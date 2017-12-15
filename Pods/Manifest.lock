@@ -1,0 +1,65 @@
+PODS:
+  - DOFavoriteButton (0.0.4)
+  - FontAwesome.swift (1.2.0)
+  - Hero (1.0.1)
+  - HydraAsync (1.2.1)
+  - Nuke (5.2)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - ReSwift (4.0.0)
+  - SkeletonView (1.0.4)
+  - SVProgressHUD (2.2.2)
+  - ViewAnimator (1.0.2)
+
+DEPENDENCIES:
+  - DOFavoriteButton (from `https://github.com/fumiyasac/DOFavoriteButton`, branch `master`)
+  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-4.0`)
+  - Hero
+  - HydraAsync
+  - Nuke (~> 5.0)
+  - RealmSwift
+  - ReSwift
+  - SkeletonView
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - ViewAnimator
+
+EXTERNAL SOURCES:
+  DOFavoriteButton:
+    :branch: master
+    :git: https://github.com/fumiyasac/DOFavoriteButton
+  FontAwesome.swift:
+    :branch: swift-4.0
+    :git: https://github.com/thii/FontAwesome.swift
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  DOFavoriteButton:
+    :commit: 3a237a9eda88018ef36eb7e72bb0cc788ce62d37
+    :git: https://github.com/fumiyasac/DOFavoriteButton
+  FontAwesome.swift:
+    :commit: ee1bf6b3db08f969ec7508c0feca3bac0d8b96ff
+    :git: https://github.com/thii/FontAwesome.swift
+  SVProgressHUD:
+    :commit: bb4e4e460d4f8e2ecf20af99797f781e7cc09d8f
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+SPEC CHECKSUMS:
+  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
+  FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
+  Hero: cee286821578e170d8c0c9c9cda7897357401112
+  HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
+  Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
+  SkeletonView: 933a9442b08c3550f61c2ae38a02456a74ad86f4
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  ViewAnimator: d7b18e0be98e05807f61ad886a36363727209377
+
+PODFILE CHECKSUM: 08846b6266611b304f19f24ca616253cd7c8482d
+
+COCOAPODS: 1.3.1
