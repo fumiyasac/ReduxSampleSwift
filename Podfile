@@ -14,6 +14,7 @@ target 'ReduxSampleSwift' do
   # 便利ライブラリ
   pod 'Nuke', '~> 5.0'
   pod 'RealmSwift'
+  pod 'SwiftyJSON'
 
   # UIまわり
   pod 'ViewAnimator'
