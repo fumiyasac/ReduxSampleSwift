@@ -15,6 +15,8 @@
 		DE671B071FDFC75400B752CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE671B051FDFC75400B752CA /* LaunchScreen.storyboard */; };
 		DE671B121FDFC75500B752CA /* ReduxSampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B111FDFC75500B752CA /* ReduxSampleSwiftTests.swift */; };
 		DE671B1D1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */; };
+		DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B41FE6AB2C0017C3AF /* AppState.swift */; };
+		DE85D2B71FE6C1830017C3AF /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B61FE6C1830017C3AF /* HomeState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		DE671B181FDFC75500B752CA /* ReduxSampleSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReduxSampleSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxSampleSwiftUITests.swift; sourceTree = "<group>"; };
 		DE671B1E1FDFC75500B752CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE85D2B41FE6AB2C0017C3AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DE85D2B61FE6C1830017C3AF /* HomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +126,13 @@
 			isa = PBXGroup;
 			children = (
 				DE671AFC1FDFC75400B752CA /* AppDelegate.swift */,
-				DE671AFE1FDFC75400B752CA /* ViewController.swift */,
-				DE671B001FDFC75400B752CA /* Main.storyboard */,
 				DE671B031FDFC75400B752CA /* Assets.xcassets */,
-				DE671B051FDFC75400B752CA /* LaunchScreen.storyboard */,
 				DE671B081FDFC75400B752CA /* Info.plist */,
+				DE671B051FDFC75400B752CA /* LaunchScreen.storyboard */,
+				DE85D2B91FE6C3A20017C3AF /* Model */,
+				DE85D2B11FE6A81C0017C3AF /* Redux */,
+				DE85D2B31FE6A8B80017C3AF /* Storyboard */,
+				DE85D2B21FE6A8320017C3AF /* ViewController */,
 			);
 			path = ReduxSampleSwift;
 			sourceTree = "<group>";
@@ -147,6 +153,46 @@
 				DE671B1E1FDFC75500B752CA /* Info.plist */,
 			);
 			path = ReduxSampleSwiftUITests;
+			sourceTree = "<group>";
+		};
+		DE85D2B11FE6A81C0017C3AF /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				DE85D2B81FE6C37F0017C3AF /* State */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		DE85D2B21FE6A8320017C3AF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE671AFE1FDFC75400B752CA /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DE85D2B31FE6A8B80017C3AF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				DE671B001FDFC75400B752CA /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		DE85D2B81FE6C37F0017C3AF /* State */ = {
+			isa = PBXGroup;
+			children = (
+				DE85D2B41FE6AB2C0017C3AF /* AppState.swift */,
+				DE85D2B61FE6C1830017C3AF /* HomeState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		DE85D2B91FE6C3A20017C3AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE85D2B71FE6C1830017C3AF /* HomeState.swift in Sources */,
+				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* ViewController.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
 			);
