@@ -16,11 +16,14 @@
 		DE671B121FDFC75500B752CA /* ReduxSampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B111FDFC75500B752CA /* ReduxSampleSwiftTests.swift */; };
 		DE671B1D1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */; };
 		DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B41FE6AB2C0017C3AF /* AppState.swift */; };
-		DE85D2B71FE6C1830017C3AF /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B61FE6C1830017C3AF /* HomeState.swift */; };
 		DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */; };
 		DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */; };
 		DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */; };
 		DEE53CE51FF4E3C40097C7B2 /* ReuseCellConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CE41FF4E3C40097C7B2 /* ReuseCellConfigure.swift */; };
+		DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CE71FF4E7530097C7B2 /* Constants.swift */; };
+		DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */; };
+		DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */; };
+		DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +61,14 @@
 		DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxSampleSwiftUITests.swift; sourceTree = "<group>"; };
 		DE671B1E1FDFC75500B752CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE85D2B41FE6AB2C0017C3AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		DE85D2B61FE6C1830017C3AF /* HomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
 		DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		DEE53CE41FF4E3C40097C7B2 /* ReuseCellConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseCellConfigure.swift; sourceTree = "<group>"; };
+		DEE53CE71FF4E7530097C7B2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialState.swift; sourceTree = "<group>"; };
+		DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAction.swift; sourceTree = "<group>"; };
+		DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 			children = (
 				DE671AFC1FDFC75400B752CA /* AppDelegate.swift */,
 				DE671B031FDFC75400B752CA /* Assets.xcassets */,
+				DEE53CE71FF4E7530097C7B2 /* Constants.swift */,
 				DE671B081FDFC75400B752CA /* Info.plist */,
 				DE671B051FDFC75400B752CA /* LaunchScreen.storyboard */,
 				DE85D2B91FE6C3A20017C3AF /* Model */,
@@ -167,6 +174,8 @@
 		DE85D2B11FE6A81C0017C3AF /* Redux */ = {
 			isa = PBXGroup;
 			children = (
+				DEE53CE91FF4EA2A0097C7B2 /* Action */,
+				DEE53CEA1FF4EA360097C7B2 /* Reducer */,
 				DE85D2B81FE6C37F0017C3AF /* State */,
 			);
 			path = Redux;
@@ -192,7 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				DE85D2B41FE6AB2C0017C3AF /* AppState.swift */,
-				DE85D2B61FE6C1830017C3AF /* HomeState.swift */,
+				DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -213,6 +222,22 @@
 				DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		DEE53CE91FF4EA2A0097C7B2 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		DEE53CEA1FF4EA360097C7B2 /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,11 +380,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/DOFavoriteButton/DOFavoriteButton.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -370,11 +396,12 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DOFavoriteButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -428,14 +455,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE85D2B71FE6C1830017C3AF /* HomeState.swift in Sources */,
 				DEE53CE51FF4E3C40097C7B2 /* ReuseCellConfigure.swift in Sources */,
 				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
 				DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */,
+				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
+				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
+				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
+				DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

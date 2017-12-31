@@ -9,8 +9,9 @@
 import Foundation
 import ReSwift
 
-/*
+//アプリの現在状態をに関するState
 struct AppState: ReSwift.StateType {
-    var homeState = HomeState()
+
+    //チュートリアルの通過状態に関するstate
+    var tutorialState = TutorialState()
 }
-*/
