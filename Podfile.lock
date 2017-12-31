@@ -1,9 +1,21 @@
 PODS:
+  - Alamofire (4.6.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - DOFavoriteButton (0.0.4)
   - FontAwesome.swift (1.2.0)
   - Hero (1.0.1)
-  - HydraAsync (1.2.1)
-  - Nuke (5.2)
+  - PromiseKit (4.5.0):
+    - PromiseKit/Foundation (= 4.5.0)
+    - PromiseKit/QuartzCore (= 4.5.0)
+    - PromiseKit/UIKit (= 4.5.0)
+  - PromiseKit/CorePromise (4.5.0)
+  - PromiseKit/Foundation (4.5.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.5.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.5.0):
+    - PromiseKit/CorePromise
   - Realm (3.0.2):
     - Realm/Headers (= 3.0.2)
   - Realm/Headers (3.0.2)
@@ -16,11 +28,12 @@ PODS:
   - ViewAnimator (1.0.2)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
   - DOFavoriteButton (from `https://github.com/fumiyasac/DOFavoriteButton`, branch `master`)
   - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-4.0`)
   - Hero
-  - HydraAsync
-  - Nuke (~> 5.0)
+  - PromiseKit
   - RealmSwift
   - ReSwift
   - SkeletonView
@@ -50,11 +63,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
   Hero: cee286821578e170d8c0c9c9cda7897357401112
-  HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
-  Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
+  PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
@@ -63,6 +77,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   ViewAnimator: d7b18e0be98e05807f61ad886a36363727209377
 
-PODFILE CHECKSUM: 3034c3618d0811f42fd1ef10f59c7498c4e71af5
+PODFILE CHECKSUM: 8784711059dad94e55a2b62cf386f0b4fd790046
 
 COCOAPODS: 1.3.1

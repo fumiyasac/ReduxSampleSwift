@@ -9,10 +9,11 @@ target 'ReduxSampleSwift' do
 
   # 機能まわり
   pod 'ReSwift'
-  pod 'HydraAsync'
+  pod 'Alamofire'
+  pod 'PromiseKit'
 
   # 便利ライブラリ
-  pod 'Nuke', '~> 5.0'
+  pod 'AlamofireImage'
   pod 'RealmSwift'
   pod 'SwiftyJSON'
 
