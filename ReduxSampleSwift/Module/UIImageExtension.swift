@@ -13,7 +13,7 @@ import UIKit
 extension UIImage {
 
     //元画像からサムネイル用の画像を書き出すメソッド
-    func thumbnailOfSize(_ minLength: CGFloat) -> UIImage? {
+    public func thumbnailOfSize(_ minLength: CGFloat) -> UIImage? {
 
         //写真のオリジナルサイズの縦横の値を取得する
         let height = size.height

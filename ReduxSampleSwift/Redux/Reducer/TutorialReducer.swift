@@ -21,8 +21,8 @@ extension TutorialState {
 
         //チュートリアル完了状態のstateを変更させるアクションの場合はステートの変更を行う
         switch action {
-        case let .updateTutorialFinished(status):
-            state.tutorialFinished = status
+        case let .updateFinishTutorialFlag(result):
+            state.finishTutorialFlag = result
         }
 
         //Debug.

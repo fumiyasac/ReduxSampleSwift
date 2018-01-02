@@ -13,7 +13,7 @@ import UIKit
 extension UIViewController {
 
     //戻るボタンの「戻る」テキストを削除した状態にするメソッド
-    func removeBackButtonText() {
+    public func removeBackButtonText() {
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController!.navigationBar.tintColor = UIColor.white
         self.navigationItem.backBarButtonItem = backButtonItem

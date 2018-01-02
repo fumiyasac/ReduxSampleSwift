@@ -15,6 +15,6 @@ extension TutorialState {
     enum tutorialAction: ReSwift.Action {
 
         //現在のチュートリアル完了状態を反映させるアクション
-        case updateTutorialFinished(status: Bool)
+        case updateFinishTutorialFlag(result: Bool)
     }
 }
