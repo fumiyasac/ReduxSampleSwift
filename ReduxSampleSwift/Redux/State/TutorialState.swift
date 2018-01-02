@@ -13,6 +13,5 @@ import ReSwift
 struct TutorialState: ReSwift.StateType {
 
     //チュートリアルが終わっているかを判定するフラグ（初期値: false）
-    var tutorialFinished: Bool = false
+    var finishTutorialFlag: Bool = false
 }
-

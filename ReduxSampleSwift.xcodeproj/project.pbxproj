@@ -24,6 +24,9 @@
 		DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */; };
 		DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */; };
 		DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */; };
+		DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */; };
+		DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CF51FFBB5AF0097C7B2 /* CustomViewBase.swift */; };
+		DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialState.swift; sourceTree = "<group>"; };
 		DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAction.swift; sourceTree = "<group>"; };
 		DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialReducer.swift; sourceTree = "<group>"; };
+		DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSize.swift; sourceTree = "<group>"; };
+		DEE53CF51FFBB5AF0097C7B2 /* CustomViewBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewBase.swift; sourceTree = "<group>"; };
+		DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,7 @@
 				DEE53CDA1FF1DD570097C7B2 /* Module */,
 				DE85D2B11FE6A81C0017C3AF /* Redux */,
 				DE85D2B31FE6A8B80017C3AF /* Storyboard */,
+				DEE53CF11FFB84430097C7B2 /* View */,
 				DE85D2B21FE6A8320017C3AF /* ViewController */,
 			);
 			path = ReduxSampleSwift;
@@ -184,7 +191,7 @@
 		DE85D2B21FE6A8320017C3AF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				DE671AFE1FDFC75400B752CA /* MainViewController.swift */,
+				DEE53CFA1FFBD1910097C7B2 /* Main */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 		DE85D2B91FE6C3A20017C3AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 		DEE53CDA1FF1DD570097C7B2 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */,
 				DEE53CE41FF4E3C40097C7B2 /* ReuseCellConfigure.swift */,
 				DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */,
 				DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */,
@@ -238,6 +247,30 @@
 				DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */,
 			);
 			path = Reducer;
+			sourceTree = "<group>";
+		};
+		DEE53CF11FFB84430097C7B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */ = {
+			isa = PBXGroup;
+			children = (
+				DEE53CF51FFBB5AF0097C7B2 /* CustomViewBase.swift */,
+			);
+			path = CustomViewBase;
+			sourceTree = "<group>";
+		};
+		DEE53CFA1FFBD1910097C7B2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE671AFE1FDFC75400B752CA /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,9 +490,12 @@
 			files = (
 				DEE53CE51FF4E3C40097C7B2 /* ReuseCellConfigure.swift in Sources */,
 				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
+				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
 				DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
+				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
+				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
