@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gdf-tI-GCJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Q0B-ee-TE9">
+            <objects>
+                <navigationController id="gdf-tI-GCJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uyz-Gk-Lgt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dIN-w8-V8E" kind="relationship" relationship="rootViewController" id="E0d-WD-kI6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJZ-vV-KgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="154" y="-26"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="BSH-cr-IB8">
+            <objects>
+                <viewController id="dIN-w8-V8E" customClass="TutorialViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="scC-5M-Orz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coS-V3-YHE">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <connections>
+                                    <segue destination="gS9-g1-Tko" kind="embed" id="Mvx-lp-Kcx"/>
+                                </connections>
+                            </containerView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRf-Kz-rsd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="TaC-Ae-SlQ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RRf-Kz-rsd" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" id="1Lc-PK-DE4"/>
+                            <constraint firstItem="coS-V3-YHE" firstAttribute="top" secondItem="RRf-Kz-rsd" secondAttribute="bottom" id="8WF-KS-3j0"/>
+                            <constraint firstItem="coS-V3-YHE" firstAttribute="trailing" secondItem="p19-bF-woy" secondAttribute="trailing" id="TNN-uW-EAH"/>
+                            <constraint firstItem="coS-V3-YHE" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" id="bt0-6p-WHn"/>
+                            <constraint firstItem="coS-V3-YHE" firstAttribute="bottom" secondItem="p19-bF-woy" secondAttribute="bottom" id="fZH-kt-Y4e"/>
+                            <constraint firstItem="RRf-Kz-rsd" firstAttribute="trailing" secondItem="p19-bF-woy" secondAttribute="trailing" id="ydd-Ak-AsI"/>
+                            <constraint firstItem="RRf-Kz-rsd" firstAttribute="top" secondItem="p19-bF-woy" secondAttribute="top" id="zEX-tS-lve"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="p19-bF-woy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X8r-Nj-1ga"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-ur-Dpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872.79999999999995" y="-25.637181409295355"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Hvd-It-64P">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gS9-g1-Tko" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdM-T2-FMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="19"/>
+        </scene>
+        <!--First Introduction View Controller-->
+        <scene sceneID="T8i-8E-6ap">
+            <objects>
+                <viewController id="LB8-oq-Zoo" customClass="FirstIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gs7-qv-73v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="rgJ-Wy-2YM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YL2-jS-rd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-572" y="847"/>
+        </scene>
+        <!--Second Introduction View Controller-->
+        <scene sceneID="24c-We-yxJ">
+            <objects>
+                <viewController id="THR-sp-qna" customClass="SecondIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E41-Tv-qCo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="fyF-Go-Mq3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nvF-g6-Mnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="847"/>
+        </scene>
+        <!--Third Introduction View Controller-->
+        <scene sceneID="nHJ-hj-h6L">
+            <objects>
+                <viewController id="Lfq-lg-UWY" customClass="ThirdIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hkL-6j-R2S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="5Fi-Aq-3wM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GdD-uM-glX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="847"/>
+        </scene>
+        <!--Initial Setting View Controller-->
+        <scene sceneID="V50-WZ-tWm">
+            <objects>
+                <viewController id="f6V-QU-6no" customClass="InitialSettingViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sxb-bG-Btc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="xJn-BV-JRG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ya7-ML-8Xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596" y="847"/>
+        </scene>
+    </scenes>
+</document>

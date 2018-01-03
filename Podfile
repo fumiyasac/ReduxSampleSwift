@@ -7,23 +7,24 @@ target 'ReduxSampleSwift' do
 
   # Pods for ReduxSampleSwift
 
-  # 機能まわり
+  # メイン機能用のライブラリ
   pod 'ReSwift'
   pod 'Alamofire'
   pod 'PromiseKit'
 
-  # 便利ライブラリ
+  # そのほか便利ライブラリ
   pod 'AlamofireImage'
   pod 'RealmSwift'
   pod 'SwiftyJSON'
 
-  # UIまわり
+  # UI構築用ライブラリ
   pod 'ViewAnimator'
   pod 'SkeletonView'
   pod 'Hero'
   pod 'SVProgressHUD',     :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
   pod 'FontAwesome.swift', :git => 'https://github.com/thii/FontAwesome.swift',     :branch => 'swift-4.0'
   pod 'DOFavoriteButton',  :git => 'https://github.com/fumiyasac/DOFavoriteButton', :branch => 'master'
+  pod 'KYNavigationProgress'
 
 #  target 'ReduxSampleSwiftTests' do
 #    inherit! :search_paths

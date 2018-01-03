@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7094D92F4107AD5BC148A676C51F74B4'
-               BlueprintName = 'PromiseKit'
+               BlueprintIdentifier = '2FAF0EFB26F0B57F93F98FD82AA2E74E'
+               BlueprintName = 'KYNavigationProgress'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'PromiseKit.framework'>
+               BuildableName = 'KYNavigationProgress.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
