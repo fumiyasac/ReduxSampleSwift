@@ -19,10 +19,15 @@ extension TutorialState {
         //チュートリアル完了状態のstateを変更させるアクションでない場合はステートの変更は許容しない
         guard let action = action as? TutorialState.tutorialAction else { return state }
 
-        //チュートリアル完了状態のstateを変更させるアクションの場合はステートの変更を行う
         switch action {
+
+        //TutorialStateのfinishTutorialFlagの値を更新する
         case let .updateFinishTutorialFlag(result):
             state.finishTutorialFlag = result
+
+        //TutorialStateのchangeRegionFlagの値を更新する
+        case let .updateChangeRegionFlag(result):
+            state.changeRegionFlag = result
         }
 
         //Debug.

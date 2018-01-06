@@ -14,7 +14,10 @@ extension TutorialState {
     //チュートリアル完了状態のステートを変更させるアクションをEnumで定義する
     enum tutorialAction: ReSwift.Action {
 
-        //現在のチュートリアル完了状態を反映させるアクション
+        //チュートリアルの終了判定フラグを更新させるアクション
         case updateFinishTutorialFlag(result: Bool)
+
+        //現在地域の変更設定判定フラグを更新させるアクション
+        case updateChangeRegionFlag(result: Bool)
     }
 }

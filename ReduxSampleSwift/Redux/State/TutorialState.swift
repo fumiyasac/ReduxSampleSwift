@@ -14,4 +14,7 @@ struct TutorialState: ReSwift.StateType {
 
     //チュートリアルが終わっているかを判定するフラグ（初期値: false）
     var finishTutorialFlag: Bool = false
+
+    //現在地域の変更設定判定フラグ（初期値: false）
+    var changeRegionFlag: Bool = false
 }
