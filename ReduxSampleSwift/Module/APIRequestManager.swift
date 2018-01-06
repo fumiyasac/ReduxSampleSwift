@@ -28,7 +28,7 @@ class APIRequestManager {
         case middleArea   = "middle_area"
 
         func getBaseUrl() -> String {
-            let baseUrl = domain + "/\(self.rawValue)/" + version
+            let baseUrl = "\(domain)/\(self.rawValue)/\(version)"
             return baseUrl
         }
     }
