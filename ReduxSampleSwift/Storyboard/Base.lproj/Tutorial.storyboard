@@ -46,20 +46,35 @@
                                     <constraint firstAttribute="height" constant="36" id="TaC-Ae-SlQ"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEJ-CZ-UIq">
+                                <rect key="frame" x="20" y="605" width="335" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="kZf-S9-XPM"/>
+                                </constraints>
+                                <state key="normal" title="初期設定をする"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RRf-Kz-rsd" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" id="1Lc-PK-DE4"/>
+                            <constraint firstItem="p19-bF-woy" firstAttribute="bottom" secondItem="lEJ-CZ-UIq" secondAttribute="bottom" constant="16" id="7Vl-3y-dOE"/>
                             <constraint firstItem="coS-V3-YHE" firstAttribute="top" secondItem="RRf-Kz-rsd" secondAttribute="bottom" id="8WF-KS-3j0"/>
+                            <constraint firstItem="p19-bF-woy" firstAttribute="trailing" secondItem="lEJ-CZ-UIq" secondAttribute="trailing" constant="20" id="DYd-L3-fKI"/>
                             <constraint firstItem="coS-V3-YHE" firstAttribute="trailing" secondItem="p19-bF-woy" secondAttribute="trailing" id="TNN-uW-EAH"/>
+                            <constraint firstItem="lEJ-CZ-UIq" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" constant="20" id="ahM-K1-QfS"/>
                             <constraint firstItem="coS-V3-YHE" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" id="bt0-6p-WHn"/>
-                            <constraint firstItem="coS-V3-YHE" firstAttribute="bottom" secondItem="p19-bF-woy" secondAttribute="bottom" id="fZH-kt-Y4e"/>
+                            <constraint firstItem="coS-V3-YHE" firstAttribute="bottom" secondItem="scC-5M-Orz" secondAttribute="bottom" id="fZH-kt-Y4e"/>
                             <constraint firstItem="RRf-Kz-rsd" firstAttribute="trailing" secondItem="p19-bF-woy" secondAttribute="trailing" id="ydd-Ak-AsI"/>
                             <constraint firstItem="RRf-Kz-rsd" firstAttribute="top" secondItem="p19-bF-woy" secondAttribute="top" id="zEX-tS-lve"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p19-bF-woy"/>
                     </view>
                     <navigationItem key="navigationItem" id="X8r-Nj-1ga"/>
+                    <connections>
+                        <outlet property="contentsContainerView" destination="coS-V3-YHE" id="MiH-Ab-dtL"/>
+                        <outlet property="introductionFinishButton" destination="lEJ-CZ-UIq" id="ycE-hX-Qol"/>
+                        <outlet property="titleScrollView" destination="RRf-Kz-rsd" id="HeY-6b-bm1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-ur-Dpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +83,7 @@
         <!--Page View Controller-->
         <scene sceneID="Hvd-It-64P">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="gS9-g1-Tko" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gS9-g1-Tko" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdM-T2-FMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1596" y="19"/>
@@ -76,11 +91,11 @@
         <!--First Introduction View Controller-->
         <scene sceneID="T8i-8E-6ap">
             <objects>
-                <viewController id="LB8-oq-Zoo" customClass="FirstIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstIntroductionViewController" id="LB8-oq-Zoo" customClass="FirstIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gs7-qv-73v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.46274509800000002" green="0.71372549019999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="rgJ-Wy-2YM"/>
                     </view>
                 </viewController>
@@ -91,11 +106,11 @@
         <!--Second Introduction View Controller-->
         <scene sceneID="24c-We-yxJ">
             <objects>
-                <viewController id="THR-sp-qna" customClass="SecondIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondIntroductionViewController" id="THR-sp-qna" customClass="SecondIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E41-Tv-qCo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.84074590777142844" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="fyF-Go-Mq3"/>
                     </view>
                 </viewController>
@@ -106,11 +121,11 @@
         <!--Third Introduction View Controller-->
         <scene sceneID="nHJ-hj-h6L">
             <objects>
-                <viewController id="Lfq-lg-UWY" customClass="ThirdIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdIntroductionViewController" id="Lfq-lg-UWY" customClass="ThirdIntroductionViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hkL-6j-R2S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45098039220000002" green="0.76470588240000004" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="5Fi-Aq-3wM"/>
                     </view>
                 </viewController>
