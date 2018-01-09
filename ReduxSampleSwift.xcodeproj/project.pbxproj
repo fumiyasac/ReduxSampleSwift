@@ -321,9 +321,9 @@
 		DEE53CFE1FFD1C850097C7B2 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				DEE53D001FFD1D010097C7B2 /* InitialSetting */,
-				DEE53CFF1FFD1CE10097C7B2 /* Introduction */,
 				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
+				DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */,
+				DEE53CFF1FFD1CE10097C7B2 /* Introduction */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -336,14 +336,6 @@
 				DEE53D071FFD22230097C7B2 /* ThirdIntroductionViewController.swift */,
 			);
 			path = Introduction;
-			sourceTree = "<group>";
-		};
-		DEE53D001FFD1D010097C7B2 /* InitialSetting */ = {
-			isa = PBXGroup;
-			children = (
-				DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */,
-			);
-			path = InitialSetting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
