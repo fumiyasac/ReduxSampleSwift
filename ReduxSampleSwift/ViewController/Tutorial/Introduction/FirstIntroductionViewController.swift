@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ViewAnimator
 
 class FirstIntroductionViewController: UIViewController {
+
+    //MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,4 +21,7 @@ class FirstIntroductionViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }    
 
+    //MARK: - Function
+
+    //MARK: - Private Function
 }
