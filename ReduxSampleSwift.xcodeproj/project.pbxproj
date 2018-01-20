@@ -35,9 +35,7 @@
 		DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */; };
 		DEE53CFD1FFD1C750097C7B2 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEE53CFB1FFD1C750097C7B2 /* Tutorial.storyboard */; };
 		DEE53D021FFD1D2D0097C7B2 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */; };
-		DEE53D041FFD21FF0097C7B2 /* FirstIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53D031FFD21FF0097C7B2 /* FirstIntroductionViewController.swift */; };
-		DEE53D061FFD22140097C7B2 /* SecondIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53D051FFD22140097C7B2 /* SecondIntroductionViewController.swift */; };
-		DEE53D081FFD22230097C7B2 /* ThirdIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53D071FFD22230097C7B2 /* ThirdIntroductionViewController.swift */; };
+		DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53D031FFD21FF0097C7B2 /* CardIntroductionViewController.swift */; };
 		DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,9 +93,7 @@
 		DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSetting.swift; sourceTree = "<group>"; };
 		DEE53CFC1FFD1C750097C7B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
 		DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
-		DEE53D031FFD21FF0097C7B2 /* FirstIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstIntroductionViewController.swift; sourceTree = "<group>"; };
-		DEE53D051FFD22140097C7B2 /* SecondIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondIntroductionViewController.swift; sourceTree = "<group>"; };
-		DEE53D071FFD22230097C7B2 /* ThirdIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdIntroductionViewController.swift; sourceTree = "<group>"; };
+		DEE53D031FFD21FF0097C7B2 /* CardIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIntroductionViewController.swift; sourceTree = "<group>"; };
 		DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -334,9 +330,7 @@
 		DEE53CFF1FFD1CE10097C7B2 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
-				DEE53D031FFD21FF0097C7B2 /* FirstIntroductionViewController.swift */,
-				DEE53D051FFD22140097C7B2 /* SecondIntroductionViewController.swift */,
-				DEE53D071FFD22230097C7B2 /* ThirdIntroductionViewController.swift */,
+				DEE53D031FFD21FF0097C7B2 /* CardIntroductionViewController.swift */,
 			);
 			path = Introduction;
 			sourceTree = "<group>";
@@ -571,8 +565,7 @@
 				DEE53D021FFD1D2D0097C7B2 /* TutorialViewController.swift in Sources */,
 				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
 				DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */,
-				DEE53D041FFD21FF0097C7B2 /* FirstIntroductionViewController.swift in Sources */,
-				DEE53D081FFD22230097C7B2 /* ThirdIntroductionViewController.swift in Sources */,
+				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
 				DE09D4091FFFC1E700177D36 /* APIRequestManager.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
@@ -582,7 +575,6 @@
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
 				DE09D4112001198C00177D36 /* UserSelectFood.swift in Sources */,
 				DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */,
-				DEE53D061FFD22140097C7B2 /* SecondIntroductionViewController.swift in Sources */,
 				DE09D40F2001196C00177D36 /* UserSelectGenre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
