@@ -17,18 +17,12 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak fileprivate var contentsContainerView: UIView!
     @IBOutlet weak fileprivate var introductionFinishButton: UIButton!
 
-    //イントロダクションで表示させるViewController識別子
-    fileprivate let targetViewControllerIdentifires = [
-        "FirstIntroductionViewController",
-        "SecondIntroductionViewController",
-        "ThirdIntroductionViewController",
-    ]
-
     //イントロダクションで表示させるタイトル
     fileprivate let targetViewControllerTitle = [
         "1番目のタイトル",
         "2番目のタイトル",
         "3番目のタイトル",
+        "4番目のタイトル",
     ]
 
     //ページングして表示させるViewControllerを保持する配列
@@ -135,15 +129,15 @@ class TutorialViewController: UIViewController {
     //Tutorial.storyboard上に配置した紹介コンテンツ用のViewController配列に追加する
     private func setIntroductionViewControllerLists() {
 
-        for index in 0..<targetViewControllerIdentifires.count {
+        for index in 0..<targetViewControllerTitle.count {
             let storyboard: UIStoryboard = UIStoryboard(name: "Tutorial", bundle: Bundle.main)
-            let introductionViewController = storyboard.instantiateViewController(withIdentifier: targetViewControllerIdentifires[index])
+            let cardIntroductionViewController = storyboard.instantiateViewController(withIdentifier: "CardIntroductionViewController")
 
             //「タグ番号 = インデックスの値」でスワイプ完了時にどのViewControllerかを判別できるようにする ＆ 各ViewControllerの表示内容をセットする
-            introductionViewController.view.tag = index
+            cardIntroductionViewController.view.tag = index
 
             //ページングして表示させるViewControllerを保持する配列
-            targetViewControllerLists.append(introductionViewController)
+            targetViewControllerLists.append(cardIntroductionViewController)
         }
     }
 }
@@ -178,7 +172,7 @@ extension TutorialViewController: StoreSubscriber {
     //KYNavigationProgressの値をUIPageViewControllerの進み具合に合わせて変更する
     private func setKYNavigationProgressRatio(currentIndex: Int) {
         let currentProgress: Float = Float(currentIndex)
-        let maxProgress: Float = Float(targetViewControllerIdentifires.count - 1)
+        let maxProgress: Float = Float(targetViewControllerTitle.count - 1)
         let ratio = currentProgress / maxProgress
         self.navigationController?.setProgress(ratio, animated: true)
     }
@@ -186,7 +180,7 @@ extension TutorialViewController: StoreSubscriber {
     //紹介コンテンツを終了するボタンの表示をUIPageViewControllerの進み具合に合わせて変更する
     private func setIntroductionFinishButtonState(currentIndex: Int) {
         let currentProgress: Float = Float(currentIndex)
-        let maxProgress: Float = Float(targetViewControllerIdentifires.count - 1)
+        let maxProgress: Float = Float(targetViewControllerTitle.count - 1)
         let shouldHide = (currentProgress < maxProgress)
 
         if shouldHide {
