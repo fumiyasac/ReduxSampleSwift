@@ -12,6 +12,6 @@ import ReSwift
 //アプリの現在状態をに関するState
 struct AppState: ReSwift.StateType {
 
-    //チュートリアルの通過状態に関するstate
+    //チュートリアルに関する画面に関するstate
     var tutorialState = TutorialState()
 }

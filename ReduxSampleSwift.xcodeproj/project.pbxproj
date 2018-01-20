@@ -13,6 +13,7 @@
 		DE09D40F2001196C00177D36 /* UserSelectGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D40E2001196C00177D36 /* UserSelectGenre.swift */; };
 		DE09D4112001198C00177D36 /* UserSelectFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4102001198C00177D36 /* UserSelectFood.swift */; };
 		DE09D4132001249400177D36 /* UserSelectArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4122001249400177D36 /* UserSelectArea.swift */; };
+		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
 		DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFC1FDFC75400B752CA /* AppDelegate.swift */; };
 		DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFE1FDFC75400B752CA /* MainViewController.swift */; };
 		DE671B021FDFC75400B752CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE671B001FDFC75400B752CA /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		DE09D40E2001196C00177D36 /* UserSelectGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectGenre.swift; sourceTree = "<group>"; };
 		DE09D4102001198C00177D36 /* UserSelectFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectFood.swift; sourceTree = "<group>"; };
 		DE09D4122001249400177D36 /* UserSelectArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectArea.swift; sourceTree = "<group>"; };
+		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE671AF91FDFC75400B752CA /* ReduxSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE671AFC1FDFC75400B752CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE671AFE1FDFC75400B752CA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		DEE53CEA1FF4EA360097C7B2 /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
+				DE591DF7201370360097974A /* AppReducer.swift */,
 				DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */,
 			);
 			path = Reducer;
@@ -575,6 +578,7 @@
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
+				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
 				DE09D4112001198C00177D36 /* UserSelectFood.swift in Sources */,
 				DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */,

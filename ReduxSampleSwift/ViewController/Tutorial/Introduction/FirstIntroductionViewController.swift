@@ -23,5 +23,11 @@ class FirstIntroductionViewController: UIViewController {
 
     //MARK: - Function
 
+    func animateImageCollectionView() {
+        
+    }
+
     //MARK: - Private Function
+
+
 }
