@@ -12,9 +12,12 @@ import ReSwift
 //チュートリアルの通過状態に関するstateの定義
 struct TutorialState: ReSwift.StateType {
 
+    //UIPageViewControllerのインデックス位置（初期値: 0）
+    var currentPageViewControllerIndex: Int = 0
+
+    //UIPageViewControllerが進むor戻る遷移かの判定値（初期値: false）
+    var isPrevious: Bool = false
+
     //チュートリアルが終わっているかを判定するフラグ（初期値: false）
     var finishTutorialFlag: Bool = false
-
-    //現在地域の変更設定判定フラグ（初期値: false）
-    var changeRegionFlag: Bool = false
 }

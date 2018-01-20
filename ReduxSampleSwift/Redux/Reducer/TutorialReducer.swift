@@ -9,7 +9,9 @@
 import Foundation
 import ReSwift
 
-extension TutorialState {
+struct TutorialReducer {}
+
+extension TutorialReducer {
 
     static func reducer(action: ReSwift.Action, state: TutorialState?) -> TutorialState {
 
@@ -21,17 +23,18 @@ extension TutorialState {
 
         switch action {
 
-        //TutorialStateのfinishTutorialFlagの値を更新する
-        case let .updateFinishTutorialFlag(result):
+        //TutorialStateのfinishTutorialFlagの値をセットする
+        case let .setFinishTutorialFlag(result):
             state.finishTutorialFlag = result
 
-        //TutorialStateのchangeRegionFlagの値を更新する
-        case let .updateChangeRegionFlag(result):
-            state.changeRegionFlag = result
+        //TutorialStateのcurrentPageViewControllerIndexの値をセットする
+        case let .setCurrentPageViewControllerIndex(index):
+            state.isPrevious = (state.currentPageViewControllerIndex - index > 0)
+            state.currentPageViewControllerIndex = index
         }
 
         //Debug.
-        print(state)
+        print("TutorialStateの更新が行われました！")
 
         return state
     }

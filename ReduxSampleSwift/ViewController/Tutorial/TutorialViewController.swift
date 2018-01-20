@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import ReSwift
 import KYNavigationProgress
-import ViewAnimator
 
 class TutorialViewController: UIViewController {
 
     //UIパーツの配置
-    @IBOutlet weak fileprivate var titleScrollView: UIScrollView!
+    @IBOutlet weak fileprivate var titleLabel: UILabel!
     @IBOutlet weak fileprivate var contentsContainerView: UIView!
     @IBOutlet weak fileprivate var introductionFinishButton: UIButton!
 
@@ -24,6 +24,13 @@ class TutorialViewController: UIViewController {
         "ThirdIntroductionViewController",
     ]
 
+    //イントロダクションで表示させるタイトル
+    fileprivate let targetViewControllerTitle = [
+        "1番目のタイトル",
+        "2番目のタイトル",
+        "3番目のタイトル",
+    ]
+
     //ページングして表示させるViewControllerを保持する配列
     fileprivate var targetViewControllerLists = [UIViewController]()
 
@@ -31,14 +38,27 @@ class TutorialViewController: UIViewController {
     fileprivate var pageViewController: UIPageViewController?
 
     //MARK: - LifeCycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupTitleView()
         setupKYNavigationProgress()
         setupPageViewController()
         setupIntroductionFinishButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        appStore.subscribe(self)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        appStore.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +69,13 @@ class TutorialViewController: UIViewController {
 
     //この画面のナビゲーションバーの設定
     private func setupNavigationBar() {
-        self.navigationItem.title = "「ご近所ごはん検索」へようこそ!"
+        self.navigationItem.title = "「今日はコレ食べたい検索」へようこそ!"
+    }
+
+    //動くタイトル部分のアニメーションの設定
+    private func setupTitleView() {
+        titleLabel.superview?.layer.masksToBounds = true
+        titleLabel.text = targetViewControllerTitle.first
     }
 
     //この画面のナビゲーションバー下アニメーションの設定
@@ -80,13 +106,16 @@ class TutorialViewController: UIViewController {
         //UIPageViewControllerのデータソースの宣言
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
-        
+
+
         //UIPageViewControllerでUIScrollViewDelegateを適用する
+        /*
         for view in pageViewController!.view.subviews {
             if let scrollView = view as? UIScrollView {
                 scrollView.delegate = self
             }
         }
+        */
 
         //最初に表示する画面として配列の先頭のViewControllerを設定する
         pageViewController!.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
@@ -102,17 +131,105 @@ class TutorialViewController: UIViewController {
             //「タグ番号 = インデックスの値」でスワイプ完了時にどのViewControllerかを判別できるようにする ＆ 各ViewControllerの表示内容をセットする
             introductionViewController.view.tag = index
 
-            //TODO: それぞれのViewControllerに表示する内容をセットする
-
             //ページングして表示させるViewControllerを保持する配列
             targetViewControllerLists.append(introductionViewController)
         }
     }
 }
 
+//MARK: - StoreSubscriber
+
+extension TutorialViewController: StoreSubscriber {
+
+    //ステートの更新が検知された際に実行される処理
+    func newState(state: AppState) {
+
+        //Debug.
+        print("TutorialViewControllerにてStateの更新を検知しました！")
+
+        let currentPageViewControllerIndex = state.tutorialState.currentPageViewControllerIndex
+        let isPreviousResult = state.tutorialState.isPrevious
+
+        setKYNavigationProgressRatio(currentIndex: currentPageViewControllerIndex)
+        setIntroductionFinishButtonState(currentIndex: currentPageViewControllerIndex)
+        setTitleWithAnimation(title: targetViewControllerTitle[currentPageViewControllerIndex], isPrevious: isPreviousResult)
+    }
+
+    //MARK: - Private Function
+
+    //KYNavigationProgressの値をUIPageViewControllerの進み具合に合わせて変更する
+    private func setKYNavigationProgressRatio(currentIndex: Int) {
+        let currentProgress: Float = Float(currentIndex)
+        let maxProgress: Float = Float(targetViewControllerIdentifires.count - 1)
+        let ratio = currentProgress / maxProgress
+        self.navigationController?.setProgress(ratio, animated: true)
+    }
+
+    //紹介コンテンツを終了するボタンの表示をUIPageViewControllerの進み具合に合わせて変更する
+    private func setIntroductionFinishButtonState(currentIndex: Int) {
+        let currentProgress: Float = Float(currentIndex)
+        let maxProgress: Float = Float(targetViewControllerIdentifires.count - 1)
+        let shouldHide = (currentProgress < maxProgress)
+
+        if shouldHide {
+            hideIntroductionFinishButton()
+        } else {
+            displayIntroductionFinishButton()
+        }
+    }
+
+    //紹介コンテンツを終了するボタンを表示する
+    private func displayIntroductionFinishButton() {
+        introductionFinishButton.isHidden = false
+        introductionFinishButton.alpha = 0
+
+        UIView.animate(withDuration: 0.18, animations: {
+            self.introductionFinishButton.alpha = 1
+        }, completion: nil)
+    }
+
+    //紹介コンテンツを終了するボタンを隠す
+    private func hideIntroductionFinishButton() {
+        introductionFinishButton.alpha = 1
+        
+        UIView.animate(withDuration: 0.18, animations: {
+            self.introductionFinishButton.alpha = 0
+        }, completion: { _ in
+            self.introductionFinishButton.isHidden = true
+        })
+    }
+
+    //アニメーション付きでラベルに表示する内容の変更を行う
+    private func setTitleWithAnimation(title: String, isPrevious: Bool) {
+
+        //アニメーションの設定を行う
+        let transition            = CATransition()
+        transition.type           = kCATransitionPush
+        transition.duration       = 0.18
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.subtype        = kCATransitionFromLeft
+
+        var key: String
+        if isPrevious {
+            transition.subtype = kCATransitionFromLeft
+            key = "previous"
+        } else {
+            transition.subtype = kCATransitionFromRight
+            key = "next"
+        }
+
+        //タイトルの設定とアニメーションの設定を同時に適用する
+        titleLabel.text = title
+        titleLabel.layer.add(transition, forKey: key)
+    }
+}
+
+
 //MARK: - UIScrollViewDelegate
 
+/*
 extension TutorialViewController: UIScrollViewDelegate {}
+*/
 
 //MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
 
@@ -126,13 +243,16 @@ extension TutorialViewController: UIPageViewControllerDelegate, UIPageViewContro
         
         //スワイプアニメーションが完了していない時には処理をさせなくする
         if !completed { return }
-        
+
         //ここから先はUIPageViewControllerのスワイプアニメーション完了時に発動する
         if let targetViewControllers = pageViewController.viewControllers {
             if let targetViewController = targetViewControllers.last {
+
+                //受け取ったインデックス値を元にコンテンツ表示を更新する
                 let index = targetViewController.view.tag
-                setKYNavigationProgressRatio(currentIndex: index)
-                setIntroductionFinishButtonState(currentIndex: index)
+
+                let pageViewControllerAction = TutorialState.tutorialAction.setCurrentPageViewControllerIndex(index: index)
+                appStore.dispatch(pageViewControllerAction)
             }
         }
     }
@@ -167,23 +287,5 @@ extension TutorialViewController: UIPageViewControllerDelegate, UIPageViewContro
         } else {
             return targetViewControllerLists[index + 1]
         }
-    }
-
-    //MARK: - Private Function
-
-    //KYNavigationProgressの値をUIPageViewControllerの進み具合に合わせて変更する
-    private func setKYNavigationProgressRatio(currentIndex: Int) {
-        let currentProgress: Float = Float(currentIndex)
-        let maxProgress: Float = Float(targetViewControllerIdentifires.count - 1)
-        let ratio = currentProgress / maxProgress
-        self.navigationController?.setProgress(ratio, animated: true)
-    }
-
-    //紹介コンテンツを終了するボタンの表示をUIPageViewControllerの進み具合に合わせて変更する
-    private func setIntroductionFinishButtonState(currentIndex: Int) {
-        let currentProgress: Float = Float(currentIndex)
-        let maxProgress: Float = Float(targetViewControllerIdentifires.count - 1)
-        let shouldHide = (currentProgress < maxProgress)
-        introductionFinishButton.isHidden = shouldHide
     }
 }
