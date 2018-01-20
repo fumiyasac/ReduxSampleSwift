@@ -36,6 +36,9 @@ class TutorialViewController: UIViewController {
 
     //ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
     fileprivate var pageViewController: UIPageViewController?
+    
+    //ユーザー情報クラスをインスタンス化する
+    fileprivate let initialSetting = InitialSetting()
 
     //MARK: - LifeCycle
 
@@ -52,12 +55,21 @@ class TutorialViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
+
+        //チュートリアルの完了状態をUserDefaultより取得する
+        let finishTutorialFlag = initialSetting.getFinishTutorialFlag()
+
+        //setFinishTutorialFlagアクション(ReSwift)を実行する
+        let finishTutorialAction = TutorialState.tutorialAction.setFinishTutorialFlag(result: finishTutorialFlag)
+        appStore.dispatch(finishTutorialAction)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
+        //Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
         appStore.unsubscribe(self)
     }
 
@@ -66,6 +78,14 @@ class TutorialViewController: UIViewController {
     }
 
     //MARK: - Private Function
+
+    //紹介コンテンツを終了するボタンをタップした際のアクションの設定
+    @objc private func introductionFinishButtonTapped() {
+
+        //setFinishTutorialFlagアクション(ReSwift)を実行する
+        let finishTutorialAction = TutorialState.tutorialAction.setFinishTutorialFlag(result: true)
+        appStore.dispatch(finishTutorialAction)
+    }
 
     //この画面のナビゲーションバーの設定
     private func setupNavigationBar() {
@@ -88,6 +108,7 @@ class TutorialViewController: UIViewController {
     //紹介コンテンツを終了するボタンの設定
     private func setupIntroductionFinishButton() {
         introductionFinishButton.isHidden = true
+        introductionFinishButton.addTarget(self, action: #selector(self.introductionFinishButtonTapped), for: .touchUpInside)
     }
 
     //UIPageViewControllerの設定
@@ -106,7 +127,6 @@ class TutorialViewController: UIViewController {
         //UIPageViewControllerのデータソースの宣言
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
-
 
         //UIPageViewControllerでUIScrollViewDelegateを適用する
         /*
@@ -146,6 +166,13 @@ extension TutorialViewController: StoreSubscriber {
 
         //Debug.
         print("TutorialViewControllerにてStateの更新を検知しました！")
+
+        let finishTutorialFlag = state.tutorialState.finishTutorialFlag
+        if finishTutorialFlag {
+
+            // TODO: 次の画面へ遷移する
+            return
+        }
 
         let currentPageViewControllerIndex = state.tutorialState.currentPageViewControllerIndex
         let isPreviousResult = state.tutorialState.isPrevious
@@ -191,7 +218,7 @@ extension TutorialViewController: StoreSubscriber {
     //紹介コンテンツを終了するボタンを隠す
     private func hideIntroductionFinishButton() {
         introductionFinishButton.alpha = 1
-        
+
         UIView.animate(withDuration: 0.18, animations: {
             self.introductionFinishButton.alpha = 0
         }, completion: { _ in
@@ -240,7 +267,7 @@ extension TutorialViewController: UIPageViewControllerDelegate, UIPageViewContro
     //（実装例に関する解説）http://chaoruko-tech.hatenablog.com/entry/2014/05/15/103811
     //（公式ドキュメント）https://developer.apple.com/reference/uikit/uipageviewcontrollerdelegate
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        
+
         //スワイプアニメーションが完了していない時には処理をさせなくする
         if !completed { return }
 
@@ -251,6 +278,7 @@ extension TutorialViewController: UIPageViewControllerDelegate, UIPageViewContro
                 //受け取ったインデックス値を元にコンテンツ表示を更新する
                 let index = targetViewController.view.tag
 
+                //setCurrentPageViewControllerIndexアクション(ReSwift)を実行する
                 let pageViewControllerAction = TutorialState.tutorialAction.setCurrentPageViewControllerIndex(index: index)
                 appStore.dispatch(pageViewControllerAction)
             }
