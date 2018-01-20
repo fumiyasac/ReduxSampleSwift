@@ -36,7 +36,7 @@ class TutorialViewController: UIViewController {
 
     //ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
     fileprivate var pageViewController: UIPageViewController?
-    
+
     //ユーザー情報クラスをインスタンス化する
     fileprivate let initialSetting = InitialSetting()
 
@@ -127,15 +127,6 @@ class TutorialViewController: UIViewController {
         //UIPageViewControllerのデータソースの宣言
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
-
-        //UIPageViewControllerでUIScrollViewDelegateを適用する
-        /*
-        for view in pageViewController!.view.subviews {
-            if let scrollView = view as? UIScrollView {
-                scrollView.delegate = self
-            }
-        }
-        */
 
         //最初に表示する画面として配列の先頭のViewControllerを設定する
         pageViewController!.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
@@ -250,13 +241,6 @@ extension TutorialViewController: StoreSubscriber {
         titleLabel.layer.add(transition, forKey: key)
     }
 }
-
-
-//MARK: - UIScrollViewDelegate
-
-/*
-extension TutorialViewController: UIScrollViewDelegate {}
-*/
 
 //MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
 
