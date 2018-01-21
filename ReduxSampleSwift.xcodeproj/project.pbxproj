@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16E668A7B7110EEEF2AB86AD /* Pods_ReduxSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */; };
-		DE09D4091FFFC1E700177D36 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManager.swift */; };
+		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
 		DE09D40D2001143100177D36 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D40C2001143100177D36 /* UserSetting.swift */; };
 		DE09D40F2001196C00177D36 /* UserSelectGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D40E2001196C00177D36 /* UserSelectGenre.swift */; };
 		DE09D4112001198C00177D36 /* UserSelectFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4102001198C00177D36 /* UserSelectFood.swift */; };
@@ -60,7 +60,7 @@
 		2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE09D4081FFFC1E700177D36 /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
 		DE09D40C2001143100177D36 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		DE09D40E2001196C00177D36 /* UserSelectGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectGenre.swift; sourceTree = "<group>"; };
 		DE09D4102001198C00177D36 /* UserSelectFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectFood.swift; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		DEE53CDA1FF1DD570097C7B2 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				DE09D4081FFFC1E700177D36 /* APIRequestManager.swift */,
+				DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */,
 				DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */,
 				DEE53CE41FF4E3C40097C7B2 /* ReuseCellConfigure.swift */,
 			);
@@ -566,7 +566,7 @@
 				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
 				DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */,
 				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
-				DE09D4091FFFC1E700177D36 /* APIRequestManager.swift in Sources */,
+				DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,

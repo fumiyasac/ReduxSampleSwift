@@ -152,6 +152,7 @@ extension TutorialViewController: StoreSubscriber {
         //Debug.
         print("TutorialViewControllerにてStateの更新を検知しました！")
 
+        //チュートリアルが完了したら初期設定画面へ遷移する
         let finishTutorialFlag = state.tutorialState.finishTutorialFlag
         if finishTutorialFlag {
 
