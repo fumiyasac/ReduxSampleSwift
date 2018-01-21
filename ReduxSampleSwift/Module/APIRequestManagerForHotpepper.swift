@@ -1,5 +1,5 @@
 //
-//  APIRequestManager.swift
+//  APIRequestManagerForHotpepper.swift
 //  ReduxSampleSwift
 //
 //  Created by 酒井文也 on 2018/01/05.
@@ -11,7 +11,7 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
-class APIRequestManager {
+class APIRequestManagerForHotpepper {
 
     private static let domain  = "https://webservice.recruit.co.jp/hotpepper/"
     private static let version = "v1"
@@ -22,8 +22,6 @@ class APIRequestManager {
     //エンドポイントの定義をするenum
     private enum endPoint: String {
         case shop         = "shop"
-        case genre        = "genre"
-        case food         = "food"
         case largeArea    = "large_area"
         case middleArea   = "middle_area"
 
@@ -35,7 +33,7 @@ class APIRequestManager {
 
     //MARK: - Singleton Instance
 
-    static let shared = APIRequestManager()
+    static let shared = APIRequestManagerForHotpepper()
 
     private init() {}
 
@@ -62,8 +60,8 @@ class APIRequestManager {
         }
     }
 
-    //hotpepperの料理名一覧を取得する
-    func getFoodList() -> Promise<JSON> {
+    //Hotpepper掲載店舗一覧検索用の都道府県の一覧を取得する
+    func getLargeAreaList() -> Promise<JSON> {
         let parameters = [
             "key"    : key,
             "format" : format,
@@ -71,7 +69,7 @@ class APIRequestManager {
 
         //Alamofireの非同期通信をPromiseKitの処理でラッピングする
         return Promise { fulfill, reject in
-            Alamofire.request(endPoint.food.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
+            Alamofire.request(endPoint.largeArea.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
                 case .success(let data):
                     fulfill(JSON(data))
@@ -82,8 +80,8 @@ class APIRequestManager {
         }
     }
 
-    //hotpepperのジャンル名一覧を取得する
-    func getGenreList() -> Promise<JSON> {
+    //Hotpepper掲載店舗一覧検索用の市区町村の一覧を取得する
+    func getMiddleAreaList() -> Promise<JSON> {
         let parameters = [
             "key"    : key,
             "format" : format,
@@ -91,7 +89,7 @@ class APIRequestManager {
 
         //Alamofireの非同期通信をPromiseKitの処理でラッピングする
         return Promise { fulfill, reject in
-            Alamofire.request(endPoint.genre.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
+            Alamofire.request(endPoint.middleArea.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
                 case .success(let data):
                     fulfill(JSON(data))
