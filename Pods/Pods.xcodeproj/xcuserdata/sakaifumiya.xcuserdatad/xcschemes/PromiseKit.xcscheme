@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7094D92F4107AD5BC148A676C51F74B4'
-               BlueprintName = 'PromiseKit'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'PromiseKit.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "47E430F0695F08E531D97069E3573DE8"
+               BlueprintName = "PromiseKit"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "PromiseKit.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

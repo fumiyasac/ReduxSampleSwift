@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '190E2276A5189A937D6DD338DA6F2CBF'
-               BlueprintName = 'ReSwift'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'ReSwift.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EF4BFE56ACCB57E7F2CD10BC8DFA1A54"
+               BlueprintName = "ReSwift"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "ReSwift.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
