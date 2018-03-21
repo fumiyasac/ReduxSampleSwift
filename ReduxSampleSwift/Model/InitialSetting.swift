@@ -10,15 +10,15 @@ import Foundation
 
 class InitialSetting {
 
-    //チュートリアルの終了判定フラグ
+    // チュートリアルの終了判定フラグ
     private let finishTutorialFlag = "InitialSetting::finishTutorialFlag"
 
-    //MARK: - Function
+    // MARK: - Function
 
-    //チュートリアルの終了判定フラグの更新・取得
+    // チュートリアルの終了判定フラグの更新・取得
 
     func getFinishTutorialFlag() -> Bool {
-        return ud.bool(forKey: finishTutorialFlag)
+        return ud.bool(forKey: finishTutorialFlag) 
     }
 
     func setFinishTutorialFlag(result: Bool) {
@@ -26,7 +26,7 @@ class InitialSetting {
         ud.synchronize()
     }
 
-    //MARK: - Private Function
+    // MARK: - Private Function
 
     private var ud: UserDefaults {
         return UserDefaults.standard

@@ -11,25 +11,25 @@ import UIKit
 
 struct DeviceSize {
 
-    //MARK: - Static Functions
+    // MARK: - Static Function
 
-    //CGRectを取得
+    // CGRectを取得
     static func bounds() -> CGRect {
         return UIScreen.main.bounds
     }
 
-    //画面の横サイズを取得
+    // 画面の横サイズを取得
     static func screenWidth() -> Int {
         return Int(self.bounds().width)
     }
 
-    //画面の縦サイズを取得
+    // 画面の縦サイズを取得
     static func screenHeight() -> Int {
         return Int(self.bounds().height)
     }
 
-    //iPhoneXのサイズとマッチしているかを返す
-    static func isEqualSizeIphoneX() -> Bool {
+    // iPhoneXのサイズとマッチしているかを返す
+    static func isEqualSizeOfIphoneX() -> Bool {
         return (self.screenWidth() == 375 && self.screenHeight() == 812)
     }
 }

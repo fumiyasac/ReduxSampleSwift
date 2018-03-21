@@ -9,15 +9,15 @@
 import Foundation
 import ReSwift
 
-//チュートリアルの通過状態に関するstateの定義
+// チュートリアルの通過状態に関するstateの定義
 struct TutorialState: ReSwift.StateType {
 
-    //UIPageViewControllerのインデックス位置（初期値: 0）
+    // UIPageViewControllerのインデックス位置（初期値: 0）
     var currentPageViewControllerIndex: Int = 0
 
-    //UIPageViewControllerが進むor戻る遷移かの判定値（初期値: false）
+    // UIPageViewControllerが進むor戻る遷移かの判定値（初期値: false）
     var isPrevious: Bool = false
 
-    //チュートリアルが終わっているかを判定するフラグ（初期値: false）
+    // チュートリアルが終わっているかを判定するフラグ（初期値: false）
     var finishTutorialFlag: Bool = false
 }

@@ -15,7 +15,7 @@ class CardIntroductionViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
 
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +27,11 @@ class CardIntroductionViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }    
 
-    //MARK: - Function
+    // MARK: - Function
 
-    //TODO: チュートリアル用のデータを表示するメソッドを作成
+    // TODO: チュートリアル用のデータを表示するメソッドを作成
 
-    //MARK: - Private Function
+    // MARK: - Private Function
 
     private func setupCardIntroductionView() {
         cardBackgroundView.layer.masksToBounds = true

@@ -14,7 +14,7 @@ func appReduce(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     state.tutorialState = TutorialReducer.reducer(action: action, state: state.tutorialState)
 
-    //Debug.
+    // Debug.
     print("appReduceが実行されました！")
     print(state)
 

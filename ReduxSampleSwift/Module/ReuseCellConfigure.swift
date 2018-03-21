@@ -16,42 +16,42 @@
 import Foundation
 import UIKit
 
-//MARK: - ReusableViewProtocol
+// MARK: - ReusableViewProtocol
 public protocol ReusableViewRegisterType {}
 
-//Nibからの登録 or Classからの登録を分類するためのEnum値
+// Nibからの登録 or Classからの登録を分類するためのEnum値
 public enum RegisterNib: ReusableViewRegisterType {}
 public enum RegisterClass: ReusableViewRegisterType {}
 
-//ReusableViewProtocolの宣言
+// ReusableViewProtocolの宣言
 public protocol ReusableViewProtocol {
     associatedtype RegisterType: ReusableViewRegisterType
     static var identifier: String { get }
     static var nib: UINib? { get }
 }
 
-//ReusableViewProtocolの拡張
+// ReusableViewProtocolの拡張
 extension ReusableViewProtocol {
     public static var identifier: String {
         return String(describing: self)
     }
 }
 
-//登録するReusableViewがNibからの登録の場合
+// 登録するReusableViewがNibからの登録の場合
 extension ReusableViewProtocol where RegisterType == RegisterNib {
     public static var nib: UINib? {
         return UINib(nibName: identifier, bundle: nil)
     }
 }
 
-//登録するReusableViewがClassからの登録の場合
+// 登録するReusableViewがClassからの登録の場合
 extension ReusableViewProtocol where RegisterType == RegisterClass {
     public static var nib: UINib? {
         return nil
     }
 }
 
-//MARK: - UITableView Extension
+// MARK: - UITableView Extension
 public extension UITableView {
     public typealias ReusableCell = ReusableViewProtocol & UITableViewCell
     public typealias ReusableView = ReusableViewProtocol & UITableViewHeaderFooterView
@@ -96,12 +96,12 @@ public extension UITableView {
     }
 }
 
-//MARK: - UICollectionView Extension
+// MARK: - UICollectionView Extension
 public extension UICollectionView {
     public typealias ReusableCell = ReusableViewProtocol & UICollectionViewCell
     public typealias ReusableView = ReusableViewProtocol & UICollectionReusableView
 
-    //ヘッダー・フッターを判別するためのenum値
+    // ヘッダー・フッターを判別するためのenum値
     public enum ElementKind {
         case header
         case footer

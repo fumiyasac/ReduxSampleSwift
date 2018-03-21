@@ -19,7 +19,7 @@ class APIRequestManagerForHotpepper {
     private let key     = Constants.HOTPEPPER_API_KEY
     private let format  = "json"
 
-    //エンドポイントの定義をするenum
+    // エンドポイントの定義をするenum
     private enum endPoint: String {
         case shop         = "shop"
         case largeArea    = "large_area"
@@ -31,15 +31,15 @@ class APIRequestManagerForHotpepper {
         }
     }
 
-    //MARK: - Singleton Instance
+    // MARK: - Singleton Instance
 
     static let shared = APIRequestManagerForHotpepper()
 
     private init() {}
 
-    //MARK: - Functions
+    // MARK: - Functions
 
-    //hotpepperのお店IDに紐づくお店情報を取得する
+    // hotpepperのお店IDに紐づくお店情報を取得する
     func getShopDetailBy(targetId: String) -> Promise<JSON> {
         let parameters = [
             "key"    : key,
@@ -47,7 +47,7 @@ class APIRequestManagerForHotpepper {
             "id"     : targetId,
         ]
 
-        //Alamofireの非同期通信をPromiseKitの処理でラッピングする
+        // Alamofireの非同期通信をPromiseKitの処理でラッピングする
         return Promise { fulfill, reject in
             Alamofire.request(endPoint.shop.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
@@ -60,14 +60,14 @@ class APIRequestManagerForHotpepper {
         }
     }
 
-    //Hotpepper掲載店舗一覧検索用の都道府県の一覧を取得する
+    // Hotpepper掲載店舗一覧検索用の都道府県の一覧を取得する
     func getLargeAreaList() -> Promise<JSON> {
         let parameters = [
             "key"    : key,
             "format" : format,
         ]
 
-        //Alamofireの非同期通信をPromiseKitの処理でラッピングする
+        // Alamofireの非同期通信をPromiseKitの処理でラッピングする
         return Promise { fulfill, reject in
             Alamofire.request(endPoint.largeArea.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
@@ -80,14 +80,14 @@ class APIRequestManagerForHotpepper {
         }
     }
 
-    //Hotpepper掲載店舗一覧検索用の市区町村の一覧を取得する
+    // Hotpepper掲載店舗一覧検索用の市区町村の一覧を取得する
     func getMiddleAreaList() -> Promise<JSON> {
         let parameters = [
             "key"    : key,
             "format" : format,
         ]
 
-        //Alamofireの非同期通信をPromiseKitの処理でラッピングする
+        // Alamofireの非同期通信をPromiseKitの処理でラッピングする
         return Promise { fulfill, reject in
             Alamofire.request(endPoint.middleArea.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
