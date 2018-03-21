@@ -15,25 +15,25 @@ extension TutorialReducer {
 
     static func reducer(action: ReSwift.Action, state: TutorialState?) -> TutorialState {
 
-        //チュートリアル完了状態のstateを取得する(ない場合は初期状態とする)
+        // チュートリアル完了状態のstateを取得する(ない場合は初期状態とする)
         var state = state ?? TutorialState()
 
-        //チュートリアル完了状態のstateを変更させるアクションでない場合はステートの変更は許容しない
+        // チュートリアル完了状態のstateを変更させるアクションでない場合はステートの変更は許容しない
         guard let action = action as? TutorialState.tutorialAction else { return state }
 
         switch action {
 
-        //TutorialStateのfinishTutorialFlagの値をセットする
+        // TutorialStateのfinishTutorialFlagの値をセットする
         case let .setFinishTutorialFlag(result):
             state.finishTutorialFlag = result
 
-        //TutorialStateのcurrentPageViewControllerIndexの値をセットする
+        // TutorialStateのcurrentPageViewControllerIndexの値をセットする
         case let .setCurrentPageViewControllerIndex(index):
             state.isPrevious = (state.currentPageViewControllerIndex - index > 0)
             state.currentPageViewControllerIndex = index
         }
 
-        //Debug.
+        // Debug.
         print("TutorialStateの更新が行われました！")
 
         return state

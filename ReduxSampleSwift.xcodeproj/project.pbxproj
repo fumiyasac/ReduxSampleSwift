@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		16E668A7B7110EEEF2AB86AD /* Pods_ReduxSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */; };
 		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
-		DE09D40D2001143100177D36 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D40C2001143100177D36 /* UserSetting.swift */; };
-		DE09D40F2001196C00177D36 /* UserSelectGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D40E2001196C00177D36 /* UserSelectGenre.swift */; };
-		DE09D4112001198C00177D36 /* UserSelectFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4102001198C00177D36 /* UserSelectFood.swift */; };
-		DE09D4132001249400177D36 /* UserSelectArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4122001249400177D36 /* UserSelectArea.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
 		DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFC1FDFC75400B752CA /* AppDelegate.swift */; };
 		DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFE1FDFC75400B752CA /* MainViewController.swift */; };
@@ -61,10 +57,6 @@
 		4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
-		DE09D40C2001143100177D36 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
-		DE09D40E2001196C00177D36 /* UserSelectGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectGenre.swift; sourceTree = "<group>"; };
-		DE09D4102001198C00177D36 /* UserSelectFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectFood.swift; sourceTree = "<group>"; };
-		DE09D4122001249400177D36 /* UserSelectArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectArea.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE671AF91FDFC75400B752CA /* ReduxSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE671AFC1FDFC75400B752CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +149,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DE4D414720623FEB0038CC01 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		DE671AF01FDFC75400B752CA = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +189,7 @@
 				DE09D40B2001118700177D36 /* Extension */,
 				DE85D2B91FE6C3A20017C3AF /* Model */,
 				DEE53CDA1FF1DD570097C7B2 /* Module */,
+				DE4D414720623FEB0038CC01 /* Protocol */,
 				DE85D2B11FE6A81C0017C3AF /* Redux */,
 				DE85D2B31FE6A8B80017C3AF /* Storyboard */,
 				DEE53CF11FFB84430097C7B2 /* View */,
@@ -258,10 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */,
-				DE09D4122001249400177D36 /* UserSelectArea.swift */,
-				DE09D4102001198C00177D36 /* UserSelectFood.swift */,
-				DE09D40E2001196C00177D36 /* UserSelectGenre.swift */,
-				DE09D40C2001143100177D36 /* UserSetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,11 +552,9 @@
 				DEE53CE51FF4E3C40097C7B2 /* ReuseCellConfigure.swift in Sources */,
 				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
-				DE09D40D2001143100177D36 /* UserSetting.swift in Sources */,
 				DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
-				DE09D4132001249400177D36 /* UserSelectArea.swift in Sources */,
 				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
 				DEE53D021FFD1D2D0097C7B2 /* TutorialViewController.swift in Sources */,
 				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
@@ -573,9 +567,7 @@
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
 				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
-				DE09D4112001198C00177D36 /* UserSelectFood.swift in Sources */,
 				DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */,
-				DE09D40F2001196C00177D36 /* UserSelectGenre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
