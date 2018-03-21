@@ -5,11 +5,6 @@ PODS:
   - DOFavoriteButton (0.0.4)
   - FontAwesome.swift (1.2.0)
   - Hero (1.0.1)
-  - IGListKit (3.1.1):
-    - IGListKit/Default (= 3.1.1)
-  - IGListKit/Default (3.1.1):
-    - IGListKit/Diffing
-  - IGListKit/Diffing (3.1.1)
   - KYNavigationProgress (2.0.2)
   - PromiseKit (4.5.0):
     - PromiseKit/Foundation (= 4.5.0)
@@ -39,7 +34,6 @@ DEPENDENCIES:
   - DOFavoriteButton (from `https://github.com/fumiyasac/DOFavoriteButton`, branch `master`)
   - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-4.0`)
   - Hero
-  - IGListKit (~> 3.0)
   - KYNavigationProgress
   - PromiseKit
   - RealmSwift
@@ -76,7 +70,6 @@ SPEC CHECKSUMS:
   DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
   Hero: cee286821578e170d8c0c9c9cda7897357401112
-  IGListKit: cb97f405ae43e59fe1da74271e19427ec20d3c07
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
@@ -87,6 +80,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   ViewAnimator: d7b18e0be98e05807f61ad886a36363727209377
 
-PODFILE CHECKSUM: d4760c517c4605b67c28db84f0925034fec21fce
+PODFILE CHECKSUM: 73becbd436cfcd7acfb07bdb45c272c94db2c813
 
 COCOAPODS: 1.4.0

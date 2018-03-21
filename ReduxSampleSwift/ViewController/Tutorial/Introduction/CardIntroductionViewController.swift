@@ -35,7 +35,7 @@ class CardIntroductionViewController: UIViewController {
 
     private func setupCardIntroductionView() {
         cardBackgroundView.layer.masksToBounds = true
-        cardBackgroundView.layer.cornerRadius  = 6.0
+        cardBackgroundView.layer.cornerRadius  = 10.0
         cardBackgroundView.layer.borderWidth   = 1.0
         cardBackgroundView.layer.borderColor   = UIColor(code: "#ffdd00").cgColor
     }

@@ -41,10 +41,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHt-nR-htW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9p-mC-8jh">
-                                        <rect key="frame" x="16" y="14" width="343" height="12"/>
+                                        <rect key="frame" x="16" y="9" width="343" height="12"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,25 +52,25 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="4Wv-jC-nLI"/>
+                                    <constraint firstAttribute="height" constant="30" id="4Wv-jC-nLI"/>
                                     <constraint firstAttribute="trailing" secondItem="Y9p-mC-8jh" secondAttribute="trailing" constant="16" id="5pF-w4-Aqd"/>
                                     <constraint firstItem="Y9p-mC-8jh" firstAttribute="centerY" secondItem="fHt-nR-htW" secondAttribute="centerY" id="qtY-pt-kvL"/>
                                     <constraint firstItem="Y9p-mC-8jh" firstAttribute="leading" secondItem="fHt-nR-htW" secondAttribute="leading" constant="16" id="uPt-bm-vWY"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coS-V3-YHE">
-                                <rect key="frame" x="0.0" y="104" width="375" height="485"/>
+                                <rect key="frame" x="0.0" y="118" width="375" height="479"/>
                                 <connections>
                                     <segue destination="gS9-g1-Tko" kind="embed" id="Mvx-lp-Kcx"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZN-Bv-G5Q">
-                                <rect key="frame" x="0.0" y="589" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEJ-CZ-UIq">
-                                        <rect key="frame" x="16" y="16" width="343" height="46"/>
+                                        <rect key="frame" x="16" y="15" width="343" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="kZf-S9-XPM"/>
+                                            <constraint firstAttribute="height" constant="40" id="kZf-S9-XPM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                         <state key="normal" title="初期設定をする">
@@ -82,7 +82,7 @@
                                     <constraint firstItem="lEJ-CZ-UIq" firstAttribute="leading" secondItem="cZN-Bv-G5Q" secondAttribute="leading" constant="16" id="D5C-U8-F8i"/>
                                     <constraint firstItem="lEJ-CZ-UIq" firstAttribute="centerY" secondItem="cZN-Bv-G5Q" secondAttribute="centerY" id="R08-bR-gaw"/>
                                     <constraint firstAttribute="trailing" secondItem="lEJ-CZ-UIq" secondAttribute="trailing" constant="16" id="qRQ-PY-9LV"/>
-                                    <constraint firstAttribute="height" constant="78" id="zoK-yB-HH6"/>
+                                    <constraint firstAttribute="height" constant="70" id="zoK-yB-HH6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -97,7 +97,7 @@
                             <constraint firstItem="cZN-Bv-G5Q" firstAttribute="top" secondItem="coS-V3-YHE" secondAttribute="bottom" id="dzj-PZ-ucD"/>
                             <constraint firstItem="fHt-nR-htW" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" id="fLC-JL-9xw"/>
                             <constraint firstItem="cZN-Bv-G5Q" firstAttribute="leading" secondItem="p19-bF-woy" secondAttribute="leading" id="rMe-jy-bCy"/>
-                            <constraint firstItem="fHt-nR-htW" firstAttribute="top" secondItem="p19-bF-woy" secondAttribute="top" id="zp4-3e-FDO"/>
+                            <constraint firstItem="fHt-nR-htW" firstAttribute="top" secondItem="p19-bF-woy" secondAttribute="top" constant="24" id="zp4-3e-FDO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p19-bF-woy"/>
                     </view>
@@ -129,20 +129,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-36-2Qz">
-                                <rect key="frame" x="40" y="60" width="295" height="567"/>
+                                <rect key="frame" x="32" y="40" width="311" height="607"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RaR-aa-ZDY">
-                                        <rect key="frame" x="0.0" y="0.0" width="295" height="567"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="607"/>
                                         <color key="backgroundColor" red="1" green="0.84074590780000003" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-lt-pBs">
-                                        <rect key="frame" x="12" y="12" width="271" height="14"/>
+                                        <rect key="frame" x="12" y="12" width="287" height="14"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="説明文が入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-P7-QjK">
-                                        <rect key="frame" x="14" y="541" width="267" height="12"/>
+                                        <rect key="frame" x="14" y="581" width="283" height="12"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -164,10 +164,10 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Z1b-36-2Qz" firstAttribute="leading" secondItem="rgJ-Wy-2YM" secondAttribute="leading" constant="40" id="Grp-Rx-TqD"/>
-                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="trailing" secondItem="Z1b-36-2Qz" secondAttribute="trailing" constant="40" id="SAY-Gd-M28"/>
-                            <constraint firstItem="Z1b-36-2Qz" firstAttribute="top" secondItem="rgJ-Wy-2YM" secondAttribute="top" constant="40" id="kS5-w9-KGj"/>
-                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="bottom" secondItem="Z1b-36-2Qz" secondAttribute="bottom" constant="40" id="qcO-Xk-MzO"/>
+                            <constraint firstItem="Z1b-36-2Qz" firstAttribute="leading" secondItem="rgJ-Wy-2YM" secondAttribute="leading" constant="32" id="Grp-Rx-TqD"/>
+                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="trailing" secondItem="Z1b-36-2Qz" secondAttribute="trailing" constant="32" id="SAY-Gd-M28"/>
+                            <constraint firstItem="Z1b-36-2Qz" firstAttribute="top" secondItem="rgJ-Wy-2YM" secondAttribute="top" constant="20" id="kS5-w9-KGj"/>
+                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="bottom" secondItem="Z1b-36-2Qz" secondAttribute="bottom" constant="20" id="qcO-Xk-MzO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rgJ-Wy-2YM"/>
                     </view>

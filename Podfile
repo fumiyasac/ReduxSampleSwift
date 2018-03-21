@@ -18,7 +18,6 @@ target 'ReduxSampleSwift' do
   pod 'SwiftyJSON'
 
   # UI構築用ライブラリ
-  pod 'IGListKit', '~> 3.0' 
   pod 'ViewAnimator'
   pod 'SkeletonView'
   pod 'Hero'
