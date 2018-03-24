@@ -31,9 +31,6 @@ class TutorialViewController: UIViewController {
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
     fileprivate var pageViewController: UIPageViewController?
 
-    // ユーザー情報クラスをインスタンス化する
-    fileprivate let initialSetting = InitialSetting()
-
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -53,7 +50,7 @@ class TutorialViewController: UIViewController {
         appStore.subscribe(self)
 
         // チュートリアルの完了状態をUserDefaultより取得する
-        let finishTutorialFlag = initialSetting.getFinishTutorialFlag()
+        let finishTutorialFlag = InitialSetting.getFinishTutorialFlag()
 
         // setFinishTutorialFlagアクション(ReSwift)を実行する
         let finishTutorialAction = TutorialState.tutorialAction.setFinishTutorialFlag(result: finishTutorialFlag)
