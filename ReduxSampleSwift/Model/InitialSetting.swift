@@ -8,27 +8,44 @@
 
 import Foundation
 
+/**
+ * 仕様メモ:
+ * チュートリアルが終了やインストール日時の記録用
+ */
+
 class InitialSetting {
 
     // チュートリアルの終了判定フラグ
-    private let finishTutorialFlag = "InitialSetting::finishTutorialFlag"
+    static private let finishTutorialFlag = "InitialSetting::finishTutorialFlag"
 
-    // MARK: - Function
+    // アプリインストール日時
+    static private let installAppDate     = "InitialSetting::installAppDate"
+
+    // MARK: - Static Function
 
     // チュートリアルの終了判定フラグの更新・取得
-
-    func getFinishTutorialFlag() -> Bool {
+    static func getFinishTutorialFlag() -> Bool {
         return ud.bool(forKey: finishTutorialFlag) 
     }
 
-    func setFinishTutorialFlag(result: Bool) {
+    static func setFinishTutorialFlag(result: Bool) {
         ud.set(result, forKey: finishTutorialFlag)
+        ud.synchronize()
+    }
+
+    // アプリインストール日時の更新・取得
+    static func getInstallAppDate() -> Bool? {
+        return ud.bool(forKey: installAppDate)
+    }
+
+    static func setInstallAppDate(date: Date) {
+        ud.set(date, forKey: installAppDate)
         ud.synchronize()
     }
 
     // MARK: - Private Function
 
-    private var ud: UserDefaults {
+    static private var ud: UserDefaults {
         return UserDefaults.standard
     }
 }
