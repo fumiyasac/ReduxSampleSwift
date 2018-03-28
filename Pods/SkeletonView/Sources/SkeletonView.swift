@@ -27,16 +27,12 @@ public extension UIView {
     }
     
     func hideSkeleton(reloadDataAfter reload: Bool = true) {
-        removeDummyDataSourceIfNeeded(reloadAfter: reload)
-        isUserInteractionEnabled = true
-        recursiveSearch(inArray: subviewsSkeletonables,
-                        leafBlock: { removeSkeletonLayer() },
-                        recursiveBlock: {
-                            $0.hideSkeleton(reloadDataAfter: reload)
-                        })
+        flowDelegate?.willBeginHidingSkeletons(withRootView: self)
+        recursiveHideSkeleton(reloadDataAfter: reload)
     }
     
     func startSkeletonAnimation(_ anim: SkeletonLayerAnimation? = nil) {
+        skeletonIsAnimated = true
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock:  startSkeletonLayerAnimationBlock(anim)) {
                             $0.startSkeletonAnimation(anim)
@@ -44,6 +40,7 @@ public extension UIView {
     }
 
     func stopSkeletonAnimation() {
+        skeletonIsAnimated = false
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: stopSkeletonLayerAnimationBlock) {
                             $0.stopSkeletonAnimation()
@@ -54,6 +51,13 @@ public extension UIView {
 extension UIView {
     
     func showSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
+        skeletonIsAnimated = animated
+        flowDelegate = SkeletonFlowHandler()
+        flowDelegate?.willBeginShowingSkeletons(withRootView: self)
+        recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+    }
+    
+    fileprivate func recursiveShowSkeleton(withType type: SkeletonType = .solid, usingColors colors: [UIColor], animated: Bool = false, animation: SkeletonLayerAnimation? = nil) {
         addDummyDataSourceIfNeeded()
         recursiveSearch(inArray: subviewsSkeletonables,
                         leafBlock: {
@@ -61,9 +65,20 @@ extension UIView {
                             isUserInteractionEnabled = false
                             (self as? PrepareForSkeleton)?.prepareViewForSkeleton()
                             addSkeletonLayer(withType: type, usingColors: colors, animated: animated, animation: animation)
-                        }) {
-                            $0.showSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
-                        }
+        }) {
+            $0.recursiveShowSkeleton(withType: type, usingColors: colors, animated: animated, animation: animation)
+        }
+    }
+    
+    fileprivate func recursiveHideSkeleton(reloadDataAfter reload: Bool = true) {
+        removeDummyDataSourceIfNeeded()
+        isUserInteractionEnabled = true
+        recursiveSearch(inArray: subviewsSkeletonables,
+                        leafBlock: {
+                            removeSkeletonLayer()
+                        }, recursiveBlock: {
+                            $0.recursiveHideSkeleton(reloadDataAfter: reload)
+                        })
     }
     
     fileprivate func startSkeletonLayerAnimationBlock(_ anim: SkeletonLayerAnimation? = nil) -> VoidBlock {
@@ -99,6 +114,18 @@ extension UITableViewCell {
     }
 }
 
+extension UICollectionView {
+    override var subviewsSkeletonables: [UIView] {
+        return subviews.filter { $0.isSkeletonable }
+    }
+}
+
+extension UICollectionViewCell {
+    override var subviewsSkeletonables: [UIView] {
+        return contentView.subviews.filter { $0.isSkeletonable }
+    }
+}
+
 extension UIStackView {
     override var subviewsSkeletonables: [UIView] {
         return arrangedSubviews.filter { $0.isSkeletonable }
@@ -108,7 +135,7 @@ extension UIStackView {
 extension UIView {
     
     func addSkeletonLayer(withType type: SkeletonType, usingColors colors: [UIColor], gradientDirection direction: GradientDirection? = nil, animated: Bool, animation: SkeletonLayerAnimation? = nil) {
-        self.skeletonLayer = SkeletonLayerFactory().makeLayer(withType: type, usingColors: colors, andHolder: self)
+        self.skeletonLayer = SkeletonLayerFactory().makeSkeletonLayer(withType: type, usingColors: colors, andHolder: self)
         layer.insertSublayer(skeletonLayer!.contentLayer, at: UInt32.max)
         if animated { skeletonLayer!.start(animation) }
         status = .on

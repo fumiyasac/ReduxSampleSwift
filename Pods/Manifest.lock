@@ -1,32 +1,30 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - DOFavoriteButton (0.0.4)
   - FontAwesome.swift (1.2.0)
-  - Hero (1.0.1)
+  - Hero (1.1.0)
   - KYNavigationProgress (2.0.2)
-  - PromiseKit (4.5.0):
-    - PromiseKit/Foundation (= 4.5.0)
-    - PromiseKit/QuartzCore (= 4.5.0)
-    - PromiseKit/UIKit (= 4.5.0)
-  - PromiseKit/CorePromise (4.5.0)
-  - PromiseKit/Foundation (4.5.0):
+  - PromiseKit (6.2.1):
+    - PromiseKit/CorePromise (= 6.2.1)
+    - PromiseKit/Foundation (= 6.2.1)
+    - PromiseKit/UIKit (= 6.2.1)
+  - PromiseKit/CorePromise (6.2.1)
+  - PromiseKit/Foundation (6.2.1):
     - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.5.0):
+  - PromiseKit/UIKit (6.2.1):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.5.0):
-    - PromiseKit/CorePromise
-  - Realm (3.0.2):
-    - Realm/Headers (= 3.0.2)
-  - Realm/Headers (3.0.2)
-  - RealmSwift (3.0.2):
-    - Realm (= 3.0.2)
-  - ReSwift (4.0.0)
-  - SkeletonView (1.0.4)
-  - SVProgressHUD (2.2.2)
+  - Realm (3.3.0):
+    - Realm/Headers (= 3.3.0)
+  - Realm/Headers (3.3.0)
+  - RealmSwift (3.3.0):
+    - Realm (= 3.3.0)
+  - ReSwift (4.0.1)
+  - SkeletonView (1.1.1)
+  - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.0.0)
-  - ViewAnimator (1.0.2)
+  - ViewAnimator (1.0.5)
 
 DEPENDENCIES:
   - Alamofire
@@ -61,24 +59,24 @@ CHECKOUT OPTIONS:
     :commit: ee1bf6b3db08f969ec7508c0feca3bac0d8b96ff
     :git: https://github.com/thii/FontAwesome.swift
   SVProgressHUD:
-    :commit: bb4e4e460d4f8e2ecf20af99797f781e7cc09d8f
+    :commit: 7f676d51905ede045ca5dcaf82d4ba0d9f96addf
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
   FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
-  Hero: cee286821578e170d8c0c9c9cda7897357401112
+  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
-  PromiseKit: 9c1d9f6d7b65e3951a90bea7f407c56972be5d8e
-  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
-  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
-  ReSwift: f058ef13b46ae5f463f10605ccbbb7fb04424d8d
-  SkeletonView: 933a9442b08c3550f61c2ae38a02456a74ad86f4
-  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  PromiseKit: edaca6f0a7ed73b08c287600537d13867a7fabc7
+  Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
+  RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
+  ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
+  SkeletonView: 041053e904504e7d8db83df166e599be75659fe1
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  ViewAnimator: d7b18e0be98e05807f61ad886a36363727209377
+  ViewAnimator: d87d691fbcaf994db7ee8fc632afa3073bd3b851
 
 PODFILE CHECKSUM: 73becbd436cfcd7acfb07bdb45c272c94db2c813
 

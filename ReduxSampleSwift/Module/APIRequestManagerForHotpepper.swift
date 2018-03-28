@@ -48,13 +48,13 @@ class APIRequestManagerForHotpepper {
         ]
 
         // Alamofireの非同期通信をPromiseKitの処理でラッピングする
-        return Promise { fulfill, reject in
+        return Promise { seal in
             Alamofire.request(endPoint.shop.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
                 case .success(let data):
-                    fulfill(JSON(data))
+                    seal.fulfill(JSON(data))
                 case .failure(let error):
-                    reject(error)
+                    seal.reject(error)
                 }
             }
         }
@@ -68,13 +68,13 @@ class APIRequestManagerForHotpepper {
         ]
 
         // Alamofireの非同期通信をPromiseKitの処理でラッピングする
-        return Promise { fulfill, reject in
+        return Promise { seal in
             Alamofire.request(endPoint.largeArea.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
                 case .success(let data):
-                    fulfill(JSON(data))
+                    seal.fulfill(JSON(data))
                 case .failure(let error):
-                    reject(error)
+                    seal.reject(error)
                 }
             }
         }
@@ -88,13 +88,13 @@ class APIRequestManagerForHotpepper {
         ]
 
         // Alamofireの非同期通信をPromiseKitの処理でラッピングする
-        return Promise { fulfill, reject in
+        return Promise { seal in
             Alamofire.request(endPoint.middleArea.getBaseUrl(), method: .get, parameters: parameters).validate().responseJSON { response in
                 switch response.result {
                 case .success(let data):
-                    fulfill(JSON(data))
+                    seal.fulfill(JSON(data))
                 case .failure(let error):
-                    reject(error)
+                    seal.reject(error)
                 }
             }
         }

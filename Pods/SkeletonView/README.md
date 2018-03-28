@@ -41,6 +41,7 @@ Enjoy it! 🙂
   * [Custom animations](#-custom-animations)
   * [Hierarchy](#-hierarchy)
 * [Documentation](#-documentation)
+* [Next steps](#-next-steps)
 * [Contributed](#-contributed)
 * [Author](#-author)
 * [License](#-license)
@@ -59,7 +60,7 @@ Enjoy it! 🙂
 ### 📋 Supported OS & SDK Versions
 
 * iOS 9.0+
-* Swift 4 (Swift 3 compatible)
+* Swift 4
 
 ### 🔮 Example
 
@@ -151,7 +152,9 @@ avatarImageView.isSkeletonable = true
 
 ### 🌿 Collections
 
- Currently, ```SkeletonView``` only is compatible with ```UITableView```. We are working hard to support ```UICollectionView``` too 💪🏼
+ Now, ```SkeletonView``` is compatible with ```UITableView``` and ```UICollectionView```.
+
+###### UITableView
 
 If you want to show the skeleton in a ```UITableView```, you need to conform to ```SkeletonTableViewDataSource``` protocol.
 
@@ -189,6 +192,23 @@ There is only one method you need to implement to let Skeleton know the cell ide
 }
  ```
 
+> **IMPORTANT!**
+> If you are using resizable cells (`tableView.rowHeight = UITableViewAutomaticDimension` ), it's mandatory define the `estimatedRowHeight`.
+
+###### UICollectionView
+
+For ```UICollectionView```, you need to conform to ```SkeletonCollectionViewDataSource``` protocol.
+
+``` swift
+public protocol SkeletonCollectionViewDataSource: UICollectionViewDataSource {
+    func numSections(in collectionSkeletonView: UICollectionView) -> Int
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier
+}
+```
+
+The rest of the process is the same as ```UITableView```
+
 ### 📰 Multiline text
 
 
@@ -197,7 +217,7 @@ There is only one method you need to implement to let Skeleton know the cell ide
 When using elements with text, ```SkeletonView``` draws lines to simulate text.
 Besides, you can decide how many lines you want. If  ```numberOfLines``` is set to zero, it will calculate how many lines needed to populate the whole skeleton and it will be drawn. Instead, if you set it to one, two or any number greater than zero, it will only draw this number of lines.
 
-**NEW** Now, you can set the filling percent of the last line. **Default: 80%**
+**NEW** Now, you can set the filling percent of the last line. **Default: 70%**
 
 To modify the percent **using code**, set the property:
 ```swift
@@ -302,6 +322,17 @@ Because an image is worth a thousand words:
 
 ### 📚 Documentation
 Coming soon...😅
+
+## 📬 Next steps
+
+* [x] Set the filling percent of the last line in multiline elements
+* [x] Add more gradient animations
+* [x] Supported resizable cells
+* [x] CollectionView compatible
+* [ ] Add recovery state
+* [ ] Custom collections compatible
+* [ ] Add animations when it shows/hides the skeletons
+* [ ] MacOS and WatchOS compatible
 
 ## ❤️ Contributed
 This is an open source project, so feel free to contribute. How?
