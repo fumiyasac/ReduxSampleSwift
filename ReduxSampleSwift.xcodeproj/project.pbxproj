@@ -327,8 +327,8 @@
 		DEE53CFE1FFD1C850097C7B2 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
 				DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */,
+				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
 				DEE53CFF1FFD1CE10097C7B2 /* Introduction */,
 			);
 			path = Tutorial;
