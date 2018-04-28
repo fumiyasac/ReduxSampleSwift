@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kd2-nz-kXS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial Setting View Controller-->
+        <scene sceneID="hHW-p8-Rcl">
+            <objects>
+                <viewController id="kd2-nz-kXS" customClass="InitialSettingViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fq3-Eg-ukG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nJ8-lt-bXE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nJ8-lt-bXE" firstAttribute="trailing" secondItem="5la-yf-MkS" secondAttribute="trailing" id="dF7-Ng-0Vw"/>
+                            <constraint firstItem="nJ8-lt-bXE" firstAttribute="bottom" secondItem="5la-yf-MkS" secondAttribute="bottom" id="isL-rr-3ZF"/>
+                            <constraint firstItem="nJ8-lt-bXE" firstAttribute="leading" secondItem="5la-yf-MkS" secondAttribute="leading" id="sg1-ox-En8"/>
+                            <constraint firstItem="nJ8-lt-bXE" firstAttribute="top" secondItem="fq3-Eg-ukG" secondAttribute="top" id="yDf-QM-iKU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5la-yf-MkS"/>
+                    </view>
+                    <connections>
+                        <segue destination="TRl-RL-OQn" kind="presentation" identifier="goTutorial" id="8TS-7V-v04"/>
+                        <segue destination="SeP-gt-yex" kind="presentation" identifier="goMain" id="NH8-Fe-ngq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Buc-6f-C0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="172" y="5.8470764617691158"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="wPr-Wo-3mE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tutorial" id="TRl-RL-OQn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2L-4S-QXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="-71"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="SmL-Sb-zbY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="SeP-gt-yex" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DmP-4k-zSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="72"/>
+        </scene>
+    </scenes>
+</document>

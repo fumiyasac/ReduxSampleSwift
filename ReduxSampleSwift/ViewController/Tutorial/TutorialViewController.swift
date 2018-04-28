@@ -46,13 +46,6 @@ class TutorialViewController: UIViewController {
         
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
-
-        // チュートリアルの完了状態を取得しすでにチュートリアルが終わっていたら"Main.storyboard"を更新する
-        let finishTutorialFlag = InitialSetting.getFinishTutorialFlag()
-
-        // setFinishTutorialFlagアクション(ReSwift)を実行する
-        let finishTutorialAction = TutorialState.tutorialAction.setFinishTutorialFlag(result: finishTutorialFlag)
-        appStore.dispatch(finishTutorialAction)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -69,11 +62,11 @@ class TutorialViewController: UIViewController {
     // MARK: - Private Function
 
     // 紹介コンテンツを終了するボタンをタップした際のアクションの設定
-    @objc private func introductionFinishButtonTapped() {
+    @objc private func tutorialFinishButtonTapped() {
 
         // setFinishTutorialFlagアクション(ReSwift)を実行する
-        let finishTutorialAction = TutorialState.tutorialAction.setFinishTutorialFlag(result: true)
-        appStore.dispatch(finishTutorialAction)
+        let updateIsFinishTutorialAction = TutorialState.tutorialAction.updateIsFinishTutorial(result: true)
+        appStore.dispatch(updateIsFinishTutorialAction)
     }
 
     // この画面のナビゲーションバーの設定
@@ -91,7 +84,7 @@ class TutorialViewController: UIViewController {
     // 紹介コンテンツを終了するボタンの設定
     private func setupIntroductionFinishButton() {
         introductionFinishButton.isHidden = true
-        introductionFinishButton.addTarget(self, action: #selector(self.introductionFinishButtonTapped), for: .touchUpInside)
+        introductionFinishButton.addTarget(self, action: #selector(self.tutorialFinishButtonTapped), for: .touchUpInside)
     }
 
     // UIPageViewControllerの設定
@@ -139,18 +132,17 @@ extension TutorialViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("TutorialViewControllerにてStateの更新を検知しました！")
+        print("TutorialState change is observed in TutorialViewController !!!")
 
         // チュートリアルが完了したら初期設定画面へ遷移する
-        let finishTutorialFlag = state.tutorialState.finishTutorialFlag
-        if finishTutorialFlag {
+        let isFinishedTutorial = state.tutorialState.isFinishedTutorial
+        if isFinishedTutorial {
 
             // TODO: 次の画面へ遷移する
             return
         }
 
         let currentPageViewControllerIndex = state.tutorialState.currentPageViewControllerIndex
-        let isPreviousResult = state.tutorialState.isPrevious
 
         setKYNavigationProgressRatio(currentIndex: currentPageViewControllerIndex)
         setIntroductionFinishButtonState(currentIndex: currentPageViewControllerIndex)

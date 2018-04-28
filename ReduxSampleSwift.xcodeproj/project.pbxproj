@@ -11,6 +11,7 @@
 		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
+		DE6565082094D8B4005745D2 /* InitialSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6565062094D8B4005745D2 /* InitialSetting.storyboard */; };
 		DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFC1FDFC75400B752CA /* AppDelegate.swift */; };
 		DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFE1FDFC75400B752CA /* MainViewController.swift */; };
 		DE671B021FDFC75400B752CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE671B001FDFC75400B752CA /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		DE6565072094D8B4005745D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InitialSetting.storyboard; sourceTree = "<group>"; };
 		DE671AF91FDFC75400B752CA /* ReduxSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE671AFC1FDFC75400B752CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE671AFE1FDFC75400B752CA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		DE6565092094D8CF005745D2 /* InitialSetting */ = {
+			isa = PBXGroup;
+			children = (
+				DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */,
+			);
+			path = InitialSetting;
+			sourceTree = "<group>";
+		};
 		DE671AF01FDFC75400B752CA = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +249,7 @@
 		DE85D2B21FE6A8320017C3AF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DE6565092094D8CF005745D2 /* InitialSetting */,
 				DEE53CFA1FFBD1910097C7B2 /* Main */,
 				DEE53CFE1FFD1C850097C7B2 /* Tutorial */,
 			);
@@ -249,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				DE671B051FDFC75400B752CA /* LaunchScreen.storyboard */,
+				DE6565062094D8B4005745D2 /* InitialSetting.storyboard */,
 				DE671B001FDFC75400B752CA /* Main.storyboard */,
 				DEE53CFB1FFD1C750097C7B2 /* Tutorial.storyboard */,
 			);
@@ -327,7 +339,6 @@
 		DEE53CFE1FFD1C850097C7B2 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				DEE53D091FFD22620097C7B2 /* InitialSettingViewController.swift */,
 				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
 				DEE53CFF1FFD1CE10097C7B2 /* Introduction */,
 			);
@@ -455,6 +466,7 @@
 				DE671B041FDFC75400B752CA /* Assets.xcassets in Resources */,
 				DEE53CFD1FFD1C750097C7B2 /* Tutorial.storyboard in Resources */,
 				DE671B021FDFC75400B752CA /* Main.storyboard in Resources */,
+				DE6565082094D8B4005745D2 /* InitialSetting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +611,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DE6565062094D8B4005745D2 /* InitialSetting.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE6565072094D8B4005745D2 /* Base */,
+			);
+			name = InitialSetting.storyboard;
+			sourceTree = "<group>";
+		};
 		DE671B001FDFC75400B752CA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

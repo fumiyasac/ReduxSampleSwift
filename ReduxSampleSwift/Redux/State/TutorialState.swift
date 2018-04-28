@@ -15,9 +15,9 @@ struct TutorialState: ReSwift.StateType {
     // UIPageViewControllerのインデックス位置（初期値: 0）
     var currentPageViewControllerIndex: Int = 0
 
-    // UIPageViewControllerが進むor戻る遷移かの判定値（初期値: false）
-    var isPrevious: Bool = false
-
     // チュートリアルが終わっているかを判定するフラグ（初期値: false）
-    var finishTutorialFlag: Bool = false
+    var isFinishedTutorial: Bool = false
+
+    // アプリインストール日時（初期値: nil）
+    var installAppDate: Date? = nil
 }
