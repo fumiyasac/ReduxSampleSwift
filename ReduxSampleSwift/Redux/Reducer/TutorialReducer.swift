@@ -24,17 +24,20 @@ extension TutorialReducer {
         switch action {
 
         // TutorialStateのfinishTutorialFlagの値をセットする
-        case let .setFinishTutorialFlag(result):
-            state.finishTutorialFlag = result
+        case let .setCurrentStatus(initialSetting):
+            state.isFinishedTutorial = initialSetting.isFinishedTutorial
+            state.installAppDate     = initialSetting.installAppDate
+
+        case let .updateIsFinishTutorial(result):
+            state.isFinishedTutorial = result
 
         // TutorialStateのcurrentPageViewControllerIndexの値をセットする
         case let .setCurrentPageViewControllerIndex(index):
-            state.isPrevious = (state.currentPageViewControllerIndex - index > 0)
             state.currentPageViewControllerIndex = index
         }
 
         // Debug.
-        print("TutorialStateの更新が行われました！")
+        print("TutorialState is Updated !!!")
 
         return state
     }

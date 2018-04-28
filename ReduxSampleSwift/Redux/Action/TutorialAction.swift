@@ -14,8 +14,11 @@ extension TutorialState {
     // チュートリアル完了状態のステートを変更させるアクションをEnumで定義する
     enum tutorialAction: ReSwift.Action {
 
-        // チュートリアルの終了判定フラグの値をセットするアクション
-        case setFinishTutorialFlag(result: Bool)
+        // 現在のチュートリアルの終了判定の値をセットするアクション
+        case setCurrentStatus(initialSetting: (isFinishedTutorial: Bool, installAppDate: Date))
+
+        // チュートリアルの終了判定の値を更新するアクション
+        case updateIsFinishTutorial(result: Bool)
 
         // 現在のUIPageViewControllerのインデックスをセットアクション
         case setCurrentPageViewControllerIndex(index: Int)

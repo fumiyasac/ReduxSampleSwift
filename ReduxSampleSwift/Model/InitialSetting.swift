@@ -15,27 +15,27 @@ import Foundation
 
 class InitialSetting {
 
-    // チュートリアルの終了判定フラグ
-    static private let finishTutorialFlag = "InitialSetting::finishTutorialFlag"
+    // チュートリアルの終了判定
+    static private let isFinishedTutorial = "InitialSetting::isFinishedTutorial"
 
     // アプリインストール日時
     static private let installAppDate     = "InitialSetting::installAppDate"
 
     // MARK: - Static Function
 
-    // チュートリアルの終了判定フラグの更新・取得
-    static func getFinishTutorialFlag() -> Bool {
-        return ud.bool(forKey: finishTutorialFlag) 
+    // チュートリアルの終了判定の更新・取得
+    static func getIsFinishedTutorial() -> Bool {
+        return ud.bool(forKey: isFinishedTutorial)
     }
 
-    static func setFinishTutorialFlag(result: Bool) {
-        ud.set(result, forKey: finishTutorialFlag)
+    static func setIsFinishedTutorial(result: Bool) {
+        ud.set(result, forKey: isFinishedTutorial)
         ud.synchronize()
     }
 
     // アプリインストール日時の更新・取得
-    static func getInstallAppDate() -> Bool? {
-        return ud.bool(forKey: installAppDate)
+    static func getInstallAppDate() -> Date? {
+        return ud.object(forKey: installAppDate) as? Date
     }
 
     static func setInstallAppDate(date: Date) {

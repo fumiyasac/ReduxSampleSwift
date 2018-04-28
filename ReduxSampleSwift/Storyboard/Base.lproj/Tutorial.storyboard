@@ -101,10 +101,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-36-2Qz">
-                                <rect key="frame" x="32" y="40" width="311" height="607"/>
+                                <rect key="frame" x="32" y="52" width="311" height="595"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RaR-aa-ZDY">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="607"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="595"/>
                                         <color key="backgroundColor" red="1" green="0.84074590780000003" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-lt-pBs">
@@ -114,7 +114,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="説明文が入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-P7-QjK">
-                                        <rect key="frame" x="14" y="581" width="283" height="12"/>
+                                        <rect key="frame" x="14" y="569" width="283" height="12"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -138,7 +138,7 @@
                         <constraints>
                             <constraint firstItem="Z1b-36-2Qz" firstAttribute="leading" secondItem="rgJ-Wy-2YM" secondAttribute="leading" constant="32" id="Grp-Rx-TqD"/>
                             <constraint firstItem="rgJ-Wy-2YM" firstAttribute="trailing" secondItem="Z1b-36-2Qz" secondAttribute="trailing" constant="32" id="SAY-Gd-M28"/>
-                            <constraint firstItem="Z1b-36-2Qz" firstAttribute="top" secondItem="rgJ-Wy-2YM" secondAttribute="top" constant="20" id="kS5-w9-KGj"/>
+                            <constraint firstItem="Z1b-36-2Qz" firstAttribute="top" secondItem="rgJ-Wy-2YM" secondAttribute="top" constant="32" id="kS5-w9-KGj"/>
                             <constraint firstItem="rgJ-Wy-2YM" firstAttribute="bottom" secondItem="Z1b-36-2Qz" secondAttribute="bottom" constant="20" id="qcO-Xk-MzO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rgJ-Wy-2YM"/>
