@@ -32,8 +32,8 @@
                         <viewLayoutGuide key="safeArea" id="5la-yf-MkS"/>
                     </view>
                     <connections>
-                        <segue destination="TRl-RL-OQn" kind="presentation" identifier="goTutorial" id="8TS-7V-v04"/>
-                        <segue destination="SeP-gt-yex" kind="presentation" identifier="goMain" id="NH8-Fe-ngq"/>
+                        <segue destination="TRl-RL-OQn" kind="presentation" identifier="goTutorial" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="8TS-7V-v04"/>
+                        <segue destination="SeP-gt-yex" kind="presentation" identifier="goMain" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="NH8-Fe-ngq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Buc-6f-C0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
