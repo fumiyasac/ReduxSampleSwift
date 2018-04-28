@@ -41,6 +41,20 @@ DEPENDENCIES:
   - SwiftyJSON
   - ViewAnimator
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Hero
+    - KYNavigationProgress
+    - PromiseKit
+    - Realm
+    - RealmSwift
+    - ReSwift
+    - SkeletonView
+    - SwiftyJSON
+    - ViewAnimator
+
 EXTERNAL SOURCES:
   DOFavoriteButton:
     :branch: master
@@ -80,4 +94,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 73becbd436cfcd7acfb07bdb45c272c94db2c813
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
