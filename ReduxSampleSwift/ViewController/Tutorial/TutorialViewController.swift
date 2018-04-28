@@ -13,7 +13,6 @@ import KYNavigationProgress
 class TutorialViewController: UIViewController {
 
     // UIパーツの配置
-    @IBOutlet weak fileprivate var titleLabel: UILabel!
     @IBOutlet weak fileprivate var contentsContainerView: UIView!
     @IBOutlet weak fileprivate var introductionFinishButton: UIButton!
 
@@ -37,7 +36,6 @@ class TutorialViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
-        setupTitleView()
         setupKYNavigationProgress()
         setupPageViewController()
         setupIntroductionFinishButton()
@@ -49,7 +47,7 @@ class TutorialViewController: UIViewController {
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
 
-        // チュートリアルの完了状態をUserDefaultより取得する
+        // チュートリアルの完了状態を取得しすでにチュートリアルが終わっていたら"Main.storyboard"を更新する
         let finishTutorialFlag = InitialSetting.getFinishTutorialFlag()
 
         // setFinishTutorialFlagアクション(ReSwift)を実行する
@@ -81,12 +79,6 @@ class TutorialViewController: UIViewController {
     // この画面のナビゲーションバーの設定
     private func setupNavigationBar() {
         self.navigationItem.title = "「ご近所情報検索」へようこそ!"
-    }
-
-    // 動くタイトル部分のアニメーションの設定
-    private func setupTitleView() {
-        titleLabel.superview?.layer.masksToBounds = true
-        titleLabel.text = targetViewControllerTitle.first
     }
 
     // この画面のナビゲーションバー下アニメーションの設定
@@ -162,7 +154,6 @@ extension TutorialViewController: StoreSubscriber {
 
         setKYNavigationProgressRatio(currentIndex: currentPageViewControllerIndex)
         setIntroductionFinishButtonState(currentIndex: currentPageViewControllerIndex)
-        setTitleWithAnimation(title: targetViewControllerTitle[currentPageViewControllerIndex], isPrevious: isPreviousResult)
     }
 
     // MARK: - Private Function
@@ -207,30 +198,6 @@ extension TutorialViewController: StoreSubscriber {
         }, completion: { _ in
             self.introductionFinishButton.isHidden = true
         })
-    }
-
-    // アニメーション付きでラベルに表示する内容の変更を行う
-    private func setTitleWithAnimation(title: String, isPrevious: Bool) {
-
-        // アニメーションの設定を行う
-        let transition            = CATransition()
-        transition.type           = kCATransitionPush
-        transition.duration       = 0.18
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.subtype        = kCATransitionFromLeft
-
-        var key: String
-        if isPrevious {
-            transition.subtype = kCATransitionFromLeft
-            key = "previous"
-        } else {
-            transition.subtype = kCATransitionFromRight
-            key = "next"
-        }
-
-        //タイトルの設定とアニメーションの設定を同時に適用する
-        titleLabel.text = title
-        titleLabel.layer.add(transition, forKey: key)
     }
 }
 
