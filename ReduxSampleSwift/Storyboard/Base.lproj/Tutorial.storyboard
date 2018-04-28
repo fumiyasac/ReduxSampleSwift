@@ -78,6 +78,7 @@
                     <connections>
                         <outlet property="contentsContainerView" destination="coS-V3-YHE" id="MiH-Ab-dtL"/>
                         <outlet property="introductionFinishButton" destination="lEJ-CZ-UIq" id="ycE-hX-Qol"/>
+                        <segue destination="f6V-QU-6no" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="V80-Dp-xDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-ur-Dpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ya7-ML-8Xv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="1609" y="-27"/>
         </scene>
     </scenes>
 </document>
