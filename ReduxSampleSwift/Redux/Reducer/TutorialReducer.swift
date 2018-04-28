@@ -23,11 +23,12 @@ extension TutorialReducer {
 
         switch action {
 
-        // TutorialStateのfinishTutorialFlagの値をセットする
+        // TutorialStateのisFinishedTutorialの値をセットする
         case let .setCurrentStatus(initialSetting):
             state.isFinishedTutorial = initialSetting.isFinishedTutorial
             state.installAppDate     = initialSetting.installAppDate
 
+        // TutorialStateのisFinishedTutorialの値を更新する
         case let .updateIsFinishTutorial(result):
             state.isFinishedTutorial = result
 
