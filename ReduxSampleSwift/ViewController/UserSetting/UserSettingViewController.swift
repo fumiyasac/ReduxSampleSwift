@@ -10,13 +10,19 @@ import UIKit
 
 class UserSettingViewController: UIViewController {
 
+    @IBOutlet weak private var postalCodeTextField: UITextField!
+    @IBOutlet weak private var residentPeriodTableView: UITableView!
+    @IBOutlet weak private var freeWordTextView: UITextView!
+    @IBOutlet weak private var nicknameTextField: UITextField!
+    @IBOutlet weak private var genderSegmentedControl: UISegmentedControl!
+    @IBOutlet weak private var ageTableView: UITableView!
+    @IBOutlet weak private var userSettingSubmitButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
 }

@@ -12,11 +12,12 @@ import RealmSwift
 class UserSettingEntity: Object {
 
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var nickname = ""
     @objc dynamic var postalCode = ""
-    @objc dynamic var residentPeriod = 0
-    @objc dynamic var age = 0
-    @objc dynamic var freeText = ""
+    @objc dynamic var selectedResidentPeriod = 0
+    @objc dynamic var freeWord = ""
+    @objc dynamic var nickname = ""
+    @objc dynamic var gender = 0
+    @objc dynamic var selectedAge = 0
     @objc dynamic var createdAt = Date()
 
     override static func primaryKey() -> String? {
