@@ -11,7 +11,8 @@ import ReSwift
 
 class InitialSettingViewController: UIViewController {
 
-    // チュートリアルの終了状態を格納する変数
+    // ユーザーの登録状態を格納する変数
+    fileprivate var isFinishedUserSetting: Bool = false
     fileprivate var isFinishedTutorial: Bool = false
 
     override func viewDidLoad() {
@@ -24,8 +25,8 @@ class InitialSettingViewController: UIViewController {
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
 
-        // tutorialAction.setCurrentStatusアクション(ReSwift)を実行する
-        executeSetCurrentStatusAction()
+        // 現在のユーザーステータスのアクション(ReSwift)を実行する
+        executeCurrentStatusActions()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -48,7 +49,7 @@ class InitialSettingViewController: UIViewController {
     
     // MARK: - Private Function
 
-    private func executeSetCurrentStatusAction() {
+    private func executeCurrentStatusActions() {
 
         // アプリインストール日時の取得
         var installAppDate: Date
@@ -62,22 +63,33 @@ class InitialSettingViewController: UIViewController {
         // チュートリアルの終了判定の取得
         let isFinishedTutorial = InitialSetting.getIsFinishedTutorial()
 
-        let setCurrentStatusAction = TutorialState.tutorialAction.setCurrentStatus(
-            initialSetting: (isFinishedTutorial: isFinishedTutorial, installAppDate: installAppDate)
-        )
+        // ユーザー登録の終了判定の取得
+        let isFinishedUserSetting = UserSetting.isFinishedUserSetting()
 
         // 現在の初期設定状態を反映するアクションの実行
-        appStore.dispatch(setCurrentStatusAction)
+        appStore.dispatch(
+            TutorialState.tutorialAction.setInstallAppDate(date: installAppDate)
+        )
+        appStore.dispatch(
+            TutorialState.tutorialAction.setIsFinishedTutorial(result: isFinishedTutorial)
+        )
+        appStore.dispatch(
+            TutorialState.tutorialAction.setIsFinishedUserSetting(result: isFinishedUserSetting)
+        )
     }
 
     private func chooseNextScreen() {
 
         // チュートリアルの状態に応じて画面遷移を切り替える
-        if isFinishedTutorial {
-            performSegue(withIdentifier: "goMain", sender: self)
+        var identifierName: String
+        if isFinishedUserSetting {
+            identifierName = "goMain"
+        } else if isFinishedTutorial {
+            identifierName = "goUserSetting"
         } else {
-            performSegue(withIdentifier: "goTutorial", sender: self)
+            identifierName = "goTutorial"
         }
+        performSegue(withIdentifier: identifierName, sender: self)
     }
 }
 
@@ -89,9 +101,10 @@ extension InitialSettingViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("TutorialState change is observed in InitialSettingViewController !!!")
+        print("TutorialStateの変更をInitialSettingViewControllerで受け取りました。")
 
-        // チュートリアルの完了状態に応じて表示する画面を決定する
+        // 現在のチュートリアルの完了状態＆ユーザー登録の完了状態を取得する
+        isFinishedUserSetting = state.tutorialState.isFinishedUserSetting
         isFinishedTutorial = state.tutorialState.isFinishedTutorial
     }
 }

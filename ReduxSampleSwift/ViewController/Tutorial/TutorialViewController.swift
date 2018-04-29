@@ -64,8 +64,11 @@ class TutorialViewController: UIViewController {
     // 紹介コンテンツを終了するボタンをタップした際のアクションの設定
     @objc private func tutorialFinishButtonTapped() {
 
+        // チュートリアルが完了したことを記録する
+        InitialSetting.setIsFinishedTutorial(result: true)
+
         // setFinishTutorialFlagアクション(ReSwift)を実行する
-        let updateIsFinishTutorialAction = TutorialState.tutorialAction.updateIsFinishTutorial(result: true)
+        let updateIsFinishTutorialAction = TutorialState.tutorialAction.setIsFinishedTutorial(result: true)
         appStore.dispatch(updateIsFinishTutorialAction)
     }
 
@@ -139,7 +142,7 @@ extension TutorialViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("TutorialState change is observed in TutorialViewController !!!")
+        print("TutorialStateの変更をTutorialViewControllerで受け取りました。")
 
         // チュートリアルが完了したら初期設定画面へ遷移する
         let isFinishedTutorial = state.tutorialState.isFinishedTutorial

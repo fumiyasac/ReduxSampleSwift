@@ -34,6 +34,7 @@
                     <connections>
                         <segue destination="TRl-RL-OQn" kind="presentation" identifier="goTutorial" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="8TS-7V-v04"/>
                         <segue destination="SeP-gt-yex" kind="presentation" identifier="goMain" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="NH8-Fe-ngq"/>
+                        <segue destination="uMh-rD-VM5" kind="presentation" identifier="goUserSetting" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="VAK-B2-Z2H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Buc-6f-C0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -46,7 +47,15 @@
                 <viewControllerPlaceholder storyboardName="Tutorial" id="TRl-RL-OQn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2L-4S-QXb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-71"/>
+            <point key="canvasLocation" x="809" y="-88"/>
+        </scene>
+        <!--UserSetting-->
+        <scene sceneID="zZd-Bk-6Bo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserSetting" id="uMh-rD-VM5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cmt-om-b7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="5"/>
         </scene>
         <!--Main-->
         <scene sceneID="SmL-Sb-zbY">
@@ -54,7 +63,7 @@
                 <viewControllerPlaceholder storyboardName="Main" id="SeP-gt-yex" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmP-4k-zSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="72"/>
+            <point key="canvasLocation" x="808" y="96"/>
         </scene>
     </scenes>
 </document>

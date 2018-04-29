@@ -9,10 +9,6 @@
 import Foundation
 import RealmSwift
 
-/**
- * ユーザーデータの記録用のRealmスキーマ定義
- */
-
 class UserSettingEntity: Object {
 
     @objc dynamic var id = UUID().uuidString
@@ -21,6 +17,7 @@ class UserSettingEntity: Object {
     @objc dynamic var residentPeriod = 0
     @objc dynamic var age = 0
     @objc dynamic var freeText = ""
+    @objc dynamic var createdAt = Date()
 
     override static func primaryKey() -> String? {
         return "id"

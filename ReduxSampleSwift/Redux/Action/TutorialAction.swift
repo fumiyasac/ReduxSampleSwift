@@ -15,10 +15,13 @@ extension TutorialState {
     enum tutorialAction: ReSwift.Action {
 
         // 現在のチュートリアルの終了判定の値をセットするアクション
-        case setCurrentStatus(initialSetting: (isFinishedTutorial: Bool, installAppDate: Date))
+        case setIsFinishedTutorial(result: Bool)
 
-        // チュートリアルの終了判定の値を更新するアクション
-        case updateIsFinishTutorial(result: Bool)
+        // インストール日時の値をセットするアクション
+        case setInstallAppDate(date: Date)
+
+        // ユーザーの存在判定の値をセットするアクション
+        case setIsFinishedUserSetting(result: Bool)
 
         // 現在のUIPageViewControllerのインデックスをセットアクション
         case setCurrentPageViewControllerIndex(index: Int)

@@ -18,6 +18,9 @@ struct TutorialState: ReSwift.StateType {
     // チュートリアルが終わっているかを判定するフラグ（初期値: false）
     var isFinishedTutorial: Bool = false
 
+    // ユーザー登録が終わっているかを判定するフラグ（初期値: false）
+    var isFinishedUserSetting: Bool = false
+
     // アプリインストール日時（初期値: nil）
     var installAppDate: Date? = nil
 
