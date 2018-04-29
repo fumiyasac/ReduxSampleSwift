@@ -24,5 +24,18 @@ class UserSettingViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
+        setupNavigationBar()
+    }
+
+    // MARK: - Private Function
+
+    @objc private func userSettingSubmitButtonTapped() {
+
+    }
+
+    // この画面のナビゲーションバーの設定
+    private func setupNavigationBar() {
+        self.navigationItem.title = "ユーザーアンケートを回答する"
     }
 }
