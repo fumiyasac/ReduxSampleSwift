@@ -79,7 +79,7 @@
                     <connections>
                         <outlet property="contentsContainerView" destination="coS-V3-YHE" id="MiH-Ab-dtL"/>
                         <outlet property="introductionFinishButton" destination="lEJ-CZ-UIq" id="ycE-hX-Qol"/>
-                        <segue destination="hs7-SJ-IDG" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="L8m-lT-fT2"/>
+                        <segue destination="hs7-SJ-IDG" kind="presentation" identifier="goUserSetting" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="L8m-lT-fT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-ur-Dpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,7 +100,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="gS9-g1-Tko" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdM-T2-FMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="646"/>
+            <point key="canvasLocation" x="873" y="645"/>
         </scene>
         <!--Card Introduction View Controller-->
         <scene sceneID="T8i-8E-6ap">
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YL2-jS-rd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="1255"/>
+            <point key="canvasLocation" x="1593" y="705"/>
         </scene>
     </scenes>
 </document>
