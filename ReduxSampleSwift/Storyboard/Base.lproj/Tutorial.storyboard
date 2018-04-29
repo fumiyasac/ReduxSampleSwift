@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,7 +79,7 @@
                     <connections>
                         <outlet property="contentsContainerView" destination="coS-V3-YHE" id="MiH-Ab-dtL"/>
                         <outlet property="introductionFinishButton" destination="lEJ-CZ-UIq" id="ycE-hX-Qol"/>
-                        <segue destination="f6V-QU-6no" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="V80-Dp-xDc"/>
+                        <segue destination="f6V-QU-6no" kind="presentation" identifier="goUserSetting" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="V80-Dp-xDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yk-ur-Dpt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -102,45 +103,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-36-2Qz">
-                                <rect key="frame" x="32" y="52" width="311" height="595"/>
+                                <rect key="frame" x="32" y="52" width="311" height="311"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RaR-aa-ZDY">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="595"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="311"/>
                                         <color key="backgroundColor" red="1" green="0.84074590780000003" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-lt-pBs">
-                                        <rect key="frame" x="12" y="12" width="287" height="14"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="説明文が入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-P7-QjK">
-                                        <rect key="frame" x="14" y="569" width="283" height="12"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="s0F-P7-QjK" firstAttribute="leading" secondItem="Z1b-36-2Qz" secondAttribute="leading" constant="14" id="27m-Q4-6GI"/>
                                     <constraint firstItem="RaR-aa-ZDY" firstAttribute="top" secondItem="Z1b-36-2Qz" secondAttribute="top" id="BVF-hp-Ww9"/>
-                                    <constraint firstAttribute="trailing" secondItem="s0F-P7-QjK" secondAttribute="trailing" constant="14" id="JMW-0w-wwk"/>
                                     <constraint firstAttribute="trailing" secondItem="RaR-aa-ZDY" secondAttribute="trailing" id="Qpw-PQ-QKS"/>
-                                    <constraint firstItem="UUG-lt-pBs" firstAttribute="leading" secondItem="Z1b-36-2Qz" secondAttribute="leading" constant="12" id="Uq7-4G-BBi"/>
-                                    <constraint firstAttribute="bottom" secondItem="s0F-P7-QjK" secondAttribute="bottom" constant="14" id="arz-G6-fmG"/>
-                                    <constraint firstItem="UUG-lt-pBs" firstAttribute="top" secondItem="Z1b-36-2Qz" secondAttribute="top" constant="12" id="dCZ-wC-7EH"/>
+                                    <constraint firstAttribute="width" secondItem="Z1b-36-2Qz" secondAttribute="height" multiplier="1:1" id="UO2-JP-i5Z"/>
                                     <constraint firstAttribute="bottom" secondItem="RaR-aa-ZDY" secondAttribute="bottom" id="dTE-h4-Fsn"/>
                                     <constraint firstItem="RaR-aa-ZDY" firstAttribute="leading" secondItem="Z1b-36-2Qz" secondAttribute="leading" id="riv-mm-zWv"/>
-                                    <constraint firstAttribute="trailing" secondItem="UUG-lt-pBs" secondAttribute="trailing" constant="12" id="t3n-8l-x3q"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-lt-pBs">
+                                <rect key="frame" x="40" y="395" width="295" height="18"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="説明文が入ります。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0F-P7-QjK">
+                                <rect key="frame" x="46" y="437" width="283" height="14"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="UUG-lt-pBs" firstAttribute="top" secondItem="Z1b-36-2Qz" secondAttribute="bottom" constant="32" id="0zX-n3-QPO"/>
+                            <constraint firstItem="UUG-lt-pBs" firstAttribute="leading" secondItem="rgJ-Wy-2YM" secondAttribute="leading" constant="40" id="GUQ-5V-dF5"/>
                             <constraint firstItem="Z1b-36-2Qz" firstAttribute="leading" secondItem="rgJ-Wy-2YM" secondAttribute="leading" constant="32" id="Grp-Rx-TqD"/>
+                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="trailing" secondItem="s0F-P7-QjK" secondAttribute="trailing" constant="46" id="MY4-CJ-YWj"/>
                             <constraint firstItem="rgJ-Wy-2YM" firstAttribute="trailing" secondItem="Z1b-36-2Qz" secondAttribute="trailing" constant="32" id="SAY-Gd-M28"/>
+                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="trailing" secondItem="UUG-lt-pBs" secondAttribute="trailing" constant="40" id="XTd-YJ-tdF"/>
                             <constraint firstItem="Z1b-36-2Qz" firstAttribute="top" secondItem="rgJ-Wy-2YM" secondAttribute="top" constant="32" id="kS5-w9-KGj"/>
-                            <constraint firstItem="rgJ-Wy-2YM" firstAttribute="bottom" secondItem="Z1b-36-2Qz" secondAttribute="bottom" constant="20" id="qcO-Xk-MzO"/>
+                            <constraint firstItem="s0F-P7-QjK" firstAttribute="top" secondItem="UUG-lt-pBs" secondAttribute="bottom" constant="24" id="pyX-2N-E8t"/>
+                            <constraint firstItem="s0F-P7-QjK" firstAttribute="leading" secondItem="rgJ-Wy-2YM" secondAttribute="leading" constant="46" id="tCR-FW-XAq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rgJ-Wy-2YM"/>
                     </view>

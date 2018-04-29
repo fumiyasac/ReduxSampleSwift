@@ -43,7 +43,7 @@ class TutorialViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
     }
@@ -100,10 +100,17 @@ class TutorialViewController: UIViewController {
             }
         }
 
-        // UIPageViewControllerのデータソースの宣言
+        // UIPageViewControllerDelegate & UIPageViewControllerDataSourceの宣言
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
 
+        // UIPageViewControllerでUIScrollViewDelegateが欲しい場合はこのように適用する
+        //for view in pageViewController!.view.subviews {
+        //    if let scrollView = view as? UIScrollView {
+        //        scrollView.delegate = self
+        //    }
+        //}
+        
         // 最初に表示する画面として配列の先頭のViewControllerを設定する
         pageViewController!.setViewControllers([targetViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
     }
@@ -137,19 +144,18 @@ extension TutorialViewController: StoreSubscriber {
         // チュートリアルが完了したら初期設定画面へ遷移する
         let isFinishedTutorial = state.tutorialState.isFinishedTutorial
         if isFinishedTutorial {
-
-            // TODO: 次の画面へ遷移する
+            performSegue(withIdentifier: "goUserSetting", sender: self)
             return
         }
 
+        // 現在のUIPageViewControllerの表示位置を更新する
         let currentPageViewControllerIndex = state.tutorialState.currentPageViewControllerIndex
-
         setKYNavigationProgressRatio(currentIndex: currentPageViewControllerIndex)
         setIntroductionFinishButtonState(currentIndex: currentPageViewControllerIndex)
     }
 
     // MARK: - Private Function
-
+    
     // KYNavigationProgressの値をUIPageViewControllerの進み具合に合わせて変更する
     private func setKYNavigationProgressRatio(currentIndex: Int) {
         let currentProgress: Float = Float(currentIndex)
@@ -192,6 +198,10 @@ extension TutorialViewController: StoreSubscriber {
         })
     }
 }
+
+// MARK: - UIScrollViewDelegate
+
+//extension TutorialViewController: UIScrollViewDelegate {}
 
 // MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
 
