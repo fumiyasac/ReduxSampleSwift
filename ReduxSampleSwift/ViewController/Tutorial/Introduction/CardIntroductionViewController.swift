@@ -27,8 +27,6 @@ class CardIntroductionViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }    
 
-    // MARK: - Function
-
     // TODO: チュートリアル用のデータを表示するメソッドを作成
 
     // MARK: - Private Function

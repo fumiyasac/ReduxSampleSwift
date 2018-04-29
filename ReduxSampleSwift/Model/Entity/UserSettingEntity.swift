@@ -10,8 +10,7 @@ import Foundation
 import RealmSwift
 
 /**
- * 仕様メモ:
- * ユーザーデータの記録用
+ * ユーザーデータの記録用のRealmスキーマ定義
  */
 
 class UserSettingEntity: Object {
@@ -21,6 +20,7 @@ class UserSettingEntity: Object {
     @objc dynamic var postalCode = ""
     @objc dynamic var residentPeriod = 0
     @objc dynamic var age = 0
+    @objc dynamic var freeText = ""
 
     override static func primaryKey() -> String? {
         return "id"
