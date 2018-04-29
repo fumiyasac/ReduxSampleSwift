@@ -258,6 +258,7 @@
 				DE6565092094D8CF005745D2 /* InitialSetting */,
 				DEE53CFA1FFBD1910097C7B2 /* Main */,
 				DEE53CFE1FFD1C850097C7B2 /* Tutorial */,
+				DEDC73F72095FECE00694443 /* UserSetting */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -291,6 +292,14 @@
 				DE65650A2095C8A8005745D2 /* UserSetting.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DEDC73F72095FECE00694443 /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				DEDC73F32095F29F00694443 /* UserSettingViewController.swift */,
+			);
+			path = UserSetting;
 			sourceTree = "<group>";
 		};
 		DEE53CDA1FF1DD570097C7B2 /* Module */ = {
@@ -349,7 +358,6 @@
 			children = (
 				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
 				DEE53D031FFD21FF0097C7B2 /* CardIntroductionViewController.swift */,
-				DEDC73F32095F29F00694443 /* UserSettingViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
