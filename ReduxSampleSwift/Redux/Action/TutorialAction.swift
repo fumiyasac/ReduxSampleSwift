@@ -11,7 +11,7 @@ import ReSwift
 
 extension TutorialState {
 
-    // チュートリアル完了状態のステートを変更させるアクションをEnumで定義する
+    // チュートリアル完了状態のstateを変更させるアクションをEnumで定義する
     enum tutorialAction: ReSwift.Action {
 
         // 現在のチュートリアルの終了判定の値をセットするアクション

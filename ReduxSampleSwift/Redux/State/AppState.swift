@@ -14,4 +14,7 @@ struct AppState: ReSwift.StateType {
 
     // チュートリアルに関する画面に関するstate
     var tutorialState = TutorialState()
+
+    // ユーザーの回答に関するstate
+    var userSettingState = UserSettingState()
 }

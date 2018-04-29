@@ -23,6 +23,9 @@
 		DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B41FE6AB2C0017C3AF /* AppState.swift */; };
 		DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F32095F29F00694443 /* UserSettingViewController.swift */; };
 		DEDC73F62095F61C00694443 /* UserSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEDC73F52095F61C00694443 /* UserSetting.storyboard */; };
+		DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F820965AED00694443 /* UserSettingAction.swift */; };
+		DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FA20965B4600694443 /* UserSettingState.swift */; };
+		DEDC73FD2096651700694443 /* UserSettingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FC2096651700694443 /* UserSettingReducer.swift */; };
 		DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */; };
 		DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */; };
 		DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */; };
@@ -82,6 +85,9 @@
 		DE85D2B41FE6AB2C0017C3AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		DEDC73F32095F29F00694443 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		DEDC73F52095F61C00694443 /* UserSetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserSetting.storyboard; sourceTree = "<group>"; };
+		DEDC73F820965AED00694443 /* UserSettingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingAction.swift; sourceTree = "<group>"; };
+		DEDC73FA20965B4600694443 /* UserSettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingState.swift; sourceTree = "<group>"; };
+		DEDC73FC2096651700694443 /* UserSettingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingReducer.swift; sourceTree = "<group>"; };
 		DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -280,6 +286,7 @@
 			children = (
 				DE85D2B41FE6AB2C0017C3AF /* AppState.swift */,
 				DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */,
+				DEDC73FA20965B4600694443 /* UserSettingState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */,
+				DEDC73F820965AED00694443 /* UserSettingAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 			children = (
 				DE591DF7201370360097974A /* AppReducer.swift */,
 				DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */,
+				DEDC73FC2096651700694443 /* UserSettingReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -571,7 +580,10 @@
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
 				DE65650B2095C8A8005745D2 /* UserSetting.swift in Sources */,
 				DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */,
+				DEDC73FD2096651700694443 /* UserSettingReducer.swift in Sources */,
 				DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */,
+				DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */,
+				DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
 				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
