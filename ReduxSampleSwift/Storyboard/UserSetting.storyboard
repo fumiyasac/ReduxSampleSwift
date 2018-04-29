@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qcr-MG-DeK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Setting View Controller-->
+        <scene sceneID="ijR-5t-WeJ">
+            <objects>
+                <viewController storyboardIdentifier="InitialSettingViewController" id="Qcr-MG-DeK" customClass="UserSettingViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UtB-D7-0fz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTG-nS-zbe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-FL-uk2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="640"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNz-bX-IQC">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" constant="128" id="EvR-iU-3YX"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="tNl-Gz-zFv"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97M-VV-xXy">
+                                                <rect key="frame" x="0.0" y="128" width="375" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="Ule-Ee-4mL"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="128" id="mvj-2t-S2k"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYo-dl-tAf">
+                                                <rect key="frame" x="0.0" y="256" width="375" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="TG8-jd-ik5"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="128" id="Udv-0i-fA9"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40Q-tL-6tK">
+                                                <rect key="frame" x="0.0" y="384" width="375" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="LAN-YR-JAI"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="128" id="olO-Ao-eQG"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eia-Pw-zfn">
+                                                <rect key="frame" x="0.0" y="512" width="375" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="EaK-ci-9Es"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fgo-FL-uk2" firstAttribute="width" secondItem="wTG-nS-zbe" secondAttribute="width" id="B4U-Xu-BYY"/>
+                                    <constraint firstAttribute="trailing" secondItem="fgo-FL-uk2" secondAttribute="trailing" id="EQC-9R-VEQ"/>
+                                    <constraint firstItem="fgo-FL-uk2" firstAttribute="top" secondItem="wTG-nS-zbe" secondAttribute="top" id="Hwd-ib-yL2"/>
+                                    <constraint firstItem="fgo-FL-uk2" firstAttribute="leading" secondItem="wTG-nS-zbe" secondAttribute="leading" id="ZFg-1t-Ja4"/>
+                                    <constraint firstAttribute="bottom" secondItem="fgo-FL-uk2" secondAttribute="bottom" id="okh-0T-B3h"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wTG-nS-zbe" firstAttribute="trailing" secondItem="oTn-1K-HXj" secondAttribute="trailing" id="CMe-Ie-6YT"/>
+                            <constraint firstItem="wTG-nS-zbe" firstAttribute="bottom" secondItem="oTn-1K-HXj" secondAttribute="bottom" id="rNs-SF-NIN"/>
+                            <constraint firstItem="wTG-nS-zbe" firstAttribute="leading" secondItem="oTn-1K-HXj" secondAttribute="leading" id="yTl-f8-2Mg"/>
+                            <constraint firstItem="wTG-nS-zbe" firstAttribute="top" secondItem="UtB-D7-0fz" secondAttribute="top" id="ypz-Cy-qDa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oTn-1K-HXj"/>
+                    </view>
+                    <connections>
+                        <segue destination="akE-sM-0Ce" kind="presentation" identifier="goMain" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="9yx-xH-2oz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vw8-Cj-Gly" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1609" y="-27"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="eXj-dY-SmK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="akE-sM-0Ce" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZA-vd-bS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2157" y="-28"/>
+        </scene>
+    </scenes>
+</document>
