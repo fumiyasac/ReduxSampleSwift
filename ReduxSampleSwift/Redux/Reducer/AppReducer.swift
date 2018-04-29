@@ -13,10 +13,12 @@ import ReSwift
 func appReduce(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     state.tutorialState = TutorialReducer.reducer(action: action, state: state.tutorialState)
+    state.userSettingState = UserSettingReducer.reducer(action: action, state: state.userSettingState)
 
     // Debug.
     print("appReduceが実行されました。")
     print("TutorialState:", state.tutorialState)
+    print("UserSettingState:", state.userSettingState)
 
     return state
 }
