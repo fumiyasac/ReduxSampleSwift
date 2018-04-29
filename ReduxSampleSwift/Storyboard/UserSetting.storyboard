@@ -195,7 +195,7 @@
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrf-4J-yIF">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nrf-4J-yIF">
                                                         <rect key="frame" x="16" y="88" width="343" height="92"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -424,6 +424,13 @@
                     <navigationItem key="navigationItem" id="iAD-d1-17R"/>
                     <size key="freeformSize" width="375" height="1800"/>
                     <connections>
+                        <outlet property="ageTableView" destination="EXI-nt-ewi" id="duC-Q3-udt"/>
+                        <outlet property="freeWordTextView" destination="Nrf-4J-yIF" id="KQe-gP-b7D"/>
+                        <outlet property="genderSegmentedControl" destination="OdY-Un-jLD" id="Fas-mj-gkv"/>
+                        <outlet property="nicknameTextField" destination="5pl-Zb-bUg" id="KJd-4V-fCt"/>
+                        <outlet property="postalCodeTextField" destination="gZY-cw-sDL" id="xW2-kC-s7m"/>
+                        <outlet property="residentPeriodTableView" destination="XI7-Ua-HaS" id="TQb-wD-Tir"/>
+                        <outlet property="userSettingSubmitButton" destination="Pd5-Tm-2ZK" id="M8j-pg-c41"/>
                         <segue destination="akE-sM-0Ce" kind="presentation" identifier="goMain" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="9yx-xH-2oz"/>
                     </connections>
                 </viewController>
