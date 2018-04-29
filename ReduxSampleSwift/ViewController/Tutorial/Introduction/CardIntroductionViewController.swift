@@ -25,9 +25,7 @@ class CardIntroductionViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }    
-
-    // TODO: チュートリアル用のデータを表示するメソッドを作成
+    }
 
     // MARK: - Private Function
 
