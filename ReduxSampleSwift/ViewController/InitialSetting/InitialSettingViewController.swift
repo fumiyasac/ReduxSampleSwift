@@ -67,15 +67,15 @@ class InitialSettingViewController: UIViewController {
         let isFinishedUserSetting = UserSetting.isFinishedUserSetting()
 
         // 現在の初期設定状態を反映するアクションの実行
-        appStore.dispatch(
-            TutorialState.tutorialAction.setInstallAppDate(date: installAppDate)
-        )
-        appStore.dispatch(
-            TutorialState.tutorialAction.setIsFinishedTutorial(result: isFinishedTutorial)
-        )
-        appStore.dispatch(
-            TutorialState.tutorialAction.setIsFinishedUserSetting(result: isFinishedUserSetting)
-        )
+        appStore.dispatch(TutorialState.tutorialAction.setInstallAppDate(date: installAppDate))
+        appStore.dispatch(TutorialState.tutorialAction.setIsFinishedTutorial(result: isFinishedTutorial))
+        appStore.dispatch(TutorialState.tutorialAction.setIsFinishedUserSetting(result: isFinishedUserSetting))
+
+        /*
+        if let userSetting = UserSetting.getUserSetting() {
+            
+        }
+        */
     }
 
     private func chooseNextScreen() {

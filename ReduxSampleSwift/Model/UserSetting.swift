@@ -14,16 +14,19 @@ class UserSetting: Object {
     // MARK: - Static Function
     
     static func isFinishedUserSetting() -> Bool {
-        if let _ = findLatestUserSetting() {
-            return true
-        } else {
+        guard let _ = findLatestUserSetting() else {
             return false
         }
+        return true
+    }
+
+    static func getUserSetting() -> UserSettingEntity? {
+        return findLatestUserSetting()
     }
 
     // MARK: - Private Function
 
-    private static func setUserSetting(userSetting: UserSettingEntity) {
+    private static func addUserSetting(userSetting: UserSettingEntity) {
         do {
             let realm = try Realm()
             //
