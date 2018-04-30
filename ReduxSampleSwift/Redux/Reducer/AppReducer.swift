@@ -12,13 +12,19 @@ import ReSwift
 // Stateの更新が行われた際にappReduceを実行してStore内のStateを更新する ※Store内では全てのStateを一元管理している
 func appReduce(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
+
     state.tutorialState = TutorialReducer.reducer(action: action, state: state.tutorialState)
     state.userSettingState = UserSettingReducer.reducer(action: action, state: state.userSettingState)
 
     // Debug.
     print("appReduceが実行されました。")
+    print("==============")
+
     print("TutorialState:", state.tutorialState)
+    print("--------------")
+
     print("UserSettingState:", state.userSettingState)
+    print("--------------")
 
     return state
 }

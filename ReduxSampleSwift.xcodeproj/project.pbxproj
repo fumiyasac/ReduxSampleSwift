@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		16E668A7B7110EEEF2AB86AD /* Pods_ReduxSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */; };
+		DE041AD22096758B005271E1 /* SelectFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */; };
+		DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE041AD12096758B005271E1 /* SelectFormTableViewCell.xib */; };
+		DE041AD52096E759005271E1 /* NSObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD42096E759005271E1 /* NSObjectProtocol.swift */; };
+		DE041AD72096E81F005271E1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD62096E81F005271E1 /* UITableViewExtension.swift */; };
+		DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */; };
 		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
@@ -26,6 +31,8 @@
 		DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F820965AED00694443 /* UserSettingAction.swift */; };
 		DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FA20965B4600694443 /* UserSettingState.swift */; };
 		DEDC73FD2096651700694443 /* UserSettingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FC2096651700694443 /* UserSettingReducer.swift */; };
+		DEDC73FF209668B400694443 /* SelectedResidentPeriodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FE209668B400694443 /* SelectedResidentPeriodEnum.swift */; };
+		DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC740020966B1E00694443 /* SelectedAgeEnum.swift */; };
 		DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */; };
 		DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */; };
 		DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */; };
@@ -64,6 +71,11 @@
 		2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFormTableViewCell.swift; sourceTree = "<group>"; };
+		DE041AD12096758B005271E1 /* SelectFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFormTableViewCell.xib; sourceTree = "<group>"; };
+		DE041AD42096E759005271E1 /* NSObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.swift; sourceTree = "<group>"; };
+		DE041AD62096E81F005271E1 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -88,6 +100,8 @@
 		DEDC73F820965AED00694443 /* UserSettingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingAction.swift; sourceTree = "<group>"; };
 		DEDC73FA20965B4600694443 /* UserSettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingState.swift; sourceTree = "<group>"; };
 		DEDC73FC2096651700694443 /* UserSettingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingReducer.swift; sourceTree = "<group>"; };
+		DEDC73FE209668B400694443 /* SelectedResidentPeriodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedResidentPeriodEnum.swift; sourceTree = "<group>"; };
+		DEDC740020966B1E00694443 /* SelectedAgeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAgeEnum.swift; sourceTree = "<group>"; };
 		DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -148,9 +162,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE041ACF20967548005271E1 /* SelectFormTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */,
+				DE041AD12096758B005271E1 /* SelectFormTableViewCell.xib */,
+			);
+			path = SelectFormTableViewCell;
+			sourceTree = "<group>";
+		};
 		DE09D40A1FFFC47900177D36 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				DEDC740020966B1E00694443 /* SelectedAgeEnum.swift */,
+				DEDC73FE209668B400694443 /* SelectedResidentPeriodEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -158,9 +183,11 @@
 		DE09D40B2001118700177D36 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */,
-				DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */,
+				DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */,
 				DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */,
+				DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */,
+				DE041AD62096E81F005271E1 /* UITableViewExtension.swift */,
+				DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -168,6 +195,7 @@
 		DE4D414720623FEB0038CC01 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				DE041AD42096E759005271E1 /* NSObjectProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -341,6 +369,7 @@
 		DEE53CF11FFB84430097C7B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE041ACF20967548005271E1 /* SelectFormTableViewCell */,
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
 			);
 			path = View;
@@ -480,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */,
 				DE671B071FDFC75400B752CA /* LaunchScreen.storyboard in Resources */,
 				DE671B041FDFC75400B752CA /* Assets.xcassets in Resources */,
 				DEE53CFD1FFD1C750097C7B2 /* Tutorial.storyboard in Resources */,
@@ -582,6 +612,8 @@
 				DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */,
 				DEDC73FD2096651700694443 /* UserSettingReducer.swift in Sources */,
 				DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */,
+				DE041AD22096758B005271E1 /* SelectFormTableViewCell.swift in Sources */,
+				DE041AD52096E759005271E1 /* NSObjectProtocol.swift in Sources */,
 				DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */,
 				DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
@@ -593,8 +625,12 @@
 				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
 				DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
+				DEDC73FF209668B400694443 /* SelectedResidentPeriodEnum.swift in Sources */,
+				DE041AD72096E81F005271E1 /* UITableViewExtension.swift in Sources */,
 				DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
+				DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */,
+				DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
 				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
