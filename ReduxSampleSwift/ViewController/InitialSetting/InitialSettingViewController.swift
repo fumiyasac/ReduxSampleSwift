@@ -12,6 +12,7 @@ import ReSwift
 class InitialSettingViewController: UIViewController {
 
     // ユーザーの登録状態を格納する変数
+    // → stateにまとめて格納しているものを個別に使用するためにこのような形にしている
     fileprivate var isFinishedUserSetting: Bool = false
     fileprivate var isFinishedTutorial: Bool = false
 
@@ -65,17 +66,14 @@ class InitialSettingViewController: UIViewController {
 
         // ユーザー登録の終了判定の取得
         let isFinishedUserSetting = UserSetting.isFinishedUserSetting()
+        if let userSetting = UserSetting.getUserSetting() {
+            appStore.dispatch(UserSettingState.userSettingAction.setCreatedUserSetting(userSetting: userSetting))
+        }
 
         // 現在の初期設定状態を反映するアクションの実行
         appStore.dispatch(TutorialState.tutorialAction.setInstallAppDate(date: installAppDate))
         appStore.dispatch(TutorialState.tutorialAction.setIsFinishedTutorial(result: isFinishedTutorial))
         appStore.dispatch(TutorialState.tutorialAction.setIsFinishedUserSetting(result: isFinishedUserSetting))
-
-        /*
-        if let userSetting = UserSetting.getUserSetting() {
-            
-        }
-        */
     }
 
     private func chooseNextScreen() {
