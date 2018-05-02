@@ -40,6 +40,14 @@ extension UserSettingReducer {
 
         case let .setSelectedAge(age):
             state.selectedAge = age
+
+        case let .setCreatedUserSetting(userSetting):
+            state.postalCode             = userSetting.postalCode
+            state.selectedResidentPeriod = userSetting.selectedResidentPeriod
+            state.freeWord               = userSetting.freeWord
+            state.nickname               = userSetting.nickname
+            state.gender                 = userSetting.gender
+            state.selectedAge            = userSetting.selectedAge
         }
 
         // Debug.

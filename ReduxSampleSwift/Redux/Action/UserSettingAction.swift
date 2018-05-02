@@ -31,5 +31,8 @@ extension UserSettingState {
 
         // 住んでいる年数が選択された際に実行されるアクション
         case setSelectedAge(age: Int)
+
+        // 登録されているユーザーデータをセットする際のアクション
+        case setCreatedUserSetting(userSetting: UserSettingEntity)
     }
 }
