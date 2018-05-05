@@ -12,6 +12,9 @@ import ReSwift
 // ユーザーの回答に関するstateの定義
 struct UserSettingState: ReSwift.StateType {
 
+    // キーボードの表示状態（初期値: false）
+    var keyboardIsShown: Bool = false
+    
     // 入力された郵便番号（初期値: ""）
     var postalCode: String = ""
 
@@ -22,7 +25,7 @@ struct UserSettingState: ReSwift.StateType {
     var freeWord: String = ""
     
     // 入力されたニックネーム（初期値: ""）
-    var nickname: String = ""
+    var nickName: String = ""
 
     // 選択された性別（初期値: 0）
     var gender: Int = 0

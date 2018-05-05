@@ -15,7 +15,7 @@ class UserSettingEntity: Object {
     @objc dynamic var postalCode = ""
     @objc dynamic var selectedResidentPeriod = 0
     @objc dynamic var freeWord = ""
-    @objc dynamic var nickname = ""
+    @objc dynamic var nickName = ""
     @objc dynamic var gender = 0
     @objc dynamic var selectedAge = 0
     @objc dynamic var createdAt = Date()

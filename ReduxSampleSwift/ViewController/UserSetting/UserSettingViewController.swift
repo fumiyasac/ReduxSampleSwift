@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import ReSwift
 
 class UserSettingViewController: UIViewController {
 
     // 選択肢用のTableViewに関する定数
     private let TABLE_VIEW_VIEW_HEIGHT: CGFloat = 47.0
     private let SELETE_FORM_TABLE_VIEW_CELL = "SelectFormTableViewCell"
-
+    
     // キーボード表示時に表示されるツールバーの設定
     private var keyboardToolBar: UIToolbar!
 
@@ -21,10 +22,14 @@ class UserSettingViewController: UIViewController {
     // MEMO: Realmで定義しているものについてはEntityファイルを用意しインスタンス化して利用する
     fileprivate var userSetting: UserSettingEntity? = UserSetting.getUserSetting()
 
+    fileprivate var selectedResidentPeriod: Int = 0
+    fileprivate var selectedAge: Int            = 0
+
+    @IBOutlet weak private var formScrollView: UIScrollView!
     @IBOutlet weak private var postalCodeTextField: UITextField!
     @IBOutlet weak private var residentPeriodTableView: UITableView!
     @IBOutlet weak private var freeWordTextView: UITextView!
-    @IBOutlet weak private var nicknameTextField: UITextField!
+    @IBOutlet weak private var nickNameTextField: UITextField!
     @IBOutlet weak private var genderSegmentedControl: UISegmentedControl!
     @IBOutlet weak private var ageTableView: UITableView!
     @IBOutlet weak private var userSettingSubmitButton: UIButton!
@@ -32,7 +37,7 @@ class UserSettingViewController: UIViewController {
     // 入力用のTextFieldを場合分けするためのEnum
     fileprivate enum textFieldType: Int {
         case postalCode
-        case nickname
+        case nickName
     }
 
     // 入力用のTableViewを場合分けするためのEnum
@@ -48,11 +53,25 @@ class UserSettingViewController: UIViewController {
         setupPostalCodeTextField()
         setupResidentPeriodTableView()
         setupFreeWordTextView()
-        setupNicknameTextField()
+        setupNickNameTextField()
         setupGenderSegmentedControl()
         setupUserSettingSubmitButton()
         setupAgeTableView()
         setupKeyboardAccesoryView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
+        appStore.subscribe(self)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
+        appStore.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,53 +84,68 @@ class UserSettingViewController: UIViewController {
 
     }
 
+    // 郵便番号の値が更新された際に実行されるアクション
+    @objc private func postalCodeValueChanged(sender: UITextField) {
+        if let postalCode = sender.text {
+            let setPostalCodeAction = UserSettingState.userSettingAction.setPostalCode(postalCode: postalCode)
+            appStore.dispatch(setPostalCodeAction)
+        }
+    }
+
+    // ニックネームの値が更新された際に実行されるアクション
+    @objc private func nickNameValueChanged(sender: UITextField) {
+        if let nickName = sender.text {
+            let setNickNameAction = UserSettingState.userSettingAction.setNickname(nickName: nickName)
+            appStore.dispatch(setNickNameAction)
+        }
+    }
+
+    // 性別の値を更新した際に実行されるアクション
     @objc private func genderSegmentedControlValueChanged(sender: UISegmentedControl) {
-        
+        let setGenderAction = UserSettingState.userSettingAction.setGender(gender: sender.selectedSegmentIndex)
+        appStore.dispatch(setGenderAction)
     }
 
-    @objc private func toolbarDoneButtonTapped() {
-
-    }
-
-    @objc private func toolbarCancelButtonTapped() {
-
+    @objc private func toolbarCloseButtonTapped() {
+        revertFormScrollViewState()
     }
 
     private func setupNavigationBar() {
         self.navigationItem.title = "ユーザーアンケートを回答する"
     }
 
+    // キーボードに付与するツールバーの設定を行う
     private func setupKeyboardAccesoryView() {
 
-        // キーボードにツールバーの設定を行う
+        // ツールバーのサイズ設定を行う
         keyboardToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
         keyboardToolBar.barStyle = UIBarStyle.default
         keyboardToolBar.sizeToFit()
 
-        // ツールバー内に追加するスペースを定義する
-        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        // ツールバー内に追加するスペースと閉じるボタンを定義する
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
-        // ツールバー内に追加する入力完了ボタンを定義する
-        let doneButton = UIBarButtonItem(title: "入力完了", style: .plain, target: self, action: #selector(self.toolbarDoneButtonTapped))
-        doneButton.setTitleTextAttributes([
-            NSAttributedStringKey.foregroundColor : UIColor.init(code: "#ff9900"),
-            NSAttributedStringKey.font: UIFont(name: AppConstants.FONT_NAME, size: 17)!
-            ], for: .normal)
-
-        // ツールバー内に追加するキャンセルボタンを定義する
-        let cancelButton = UIBarButtonItem(title: "キャンセル", style: .plain, target: self, action: #selector(self.toolbarCancelButtonTapped))
-        cancelButton.setTitleTextAttributes([
-            NSAttributedStringKey.foregroundColor : UIColor.init(code: "#ff9900"),
-            NSAttributedStringKey.font: UIFont(name: AppConstants.FONT_NAME, size: 17)!
-            ], for: .normal)
+        let closeButton = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(self.toolbarCloseButtonTapped))
+        let attributeOfFont = [
+            NSAttributedStringKey.font: UIFont(name: AppConstants.FONT_NAME, size: 16)!,
+        ]
+        closeButton.setTitleTextAttributes(attributeOfFont, for: .normal)
+        closeButton.tintColor = UIColor.init(code: "#ff9900")
         
-        keyboardToolBar.items = [cancelButton, spacer, doneButton]
+        keyboardToolBar.items = [spacer, closeButton]
 
         // アクセサリービューにツールバーを追加する
+        postalCodeTextField.inputAccessoryView = keyboardToolBar
+        freeWordTextView.inputAccessoryView    = keyboardToolBar
+        nickNameTextField.inputAccessoryView   = keyboardToolBar
     }
 
     private func setupPostalCodeTextField() {
         postalCodeTextField.delegate = self
+        postalCodeTextField.tag = textFieldType.postalCode.rawValue
+        postalCodeTextField.placeholder = "（例）1700005"
+        postalCodeTextField.keyboardType = .numberPad
+        postalCodeTextField.addTarget(self, action: #selector(self.postalCodeValueChanged(sender:)), for: .editingChanged)
     }
 
     private func setupResidentPeriodTableView() {
@@ -125,10 +159,17 @@ class UserSettingViewController: UIViewController {
 
     private func setupFreeWordTextView() {
         freeWordTextView.delegate = self
+        freeWordTextView.layer.borderColor = UIColor.init(code: "#cecece").cgColor
+        freeWordTextView.layer.cornerRadius = 5.0
+        freeWordTextView.layer.borderWidth = 0.5
     }
 
-    private func setupNicknameTextField() {
-        nicknameTextField.delegate = self
+    private func setupNickNameTextField() {
+        nickNameTextField.delegate = self
+        nickNameTextField.tag = textFieldType.nickName.rawValue
+        nickNameTextField.placeholder = "（例）●●●●さん"
+        postalCodeTextField.keyboardType = .alphabet
+        nickNameTextField.addTarget(self, action: #selector(self.nickNameValueChanged(sender:)), for: .editingChanged)
     }
 
     private func setupGenderSegmentedControl() {
@@ -148,18 +189,99 @@ class UserSettingViewController: UIViewController {
     private func setupUserSettingSubmitButton() {
         userSettingSubmitButton.addTarget(self, action: #selector(self.userSettingSubmitButtonTapped), for: .touchUpInside)
     }
+
+    // MARK: - Fileprivate Function
+
+    fileprivate func revertFormScrollViewState() {
+        let setKeyboardIsShownAction = UserSettingState.userSettingAction.setKeyboardIsShown(result: false)
+        appStore.dispatch(setKeyboardIsShownAction)
+
+        formScrollView.isScrollEnabled = true
+        view.endEditing(false)
+    }
+
+    fileprivate func changeFormScrollViewState(offsetY: CGFloat) {
+        let setKeyboardIsShownAction = UserSettingState.userSettingAction.setKeyboardIsShown(result: true)
+        appStore.dispatch(setKeyboardIsShownAction)
+
+        formScrollView.isScrollEnabled = false
+        UIView.animate(withDuration: 0.16, animations: {
+            self.formScrollView.contentOffset.y = offsetY
+        })
+    }
+}
+
+// MARK: - StoreSubscriber
+
+extension UserSettingViewController: StoreSubscriber {
+
+    // ステートの更新が検知された際に実行される処理
+    func newState(state: AppState) {
+
+        // Debug.
+        print("UserSettingStateの変更をUserSettingViewControllerで受け取りました。")
+        print("==============")
+        print(state.userSettingState)
+        print("--------------")
+
+        // state.userSettingStateの値を反映する
+        postalCodeTextField.text                    = state.userSettingState.postalCode
+        selectedResidentPeriod                      = state.userSettingState.selectedResidentPeriod
+        freeWordTextView.text                       = state.userSettingState.freeWord
+        nickNameTextField.text                      = state.userSettingState.nickName
+        genderSegmentedControl.selectedSegmentIndex = state.userSettingState.gender
+        selectedAge                                 = state.userSettingState.selectedAge
+        
+        // tableViewのリロードを行う
+        residentPeriodTableView.reloadData()
+        ageTableView.reloadData()
+
+        // Debug.
+        print("TutorialStateの変更をUserSettingViewControllerで受け取りました。")
+        print("==============")
+        print(state.tutorialState)
+        print("--------------")
+    }
 }
 
 // MARK: - UITextFieldDelegate
 
 extension UserSettingViewController: UITextFieldDelegate {
-    
+
+    // UITextFieldの入力が開始された際に実行される処理
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+        var targetOffsetY: CGFloat = 0
+        if textField.tag == textFieldType.postalCode.rawValue {
+            targetOffsetY = 135.0
+        } else if textField.tag == textFieldType.nickName.rawValue {
+            targetOffsetY = 859.0
+        }
+
+        guard targetOffsetY == 0 else {
+            changeFormScrollViewState(offsetY: targetOffsetY)
+            return
+        }
+    }
 }
 
 // MARK: - UITextViewDelegate
 
 extension UserSettingViewController: UITextViewDelegate {
-    
+
+    // UITextViewの入力が開始された際に実行される処理
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        let targetOffsetY: CGFloat = 649.0
+        changeFormScrollViewState(offsetY: targetOffsetY)
+    }
+
+    // 自由入力項目の値が更新された際に実行されるアクション
+    func textViewDidChange(_ textView: UITextView) {
+        if let freeWord = textView.text {
+            let setFreeWordAction = UserSettingState.userSettingAction.setFreeWord(freeWord: freeWord)
+            appStore.dispatch(setFreeWordAction)
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -182,21 +304,46 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCustomCell(with: SelectFormTableViewCell.self)
 
         switch tableView.tag {
+
         case tableViewType.residentPeriod.rawValue:
             let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
-            let residentPeriodCellData = (isSelected: false, statusCode: residentPeriod.getStatusCode(), cellText: residentPeriod.rawValue)
+            let residentPeriodCellData = (isSelected: (selectedResidentPeriod == residentPeriod.getStatusCode()), statusCode: residentPeriod.getStatusCode(), cellText: residentPeriod.rawValue)
             cell.setCell(residentPeriodCellData)
             return cell
+
         case tableViewType.age.rawValue:
             let age = SelectedAgeEnum.getAll()[indexPath.row]
-            let ageCellData = (isSelected: false, statusCode: age.getStatusCode(), cellText: age.rawValue)
+            let ageCellData = (isSelected: (selectedAge == age.getStatusCode()), statusCode: age.getStatusCode(), cellText: age.rawValue)
             cell.setCell(ageCellData)
             return cell
+
         default:
             return UITableViewCell.init()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        switch tableView.tag {
+
+        case tableViewType.residentPeriod.rawValue:
+            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
+            let selectedResidentPeriodAction = UserSettingState.userSettingAction.setSelectedResidentPeriod(residentPeriod: residentPeriod.getStatusCode())
+            appStore.dispatch(selectedResidentPeriodAction)
+            return
+
+        case tableViewType.age.rawValue:
+            let age = SelectedAgeEnum.getAll()[indexPath.row]
+            let selectedAgeAction = UserSettingState.userSettingAction.setSelectedAge(age: age.getStatusCode())
+            appStore.dispatch(selectedAgeAction)
+            return
+
+        default:
+            return
         }
     }
 }

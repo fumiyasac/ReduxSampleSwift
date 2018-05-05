@@ -11,12 +11,13 @@ import UIKit
 class SelectFormTableViewCell: UITableViewCell {
 
     private let DISABLED_REMARK_LABEL_TEXT = "未選択"
-    private let ENABLED_REMARK_LABEL_TEXT = "選択中"
+    private let ENABLED_REMARK_LABEL_TEXT  = "選択中"
 
     private let DISABLED_REMARK_LABEL_BACKGROUND_COLOR = UIColor.init(code: "#dddddd")
-    private let ENABLED_REMARK_LABEL_BACKGROUND_COLOR = UIColor.init(code: "#ff9900")
+    private let ENABLED_REMARK_LABEL_BACKGROUND_COLOR  = UIColor.init(code: "#ff9900")
+
     private let DISABLED_TEXT_LABEL_COLOR = UIColor.init(code: "#777777")
-    private let ENABLED_TEXT_LABEL_COLOR = UIColor.init(code: "#555555")
+    private let ENABLED_TEXT_LABEL_COLOR  = UIColor.init(code: "#555555")
     
     @IBOutlet weak private var targetRemarkLabel: UILabel!
     @IBOutlet weak private var targetTextLabel: UILabel!
@@ -35,12 +36,14 @@ class SelectFormTableViewCell: UITableViewCell {
         targetTextLabel.text = cellData.cellText
         targetStatusCode = cellData.statusCode
         if cellData.isSelected {
-            targetRemarkLabel.text = ENABLED_REMARK_LABEL_TEXT
+            targetRemarkLabel.text            = ENABLED_REMARK_LABEL_TEXT
             targetRemarkLabel.backgroundColor = ENABLED_REMARK_LABEL_BACKGROUND_COLOR
+            targetTextLabel.font      = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 13)!
             targetTextLabel.textColor = ENABLED_TEXT_LABEL_COLOR
         } else {
-            targetRemarkLabel.text = DISABLED_REMARK_LABEL_TEXT
+            targetRemarkLabel.text            = DISABLED_REMARK_LABEL_TEXT
             targetRemarkLabel.backgroundColor = DISABLED_REMARK_LABEL_BACKGROUND_COLOR
+            targetTextLabel.font      = UIFont(name: AppConstants.FONT_NAME, size: 13)!
             targetTextLabel.textColor = DISABLED_TEXT_LABEL_COLOR
         }
     }
