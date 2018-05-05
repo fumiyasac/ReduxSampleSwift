@@ -57,7 +57,7 @@
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="oeN-72-yiX" secondAttribute="trailing" constant="16" id="8ep-eS-AhT"/>
-                                                    <constraint firstAttribute="height" priority="250" constant="128" id="EvR-iU-3YX"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="135" id="EvR-iU-3YX"/>
                                                     <constraint firstAttribute="trailing" secondItem="2UY-ML-Nbo" secondAttribute="trailing" constant="16" id="MRC-Va-wOp"/>
                                                     <constraint firstAttribute="bottom" secondItem="2UY-ML-Nbo" secondAttribute="bottom" constant="14" id="PRf-De-f4b"/>
                                                     <constraint firstItem="2UY-ML-Nbo" firstAttribute="top" secondItem="oeN-72-yiX" secondAttribute="bottom" constant="14" id="jeb-md-4SX"/>
@@ -240,7 +240,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9f-UM-lFt">
                                                 <rect key="frame" x="0.0" y="859" width="375" height="128"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q4. あなたの呼び方を教えてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YT-Y0-izC">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q4. あなたのニックネームを教えてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YT-Y0-izC">
                                                         <rect key="frame" x="16" y="14" width="343" height="15"/>
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,7 +249,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLK-Tq-wTx">
                                                         <rect key="frame" x="16" y="43" width="343" height="33"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="あなたのニックネーム（もしくは読んで欲しい呼び方）を教えてください。※ この項目は必須です。">
+                                                            <fragment content="あなたのニックネーム（半角英数字で20文字以内）を教えてください。※ この項目は必須です。">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="13" name="HiraginoSans-W3"/>
@@ -425,9 +425,10 @@
                     <size key="freeformSize" width="375" height="1800"/>
                     <connections>
                         <outlet property="ageTableView" destination="EXI-nt-ewi" id="duC-Q3-udt"/>
+                        <outlet property="formScrollView" destination="wTG-nS-zbe" id="JO5-Ca-NPA"/>
                         <outlet property="freeWordTextView" destination="Nrf-4J-yIF" id="KQe-gP-b7D"/>
                         <outlet property="genderSegmentedControl" destination="OdY-Un-jLD" id="Fas-mj-gkv"/>
-                        <outlet property="nicknameTextField" destination="5pl-Zb-bUg" id="KJd-4V-fCt"/>
+                        <outlet property="nickNameTextField" destination="5pl-Zb-bUg" id="lsI-Lo-y2b"/>
                         <outlet property="postalCodeTextField" destination="gZY-cw-sDL" id="xW2-kC-s7m"/>
                         <outlet property="residentPeriodTableView" destination="XI7-Ua-HaS" id="TQb-wD-Tir"/>
                         <outlet property="userSettingSubmitButton" destination="Pd5-Tm-2ZK" id="M8j-pg-c41"/>

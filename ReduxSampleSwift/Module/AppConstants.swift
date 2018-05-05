@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 struct AppConstants {
-    static let FONT_NAME = "HiraKakuProN-W3"
+
+    // フォント名
+    static let FONT_NAME      = "HiraKakuProN-W3"
     static let BOLD_FONT_NAME = "HiraKakuProN-W6"
+
+    // 郵便番号の桁数
+    static let POSTAL_CODE_LIMIT = 7
+
+    // 自由入力欄の文字数
+    static let FREE_WORD_LIMIT   = 200
 }

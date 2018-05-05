@@ -14,6 +14,9 @@ extension UserSettingState {
     // ユーザーの回答に関するstateを変更させるアクションをEnumで定義する
     enum userSettingAction: ReSwift.Action {
 
+        // キーボードの表示状態が更新された際に実行されるアクション
+        case setKeyboardIsShown(result: Bool)
+
         // 郵便番号が入力された際に実行されるアクション
         case setPostalCode(postalCode: String)
 
@@ -24,7 +27,7 @@ extension UserSettingState {
         case setFreeWord(freeWord: String)
 
         // ニックネームが入力された際に実行されるアクション
-        case setNickname(nickname: String)
+        case setNickname(nickName: String)
 
         // 性別が選択された際に実行されるアクション
         case setGender(gender: Int)

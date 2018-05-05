@@ -22,18 +22,21 @@ extension UserSettingReducer {
         guard let action = action as? UserSettingState.userSettingAction else { return state }
 
         switch action {
+        
+        case let .setKeyboardIsShown(result):
+            state.keyboardIsShown = result
 
         case let .setPostalCode(postalCode):
-            state.postalCode = postalCode
+            state.postalCode = adjustPostalCode(postalCode: postalCode)
             
         case let .setSelectedResidentPeriod(residentPeriod):
             state.selectedResidentPeriod = residentPeriod
 
         case let .setFreeWord(freeWord):
-            state.freeWord = freeWord
+            state.freeWord = adjustFreeWordCode(freeWord: freeWord)
 
-        case let .setNickname(nickname):
-            state.nickname = nickname
+        case let .setNickname(nickName):
+            state.nickName = nickName
 
         case let .setGender(gender):
             state.gender = gender
@@ -42,10 +45,10 @@ extension UserSettingReducer {
             state.selectedAge = age
 
         case let .setCreatedUserSetting(userSetting):
-            state.postalCode             = userSetting.postalCode
+            state.postalCode             = adjustPostalCode(postalCode: userSetting.postalCode)
             state.selectedResidentPeriod = userSetting.selectedResidentPeriod
-            state.freeWord               = userSetting.freeWord
-            state.nickname               = userSetting.nickname
+            state.freeWord               = adjustFreeWordCode(freeWord: userSetting.freeWord)
+            state.nickName               = userSetting.nickName
             state.gender                 = userSetting.gender
             state.selectedAge            = userSetting.selectedAge
         }
@@ -54,6 +57,26 @@ extension UserSettingReducer {
         print("UserSettingStateが更新されました。")
 
         return state
+    }
+
+    // 郵便番号を7桁で制限する
+    private static func adjustPostalCode(postalCode: String) -> String {
+        let limit = AppConstants.POSTAL_CODE_LIMIT
+        var targetPostalCode = postalCode
+        if targetPostalCode.count > limit {
+            targetPostalCode = String(targetPostalCode.prefix(limit))
+        }
+        return targetPostalCode
+    }
+
+    // 自由入力を200文字で制限する
+    private static func adjustFreeWordCode(freeWord: String) -> String {
+        let limit = AppConstants.FREE_WORD_LIMIT
+        var targetFreeWord = freeWord
+        if targetFreeWord.count > limit {
+            targetFreeWord = String(targetFreeWord.prefix(limit))
+        }
+        return targetFreeWord
     }
 }
 
