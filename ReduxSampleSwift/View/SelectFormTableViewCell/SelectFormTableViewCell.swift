@@ -13,10 +13,10 @@ class SelectFormTableViewCell: UITableViewCell {
     private let DISABLED_REMARK_LABEL_TEXT = "未選択"
     private let ENABLED_REMARK_LABEL_TEXT = "選択中"
 
-    private let DISABLED_REMARK_LABEL_BACKGROUND_COLOR = UIColor.init(code: "dddddd")
-    private let ENABLED_REMARK_LABEL_BACKGROUND_COLOR = UIColor.init(code: "ff9900")
-    private let DISABLED_TEXT_LABEL_COLOR = UIColor.init(code: "777777")
-    private let ENABLED_TEXT_LABEL_COLOR = UIColor.init(code: "555555")
+    private let DISABLED_REMARK_LABEL_BACKGROUND_COLOR = UIColor.init(code: "#dddddd")
+    private let ENABLED_REMARK_LABEL_BACKGROUND_COLOR = UIColor.init(code: "#ff9900")
+    private let DISABLED_TEXT_LABEL_COLOR = UIColor.init(code: "#777777")
+    private let ENABLED_TEXT_LABEL_COLOR = UIColor.init(code: "#555555")
     
     @IBOutlet weak private var targetRemarkLabel: UILabel!
     @IBOutlet weak private var targetTextLabel: UILabel!

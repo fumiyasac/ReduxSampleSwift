@@ -9,10 +9,16 @@
 import UIKit
 
 class UserSettingViewController: UIViewController {
-    
+
+    // 選択肢用のTableViewに関する定数
     private let TABLE_VIEW_VIEW_HEIGHT: CGFloat = 47.0
     private let SELETE_FORM_TABLE_VIEW_CELL = "SelectFormTableViewCell"
 
+    // キーボード表示時に表示されるツールバーの設定
+    private var keyboardToolBar: UIToolbar!
+
+    // ユーザー情報のEntity
+    // MEMO: Realmで定義しているものについてはEntityファイルを用意しインスタンス化して利用する
     fileprivate var userSetting: UserSettingEntity? = UserSetting.getUserSetting()
 
     @IBOutlet weak private var postalCodeTextField: UITextField!
@@ -46,6 +52,7 @@ class UserSettingViewController: UIViewController {
         setupGenderSegmentedControl()
         setupUserSettingSubmitButton()
         setupAgeTableView()
+        setupKeyboardAccesoryView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,12 +69,49 @@ class UserSettingViewController: UIViewController {
         
     }
 
+    @objc private func toolbarDoneButtonTapped() {
+
+    }
+
+    @objc private func toolbarCancelButtonTapped() {
+
+    }
+
     private func setupNavigationBar() {
         self.navigationItem.title = "ユーザーアンケートを回答する"
     }
 
-    private func setupPostalCodeTextField() {
+    private func setupKeyboardAccesoryView() {
+
+        // キーボードにツールバーの設定を行う
+        keyboardToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+        keyboardToolBar.barStyle = UIBarStyle.default
+        keyboardToolBar.sizeToFit()
+
+        // ツールバー内に追加するスペースを定義する
+        let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+
+        // ツールバー内に追加する入力完了ボタンを定義する
+        let doneButton = UIBarButtonItem(title: "入力完了", style: .plain, target: self, action: #selector(self.toolbarDoneButtonTapped))
+        doneButton.setTitleTextAttributes([
+            NSAttributedStringKey.foregroundColor : UIColor.init(code: "#ff9900"),
+            NSAttributedStringKey.font: UIFont(name: AppConstants.FONT_NAME, size: 17)!
+            ], for: .normal)
+
+        // ツールバー内に追加するキャンセルボタンを定義する
+        let cancelButton = UIBarButtonItem(title: "キャンセル", style: .plain, target: self, action: #selector(self.toolbarCancelButtonTapped))
+        cancelButton.setTitleTextAttributes([
+            NSAttributedStringKey.foregroundColor : UIColor.init(code: "#ff9900"),
+            NSAttributedStringKey.font: UIFont(name: AppConstants.FONT_NAME, size: 17)!
+            ], for: .normal)
         
+        keyboardToolBar.items = [cancelButton, spacer, doneButton]
+
+        // アクセサリービューにツールバーを追加する
+    }
+
+    private func setupPostalCodeTextField() {
+        postalCodeTextField.delegate = self
     }
 
     private func setupResidentPeriodTableView() {
@@ -80,11 +124,11 @@ class UserSettingViewController: UIViewController {
     }
 
     private func setupFreeWordTextView() {
-        
+        freeWordTextView.delegate = self
     }
 
     private func setupNicknameTextField() {
-
+        nicknameTextField.delegate = self
     }
 
     private func setupGenderSegmentedControl() {
@@ -104,6 +148,18 @@ class UserSettingViewController: UIViewController {
     private func setupUserSettingSubmitButton() {
         userSettingSubmitButton.addTarget(self, action: #selector(self.userSettingSubmitButtonTapped), for: .touchUpInside)
     }
+}
+
+// MARK: - UITextFieldDelegate
+
+extension UserSettingViewController: UITextFieldDelegate {
+    
+}
+
+// MARK: - UITextViewDelegate
+
+extension UserSettingViewController: UITextViewDelegate {
+    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource

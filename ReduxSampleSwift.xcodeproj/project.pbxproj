@@ -13,6 +13,7 @@
 		DE041AD52096E759005271E1 /* NSObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD42096E759005271E1 /* NSObjectProtocol.swift */; };
 		DE041AD72096E81F005271E1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD62096E81F005271E1 /* UITableViewExtension.swift */; };
 		DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */; };
+		DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041ADE209DFAF5005271E1 /* AppConstants.swift */; };
 		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
@@ -76,6 +77,7 @@
 		DE041AD42096E759005271E1 /* NSObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.swift; sourceTree = "<group>"; };
 		DE041AD62096E81F005271E1 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		DE041ADE209DFAF5005271E1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */,
+				DE041ADE209DFAF5005271E1 /* AppConstants.swift */,
 				DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */,
 				DEE53CE41FF4E3C40097C7B2 /* ReuseCellConfigure.swift */,
 			);
@@ -616,6 +619,7 @@
 				DE041AD52096E759005271E1 /* NSObjectProtocol.swift in Sources */,
 				DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */,
 				DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */,
+				DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
 				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
