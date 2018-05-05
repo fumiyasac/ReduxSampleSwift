@@ -20,4 +20,7 @@ struct AppConstants {
 
     // 自由入力欄の文字数
     static let FREE_WORD_LIMIT   = 200
+
+    // ニックネームの文字数
+    static let NICK_NAME_LIMIT   = 20
 }
