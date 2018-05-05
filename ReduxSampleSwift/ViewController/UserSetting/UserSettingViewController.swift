@@ -144,7 +144,6 @@ class UserSettingViewController: UIViewController {
         postalCodeTextField.delegate = self
         postalCodeTextField.tag = textFieldType.postalCode.rawValue
         postalCodeTextField.placeholder = "（例）1700005"
-        postalCodeTextField.keyboardType = .numberPad
         postalCodeTextField.addTarget(self, action: #selector(self.postalCodeValueChanged(sender:)), for: .editingChanged)
     }
 
@@ -168,7 +167,6 @@ class UserSettingViewController: UIViewController {
         nickNameTextField.delegate = self
         nickNameTextField.tag = textFieldType.nickName.rawValue
         nickNameTextField.placeholder = "（例）●●●●さん"
-        postalCodeTextField.keyboardType = .alphabet
         nickNameTextField.addTarget(self, action: #selector(self.nickNameValueChanged(sender:)), for: .editingChanged)
     }
 
@@ -253,8 +251,10 @@ extension UserSettingViewController: UITextFieldDelegate {
 
         var targetOffsetY: CGFloat = 0
         if textField.tag == textFieldType.postalCode.rawValue {
+            textField.keyboardType = .numberPad
             targetOffsetY = 135.0
         } else if textField.tag == textFieldType.nickName.rawValue {
+            textField.keyboardType = .URL
             targetOffsetY = 859.0
         }
 

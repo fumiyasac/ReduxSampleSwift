@@ -33,10 +33,10 @@ extension UserSettingReducer {
             state.selectedResidentPeriod = residentPeriod
 
         case let .setFreeWord(freeWord):
-            state.freeWord = adjustFreeWordCode(freeWord: freeWord)
+            state.freeWord = adjustFreeWord(freeWord: freeWord)
 
         case let .setNickname(nickName):
-            state.nickName = nickName
+            state.nickName = adjustNickName(nickName: nickName)
 
         case let .setGender(gender):
             state.gender = gender
@@ -47,8 +47,8 @@ extension UserSettingReducer {
         case let .setCreatedUserSetting(userSetting):
             state.postalCode             = adjustPostalCode(postalCode: userSetting.postalCode)
             state.selectedResidentPeriod = userSetting.selectedResidentPeriod
-            state.freeWord               = adjustFreeWordCode(freeWord: userSetting.freeWord)
-            state.nickName               = userSetting.nickName
+            state.freeWord               = adjustFreeWord(freeWord: userSetting.freeWord)
+            state.nickName               = adjustNickName(nickName: userSetting.nickName)
             state.gender                 = userSetting.gender
             state.selectedAge            = userSetting.selectedAge
         }
@@ -70,13 +70,23 @@ extension UserSettingReducer {
     }
 
     // 自由入力を200文字で制限する
-    private static func adjustFreeWordCode(freeWord: String) -> String {
+    private static func adjustFreeWord(freeWord: String) -> String {
         let limit = AppConstants.FREE_WORD_LIMIT
         var targetFreeWord = freeWord
         if targetFreeWord.count > limit {
             targetFreeWord = String(targetFreeWord.prefix(limit))
         }
         return targetFreeWord
+    }
+
+    // ニックネームを20文字で制限する
+    private static func adjustNickName(nickName: String) -> String {
+        let limit = AppConstants.NICK_NAME_LIMIT
+        var targetNickName = nickName
+        if targetNickName.count > limit {
+            targetNickName = String(targetNickName.prefix(limit))
+        }
+        return targetNickName
     }
 }
 
