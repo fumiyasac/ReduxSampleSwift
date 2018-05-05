@@ -28,12 +28,12 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="135"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeN-72-yiX">
-                                                        <rect key="frame" x="16" y="14" width="343" height="40"/>
+                                                        <rect key="frame" x="16" y="14" width="343" height="38"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="あなたのこととお住まいの地域のことについて、ほんの少しだけ教えてください。">
+                                                            <fragment content="あなたとお住まいの地域のことについて、是非少しだけ教えてください。">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" size="16" name="HiraginoSans-W6"/>
+                                                                    <font key="NSFont" size="15" name="HiraginoSans-W6"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -41,12 +41,12 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UY-ML-Nbo">
-                                                        <rect key="frame" x="16" y="68" width="343" height="53"/>
+                                                        <rect key="frame" x="16" y="66" width="343" height="55"/>
                                                         <attributedString key="attributedText">
-                                                            <fragment content="※ ここで入力して頂きたい情報ついては、簡単なアンケートになりますので差し支えない範囲に関して教えて頂ければと思います。">
+                                                            <fragment content="※ ここで入力して頂きたい情報ついては、ユーザーに関する簡単なアンケートになりますので差し支えない範囲に関して教えて頂ければと思います。">
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <font key="NSFont" size="13" name="HiraginoSans-W3"/>
+                                                                    <font key="NSFont" size="12" name="HiraginoSans-W3"/>
                                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
@@ -169,7 +169,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40Q-tL-6tK">
                                                 <rect key="frame" x="0.0" y="649" width="375" height="210"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q3. お住まいの場所でのお気に入りについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOv-kz-Jxp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q3. お住まいの場所での好きな部分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOv-kz-Jxp">
                                                         <rect key="frame" x="16" y="14" width="343" height="15"/>
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,7 +240,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9f-UM-lFt">
                                                 <rect key="frame" x="0.0" y="859" width="375" height="128"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q4. あなたのニックネームを教えてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YT-Y0-izC">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q4. ニックネームを教えてください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YT-Y0-izC">
                                                         <rect key="frame" x="16" y="14" width="343" height="15"/>
                                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
                                                         <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>

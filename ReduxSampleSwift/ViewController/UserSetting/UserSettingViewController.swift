@@ -26,13 +26,14 @@ class UserSettingViewController: UIViewController {
     fileprivate var selectedAge: Int            = 0
 
     @IBOutlet weak private var formScrollView: UIScrollView!
-    @IBOutlet weak private var postalCodeTextField: UITextField!
-    @IBOutlet weak private var residentPeriodTableView: UITableView!
-    @IBOutlet weak private var freeWordTextView: UITextView!
-    @IBOutlet weak private var nickNameTextField: UITextField!
-    @IBOutlet weak private var genderSegmentedControl: UISegmentedControl!
-    @IBOutlet weak private var ageTableView: UITableView!
     @IBOutlet weak private var userSettingSubmitButton: UIButton!
+
+    @IBOutlet weak fileprivate var postalCodeTextField: UITextField!
+    @IBOutlet weak fileprivate var residentPeriodTableView: UITableView!
+    @IBOutlet weak fileprivate var freeWordTextView: UITextView!
+    @IBOutlet weak fileprivate var nickNameTextField: UITextField!
+    @IBOutlet weak fileprivate var genderSegmentedControl: UISegmentedControl!
+    @IBOutlet weak fileprivate var ageTableView: UITableView!
 
     // 入力用のTextFieldを場合分けするためのEnum
     fileprivate enum textFieldType: Int {
