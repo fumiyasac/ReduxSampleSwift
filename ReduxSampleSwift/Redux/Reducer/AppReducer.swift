@@ -20,11 +20,5 @@ func appReduce(action: Action, state: AppState?) -> AppState {
     print("appReduceが実行されました。")
     print("==============")
 
-    print("TutorialState:", state.tutorialState)
-    print("--------------")
-
-    print("UserSettingState:", state.userSettingState)
-    print("--------------")
-
     return state
 }

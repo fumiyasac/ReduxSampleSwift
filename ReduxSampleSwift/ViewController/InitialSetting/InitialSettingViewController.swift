@@ -100,6 +100,15 @@ extension InitialSettingViewController: StoreSubscriber {
 
         // Debug.
         print("TutorialStateの変更をInitialSettingViewControllerで受け取りました。")
+        print("==============")
+        print(state.tutorialState)
+        print("--------------")
+
+        // Debug.
+        print("UserSettingStateの変更をInitialSettingViewControllerで受け取りました。")
+        print("==============")
+        print(state.userSettingState)
+        print("--------------")
 
         // 現在のチュートリアルの完了状態＆ユーザー登録の完了状態を取得する
         isFinishedUserSetting = state.tutorialState.isFinishedUserSetting
