@@ -35,7 +35,7 @@ extension UserSettingReducer {
         case let .setFreeWord(freeWord):
             state.freeWord = adjustFreeWord(freeWord: freeWord)
 
-        case let .setNickname(nickName):
+        case let .setNickName(nickName):
             state.nickName = adjustNickName(nickName: nickName)
 
         case let .setGender(gender):

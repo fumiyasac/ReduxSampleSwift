@@ -27,7 +27,7 @@ extension UserSettingState {
         case setFreeWord(freeWord: String)
 
         // ニックネームが入力された際に実行されるアクション
-        case setNickname(nickName: String)
+        case setNickName(nickName: String)
 
         // 性別が選択された際に実行されるアクション
         case setGender(gender: Int)

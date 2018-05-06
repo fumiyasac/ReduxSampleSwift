@@ -20,14 +20,19 @@ class UserSettingViewController: UIViewController {
 
     // ユーザー情報のEntity
     // MEMO: Realmで定義しているものについてはEntityファイルを用意しインスタンス化して利用する
-    fileprivate var userSetting: UserSettingEntity? = UserSetting.getUserSetting()
+    fileprivate var userSettingEntity: UserSettingEntity = UserSetting.getUserSetting() ?? UserSettingEntity()
 
+    // 選択項目用のUITableViewを選択した値を格納するメンバ変数
     fileprivate var selectedResidentPeriod: Int = 0
     fileprivate var selectedAge: Int            = 0
 
+    // フォーム全体のUIScrollView
     @IBOutlet weak private var formScrollView: UIScrollView!
-    @IBOutlet weak private var userSettingSubmitButton: UIButton!
 
+    // フォーム項目登録用のボタン
+    @IBOutlet weak fileprivate var userSettingSubmitButton: UIButton!
+
+    // フォーム項目
     @IBOutlet weak fileprivate var postalCodeTextField: UITextField!
     @IBOutlet weak fileprivate var residentPeriodTableView: UITableView!
     @IBOutlet weak fileprivate var freeWordTextView: UITextView!
@@ -81,13 +86,22 @@ class UserSettingViewController: UIViewController {
 
     // MARK: - Private Function
 
+    // ユーザーアンケート情報を登録する際に実行されるアクション
     @objc private func userSettingSubmitButtonTapped() {
 
+        // ユーザーアンケート情報を登録する
+        UserSetting.addUserSetting(userSetting: userSettingEntity)
+
+        // setIsFinishedUserSettingアクション(ReSwift)を実行する
+        let updateIsFinishedUserSettingAction = TutorialState.tutorialAction.setIsFinishedUserSetting(result: true)
+        appStore.dispatch(updateIsFinishedUserSettingAction)
     }
 
     // 郵便番号の値が更新された際に実行されるアクション
     @objc private func postalCodeValueChanged(sender: UITextField) {
         if let postalCode = sender.text {
+
+            // setPostalCodeアクション(ReSwift)を実行する
             let setPostalCodeAction = UserSettingState.userSettingAction.setPostalCode(postalCode: postalCode)
             appStore.dispatch(setPostalCodeAction)
         }
@@ -96,13 +110,17 @@ class UserSettingViewController: UIViewController {
     // ニックネームの値が更新された際に実行されるアクション
     @objc private func nickNameValueChanged(sender: UITextField) {
         if let nickName = sender.text {
-            let setNickNameAction = UserSettingState.userSettingAction.setNickname(nickName: nickName)
+
+            // setNickNameアクション(ReSwift)を実行する
+            let setNickNameAction = UserSettingState.userSettingAction.setNickName(nickName: nickName)
             appStore.dispatch(setNickNameAction)
         }
     }
 
     // 性別の値を更新した際に実行されるアクション
     @objc private func genderSegmentedControlValueChanged(sender: UISegmentedControl) {
+
+        // setGenderアクション(ReSwift)を実行する
         let setGenderAction = UserSettingState.userSettingAction.setGender(gender: sender.selectedSegmentIndex)
         appStore.dispatch(setGenderAction)
     }
@@ -127,9 +145,9 @@ class UserSettingViewController: UIViewController {
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 
         let closeButton = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(self.toolbarCloseButtonTapped))
-        let attributeOfFont = [
-            NSAttributedStringKey.font: UIFont(name: AppConstants.FONT_NAME, size: 16)!,
-        ]
+
+        let attributeOfFont = [ NSAttributedStringKey.font : UIFont(name: AppConstants.FONT_NAME, size: 16)! ]
+
         closeButton.setTitleTextAttributes(attributeOfFont, for: .normal)
         closeButton.tintColor = UIColor.init(code: "#ff9900")
         
@@ -218,28 +236,76 @@ extension UserSettingViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
+        print("TutorialStateの変更をUserSettingViewControllerで受け取りました。")
+        print("==============")
+        print(state.tutorialState)
+        print("--------------")
+
+        // アンケート回答登録が完了したらメイン画面へ遷移する
+        let isFinishedUserSetting = state.tutorialState.isFinishedUserSetting
+        if isFinishedUserSetting {
+            performSegue(withIdentifier: "goMain", sender: self)
+            return
+        }
+
+        // Debug.
         print("UserSettingStateの変更をUserSettingViewControllerで受け取りました。")
         print("==============")
         print(state.userSettingState)
         print("--------------")
 
-        // state.userSettingStateの値を反映する
-        postalCodeTextField.text                    = state.userSettingState.postalCode
-        selectedResidentPeriod                      = state.userSettingState.selectedResidentPeriod
-        freeWordTextView.text                       = state.userSettingState.freeWord
-        nickNameTextField.text                      = state.userSettingState.nickName
-        genderSegmentedControl.selectedSegmentIndex = state.userSettingState.gender
-        selectedAge                                 = state.userSettingState.selectedAge
-        
+        // userSettingStateの値を反映する
+        setUserSettingStateValues(userSettingState: state.userSettingState)
+
+        // アンケート回答登録ボタンの状態を反映する
+        updateUserSettingSubmitButtonStatus(userSettingState: state.userSettingState)
+
+    }
+
+    // MARK: - Private Function
+
+    private func setUserSettingStateValues(userSettingState: UserSettingState) {
+
+        // userSettingEntityインスタンスのプロパティへstate.userSettingStateの値を反映する
+        userSettingEntity.postalCode             = userSettingState.postalCode
+        userSettingEntity.selectedResidentPeriod = userSettingState.selectedResidentPeriod
+        userSettingEntity.freeWord               = userSettingState.freeWord
+        userSettingEntity.nickName               = userSettingState.nickName
+        userSettingEntity.gender                 = userSettingState.gender
+        userSettingEntity.selectedAge            = userSettingState.selectedAge
+
+        // UIパーツに対してstate.userSettingStateの値を反映する
+        postalCodeTextField.text                    = userSettingState.postalCode
+        selectedResidentPeriod                      = userSettingState.selectedResidentPeriod
+        freeWordTextView.text                       = userSettingState.freeWord
+        nickNameTextField.text                      = userSettingState.nickName
+        genderSegmentedControl.selectedSegmentIndex = userSettingState.gender
+        selectedAge                                 = userSettingState.selectedAge
+
         // tableViewのリロードを行う
         residentPeriodTableView.reloadData()
         ageTableView.reloadData()
+    }
 
-        // Debug.
-        print("TutorialStateの変更をUserSettingViewControllerで受け取りました。")
-        print("==============")
-        print(state.tutorialState)
-        print("--------------")
+    private func updateUserSettingSubmitButtonStatus(userSettingState: UserSettingState) {
+
+        // 必須項目に入力されている値が妥当であるかを判定する
+        let isPostalCodeValid: Bool = (userSettingState.postalCode.count > 0 && userSettingState.postalCode.count <= AppConstants.POSTAL_CODE_LIMIT)
+        let isResidentPeriodValid: Bool = (userSettingState.selectedResidentPeriod > 0)
+        let isFreeWordValid: Bool = (userSettingState.freeWord.count > 0 && userSettingState.freeWord.count <= AppConstants.FREE_WORD_LIMIT)
+        let isNickName: Bool = (userSettingState.nickName.count > 0 && userSettingState.nickName.count <= AppConstants.NICK_NAME_LIMIT)
+        let isAgeValid: Bool = (userSettingState.selectedAge > 0)
+
+        // 必須項目の妥当性に応じて回答を登録するボタンの状態を判定する
+        if isPostalCodeValid && isResidentPeriodValid && isFreeWordValid && isNickName && isAgeValid {
+            userSettingSubmitButton.alpha = 1
+            userSettingSubmitButton.isEnabled = true
+            userSettingSubmitButton.setTitle("アンケートへの回答を完了する", for: .normal)
+        } else {
+            userSettingSubmitButton.alpha = 0.6
+            userSettingSubmitButton.isEnabled = false
+            userSettingSubmitButton.setTitle("必須項目が入力されていません", for: .normal)
+        }
     }
 }
 
@@ -333,12 +399,16 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
 
         case tableViewType.residentPeriod.rawValue:
             let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
+
+            // setSelectedResidentPeriodアクション(ReSwift)を実行する
             let selectedResidentPeriodAction = UserSettingState.userSettingAction.setSelectedResidentPeriod(residentPeriod: residentPeriod.getStatusCode())
             appStore.dispatch(selectedResidentPeriodAction)
             return
 
         case tableViewType.age.rawValue:
             let age = SelectedAgeEnum.getAll()[indexPath.row]
+
+            // setSelectedAgeアクション(ReSwift)を実行する
             let selectedAgeAction = UserSettingState.userSettingAction.setSelectedAge(age: age.getStatusCode())
             appStore.dispatch(selectedAgeAction)
             return

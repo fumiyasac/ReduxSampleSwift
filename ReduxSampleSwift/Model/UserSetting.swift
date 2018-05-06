@@ -24,16 +24,27 @@ class UserSetting: Object {
         return findLatestUserSetting()
     }
 
-    // MARK: - Private Function
-
-    private static func addUserSetting(userSetting: UserSettingEntity) {
+    static func addUserSetting(userSetting: UserSettingEntity) {
         do {
             let realm = try Realm()
-            //
+            try! realm.write {
+                let userSettingValue: [String : Any] = [
+                    "postalCode": userSetting.postalCode,
+                    "selectedResidentPeriod": userSetting.selectedResidentPeriod,
+                    "freeWord": userSetting.freeWord,
+                    "nickName": userSetting.nickName,
+                    "gender": userSetting.gender,
+                    "selectedAge": userSetting.selectedAge,
+                    "createdAt": Date()
+                ]
+                _ = realm.create(UserSettingEntity.self, value: userSettingValue)
+            }
         } catch {
             assertionFailure("ユーザー情報(UserSettingEntity)の保存に失敗しました。")
         }
     }
+
+    // MARK: - Private Function
 
     private static func findLatestUserSetting() -> UserSettingEntity? {
         do {
