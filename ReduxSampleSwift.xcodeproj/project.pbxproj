@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16E668A7B7110EEEF2AB86AD /* Pods_ReduxSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */; };
+		DE02EC7720A5E91C00AACD69 /* TutorialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02EC7620A5E91C00AACD69 /* TutorialDetailViewController.swift */; };
 		DE041AD22096758B005271E1 /* SelectFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */; };
 		DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE041AD12096758B005271E1 /* SelectFormTableViewCell.xib */; };
 		DE041AD52096E759005271E1 /* NSObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD42096E759005271E1 /* NSObjectProtocol.swift */; };
@@ -72,6 +73,7 @@
 		2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE02EC7620A5E91C00AACD69 /* TutorialDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialDetailViewController.swift; sourceTree = "<group>"; };
 		DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFormTableViewCell.swift; sourceTree = "<group>"; };
 		DE041AD12096758B005271E1 /* SelectFormTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectFormTableViewCell.xib; sourceTree = "<group>"; };
 		DE041AD42096E759005271E1 /* NSObjectProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocol.swift; sourceTree = "<group>"; };
@@ -397,8 +399,9 @@
 		DEE53CFE1FFD1C850097C7B2 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
 				DEE53D031FFD21FF0097C7B2 /* CardIntroductionViewController.swift */,
+				DE02EC7620A5E91C00AACD69 /* TutorialDetailViewController.swift */,
+				DEE53D011FFD1D2D0097C7B2 /* TutorialViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
+				DE02EC7720A5E91C00AACD69 /* TutorialDetailViewController.swift in Sources */,
 				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
 				DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */,
