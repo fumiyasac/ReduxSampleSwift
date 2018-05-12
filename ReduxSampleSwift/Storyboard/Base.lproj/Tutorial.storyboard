@@ -164,5 +164,31 @@
             </objects>
             <point key="canvasLocation" x="1593" y="705"/>
         </scene>
+        <!--Tutorial Detail View Controller-->
+        <scene sceneID="dfD-j6-vfC">
+            <objects>
+                <viewController id="VMv-lQ-hp3" customClass="TutorialDetailViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xgK-UL-QaG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DKT-Bs-wae">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DKT-Bs-wae" firstAttribute="top" secondItem="xgK-UL-QaG" secondAttribute="top" id="4AA-z1-10g"/>
+                            <constraint firstItem="4wi-Pc-NSq" firstAttribute="trailing" secondItem="DKT-Bs-wae" secondAttribute="trailing" id="94m-EY-pL7"/>
+                            <constraint firstItem="DKT-Bs-wae" firstAttribute="leading" secondItem="4wi-Pc-NSq" secondAttribute="leading" id="ULA-2p-cLD"/>
+                            <constraint firstItem="4wi-Pc-NSq" firstAttribute="bottom" secondItem="DKT-Bs-wae" secondAttribute="bottom" id="cjv-0f-fpH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4wi-Pc-NSq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4P-Nc-yl9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2306" y="705"/>
+        </scene>
     </scenes>
 </document>
