@@ -26,8 +26,8 @@ class InitialSettingViewController: UIViewController {
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
 
-        // 現在のユーザーステータスのアクション(ReSwift)を実行する
-        executeCurrentStatusActions()
+        // 現在のユーザーステータスを反映するActionCreatorを実行する
+        InitialSettingActionCreator.setCurrentUserStatus()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -49,32 +49,6 @@ class InitialSettingViewController: UIViewController {
     }
     
     // MARK: - Private Function
-
-    private func executeCurrentStatusActions() {
-
-        // アプリインストール日時の取得
-        var installAppDate: Date
-        if let targetInstallAppDate = InitialSetting.getInstallAppDate() {
-            installAppDate = targetInstallAppDate
-        } else {
-            installAppDate = Date()
-            InitialSetting.setInstallAppDate(date: installAppDate)
-        }
-
-        // チュートリアルの終了判定の取得
-        let isFinishedTutorial = InitialSetting.getIsFinishedTutorial()
-
-        // ユーザー登録の終了判定の取得
-        let isFinishedUserSetting = UserSetting.isFinishedUserSetting()
-        if let userSetting = UserSetting.getUserSetting() {
-            appStore.dispatch(UserSettingState.userSettingAction.setCreatedUserSetting(userSetting: userSetting))
-        }
-
-        // 現在の初期設定状態を反映するアクションの実行
-        appStore.dispatch(TutorialState.tutorialAction.setInstallAppDate(date: installAppDate))
-        appStore.dispatch(TutorialState.tutorialAction.setIsFinishedTutorial(result: isFinishedTutorial))
-        appStore.dispatch(TutorialState.tutorialAction.setIsFinishedUserSetting(result: isFinishedUserSetting))
-    }
 
     private func chooseNextScreen() {
 
