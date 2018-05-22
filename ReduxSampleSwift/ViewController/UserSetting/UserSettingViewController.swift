@@ -89,40 +89,34 @@ class UserSettingViewController: UIViewController {
     // ユーザーアンケート情報を登録する際に実行されるアクション
     @objc private func userSettingSubmitButtonTapped() {
 
-        // ユーザーアンケート情報を登録する
-        UserSetting.addUserSetting(userSetting: userSettingEntity)
-
-        // setIsFinishedUserSettingアクション(ReSwift)を実行する
-        let updateIsFinishedUserSettingAction = TutorialState.tutorialAction.setIsFinishedUserSetting(result: true)
-        appStore.dispatch(updateIsFinishedUserSettingAction)
+        // ユーザーアンケート情報を登録するActionCreatorを実行する
+        UserSettingActionCreator.submitUserSetting(userSetting: userSettingEntity)
     }
 
     // 郵便番号の値が更新された際に実行されるアクション
     @objc private func postalCodeValueChanged(sender: UITextField) {
-        if let postalCode = sender.text {
 
-            // setPostalCodeアクション(ReSwift)を実行する
-            let setPostalCodeAction = UserSettingState.userSettingAction.setPostalCode(postalCode: postalCode)
-            appStore.dispatch(setPostalCodeAction)
+        // 郵便番号の変更を反映するActionCreatorを実行する
+        if let postalCode = sender.text {
+            UserSettingActionCreator.changePostalCodeInput(postalCode: postalCode)
         }
     }
 
     // ニックネームの値が更新された際に実行されるアクション
     @objc private func nickNameValueChanged(sender: UITextField) {
-        if let nickName = sender.text {
 
-            // setNickNameアクション(ReSwift)を実行する
-            let setNickNameAction = UserSettingState.userSettingAction.setNickName(nickName: nickName)
-            appStore.dispatch(setNickNameAction)
+        // ニックネームの変更を反映するActionCreatorを実行する
+        if let nickName = sender.text {
+            UserSettingActionCreator.changeNickNameInput(nickName: nickName)
         }
     }
 
     // 性別の値を更新した際に実行されるアクション
     @objc private func genderSegmentedControlValueChanged(sender: UISegmentedControl) {
 
-        // setGenderアクション(ReSwift)を実行する
-        let setGenderAction = UserSettingState.userSettingAction.setGender(gender: sender.selectedSegmentIndex)
-        appStore.dispatch(setGenderAction)
+        // 性別の選択変更を反映するActionCreatorを実行する
+        let gender = sender.selectedSegmentIndex
+        UserSettingActionCreator.changeGenderSelect(gender: gender)
     }
 
     @objc private func toolbarCloseButtonTapped() {
@@ -210,16 +204,18 @@ class UserSettingViewController: UIViewController {
     // MARK: - Fileprivate Function
 
     fileprivate func revertFormScrollViewState() {
-        let setKeyboardIsShownAction = UserSettingState.userSettingAction.setKeyboardIsShown(result: false)
-        appStore.dispatch(setKeyboardIsShownAction)
+
+        // キーボード表示のステータス変更を反映するActionCreatorを実行する
+        UserSettingActionCreator.hideKeyboardStatus()
 
         formScrollView.isScrollEnabled = true
         view.endEditing(false)
     }
 
     fileprivate func changeFormScrollViewState(offsetY: CGFloat) {
-        let setKeyboardIsShownAction = UserSettingState.userSettingAction.setKeyboardIsShown(result: true)
-        appStore.dispatch(setKeyboardIsShownAction)
+
+        // キーボード表示のステータス変更を反映するActionCreatorを実行する
+        UserSettingActionCreator.showKeyboardStatus()
 
         formScrollView.isScrollEnabled = false
         UIView.animate(withDuration: 0.16, animations: {
@@ -259,7 +255,6 @@ extension UserSettingViewController: StoreSubscriber {
 
         // アンケート回答登録ボタンの状態を反映する
         updateUserSettingSubmitButtonStatus(userSettingState: state.userSettingState)
-
     }
 
     // MARK: - Private Function
@@ -344,9 +339,10 @@ extension UserSettingViewController: UITextViewDelegate {
 
     // 自由入力項目の値が更新された際に実行されるアクション
     func textViewDidChange(_ textView: UITextView) {
+
+        // 自由入力項目の変更を反映するActionCreatorを実行する
         if let freeWord = textView.text {
-            let setFreeWordAction = UserSettingState.userSettingAction.setFreeWord(freeWord: freeWord)
-            appStore.dispatch(setFreeWordAction)
+            UserSettingActionCreator.changeFreeWordInput(freeWord: freeWord)
         }
     }
 }
@@ -398,19 +394,17 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
         switch tableView.tag {
 
         case tableViewType.residentPeriod.rawValue:
-            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
 
-            // setSelectedResidentPeriodアクション(ReSwift)を実行する
-            let selectedResidentPeriodAction = UserSettingState.userSettingAction.setSelectedResidentPeriod(residentPeriod: residentPeriod.getStatusCode())
-            appStore.dispatch(selectedResidentPeriodAction)
+            // お住まいの年数の選択変更を反映するActionCreatorを実行する
+            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
+            UserSettingActionCreator.changeResidentPeriodSelect(residentPeriod: residentPeriod)
             return
 
         case tableViewType.age.rawValue:
-            let age = SelectedAgeEnum.getAll()[indexPath.row]
 
-            // setSelectedAgeアクション(ReSwift)を実行する
-            let selectedAgeAction = UserSettingState.userSettingAction.setSelectedAge(age: age.getStatusCode())
-            appStore.dispatch(selectedAgeAction)
+            // 年齢の選択変更を反映するActionCreatorを実行する
+            let age = SelectedAgeEnum.getAll()[indexPath.row]
+            UserSettingActionCreator.changeAgeSelect(age: age)
             return
 
         default:

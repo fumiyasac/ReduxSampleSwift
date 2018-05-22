@@ -64,12 +64,8 @@ class TutorialViewController: UIViewController {
     // 紹介コンテンツを終了するボタンをタップした際のアクションの設定
     @objc private func tutorialFinishButtonTapped() {
 
-        // チュートリアルが完了したことを記録する
-        InitialSetting.setIsFinishedTutorial(result: true)
-
-        // setFinishTutorialFlagアクション(ReSwift)を実行する
-        let updateIsFinishTutorialAction = TutorialState.tutorialAction.setIsFinishedTutorial(result: true)
-        appStore.dispatch(updateIsFinishTutorialAction)
+        // チュートリアル完了時のActionCreatorを実行する
+        TutorialActionCreator.finishTutorial()
     }
 
     // この画面のナビゲーションバーの設定
@@ -229,9 +225,8 @@ extension TutorialViewController: UIPageViewControllerDelegate, UIPageViewContro
                 // 受け取ったインデックス値を元にコンテンツ表示を更新する
                 let index = targetViewController.view.tag
 
-                // setCurrentPageViewControllerIndexアクション(ReSwift)を実行する
-                let pageViewControllerAction = TutorialState.tutorialAction.setCurrentPageViewControllerIndex(index: index)
-                appStore.dispatch(pageViewControllerAction)
+                // 現在ページインデックスを更新するActionCreatorを実行する
+                TutorialActionCreator.setCurrentPage(index: index)
             }
         }
     }
