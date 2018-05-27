@@ -1,15 +1,14 @@
 //
-//  MainViewController.swift
+//  NewsDetailViewController.swift
 //  ReduxSampleSwift
 //
-//  Created by 酒井文也 on 2017/12/12.
-//  Copyright © 2017年 酒井文也. All rights reserved.
+//  Created by 酒井文也 on 2018/05/27.
+//  Copyright © 2018年 酒井文也. All rights reserved.
 //
 
 import UIKit
-import ReSwift
 
-class MainViewController: UIViewController {
+class NewsDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,4 +18,3 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
-
