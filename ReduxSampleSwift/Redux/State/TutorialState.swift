@@ -23,7 +23,4 @@ struct TutorialState: ReSwift.StateType {
 
     // アプリインストール日時（初期値: nil）
     var installAppDate: Date? = nil
-
-    // 詳細コンテンツの表示状態（初期値: false）
-    var isOpenedDetail: Bool = false
 }
