@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
-  - DOFavoriteButton (0.0.4)
+  - CalculateCalendarLogic (0.1.6)
   - FontAwesome.swift (1.2.0)
   - Hero (1.1.0)
   - KYNavigationProgress (2.0.2)
@@ -21,44 +21,36 @@ PODS:
   - RealmSwift (3.3.0):
     - Realm (= 3.3.0)
   - ReSwift (4.0.1)
-  - SkeletonView (1.1.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.0.0)
-  - ViewAnimator (1.0.5)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
-  - DOFavoriteButton (from `https://github.com/fumiyasac/DOFavoriteButton`, branch `master`)
+  - CalculateCalendarLogic
   - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-4.0`)
   - Hero
   - KYNavigationProgress
   - PromiseKit
   - RealmSwift
   - ReSwift
-  - SkeletonView
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
-  - ViewAnimator
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
+    - CalculateCalendarLogic
     - Hero
     - KYNavigationProgress
     - PromiseKit
     - Realm
     - RealmSwift
     - ReSwift
-    - SkeletonView
     - SwiftyJSON
-    - ViewAnimator
 
 EXTERNAL SOURCES:
-  DOFavoriteButton:
-    :branch: master
-    :git: https://github.com/fumiyasac/DOFavoriteButton
   FontAwesome.swift:
     :branch: swift-4.0
     :git: https://github.com/thii/FontAwesome.swift
@@ -66,9 +58,6 @@ EXTERNAL SOURCES:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
-  DOFavoriteButton:
-    :commit: 3a237a9eda88018ef36eb7e72bb0cc788ce62d37
-    :git: https://github.com/fumiyasac/DOFavoriteButton
   FontAwesome.swift:
     :commit: ee1bf6b3db08f969ec7508c0feca3bac0d8b96ff
     :git: https://github.com/thii/FontAwesome.swift
@@ -79,7 +68,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  DOFavoriteButton: 866e15af173d2dd5233971a1f657a5f31d2491d5
+  CalculateCalendarLogic: 81b16c24e2b7273fffb03fc29d0c8d1800fd3c9e
   FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
   Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
@@ -87,11 +76,9 @@ SPEC CHECKSUMS:
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
   RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  SkeletonView: 041053e904504e7d8db83df166e599be75659fe1
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  ViewAnimator: d87d691fbcaf994db7ee8fc632afa3073bd3b851
 
-PODFILE CHECKSUM: 73becbd436cfcd7acfb07bdb45c272c94db2c813
+PODFILE CHECKSUM: a2df0240c5fdbfc8adb8ba594856dcd73e48f5f1
 
 COCOAPODS: 1.5.0

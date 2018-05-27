@@ -120,12 +120,6 @@
                                     <constraint firstAttribute="height" constant="58" id="4mB-Jm-jDJ"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カレンダー (日記をつける) :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-Rb-x4c">
-                                <rect key="frame" x="12" y="14" width="177" height="14"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUV-sJ-Vxb">
                                 <rect key="frame" x="0.0" y="100" width="375" height="33"/>
                                 <subviews>
@@ -143,20 +137,49 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fbR-Hh-DrF" secondAttribute="trailing" constant="12" id="pgC-Ny-6gr"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrF-zm-qgm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カレンダー :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-Rb-x4c">
+                                        <rect key="frame" x="12" y="14" width="77.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018年5月の一覧" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8g-3Y-Aeq">
+                                        <rect key="frame" x="243" y="14" width="120" height="14"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="q8g-3Y-Aeq" firstAttribute="top" secondItem="KrF-zm-qgm" secondAttribute="top" constant="14" id="0Hu-ai-Z8l"/>
+                                    <constraint firstAttribute="bottom" secondItem="q8g-3Y-Aeq" secondAttribute="bottom" constant="14" id="138-Si-S3r"/>
+                                    <constraint firstAttribute="height" constant="42" id="3Z8-qg-8kZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Upk-Rb-x4c" secondAttribute="trailing" constant="12" id="4nk-Mf-d05"/>
+                                    <constraint firstItem="Upk-Rb-x4c" firstAttribute="leading" secondItem="KrF-zm-qgm" secondAttribute="leading" constant="12" id="9fX-Ky-x6E"/>
+                                    <constraint firstItem="q8g-3Y-Aeq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KrF-zm-qgm" secondAttribute="leading" constant="12" id="CYP-V2-Hng"/>
+                                    <constraint firstAttribute="bottom" secondItem="Upk-Rb-x4c" secondAttribute="bottom" constant="14" id="Cq0-E5-0PG"/>
+                                    <constraint firstAttribute="trailing" secondItem="q8g-3Y-Aeq" secondAttribute="trailing" constant="12" id="dsP-Ba-oBP"/>
+                                    <constraint firstItem="Upk-Rb-x4c" firstAttribute="top" secondItem="KrF-zm-qgm" secondAttribute="top" constant="14" id="trz-gR-btD"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fQM-cX-sjh" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" id="1C2-Ob-nBs"/>
                             <constraint firstAttribute="trailing" secondItem="fQM-cX-sjh" secondAttribute="trailing" id="1o7-Sa-pPG"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Upk-Rb-x4c" secondAttribute="trailing" constant="12" id="BQi-Sn-hEe"/>
+                            <constraint firstItem="fQM-cX-sjh" firstAttribute="top" secondItem="KrF-zm-qgm" secondAttribute="bottom" id="2pH-5V-7uR"/>
+                            <constraint firstItem="KrF-zm-qgm" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" id="65t-QQ-39t"/>
                             <constraint firstItem="LUV-sJ-Vxb" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" id="KPO-yI-0so"/>
+                            <constraint firstAttribute="trailing" secondItem="KrF-zm-qgm" secondAttribute="trailing" id="Mpc-v9-3ec"/>
                             <constraint firstItem="LUV-sJ-Vxb" firstAttribute="top" secondItem="fQM-cX-sjh" secondAttribute="bottom" id="NkI-0V-vwH"/>
                             <constraint firstAttribute="bottom" secondItem="LUV-sJ-Vxb" secondAttribute="bottom" id="YF1-ES-xI6"/>
+                            <constraint firstItem="KrF-zm-qgm" firstAttribute="top" secondItem="ngn-c4-YuW" secondAttribute="top" id="Ybh-Lm-RFH"/>
                             <constraint firstAttribute="trailing" secondItem="LUV-sJ-Vxb" secondAttribute="trailing" id="dwc-VX-O3S"/>
-                            <constraint firstItem="fQM-cX-sjh" firstAttribute="top" secondItem="Upk-Rb-x4c" secondAttribute="bottom" constant="14" id="jqR-IF-xxS"/>
-                            <constraint firstItem="Upk-Rb-x4c" firstAttribute="top" secondItem="ngn-c4-YuW" secondAttribute="top" constant="14" id="nAi-BQ-M7l"/>
                             <constraint firstAttribute="bottom" secondItem="LUV-sJ-Vxb" secondAttribute="bottom" id="ooo-Qu-ogO"/>
-                            <constraint firstItem="Upk-Rb-x4c" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" constant="12" id="rRU-kh-kh0"/>
                             <constraint firstItem="LUV-sJ-Vxb" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" id="yUf-Be-zcW"/>
                             <constraint firstAttribute="trailing" secondItem="LUV-sJ-Vxb" secondAttribute="trailing" id="z1s-ZX-srf"/>
                             <constraint firstItem="fQM-cX-sjh" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" id="zPb-AL-mKJ"/>
@@ -169,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8r-iw-4v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="-419"/>
+            <point key="canvasLocation" x="1156" y="-419.64017991004499"/>
         </scene>
         <!--DailyMemo-->
         <scene sceneID="Ocz-G6-8lq">
@@ -177,7 +200,7 @@
                 <viewControllerPlaceholder storyboardName="DailyMemo" id="9C6-tk-ZvP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5a-LD-rml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2121" y="-372"/>
+            <point key="canvasLocation" x="2122" y="-420"/>
         </scene>
         <!--MessageDetail-->
         <scene sceneID="hu5-aW-Gbo">
@@ -185,7 +208,7 @@
                 <viewControllerPlaceholder storyboardName="MessageDetail" id="Zqc-Fe-fwJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64o-nv-g5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="-314"/>
+            <point key="canvasLocation" x="2140" y="-363"/>
         </scene>
         <!--Pickup Message View Controller-->
         <scene sceneID="4oO-AQ-DPB">
@@ -360,7 +383,7 @@
                 <viewControllerPlaceholder storyboardName="NewsDetail" id="aTA-rz-7Y2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xi7-NT-ZQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2122" y="-254"/>
+            <point key="canvasLocation" x="2124" y="-301"/>
         </scene>
         <!--English News View Controller-->
         <scene sceneID="sSI-PH-GgS">

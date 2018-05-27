@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9A30BB558A423E98624A7748E25A464"
-               BlueprintName = "ReSwift"
+               BlueprintIdentifier = "E271D645C5A8B4CD071570B76CD56E9C"
+               BlueprintName = "CalculateCalendarLogic"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ReSwift.framework">
+               BuildableName = "CalculateCalendarLogic.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
