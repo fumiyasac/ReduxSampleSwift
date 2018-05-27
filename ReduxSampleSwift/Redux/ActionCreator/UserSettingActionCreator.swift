@@ -12,13 +12,13 @@ struct UserSettingActionCreator {}
 
 extension UserSettingActionCreator {
 
-    // キーボード表示のステータス変更を反映する
-
+    // キーボード表示時のステータス変更を反映する
     static func showKeyboardStatus() {
         let setKeyboardIsShownAction = UserSettingState.userSettingAction.setKeyboardIsShown(result: true)
         appStore.dispatch(setKeyboardIsShownAction)
     }
 
+    // キーボード非表示時のステータス変更を反映する
     static func hideKeyboardStatus() {
         let setKeyboardIsShownAction = UserSettingState.userSettingAction.setKeyboardIsShown(result: false)
         appStore.dispatch(setKeyboardIsShownAction)

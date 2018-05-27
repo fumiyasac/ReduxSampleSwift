@@ -37,7 +37,9 @@ extension TutorialReducer {
         }
 
         // Debug.
+        print("---")
         print("TutorialStateが更新されました。")
+        print("---\n\n")
 
         return state
     }
