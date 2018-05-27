@@ -70,7 +70,7 @@ class TutorialViewController: UIViewController {
 
     // この画面のナビゲーションバーの設定
     private func setupNavigationBar() {
-        self.navigationItem.title = "「ご近所情報検索」へようこそ!"
+        self.navigationItem.title = "「サンプルアプリ」へようこそ!"
     }
 
     // この画面のナビゲーションバー下アニメーションの設定
