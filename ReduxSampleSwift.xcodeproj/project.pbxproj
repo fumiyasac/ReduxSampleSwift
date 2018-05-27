@@ -19,6 +19,7 @@
 		DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A020B27CE30013248E /* TutorialActionCreator.swift */; };
 		DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A220B392600013248E /* InitialSettingActionCreator.swift */; };
 		DE2766A520B395240013248E /* UserSettingActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A420B395230013248E /* UserSettingActionCreator.swift */; };
+		DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A920BA71B50013248E /* ActionLoggingMiddleware.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
 		DE6565082094D8B4005745D2 /* InitialSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6565062094D8B4005745D2 /* InitialSetting.storyboard */; };
@@ -87,6 +88,7 @@
 		DE2766A020B27CE30013248E /* TutorialActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialActionCreator.swift; sourceTree = "<group>"; };
 		DE2766A220B392600013248E /* InitialSettingActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingActionCreator.swift; sourceTree = "<group>"; };
 		DE2766A420B395230013248E /* UserSettingActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingActionCreator.swift; sourceTree = "<group>"; };
+		DE2766A920BA71B50013248E /* ActionLoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLoggingMiddleware.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE6565072094D8B4005745D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InitialSetting.storyboard; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			path = ActionCreator;
 			sourceTree = "<group>";
 		};
+		DE2766A820BA70AE0013248E /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				DE2766A920BA71B50013248E /* ActionLoggingMiddleware.swift */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
 		DE4D414720623FEB0038CC01 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +309,7 @@
 		DE85D2B11FE6A81C0017C3AF /* Redux */ = {
 			isa = PBXGroup;
 			children = (
+				DE2766A820BA70AE0013248E /* Middleware */,
 				DE27669F20B279740013248E /* ActionCreator */,
 				DEE53CE91FF4EA2A0097C7B2 /* Action */,
 				DEE53CEA1FF4EA360097C7B2 /* Reducer */,
@@ -632,6 +643,7 @@
 				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
 				DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */,
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
+				DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */,
 				DE65650B2095C8A8005745D2 /* UserSetting.swift in Sources */,
 				DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */,
 				DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */,

@@ -54,7 +54,9 @@ extension UserSettingReducer {
         }
 
         // Debug.
+        print("---")
         print("UserSettingStateが更新されました。")
+        print("---\n\n")
 
         return state
     }

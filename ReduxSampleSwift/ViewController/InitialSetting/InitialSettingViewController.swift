@@ -73,16 +73,18 @@ extension InitialSettingViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("TutorialStateの変更をInitialSettingViewControllerで受け取りました。")
-        print("==============")
+        print("---")
+        print("TutorialState logging #start: TutorialStateの変更をInitialSettingViewControllerで受け取りました。")
         print(state.tutorialState)
-        print("--------------")
-
+        print("TutorialState logging #end:")
+        print("---\n\n")
+        
         // Debug.
-        print("UserSettingStateの変更をInitialSettingViewControllerで受け取りました。")
-        print("==============")
+        print("---")
+        print("UserSettingState logging #start: UserSettingStateの変更をInitialSettingViewControllerで受け取りました。")
         print(state.userSettingState)
-        print("--------------")
+        print("UserSettingState logging #end:")
+        print("---\n\n")
 
         // 現在のチュートリアルの完了状態＆ユーザー登録の完了状態を取得する
         isFinishedUserSetting = state.tutorialState.isFinishedUserSetting

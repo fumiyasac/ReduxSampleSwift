@@ -10,7 +10,7 @@ import UIKit
 import ReSwift
 
 // 全てのStateを一元管理で管理するStoreを定義
-let appStore = Store(reducer: appReduce, state: AppState())
+let appStore = Store(reducer: appReduce, state: AppState(), middleware: [ActionLoggingMiddleware])
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

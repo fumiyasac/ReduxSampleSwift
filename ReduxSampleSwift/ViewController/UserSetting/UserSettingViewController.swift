@@ -232,10 +232,11 @@ extension UserSettingViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("TutorialStateの変更をUserSettingViewControllerで受け取りました。")
-        print("==============")
+        print("---")
+        print("TutorialState logging #start: TutorialStateの変更をUserSettingViewControllerで受け取りました。")
         print(state.tutorialState)
-        print("--------------")
+        print("TutorialState logging #end:")
+        print("---\n")
 
         // アンケート回答登録が完了したらメイン画面へ遷移する
         let isFinishedUserSetting = state.tutorialState.isFinishedUserSetting
@@ -245,10 +246,11 @@ extension UserSettingViewController: StoreSubscriber {
         }
 
         // Debug.
-        print("UserSettingStateの変更をUserSettingViewControllerで受け取りました。")
-        print("==============")
+        print("---")
+        print("UserSettingState logging #start: UserSettingStateの変更をUserSettingViewControllerで受け取りました。")
         print(state.userSettingState)
-        print("--------------")
+        print("UserSettingState logging #end:")
+        print("---\n")
 
         // userSettingStateの値を反映する
         setUserSettingStateValues(userSettingState: state.userSettingState)
