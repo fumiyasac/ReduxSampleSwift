@@ -18,12 +18,10 @@ target 'ReduxSampleSwift' do
   pod 'SwiftyJSON'
 
   # UI構築用ライブラリ
-  pod 'ViewAnimator'
-  pod 'SkeletonView'
+  pod 'CalculateCalendarLogic'
   pod 'Hero'
   pod 'SVProgressHUD',     :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
-  pod 'FontAwesome.swift', :git => 'https://github.com/thii/FontAwesome.swift',     :branch => 'swift-4.0'
-  pod 'DOFavoriteButton',  :git => 'https://github.com/fumiyasac/DOFavoriteButton', :branch => 'master'
+  pod 'FontAwesome.swift', :git => 'https://github.com/thii/FontAwesome.swift', :branch => 'swift-4.0'
   pod 'KYNavigationProgress'
 
 #  target 'ReduxSampleSwiftTests' do

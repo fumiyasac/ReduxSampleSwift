@@ -30,6 +30,7 @@
 		DE2766C420BAF9B60013248E /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */; };
 		DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2766C520BAFD470013248E /* NewsDetail.storyboard */; };
 		DE2766CA20BAFDC40013248E /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */; };
+		DE2766CD20BAFF620013248E /* CalendarButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766CC20BAFF620013248E /* CalendarButtons.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
 		DE6565082094D8B4005745D2 /* InitialSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6565062094D8B4005745D2 /* InitialSetting.storyboard */; };
@@ -108,6 +109,7 @@
 		DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		DE2766C620BAFD470013248E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewsDetail.storyboard; sourceTree = "<group>"; };
 		DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		DE2766CC20BAFF620013248E /* CalendarButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButtons.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		DE6565072094D8B4005745D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InitialSetting.storyboard; sourceTree = "<group>"; };
@@ -273,6 +275,14 @@
 				DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */,
 			);
 			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		DE2766CB20BAFEE90013248E /* CalendarButtons */ = {
+			isa = PBXGroup;
+			children = (
+				DE2766CC20BAFF620013248E /* CalendarButtons.swift */,
+			);
+			path = CalendarButtons;
 			sourceTree = "<group>";
 		};
 		DE4D414720623FEB0038CC01 /* Protocol */ = {
@@ -461,6 +471,7 @@
 		DEE53CF11FFB84430097C7B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE2766CB20BAFEE90013248E /* CalendarButtons */,
 				DE041ACF20967548005271E1 /* SelectFormTableViewCell */,
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
 			);
@@ -641,7 +652,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/DOFavoriteButton/DOFavoriteButton.framework",
+				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KYNavigationProgress/KYNavigationProgress.framework",
@@ -650,15 +661,13 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DOFavoriteButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalculateCalendarLogic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYNavigationProgress.framework",
@@ -667,9 +676,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -722,6 +729,7 @@
 				DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
+				DE2766CD20BAFF620013248E /* CalendarButtons.swift in Sources */,
 				DE2766A520B395240013248E /* UserSettingActionCreator.swift in Sources */,
 				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
 				DEE53D021FFD1D2D0097C7B2 /* TutorialViewController.swift in Sources */,
