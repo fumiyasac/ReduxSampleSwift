@@ -14,6 +14,8 @@ class CalendarButtonView: CustomViewBase {
 
     @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak private var calendarButtonBackgroundView: UIView!
+    @IBOutlet weak private var calendarButtonWeekdayLabel: UILabel!
+    @IBOutlet weak private var calendarButtonDayLabel: UILabel!
 
     static let CALENDAR_BUTTON_VIEW_WIDTH: CGFloat = 58
 
@@ -21,7 +23,7 @@ class CalendarButtonView: CustomViewBase {
     private let buttonCornerRadius: CGFloat = 23
 
     // MARK: - Initializer
-
+    
     required init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -73,12 +75,11 @@ class CalendarButtonView: CustomViewBase {
         let shortWeekday = shortWeekdaySymbols[weekdayIndex]
 
         // 必要な値をセットする（※MEMO: 「button.tag = day」となるように定義しておく）
-        calendarButton.setTitle(shortWeekday + "\n" + String(day), for: UIControlState())
         calendarButton.tag = day
-        calendarButton.titleLabel!.font = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 12)!
-        calendarButton.titleLabel!.numberOfLines = 2
-        calendarButton.titleLabel!.textAlignment = .center
-        calendarButton.tintColor = UIColor.white
+        calendarButtonWeekdayLabel.text = shortWeekday
+        calendarButtonWeekdayLabel.font = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 10)!
+        calendarButtonDayLabel.text     = String(day)
+        calendarButtonDayLabel.font     = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 13)!
         calendarButtonBackgroundView.backgroundColor = getColorOfCalendarDay(year: year, month: month, day: day, weekdayIndex: weekdayIndex)
     }
 
