@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="coY-0h-6GF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="coY-0h-6GF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -185,8 +185,10 @@
                             <constraint firstItem="fQM-cX-sjh" firstAttribute="leading" secondItem="ngn-c4-YuW" secondAttribute="leading" id="zPb-AL-mKJ"/>
                             <constraint firstAttribute="trailing" secondItem="fQM-cX-sjh" secondAttribute="trailing" id="ztE-Id-r92"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y91-Oe-T6k"/>
                     </view>
                     <connections>
+                        <outlet property="monthlyCalendarScrollView" destination="fQM-cX-sjh" id="Ot5-re-xwS"/>
                         <segue destination="9C6-tk-ZvP" kind="presentation" id="nQY-w5-lpF"/>
                     </connections>
                 </viewController>
@@ -290,6 +292,7 @@
                             <constraint firstItem="lxQ-cd-OVP" firstAttribute="top" secondItem="jQO-oL-mVv" secondAttribute="bottom" constant="14" id="fkr-WF-2Ki"/>
                             <constraint firstAttribute="trailing" secondItem="lxQ-cd-OVP" secondAttribute="trailing" id="wu5-BI-ci5"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Po-zD-ysL"/>
                     </view>
                     <connections>
                         <segue destination="Zqc-Fe-fwJ" kind="presentation" id="YWQ-Hl-J6V"/>
@@ -371,6 +374,7 @@
                             <constraint firstAttribute="bottom" secondItem="H0W-pa-7vf" secondAttribute="bottom" id="eyC-1w-wOq"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BdS-pv-n3I" secondAttribute="trailing" constant="12" id="gy9-Fj-FAF"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kgV-k5-HPr"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4B-xx-lrB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -415,6 +419,7 @@
                             <constraint firstItem="pwi-SD-hUk" firstAttribute="top" secondItem="YqJ-vH-liQ" secondAttribute="bottom" constant="14" id="QWe-zo-Z2U"/>
                             <constraint firstItem="YqJ-vH-liQ" firstAttribute="top" secondItem="U3V-5O-Jd7" secondAttribute="top" constant="14" id="X6j-Jd-bxm"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="oI2-5Y-LfI"/>
                     </view>
                     <connections>
                         <segue destination="aTA-rz-7Y2" kind="presentation" id="N39-Sv-7ys"/>

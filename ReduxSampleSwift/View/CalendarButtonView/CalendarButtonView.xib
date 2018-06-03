@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarButtonView" customModule="ReduxSampleSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="calendarButton" destination="fJ5-Mw-2IQ" id="ack-cS-UsG"/>
+                <outlet property="calendarButtonBackgroundView" destination="D3I-b2-S6r" id="Umd-6w-GfK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3I-b2-S6r">
+                    <rect key="frame" x="6" y="6" width="46" height="46"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJ5-Mw-2IQ">
+                            <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="fJ5-Mw-2IQ" firstAttribute="top" secondItem="D3I-b2-S6r" secondAttribute="top" id="4cs-IN-yRt"/>
+                        <constraint firstAttribute="height" constant="46" id="Cue-9D-yn0"/>
+                        <constraint firstAttribute="trailing" secondItem="fJ5-Mw-2IQ" secondAttribute="trailing" id="H38-fs-wjZ"/>
+                        <constraint firstAttribute="bottom" secondItem="fJ5-Mw-2IQ" secondAttribute="bottom" id="TrP-ql-0qq"/>
+                        <constraint firstItem="fJ5-Mw-2IQ" firstAttribute="leading" secondItem="D3I-b2-S6r" secondAttribute="leading" id="Xgz-Ez-fgt"/>
+                        <constraint firstAttribute="width" constant="46" id="g4T-W6-9kV"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="D3I-b2-S6r" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OIW-YQ-bGA"/>
+                <constraint firstItem="D3I-b2-S6r" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="uOa-ol-ycn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>
