@@ -115,7 +115,6 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQM-cX-sjh">
                                 <rect key="frame" x="0.0" y="42" width="375" height="58"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="4mB-Jm-jDJ"/>
                                 </constraints>
@@ -188,6 +187,7 @@
                         <viewLayoutGuide key="safeArea" id="Y91-Oe-T6k"/>
                     </view>
                     <connections>
+                        <outlet property="currentMonthLabel" destination="q8g-3Y-Aeq" id="g6a-f6-4TN"/>
                         <outlet property="monthlyCalendarScrollView" destination="fQM-cX-sjh" id="Ot5-re-xwS"/>
                         <segue destination="9C6-tk-ZvP" kind="presentation" id="nQY-w5-lpF"/>
                     </connections>
