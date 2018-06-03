@@ -13,9 +13,6 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let b = CalendarButtons.getCurrentCalendarButtonList()
-        print(b)
     }
 
     override func didReceiveMemoryWarning() {
