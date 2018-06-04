@@ -45,6 +45,9 @@
 		DE671B121FDFC75500B752CA /* ReduxSampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B111FDFC75500B752CA /* ReduxSampleSwiftTests.swift */; };
 		DE671B1D1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */; };
 		DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B41FE6AB2C0017C3AF /* AppState.swift */; };
+		DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */; };
+		DED8E96920C55B0300836CE4 /* PickupMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */; };
+		DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */; };
 		DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F32095F29F00694443 /* UserSettingViewController.swift */; };
 		DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F820965AED00694443 /* UserSettingAction.swift */; };
 		DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FA20965B4600694443 /* UserSettingState.swift */; };
@@ -132,6 +135,9 @@
 		DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxSampleSwiftUITests.swift; sourceTree = "<group>"; };
 		DE671B1E1FDFC75500B752CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE85D2B41FE6AB2C0017C3AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageFlowLayout.swift; sourceTree = "<group>"; };
+		DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupMessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEDC73F32095F29F00694443 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		DEDC73F820965AED00694443 /* UserSettingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingAction.swift; sourceTree = "<group>"; };
 		DEDC73FA20965B4600694443 /* UserSettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingState.swift; sourceTree = "<group>"; };
@@ -435,6 +441,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DED8E96220C43D9A00836CE4 /* PickupMessageFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */,
+			);
+			path = PickupMessageFlowLayout;
+			sourceTree = "<group>";
+		};
+		DED8E96520C55ABE00836CE4 /* PickupMessageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */,
+				DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */,
+			);
+			path = PickupMessageCollectionViewCell;
+			sourceTree = "<group>";
+		};
 		DEDC73F72095FECE00694443 /* UserSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,8 +501,10 @@
 			isa = PBXGroup;
 			children = (
 				DE5867FE20C3E5F700D1F78D /* CalendarButtonView */,
-				DE041ACF20967548005271E1 /* SelectFormTableViewCell */,
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
+				DED8E96520C55ABE00836CE4 /* PickupMessageCollectionViewCell */,
+				DED8E96220C43D9A00836CE4 /* PickupMessageFlowLayout */,
+				DE041ACF20967548005271E1 /* SelectFormTableViewCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -619,6 +644,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */,
 				DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */,
 				DE2766B920BAF0100013248E /* UserSetting.storyboard in Resources */,
 				DE671B071FDFC75400B752CA /* LaunchScreen.storyboard in Resources */,
@@ -722,6 +748,7 @@
 				DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */,
 				DE65650B2095C8A8005745D2 /* UserSetting.swift in Sources */,
 				DE2766B120BAAF2E0013248E /* GourmetShopViewController.swift in Sources */,
+				DED8E96920C55B0300836CE4 /* PickupMessageCollectionViewCell.swift in Sources */,
 				DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */,
 				DE58680820C3FCDE00D1F78D /* CalendarButtonModule.swift in Sources */,
 				DE2766B320BAAF4D0013248E /* EnglishNewsViewController.swift in Sources */,
@@ -752,6 +779,7 @@
 				DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */,
+				DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */,
 				DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */,
 				DE2766BD20BAF24B0013248E /* DailyMemoViewController.swift in Sources */,
 				DE2766AF20BAAEE30013248E /* PickupMessageViewController.swift in Sources */,

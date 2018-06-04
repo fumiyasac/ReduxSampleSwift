@@ -239,7 +239,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hM4-Gw-rpY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xd9-nH-UJ3">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xd9-nH-UJ3" customClass="PickupMessageFlowLayout" customModule="ReduxSampleSwift" customModuleProvider="target">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -295,6 +295,7 @@
                         <viewLayoutGuide key="safeArea" id="3Po-zD-ysL"/>
                     </view>
                     <connections>
+                        <outlet property="pickupMessageCollectionView" destination="hM4-Gw-rpY" id="lIz-dF-2hl"/>
                         <segue destination="Zqc-Fe-fwJ" kind="presentation" id="YWQ-Hl-J6V"/>
                     </connections>
                 </viewController>
