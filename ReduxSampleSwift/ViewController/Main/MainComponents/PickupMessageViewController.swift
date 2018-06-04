@@ -13,6 +13,8 @@ class PickupMessageViewController: UIViewController {
     
     @IBOutlet weak var pickupMessageCollectionView: UICollectionView!
 
+    fileprivate let pickupMessageCount = 5
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,13 +44,21 @@ extension PickupMessageViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return pickupMessageCount
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: PickupMessageCollectionViewCell.self, indexPath: indexPath)
+
+        // セルの内部にある「▶︎ Read Mode」のボタンを押下した際のアクション
+        cell.showPickupMessageAction = {
+            print("押されたセルのインデックス値:", indexPath.row)
+        }
         return cell
     }
+
+    // MEMO: 他にもこのようなメソッドもあるので随時活用してみてください。
+    // https://teratail.com/questions/16067
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
