@@ -11,6 +11,8 @@ import UIKit
 
 // Inspired by this repo
 // https://github.com/wusuowei/WTCarouselFlowLayout/blob/master/WTCarouselFlowLayout
+// 参考: UICollectionViewのレイアウトクラスをカスタマイズする方法
+// https://dev.classmethod.jp/smartphone/iphone/collection-view-layout-cell-snap/
 class PickupMessageFlowLayout: UICollectionViewFlowLayout {
 
     // 見た目の調整を行うためのプロパティ
