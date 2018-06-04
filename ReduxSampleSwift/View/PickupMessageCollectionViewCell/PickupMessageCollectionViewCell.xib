@@ -13,25 +13,72 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PickupMessageCollectionViewCell" customModule="ReduxSampleSwift" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-S9-Nvk">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neV-Sy-g1I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-S9-Nvk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="この部分にはタイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xN-2X-677">
+                                <rect key="frame" x="12" y="119" width="296" height="15"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000.00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-TZ-mD6">
+                                <rect key="frame" x="14" y="97" width="69" height="12"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n20-3R-nyh">
+                                <rect key="frame" x="224" y="144" width="84" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="K5P-5q-lUV"/>
+                                    <constraint firstAttribute="width" constant="84" id="xyt-uK-Tqe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="11"/>
+                                <state key="normal" title="▶︎ Read More">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qxI-S9-Nvk" firstAttribute="top" secondItem="neV-Sy-g1I" secondAttribute="top" id="4ll-ON-eDW"/>
+                            <constraint firstItem="n20-3R-nyh" firstAttribute="top" secondItem="0xN-2X-677" secondAttribute="bottom" constant="10" id="GFU-nq-KGz"/>
+                            <constraint firstAttribute="bottom" secondItem="qxI-S9-Nvk" secondAttribute="bottom" id="JSo-ca-kuo"/>
+                            <constraint firstItem="ATd-TZ-mD6" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" constant="14" id="Lkg-uX-RiX"/>
+                            <constraint firstItem="qxI-S9-Nvk" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" id="Ofb-21-qQE"/>
+                            <constraint firstAttribute="trailing" secondItem="n20-3R-nyh" secondAttribute="trailing" constant="12" id="Qc8-hH-pxD"/>
+                            <constraint firstItem="0xN-2X-677" firstAttribute="top" secondItem="ATd-TZ-mD6" secondAttribute="bottom" constant="10" id="T9Q-PE-QYa"/>
+                            <constraint firstItem="0xN-2X-677" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" constant="12" id="clV-I5-NUb"/>
+                            <constraint firstAttribute="trailing" secondItem="0xN-2X-677" secondAttribute="trailing" constant="12" id="gXr-hI-Fc5"/>
+                            <constraint firstAttribute="bottom" secondItem="n20-3R-nyh" secondAttribute="bottom" constant="8" id="gqj-wn-SYZ"/>
+                            <constraint firstAttribute="trailing" secondItem="qxI-S9-Nvk" secondAttribute="trailing" id="szp-Y8-JSF"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="qxI-S9-Nvk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0D3-3s-11G"/>
-                <constraint firstItem="qxI-S9-Nvk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EY8-kq-LBD"/>
-                <constraint firstAttribute="trailing" secondItem="qxI-S9-Nvk" secondAttribute="trailing" id="LJy-nq-Vrc"/>
-                <constraint firstAttribute="bottom" secondItem="qxI-S9-Nvk" secondAttribute="bottom" id="WYk-QJ-LHZ"/>
+                <constraint firstItem="neV-Sy-g1I" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H96-Ge-Yc3"/>
+                <constraint firstAttribute="trailing" secondItem="neV-Sy-g1I" secondAttribute="trailing" id="WRi-dX-W33"/>
+                <constraint firstItem="neV-Sy-g1I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ikY-65-JWr"/>
+                <constraint firstAttribute="bottom" secondItem="neV-Sy-g1I" secondAttribute="bottom" id="jTm-DB-m6E"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="pickupMessageButton" destination="n20-3R-nyh" id="dST-iq-N7f"/>
+                <outlet property="pickupMessageImageView" destination="qxI-S9-Nvk" id="vrn-s2-tXN"/>
+                <outlet property="pickupMessageWrappedView" destination="neV-Sy-g1I" id="ARA-cq-n04"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>
