@@ -322,8 +322,8 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iNu-F0-Fgo">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mhh-g0-IcL">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mhh-g0-IcL">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -377,6 +377,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kgV-k5-HPr"/>
                     </view>
+                    <connections>
+                        <outlet property="gourmetShopCollectionView" destination="iNu-F0-Fgo" id="LzY-iG-1hZ"/>
+                        <outlet property="shuffleShopButton" destination="kKO-nM-XfJ" id="2np-Sj-37y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4B-xx-lrB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

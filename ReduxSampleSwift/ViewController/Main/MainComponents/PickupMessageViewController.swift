@@ -72,7 +72,6 @@ extension PickupMessageViewController: UICollectionViewDelegateFlowLayout {
     
     // セルの垂直方向の余白(margin)を設定する
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 0
     }
 
