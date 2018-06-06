@@ -15,6 +15,8 @@
 		DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */; };
 		DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041ADE209DFAF5005271E1 /* AppConstants.swift */; };
 		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
+		DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */; };
+		DE2685F020C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */; };
 		DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A020B27CE30013248E /* TutorialActionCreator.swift */; };
 		DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A220B392600013248E /* InitialSettingActionCreator.swift */; };
 		DE2766A520B395240013248E /* UserSettingActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A420B395230013248E /* UserSettingActionCreator.swift */; };
@@ -99,6 +101,8 @@
 		DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE041ADE209DFAF5005271E1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
+		DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GourmetShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE2766A020B27CE30013248E /* TutorialActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialActionCreator.swift; sourceTree = "<group>"; };
 		DE2766A220B392600013248E /* InitialSettingActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialSettingActionCreator.swift; sourceTree = "<group>"; };
 		DE2766A420B395230013248E /* UserSettingActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingActionCreator.swift; sourceTree = "<group>"; };
@@ -232,6 +236,15 @@
 				DEE53CDE1FF4E28A0097C7B2 /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE2685EB20C83ADB00D50BCA /* GourmetShopCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */,
+				DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */,
+			);
+			path = GourmetShopCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		DE27669F20B279740013248E /* ActionCreator */ = {
@@ -502,6 +515,7 @@
 			children = (
 				DE5867FE20C3E5F700D1F78D /* CalendarButtonView */,
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
+				DE2685EB20C83ADB00D50BCA /* GourmetShopCollectionViewCell */,
 				DED8E96520C55ABE00836CE4 /* PickupMessageCollectionViewCell */,
 				DED8E96220C43D9A00836CE4 /* PickupMessageFlowLayout */,
 				DE041ACF20967548005271E1 /* SelectFormTableViewCell */,
@@ -655,6 +669,7 @@
 				DE58680420C3FB6500D1F78D /* CalendarButtonView.xib in Resources */,
 				DE2766B620BAEFB50013248E /* DailyMemo.storyboard in Resources */,
 				DE671B021FDFC75400B752CA /* Main.storyboard in Resources */,
+				DE2685F020C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib in Resources */,
 				DE6565082094D8B4005745D2 /* InitialSetting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +758,7 @@
 			files = (
 				DEE53CE51FF4E3C40097C7B2 /* ReuseCellConfigure.swift in Sources */,
 				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
+				DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */,
 				DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */,
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
 				DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */,

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GourmetShopCollectionViewCell" customModule="ReduxSampleSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="160" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="160" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEA-E6-Eyc">
+                        <rect key="frame" x="6" y="6" width="148" height="168"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8f-qN-4BN">
+                                <rect key="frame" x="0.0" y="0.0" width="148" height="168"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-Mu-zf3">
+                                <rect key="frame" x="8" y="110" width="86" height="16"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="FXb-Mr-aP9"/>
+                                    <constraint firstAttribute="height" constant="16" id="gOL-La-1En"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日のベストグルメが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-IV-9lw">
+                                <rect key="frame" x="8" y="136" width="132" height="24"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Deb-IV-9lw" secondAttribute="trailing" constant="8" id="1tv-V8-I9F"/>
+                            <constraint firstAttribute="bottom" secondItem="Q8f-qN-4BN" secondAttribute="bottom" id="2Pl-Tr-m3d"/>
+                            <constraint firstAttribute="trailing" secondItem="Q8f-qN-4BN" secondAttribute="trailing" id="5XY-Dh-8Os"/>
+                            <constraint firstItem="Deb-IV-9lw" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="J9b-kT-07y"/>
+                            <constraint firstItem="dzw-Mu-zf3" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="Ktf-Mz-0zP"/>
+                            <constraint firstAttribute="bottom" secondItem="Deb-IV-9lw" secondAttribute="bottom" constant="8" id="NTp-s7-kTv"/>
+                            <constraint firstItem="Deb-IV-9lw" firstAttribute="top" secondItem="dzw-Mu-zf3" secondAttribute="bottom" constant="10" id="Rsk-Ie-KeL"/>
+                            <constraint firstItem="Q8f-qN-4BN" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" id="aoG-hQ-2TI"/>
+                            <constraint firstItem="Q8f-qN-4BN" firstAttribute="top" secondItem="DEA-E6-Eyc" secondAttribute="top" id="iXa-5D-Nn8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="DEA-E6-Eyc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="IzO-rZ-qKN"/>
+                <constraint firstAttribute="trailing" secondItem="DEA-E6-Eyc" secondAttribute="trailing" constant="6" id="QyO-Ez-WkY"/>
+                <constraint firstAttribute="bottom" secondItem="DEA-E6-Eyc" secondAttribute="bottom" constant="6" id="d1Z-1f-Wab"/>
+                <constraint firstItem="DEA-E6-Eyc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="l6E-0U-0rE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="gourmetShopCategoryLabel" destination="dzw-Mu-zf3" id="Ztf-T6-iQi"/>
+                <outlet property="gourmetShopImageView" destination="Q8f-qN-4BN" id="Us5-5v-hXe"/>
+                <outlet property="gourmetShopTitleLabel" destination="Deb-IV-9lw" id="z9g-jS-5jO"/>
+                <outlet property="gourmetShopWrappedView" destination="DEA-E6-Eyc" id="ejY-ub-Zb8"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
