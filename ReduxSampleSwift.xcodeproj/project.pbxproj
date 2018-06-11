@@ -37,6 +37,8 @@
 		DE58680420C3FB6500D1F78D /* CalendarButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58680320C3FB6500D1F78D /* CalendarButtonView.xib */; };
 		DE58680820C3FCDE00D1F78D /* CalendarButtonModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58680720C3FCDE00D1F78D /* CalendarButtonModule.swift */; };
 		DE591DF8201370360097974A /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE591DF7201370360097974A /* AppReducer.swift */; };
+		DE59F78020CAD1B6005B2BCC /* EnglishNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE59F77E20CAD1B6005B2BCC /* EnglishNewsTableViewCell.xib */; };
+		DE59F78120CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE59F77F20CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift */; };
 		DE6565082094D8B4005745D2 /* InitialSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6565062094D8B4005745D2 /* InitialSetting.storyboard */; };
 		DE65650B2095C8A8005745D2 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65650A2095C8A8005745D2 /* UserSetting.swift */; };
 		DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671AFC1FDFC75400B752CA /* AppDelegate.swift */; };
@@ -123,6 +125,8 @@
 		DE58680320C3FB6500D1F78D /* CalendarButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarButtonView.xib; sourceTree = "<group>"; };
 		DE58680720C3FCDE00D1F78D /* CalendarButtonModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButtonModule.swift; sourceTree = "<group>"; };
 		DE591DF7201370360097974A /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		DE59F77E20CAD1B6005B2BCC /* EnglishNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EnglishNewsTableViewCell.xib; sourceTree = "<group>"; };
+		DE59F77F20CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnglishNewsTableViewCell.swift; sourceTree = "<group>"; };
 		DE6565072094D8B4005745D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InitialSetting.storyboard; sourceTree = "<group>"; };
 		DE65650A2095C8A8005745D2 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		DE671AF91FDFC75400B752CA /* ReduxSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReduxSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +329,15 @@
 			path = CalendarButtonView;
 			sourceTree = "<group>";
 		};
+		DE59F77920CAD154005B2BCC /* EnglishNewsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DE59F77F20CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift */,
+				DE59F77E20CAD1B6005B2BCC /* EnglishNewsTableViewCell.xib */,
+			);
+			path = EnglishNewsTableViewCell;
+			sourceTree = "<group>";
+		};
 		DE6565092094D8CF005745D2 /* InitialSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +526,7 @@
 		DEE53CF11FFB84430097C7B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE59F77920CAD154005B2BCC /* EnglishNewsTableViewCell */,
 				DE5867FE20C3E5F700D1F78D /* CalendarButtonView */,
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
 				DE2685EB20C83ADB00D50BCA /* GourmetShopCollectionViewCell */,
@@ -658,6 +672,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE59F78020CAD1B6005B2BCC /* EnglishNewsTableViewCell.xib in Resources */,
 				DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */,
 				DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */,
 				DE2766B920BAF0100013248E /* UserSetting.storyboard in Resources */,
@@ -799,6 +814,7 @@
 				DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */,
 				DE2766BD20BAF24B0013248E /* DailyMemoViewController.swift in Sources */,
 				DE2766AF20BAAEE30013248E /* PickupMessageViewController.swift in Sources */,
+				DE59F78120CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
 				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
