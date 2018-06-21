@@ -10,12 +10,13 @@ import UIKit
 
 class EnglishNewsTableViewCell: UITableViewCell {
 
+    static let CELL_HEIGHT: CGFloat = 126.0
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    // MARK: - Function
+
     
 }
