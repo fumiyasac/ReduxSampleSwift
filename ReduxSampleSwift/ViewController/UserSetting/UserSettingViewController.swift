@@ -120,7 +120,7 @@ class UserSettingViewController: UIViewController {
     }
 
     @objc private func toolbarCloseButtonTapped() {
-        revertFormScrollViewState()
+        undoFormScrollViewState()
     }
 
     private func setupNavigationBar() {
@@ -201,9 +201,7 @@ class UserSettingViewController: UIViewController {
         userSettingSubmitButton.addTarget(self, action: #selector(self.userSettingSubmitButtonTapped), for: .touchUpInside)
     }
 
-    // MARK: - Fileprivate Function
-
-    fileprivate func revertFormScrollViewState() {
+    private func undoFormScrollViewState() {
 
         // キーボード表示のステータス変更を反映するActionCreatorを実行する
         UserSettingActionCreator.hideKeyboardStatus()
@@ -212,7 +210,7 @@ class UserSettingViewController: UIViewController {
         view.endEditing(false)
     }
 
-    fileprivate func changeFormScrollViewState(offsetY: CGFloat) {
+    private func changeFormScrollViewState(offsetY: CGFloat) {
 
         // キーボード表示のステータス変更を反映するActionCreatorを実行する
         UserSettingActionCreator.showKeyboardStatus()
