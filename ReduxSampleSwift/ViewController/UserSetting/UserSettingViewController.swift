@@ -20,34 +20,34 @@ class UserSettingViewController: UIViewController {
 
     // ユーザー情報のEntity
     // MEMO: Realmで定義しているものについてはEntityファイルを用意しインスタンス化して利用する
-    fileprivate var userSettingEntity: UserSettingEntity = UserSetting.getUserSetting() ?? UserSettingEntity()
+    private var userSettingEntity: UserSettingEntity = UserSetting.getUserSetting() ?? UserSettingEntity()
 
     // 選択項目用のUITableViewを選択した値を格納するメンバ変数
-    fileprivate var selectedResidentPeriod: Int = 0
-    fileprivate var selectedAge: Int            = 0
+    private var selectedResidentPeriod: Int = 0
+    private var selectedAge: Int            = 0
 
     // フォーム全体のUIScrollView
     @IBOutlet weak private var formScrollView: UIScrollView!
 
     // フォーム項目登録用のボタン
-    @IBOutlet weak fileprivate var userSettingSubmitButton: UIButton!
+    @IBOutlet weak private var userSettingSubmitButton: UIButton!
 
     // フォーム項目
-    @IBOutlet weak fileprivate var postalCodeTextField: UITextField!
-    @IBOutlet weak fileprivate var residentPeriodTableView: UITableView!
-    @IBOutlet weak fileprivate var freeWordTextView: UITextView!
-    @IBOutlet weak fileprivate var nickNameTextField: UITextField!
-    @IBOutlet weak fileprivate var genderSegmentedControl: UISegmentedControl!
-    @IBOutlet weak fileprivate var ageTableView: UITableView!
+    @IBOutlet weak private var postalCodeTextField: UITextField!
+    @IBOutlet weak private var residentPeriodTableView: UITableView!
+    @IBOutlet weak private var freeWordTextView: UITextView!
+    @IBOutlet weak private var nickNameTextField: UITextField!
+    @IBOutlet weak private var genderSegmentedControl: UISegmentedControl!
+    @IBOutlet weak private var ageTableView: UITableView!
 
     // 入力用のTextFieldを場合分けするためのEnum
-    fileprivate enum textFieldType: Int {
+    private enum textFieldType: Int {
         case postalCode
         case nickName
     }
 
     // 入力用のTableViewを場合分けするためのEnum
-    fileprivate enum tableViewType: Int {
+    private enum tableViewType: Int {
         case residentPeriod
         case age
     }

@@ -13,7 +13,7 @@ class GourmetShopViewController: UIViewController {
     @IBOutlet weak var gourmetShopCollectionView: UICollectionView!
     @IBOutlet weak var shuffleShopButton: UIButton!
 
-    fileprivate let gourmetShopCount = 6
+    private let gourmetShopCount = 6
 
     override func viewDidLoad() {
         super.viewDidLoad()

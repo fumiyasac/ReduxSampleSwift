@@ -13,7 +13,7 @@ class PickupMessageViewController: UIViewController {
     
     @IBOutlet weak var pickupMessageCollectionView: UICollectionView!
 
-    fileprivate let pickupMessageCount = 5
+    private let pickupMessageCount = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()

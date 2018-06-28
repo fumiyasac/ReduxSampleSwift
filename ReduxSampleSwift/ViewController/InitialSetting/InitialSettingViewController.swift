@@ -13,8 +13,8 @@ class InitialSettingViewController: UIViewController {
 
     // ユーザーの登録状態を格納する変数
     // → stateにまとめて格納しているものを個別に使用するためにこのような形にしている
-    fileprivate var isFinishedUserSetting: Bool = false
-    fileprivate var isFinishedTutorial: Bool = false
+    private var isFinishedUserSetting: Bool = false
+    private var isFinishedTutorial: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()

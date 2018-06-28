@@ -13,11 +13,11 @@ import KYNavigationProgress
 class TutorialViewController: UIViewController {
 
     // UIパーツの配置
-    @IBOutlet weak fileprivate var contentsContainerView: UIView!
-    @IBOutlet weak fileprivate var introductionFinishButton: UIButton!
+    @IBOutlet weak private var contentsContainerView: UIView!
+    @IBOutlet weak private var introductionFinishButton: UIButton!
 
     // イントロダクションで表示させるタイトル
-    fileprivate let targetViewControllerTitle = [
+    private let targetViewControllerTitle = [
         "1番目のタイトル",
         "2番目のタイトル",
         "3番目のタイトル",
@@ -25,10 +25,10 @@ class TutorialViewController: UIViewController {
     ]
 
     // ページングして表示させるViewControllerを保持する配列
-    fileprivate var targetViewControllerLists = [UIViewController]()
+    private var targetViewControllerLists = [UIViewController]()
 
     // ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
-    fileprivate var pageViewController: UIPageViewController?
+    private var pageViewController: UIPageViewController?
 
     // MARK: - LifeCycle
 
