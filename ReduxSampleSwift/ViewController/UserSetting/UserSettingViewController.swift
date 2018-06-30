@@ -56,6 +56,7 @@ class UserSettingViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupKeyboardAccesoryView()
         setupPostalCodeTextField()
         setupResidentPeriodTableView()
         setupFreeWordTextView()
@@ -63,7 +64,6 @@ class UserSettingViewController: UIViewController {
         setupGenderSegmentedControl()
         setupUserSettingSubmitButton()
         setupAgeTableView()
-        setupKeyboardAccesoryView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
