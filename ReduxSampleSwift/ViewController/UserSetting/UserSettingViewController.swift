@@ -56,6 +56,7 @@ class UserSettingViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBar()
+        setupFormScrollView()
         setupKeyboardAccesoryView()
         setupPostalCodeTextField()
         setupResidentPeriodTableView()
@@ -125,6 +126,10 @@ class UserSettingViewController: UIViewController {
 
     private func setupNavigationBar() {
         self.navigationItem.title = "ユーザーアンケートを回答する"
+    }
+
+    private func setupFormScrollView() {
+        formScrollView.delaysContentTouches = false
     }
 
     // キーボードに付与するツールバーの設定を行う
