@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class UserSetting: Object {
+class UserSetting {
     
     // MARK: - Static Function
     
