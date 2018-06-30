@@ -22,7 +22,6 @@ PODS:
     - Realm (= 3.3.0)
   - ReSwift (4.0.1)
   - SVProgressHUD (2.2.5)
-  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -35,7 +34,6 @@ DEPENDENCIES:
   - RealmSwift
   - ReSwift
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
-  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -48,7 +46,6 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - ReSwift
-    - SwiftyJSON
 
 EXTERNAL SOURCES:
   FontAwesome.swift:
@@ -77,8 +74,7 @@ SPEC CHECKSUMS:
   RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: a2df0240c5fdbfc8adb8ba594856dcd73e48f5f1
+PODFILE CHECKSUM: 4031a351b6d391586ad535a2b00f83c327642ae6
 
 COCOAPODS: 1.5.0
