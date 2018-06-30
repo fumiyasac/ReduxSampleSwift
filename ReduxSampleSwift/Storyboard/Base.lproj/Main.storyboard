@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -345,12 +344,12 @@
                                 <rect key="frame" x="0.0" y="222" width="375" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKO-nM-XfJ">
-                                        <rect key="frame" x="135" y="7" width="105" height="34"/>
+                                        <rect key="frame" x="120" y="7" width="135" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="eHb-vr-6CO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
-                                        <state key="normal" title="別のお店を見る">
+                                        <state key="normal" title="検索条件を変更する">
                                             <color key="titleColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
