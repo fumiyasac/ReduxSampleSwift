@@ -63,8 +63,8 @@ class UserSettingViewController: UIViewController {
         setupFreeWordTextView()
         setupNickNameTextField()
         setupGenderSegmentedControl()
-        setupUserSettingSubmitButton()
         setupAgeTableView()
+        setupUserSettingSubmitButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
