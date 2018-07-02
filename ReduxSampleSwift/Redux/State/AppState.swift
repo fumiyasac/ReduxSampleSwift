@@ -17,4 +17,7 @@ struct AppState: ReSwift.StateType {
 
     // ユーザーの回答に関するstate
     var userSettingState = UserSettingState()
+
+    // 英語ニュース一覧に関するstate
+    var englishNewsState = EnglishNewsState()
 }
