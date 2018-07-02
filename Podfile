@@ -15,7 +15,7 @@ target 'ReduxSampleSwift' do
   # そのほか便利ライブラリ
   pod 'AlamofireImage'
   pod 'RealmSwift'
-  pod 'SwiftyJSON' # 使わないのであとで削除する
+  pod 'SwiftyJSON'
 
   # UI構築用ライブラリ
   pod 'CalculateCalendarLogic'
