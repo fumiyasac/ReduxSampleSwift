@@ -39,7 +39,7 @@ class APIManagerForNewYorkTimes {
         // 例.
         // -----------
         // getNewsList(page: 0)
-        //    .then { json in
+        //    .done { json in
         //        // 受け取ったJSONに関する処理をする
         //        print(json)
         //    }
