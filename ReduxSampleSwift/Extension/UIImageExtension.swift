@@ -9,24 +9,24 @@
 import Foundation
 import UIKit
 
-// UIImageの拡張
+//UIImageの拡張
 extension UIImage {
 
-    // 元画像からサムネイル用の画像を書き出すメソッド
+    //元画像からサムネイル用の画像を書き出すメソッド
     public func thumbnailOfSize(_ minLength: CGFloat) -> UIImage? {
 
-        // 写真のオリジナルサイズの縦横の値を取得する
+        //写真のオリジナルサイズの縦横の値を取得する
         let height = size.height
         let width = size.width
 
-        // 写真のオリジナルサイズの縦横比を維持して引数が短辺になるようにリサイズする
+        //写真のオリジナルサイズの縦横比を維持して引数が短辺になるようにリサイズする
         var imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: CGFloat(ceil(width * minLength / height)), height: minLength)))
         
         if height > width {
             imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: minLength, height: CGFloat(ceil(minLength * height / width)))))
         }
 
-        // リサイズ処理を行って縮小した画像を生成する
+        //リサイズ処理を行って縮小した画像を生成する
         imageView.contentMode = .scaleAspectFit
         imageView.image = self
         UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)

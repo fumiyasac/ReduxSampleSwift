@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +27,7 @@
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-Mu-zf3">
-                                <rect key="frame" x="8" y="108" width="86" height="16"/>
+                                <rect key="frame" x="8" y="110" width="86" height="16"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="86" id="FXb-Mr-aP9"/>
@@ -37,7 +38,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日のベストグルメが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-IV-9lw">
-                                <rect key="frame" x="8" y="134" width="132" height="24"/>
+                                <rect key="frame" x="8" y="136" width="132" height="24"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +51,7 @@
                             <constraint firstAttribute="trailing" secondItem="Q8f-qN-4BN" secondAttribute="trailing" id="5XY-Dh-8Os"/>
                             <constraint firstItem="Deb-IV-9lw" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="J9b-kT-07y"/>
                             <constraint firstItem="dzw-Mu-zf3" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="Ktf-Mz-0zP"/>
-                            <constraint firstAttribute="bottom" secondItem="Deb-IV-9lw" secondAttribute="bottom" constant="10" id="NTp-s7-kTv"/>
+                            <constraint firstAttribute="bottom" secondItem="Deb-IV-9lw" secondAttribute="bottom" constant="8" id="NTp-s7-kTv"/>
                             <constraint firstItem="Deb-IV-9lw" firstAttribute="top" secondItem="dzw-Mu-zf3" secondAttribute="bottom" constant="10" id="Rsk-Ie-KeL"/>
                             <constraint firstItem="Q8f-qN-4BN" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" id="aoG-hQ-2TI"/>
                             <constraint firstItem="Q8f-qN-4BN" firstAttribute="top" secondItem="DEA-E6-Eyc" secondAttribute="top" id="iXa-5D-Nn8"/>

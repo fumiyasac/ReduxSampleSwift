@@ -49,7 +49,6 @@ extension GourmetShopViewController: UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: GourmetShopCollectionViewCell.self, indexPath: indexPath)
-        cell.setCell()
 
         return cell
     }

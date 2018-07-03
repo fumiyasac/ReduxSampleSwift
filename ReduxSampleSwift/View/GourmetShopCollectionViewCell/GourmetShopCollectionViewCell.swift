@@ -23,26 +23,7 @@ class GourmetShopCollectionViewCell: UICollectionViewCell {
         setupGourmetShopCollectionViewCell()
     }
 
-    // MARK: - Function
-
-    func setCell() {
-        setAttributesForTitle("今日のベストグルメが入ります。")
-    }
-
     // MARK: - Private Function
-
-    private func setAttributesForTitle(_ text: String) {
-
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 5
-
-        var attributes = [NSAttributedStringKey : Any]()
-        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
-        attributes[NSAttributedStringKey.font] = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 12.0)
-        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#ffffff")
-
-        gourmetShopTitleLabel.attributedText = NSAttributedString(string: text, attributes: attributes)
-    }
 
     private func setupGourmetShopCollectionViewCell() {
         gourmetShopWrappedView.clipsToBounds       = true

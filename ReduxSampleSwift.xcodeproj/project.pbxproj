@@ -32,8 +32,6 @@
 		DE2766C420BAF9B60013248E /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */; };
 		DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2766C520BAFD470013248E /* NewsDetail.storyboard */; };
 		DE2766CA20BAFDC40013248E /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */; };
-		DE3D912A20EA6392008478C6 /* DateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */; };
-		DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
 		DE5867FD20C3E5C100D1F78D /* CalendarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5867FC20C3E5C100D1F78D /* CalendarButtonView.swift */; };
 		DE58680420C3FB6500D1F78D /* CalendarButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58680320C3FB6500D1F78D /* CalendarButtonView.xib */; };
@@ -51,12 +49,6 @@
 		DE671B121FDFC75500B752CA /* ReduxSampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B111FDFC75500B752CA /* ReduxSampleSwiftTests.swift */; };
 		DE671B1D1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */; };
 		DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B41FE6AB2C0017C3AF /* AppState.swift */; };
-		DEB82E3E20E76F5C00C08FFF /* EnglishNewsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E3D20E76F5C00C08FFF /* EnglishNewsReducer.swift */; };
-		DEB82E4020E76F7500C08FFF /* EnglishNewsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E3F20E76F7500C08FFF /* EnglishNewsAction.swift */; };
-		DEB82E4220E76F9900C08FFF /* EnglishNewsActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E4120E76F9900C08FFF /* EnglishNewsActionCreator.swift */; };
-		DEB82E4520E77B2300C08FFF /* EnglishNewsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E4420E77B2300C08FFF /* EnglishNewsState.swift */; };
-		DEB82E4720E7808C00C08FFF /* EnglishNewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E4620E7808C00C08FFF /* EnglishNewsEntity.swift */; };
-		DEB82E4920E780A200C08FFF /* EnglishNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E4820E780A200C08FFF /* EnglishNews.swift */; };
 		DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */; };
 		DED8E96920C55B0300836CE4 /* PickupMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */; };
 		DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */; };
@@ -128,8 +120,6 @@
 		DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		DE2766C620BAFD470013248E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewsDetail.storyboard; sourceTree = "<group>"; };
 		DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
-		DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtil.swift; sourceTree = "<group>"; };
-		DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForNewYorkTimes.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
 		DE5867FC20C3E5C100D1F78D /* CalendarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButtonView.swift; sourceTree = "<group>"; };
 		DE58680320C3FB6500D1F78D /* CalendarButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarButtonView.xib; sourceTree = "<group>"; };
@@ -153,12 +143,6 @@
 		DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxSampleSwiftUITests.swift; sourceTree = "<group>"; };
 		DE671B1E1FDFC75500B752CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE85D2B41FE6AB2C0017C3AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		DEB82E3D20E76F5C00C08FFF /* EnglishNewsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsReducer.swift; sourceTree = "<group>"; };
-		DEB82E3F20E76F7500C08FFF /* EnglishNewsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsAction.swift; sourceTree = "<group>"; };
-		DEB82E4120E76F9900C08FFF /* EnglishNewsActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsActionCreator.swift; sourceTree = "<group>"; };
-		DEB82E4420E77B2300C08FFF /* EnglishNewsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsState.swift; sourceTree = "<group>"; };
-		DEB82E4620E7808C00C08FFF /* EnglishNewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsEntity.swift; sourceTree = "<group>"; };
-		DEB82E4820E780A200C08FFF /* EnglishNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNews.swift; sourceTree = "<group>"; };
 		DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageFlowLayout.swift; sourceTree = "<group>"; };
 		DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupMessageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -270,7 +254,6 @@
 		DE27669F20B279740013248E /* ActionCreator */ = {
 			isa = PBXGroup;
 			children = (
-				DEB82E4120E76F9900C08FFF /* EnglishNewsActionCreator.swift */,
 				DE2766A220B392600013248E /* InitialSettingActionCreator.swift */,
 				DE2766A020B27CE30013248E /* TutorialActionCreator.swift */,
 				DE2766A420B395230013248E /* UserSettingActionCreator.swift */,
@@ -321,14 +304,6 @@
 			path = NewsDetail;
 			sourceTree = "<group>";
 		};
-		DE3D912C20EA760F008478C6 /* APIManager */ = {
-			isa = PBXGroup;
-			children = (
-				DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */,
-			);
-			path = APIManager;
-			sourceTree = "<group>";
-		};
 		DE4D414720623FEB0038CC01 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +315,6 @@
 		DE4D414A20629DCF0038CC01 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				DEB82E4620E7808C00C08FFF /* EnglishNewsEntity.swift */,
 				DE4D4148206295D70038CC01 /* UserSettingEntity.swift */,
 			);
 			path = Entity;
@@ -477,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				DE85D2B41FE6AB2C0017C3AF /* AppState.swift */,
-				DEB82E4420E77B2300C08FFF /* EnglishNewsState.swift */,
 				DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */,
 				DEDC73FA20965B4600694443 /* UserSettingState.swift */,
 			);
@@ -488,7 +461,6 @@
 			isa = PBXGroup;
 			children = (
 				DE4D414A20629DCF0038CC01 /* Entity */,
-				DEB82E4820E780A200C08FFF /* EnglishNews.swift */,
 				DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */,
 				DE65650A2095C8A8005745D2 /* UserSetting.swift */,
 			);
@@ -523,13 +495,11 @@
 		DEE53CDA1FF1DD570097C7B2 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				DE3D912C20EA760F008478C6 /* APIManager */,
 				DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */,
 				DE041ADE209DFAF5005271E1 /* AppConstants.swift */,
-				DE58680720C3FCDE00D1F78D /* CalendarButtonModule.swift */,
-				DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */,
 				DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */,
 				DEE53CE41FF4E3C40097C7B2 /* ReuseCellConfigure.swift */,
+				DE58680720C3FCDE00D1F78D /* CalendarButtonModule.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -537,7 +507,6 @@
 		DEE53CE91FF4EA2A0097C7B2 /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				DEB82E3F20E76F7500C08FFF /* EnglishNewsAction.swift */,
 				DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */,
 				DEDC73F820965AED00694443 /* UserSettingAction.swift */,
 			);
@@ -548,7 +517,6 @@
 			isa = PBXGroup;
 			children = (
 				DE591DF7201370360097974A /* AppReducer.swift */,
-				DEB82E3D20E76F5C00C08FFF /* EnglishNewsReducer.swift */,
 				DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */,
 				DEDC73FC2096651700694443 /* UserSettingReducer.swift */,
 			);
@@ -804,22 +772,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE53CE51FF4E3C40097C7B2 /* ReuseCellConfigure.swift in Sources */,
-				DE3D912A20EA6392008478C6 /* DateFormatterUtil.swift in Sources */,
 				DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */,
-				DEB82E4920E780A200C08FFF /* EnglishNews.swift in Sources */,
 				DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */,
 				DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */,
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
 				DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */,
 				DE65650B2095C8A8005745D2 /* UserSetting.swift in Sources */,
-				DEB82E3E20E76F5C00C08FFF /* EnglishNewsReducer.swift in Sources */,
 				DE2766B120BAAF2E0013248E /* GourmetShopViewController.swift in Sources */,
 				DED8E96920C55B0300836CE4 /* PickupMessageCollectionViewCell.swift in Sources */,
 				DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */,
 				DE58680820C3FCDE00D1F78D /* CalendarButtonModule.swift in Sources */,
 				DE2766B320BAAF4D0013248E /* EnglishNewsViewController.swift in Sources */,
 				DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */,
-				DEB82E4020E76F7500C08FFF /* EnglishNewsAction.swift in Sources */,
 				DEDC73FD2096651700694443 /* UserSettingReducer.swift in Sources */,
 				DE2766C420BAF9B60013248E /* MessageDetailViewController.swift in Sources */,
 				DEE53CE11FF4E2DE0097C7B2 /* UIImageExtension.swift in Sources */,
@@ -834,13 +798,11 @@
 				DE2766A520B395240013248E /* UserSettingActionCreator.swift in Sources */,
 				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
 				DEE53D021FFD1D2D0097C7B2 /* TutorialViewController.swift in Sources */,
-				DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */,
 				DE5867FD20C3E5C100D1F78D /* CalendarButtonView.swift in Sources */,
 				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
 				DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */,
 				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
 				DE2766CA20BAFDC40013248E /* NewsDetailViewController.swift in Sources */,
-				DEB82E4720E7808C00C08FFF /* EnglishNewsEntity.swift in Sources */,
 				DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
 				DEDC73FF209668B400694443 /* SelectedResidentPeriodEnum.swift in Sources */,
@@ -848,9 +810,7 @@
 				DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */,
-				DEB82E4520E77B2300C08FFF /* EnglishNewsState.swift in Sources */,
 				DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */,
-				DEB82E4220E76F9900C08FFF /* EnglishNewsActionCreator.swift in Sources */,
 				DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */,
 				DE2766BD20BAF24B0013248E /* DailyMemoViewController.swift in Sources */,
 				DE2766AF20BAAEE30013248E /* PickupMessageViewController.swift in Sources */,

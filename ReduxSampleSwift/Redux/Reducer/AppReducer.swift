@@ -15,7 +15,6 @@ func appReduce(action: Action, state: AppState?) -> AppState {
 
     state.tutorialState = TutorialReducer.reducer(action: action, state: state.tutorialState)
     state.userSettingState = UserSettingReducer.reducer(action: action, state: state.userSettingState)
-    state.englishNewsState = EnglishNewsReducer.reducer(action: action, state: state.englishNewsState)
 
     // Debug.
     print("---")
