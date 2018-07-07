@@ -18,5 +18,7 @@ class EnglishNewsTableViewCell: UITableViewCell {
 
     // MARK: - Function
 
-    
+    func setCell(_ news: EnglishNewsEntity) {
+
+    }
 }

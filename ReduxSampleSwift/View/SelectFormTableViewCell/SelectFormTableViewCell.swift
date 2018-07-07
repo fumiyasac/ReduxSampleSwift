@@ -10,6 +10,8 @@ import UIKit
 
 class SelectFormTableViewCell: UITableViewCell {
 
+    static let CELL_HEIGHT: CGFloat = 47.0
+
     private let enabledRemarkLabelText  = "選択中"
     private let disabledRemarkLabelText = "未選択"
 

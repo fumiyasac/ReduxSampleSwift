@@ -11,10 +11,14 @@ import ReSwift
 
 class EnglishNewsViewController: UIViewController {
 
+    private var englishNewsList: [EnglishNewsEntity] = []
+
     @IBOutlet weak private var englishNewsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupEnglishNewsTableView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +45,11 @@ class EnglishNewsViewController: UIViewController {
     // MARK: - Private Function
 
     private func setupEnglishNewsTableView() {
-
+//        englishNewsTableView.delegate = self
+//        englishNewsTableView.dataSource = self
+//        englishNewsTableView.estimatedRowHeight = EnglishNewsTableViewCell.CELL_HEIGHT
+//        englishNewsTableView.delaysContentTouches = false
+//        englishNewsTableView.registerCustomCell(EnglishNewsTableViewCell.self)
     }
 }
 
@@ -52,8 +60,6 @@ extension EnglishNewsViewController: StoreSubscriber {
     // ステートの更新が検知された際に実行される処理
     func newState(state: AppState) {
 
-        
-        
         // Debug.
         print("---")
         print("EnglishNewsState logging #start: EnglishNewsStateの変更をEnglishNewsViewControllerで受け取りました。")

@@ -10,10 +10,6 @@ import UIKit
 import ReSwift
 
 class UserSettingViewController: UIViewController {
-
-    // 選択肢用のTableViewに関する定数
-    private let TABLE_VIEW_VIEW_HEIGHT: CGFloat = 47.0
-    private let SELETE_FORM_TABLE_VIEW_CELL = "SelectFormTableViewCell"
     
     // キーボード表示時に表示されるツールバーの設定
     private var keyboardToolBar: UIToolbar!
@@ -168,7 +164,7 @@ class UserSettingViewController: UIViewController {
     private func setupResidentPeriodTableView() {
         residentPeriodTableView.delegate = self
         residentPeriodTableView.dataSource = self
-        residentPeriodTableView.estimatedRowHeight = TABLE_VIEW_VIEW_HEIGHT
+        residentPeriodTableView.estimatedRowHeight = SelectFormTableViewCell.CELL_HEIGHT
         residentPeriodTableView.delaysContentTouches = false
         residentPeriodTableView.tag = tableViewType.residentPeriod.rawValue
         residentPeriodTableView.registerCustomCell(SelectFormTableViewCell.self)
@@ -196,7 +192,7 @@ class UserSettingViewController: UIViewController {
     private func setupAgeTableView() {
         ageTableView.delegate = self
         ageTableView.dataSource = self
-        ageTableView.estimatedRowHeight = TABLE_VIEW_VIEW_HEIGHT
+        ageTableView.estimatedRowHeight = SelectFormTableViewCell.CELL_HEIGHT
         ageTableView.delaysContentTouches = false
         ageTableView.tag = tableViewType.age.rawValue
         ageTableView.registerCustomCell(SelectFormTableViewCell.self)
