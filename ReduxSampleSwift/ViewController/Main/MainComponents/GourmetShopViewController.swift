@@ -10,8 +10,8 @@ import UIKit
 
 class GourmetShopViewController: UIViewController {
 
-    @IBOutlet weak var gourmetShopCollectionView: UICollectionView!
-    @IBOutlet weak var shuffleShopButton: UIButton!
+    @IBOutlet weak private var gourmetShopCollectionView: UICollectionView!
+    @IBOutlet weak private var shuffleShopButton: UIButton!
 
     private let gourmetShopCount = 6
 

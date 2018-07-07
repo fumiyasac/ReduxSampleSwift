@@ -418,78 +418,11 @@
                                         </constraints>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-ac-uvl">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVv-ac-uvl" customClass="EnglishNewsFetchButtonView" customModule="ReduxSampleSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="788" width="375" height="48"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="377-y6-udh">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="td2-fU-Vgd">
-                                                        <rect key="frame" x="32" y="8" width="311" height="32"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="データを読み込んでいます..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uua-Mm-tvJ">
-                                                                <rect key="frame" x="77.5" y="9" width="191.5" height="15"/>
-                                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
-                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bvf-VV-Xob">
-                                                                <rect key="frame" x="42" y="6" width="20" height="20"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="20" id="NoT-lM-Lr2"/>
-                                                                    <constraint firstAttribute="height" constant="20" id="jvf-z4-vvb"/>
-                                                                </constraints>
-                                                            </activityIndicatorView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="bvf-VV-Xob" firstAttribute="centerY" secondItem="td2-fU-Vgd" secondAttribute="centerY" id="AeO-uY-JMt"/>
-                                                            <constraint firstItem="bvf-VV-Xob" firstAttribute="leading" secondItem="td2-fU-Vgd" secondAttribute="leading" constant="42" id="DLc-nL-G6v"/>
-                                                            <constraint firstItem="Uua-Mm-tvJ" firstAttribute="centerY" secondItem="td2-fU-Vgd" secondAttribute="centerY" id="DMl-Ap-mFy"/>
-                                                            <constraint firstItem="Uua-Mm-tvJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bvf-VV-Xob" secondAttribute="trailing" constant="8" symbolic="YES" id="FY5-9s-6Ed"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Uua-Mm-tvJ" secondAttribute="trailing" constant="42" id="Z7x-h1-qT3"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="td2-fU-Vgd" firstAttribute="leading" secondItem="377-y6-udh" secondAttribute="leading" constant="32" id="UsR-AS-Hkd"/>
-                                                    <constraint firstAttribute="bottom" secondItem="td2-fU-Vgd" secondAttribute="bottom" constant="8" id="Xqs-MO-0Vl"/>
-                                                    <constraint firstItem="td2-fU-Vgd" firstAttribute="top" secondItem="377-y6-udh" secondAttribute="top" constant="8" id="dvm-ar-Y2N"/>
-                                                    <constraint firstAttribute="trailing" secondItem="td2-fU-Vgd" secondAttribute="trailing" constant="32" id="fzQ-2E-nTj"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lR9-uG-vsN">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-Sd-I5O">
-                                                        <rect key="frame" x="113" y="7" width="150" height="34"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="34" id="fqU-1Y-eac"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
-                                                        <state key="normal" title="さらに記事を表示する">
-                                                            <color key="titleColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="2bh-Sd-I5O" firstAttribute="centerY" secondItem="lR9-uG-vsN" secondAttribute="centerY" id="FR7-tt-ECn"/>
-                                                    <constraint firstItem="2bh-Sd-I5O" firstAttribute="centerX" secondItem="lR9-uG-vsN" secondAttribute="centerX" id="jIo-50-dVg"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="lR9-uG-vsN" firstAttribute="top" secondItem="pVv-ac-uvl" secondAttribute="top" id="061-bT-Qc7"/>
-                                            <constraint firstAttribute="bottom" secondItem="lR9-uG-vsN" secondAttribute="bottom" id="24C-vX-XzD"/>
-                                            <constraint firstAttribute="trailing" secondItem="lR9-uG-vsN" secondAttribute="trailing" id="A4b-NU-V20"/>
-                                            <constraint firstItem="377-y6-udh" firstAttribute="top" secondItem="pVv-ac-uvl" secondAttribute="top" id="HcV-uc-rfe"/>
                                             <constraint firstAttribute="height" constant="48" id="LcL-cp-8Bo"/>
-                                            <constraint firstItem="377-y6-udh" firstAttribute="leading" secondItem="pVv-ac-uvl" secondAttribute="leading" id="Nsb-Aj-aVB"/>
-                                            <constraint firstItem="lR9-uG-vsN" firstAttribute="leading" secondItem="pVv-ac-uvl" secondAttribute="leading" id="RMs-uc-fSv"/>
-                                            <constraint firstAttribute="trailing" secondItem="377-y6-udh" secondAttribute="trailing" id="Z7G-eA-DR7"/>
-                                            <constraint firstAttribute="bottom" secondItem="377-y6-udh" secondAttribute="bottom" id="j5S-tl-LsD"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -508,6 +441,7 @@
                         <viewLayoutGuide key="safeArea" id="oI2-5Y-LfI"/>
                     </view>
                     <connections>
+                        <outlet property="englishNewsTableView" destination="pwi-SD-hUk" id="QzT-nX-8uK"/>
                         <segue destination="aTA-rz-7Y2" kind="presentation" id="N39-Sv-7ys"/>
                     </connections>
                 </viewController>
