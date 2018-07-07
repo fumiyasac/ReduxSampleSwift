@@ -11,8 +11,8 @@ import ReSwift
 
 class MonthlyCalendarViewController: UIViewController {
 
-    @IBOutlet weak var currentMonthLabel: UILabel!
-    @IBOutlet weak var monthlyCalendarScrollView: UIScrollView!
+    @IBOutlet weak private var currentMonthLabel: UILabel!
+    @IBOutlet weak private var monthlyCalendarScrollView: UIScrollView!
 
     private var calendarButtonList: [CalendarButtonView] = []
 

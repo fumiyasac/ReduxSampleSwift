@@ -32,6 +32,8 @@
 		DE2766C420BAF9B60013248E /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */; };
 		DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2766C520BAFD470013248E /* NewsDetail.storyboard */; };
 		DE2766CA20BAFDC40013248E /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */; };
+		DE27D40C20F0ADF800F1E740 /* EnglishNewsFetchButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D40B20F0ADF800F1E740 /* EnglishNewsFetchButtonView.xib */; };
+		DE27D40E20F0AE0500F1E740 /* EnglishNewsFetchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D40D20F0AE0500F1E740 /* EnglishNewsFetchButtonView.swift */; };
 		DE3D912A20EA6392008478C6 /* DateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */; };
 		DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
@@ -128,6 +130,8 @@
 		DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		DE2766C620BAFD470013248E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewsDetail.storyboard; sourceTree = "<group>"; };
 		DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		DE27D40B20F0ADF800F1E740 /* EnglishNewsFetchButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnglishNewsFetchButtonView.xib; sourceTree = "<group>"; };
+		DE27D40D20F0AE0500F1E740 /* EnglishNewsFetchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsFetchButtonView.swift; sourceTree = "<group>"; };
 		DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtil.swift; sourceTree = "<group>"; };
 		DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForNewYorkTimes.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
@@ -319,6 +323,15 @@
 				DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */,
 			);
 			path = NewsDetail;
+			sourceTree = "<group>";
+		};
+		DE27D40A20F0ADB000F1E740 /* EnglishNewsFetchButton */ = {
+			isa = PBXGroup;
+			children = (
+				DE27D40D20F0AE0500F1E740 /* EnglishNewsFetchButtonView.swift */,
+				DE27D40B20F0ADF800F1E740 /* EnglishNewsFetchButtonView.xib */,
+			);
+			path = EnglishNewsFetchButton;
 			sourceTree = "<group>";
 		};
 		DE3D912C20EA760F008478C6 /* APIManager */ = {
@@ -558,6 +571,7 @@
 		DEE53CF11FFB84430097C7B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DE27D40A20F0ADB000F1E740 /* EnglishNewsFetchButton */,
 				DE59F77920CAD154005B2BCC /* EnglishNewsTableViewCell */,
 				DE5867FE20C3E5F700D1F78D /* CalendarButtonView */,
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
@@ -713,6 +727,7 @@
 				DE671B041FDFC75400B752CA /* Assets.xcassets in Resources */,
 				DEE53CFD1FFD1C750097C7B2 /* Tutorial.storyboard in Resources */,
 				DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */,
+				DE27D40C20F0ADF800F1E740 /* EnglishNewsFetchButtonView.xib in Resources */,
 				DE58680420C3FB6500D1F78D /* CalendarButtonView.xib in Resources */,
 				DE2766B620BAEFB50013248E /* DailyMemo.storyboard in Resources */,
 				DE671B021FDFC75400B752CA /* Main.storyboard in Resources */,
@@ -849,6 +864,7 @@
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */,
 				DEB82E4520E77B2300C08FFF /* EnglishNewsState.swift in Sources */,
+				DE27D40E20F0AE0500F1E740 /* EnglishNewsFetchButtonView.swift in Sources */,
 				DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */,
 				DEB82E4220E76F9900C08FFF /* EnglishNewsActionCreator.swift in Sources */,
 				DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */,

@@ -10,11 +10,11 @@ import UIKit
 
 class PickupMessageCollectionViewCell: UICollectionViewCell {
 
+    var pickupMessageButtonAction: (() -> ())?
+
     @IBOutlet weak private var pickupMessageWrappedView: UIView!
     @IBOutlet weak private var pickupMessageImageView: UIImageView!
     @IBOutlet weak private var pickupMessageButton: UIButton!
-
-    var showPickupMessageAction: (() -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +36,7 @@ class PickupMessageCollectionViewCell: UICollectionViewCell {
         }, completion: { finished in
 
             // ViewController側でクロージャー内に設定した処理を実行する
-            self.showPickupMessageAction?()
+            self.pickupMessageButtonAction?()
         })
     }
 

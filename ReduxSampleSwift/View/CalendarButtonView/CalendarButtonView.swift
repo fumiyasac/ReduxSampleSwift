@@ -12,15 +12,18 @@ import CalculateCalendarLogic
 
 class CalendarButtonView: CustomViewBase {
 
-    @IBOutlet weak var calendarButton: UIButton!
-    @IBOutlet weak private var calendarButtonBackgroundView: UIView!
-    @IBOutlet weak private var calendarButtonWeekdayLabel: UILabel!
-    @IBOutlet weak private var calendarButtonDayLabel: UILabel!
-
     static let CALENDAR_BUTTON_VIEW_WIDTH: CGFloat = 58
 
     private let calendar = Calendar(identifier: .gregorian)
     private let buttonCornerRadius: CGFloat = 23
+
+    // MEMO: ボタンの配置時にボタンに関する設定を行う形にするのでprivateではない形にしている
+    @IBOutlet weak var calendarButton: UIButton!
+
+    // MEMO: CalculateCalendarLogicでの判定結果に応じてViewの配色や表示を変化させるための部品
+    @IBOutlet weak private var calendarButtonBackgroundView: UIView!
+    @IBOutlet weak private var calendarButtonWeekdayLabel: UILabel!
+    @IBOutlet weak private var calendarButtonDayLabel: UILabel!
 
     // MARK: - Initializer
     

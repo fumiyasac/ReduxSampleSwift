@@ -10,10 +10,10 @@ import UIKit
 import ReSwift
 
 class PickupMessageViewController: UIViewController {
-    
-    @IBOutlet weak var pickupMessageCollectionView: UICollectionView!
 
     private let pickupMessageCount = 5
+
+    @IBOutlet weak private var pickupMessageCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ extension PickupMessageViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCustomCell(with: PickupMessageCollectionViewCell.self, indexPath: indexPath)
 
         // セルの内部にある「▶︎ Read Mode」のボタンを押下した際のアクション
-        cell.showPickupMessageAction = {
+        cell.pickupMessageButtonAction = {
             print("押されたセルのインデックス値:", indexPath.row)
         }
         return cell

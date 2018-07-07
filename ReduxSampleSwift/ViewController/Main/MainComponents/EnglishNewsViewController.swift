@@ -11,6 +11,8 @@ import ReSwift
 
 class EnglishNewsViewController: UIViewController {
 
+    @IBOutlet weak private var englishNewsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -35,6 +37,12 @@ class EnglishNewsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    // MARK: - Private Function
+
+    private func setupEnglishNewsTableView() {
+
+    }
 }
 
 // MARK: - StoreSubscriber
@@ -44,6 +52,8 @@ extension EnglishNewsViewController: StoreSubscriber {
     // ステートの更新が検知された際に実行される処理
     func newState(state: AppState) {
 
+        
+        
         // Debug.
         print("---")
         print("EnglishNewsState logging #start: EnglishNewsStateの変更をEnglishNewsViewControllerで受け取りました。")
