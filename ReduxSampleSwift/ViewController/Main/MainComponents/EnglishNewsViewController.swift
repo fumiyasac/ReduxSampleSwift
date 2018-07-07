@@ -21,7 +21,7 @@ class EnglishNewsViewController: UIViewController {
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
 
-        //
+        // 英語ニュース情報をフェッチするアクションを実行する
         EnglishNewsActionCreator.fetchEnglishNewsList()
     }
 

@@ -25,13 +25,13 @@ class PickupMessageCollectionViewCell: UICollectionViewCell {
     // MARK: - Private Functions
 
     @objc private func onDownPickupMessageButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.12, animations: {
-            self.pickupMessageWrappedView.transform = CGAffineTransform(scaleX: 0.94, y: 0.94)
+        UIView.animate(withDuration: 0.10, animations: {
+            self.pickupMessageWrappedView.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
         }, completion: nil)
     }
 
     @objc private func onUpPickupMessageButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.12, animations: {
+        UIView.animate(withDuration: 0.10, animations: {
             self.pickupMessageWrappedView.transform = CGAffineTransform.identity
         }, completion: { finished in
 
