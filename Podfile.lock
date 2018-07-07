@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
-  - CalculateCalendarLogic (0.1.6)
+  - CalculateCalendarLogic (0.1.7)
   - FontAwesome.swift (1.2.0)
   - Hero (1.1.0)
   - KYNavigationProgress (2.0.2)
@@ -38,7 +38,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
     - CalculateCalendarLogic
@@ -68,7 +68,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  CalculateCalendarLogic: 81b16c24e2b7273fffb03fc29d0c8d1800fd3c9e
+  CalculateCalendarLogic: 3961452b0138ac1d716d18707bc84afe8f46837e
   FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
   Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
@@ -81,4 +81,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 736b9d3003501bfe908559f4ffa716c3ca3f4bea
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
