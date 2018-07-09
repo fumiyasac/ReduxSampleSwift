@@ -11,7 +11,7 @@ import ReSwift
 
 class MonthlyCalendarViewController: UIViewController {
 
-    @IBOutlet weak private var currentMonthLabel: UILabel!
+    @IBOutlet weak private var monthlyCalendarTitleView: MainContentsTitleView!
     @IBOutlet weak private var monthlyCalendarScrollView: UIScrollView!
 
     private var calendarButtonList: [CalendarButtonView] = []
@@ -19,6 +19,7 @@ class MonthlyCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupMonthlyCalendarTitleView()
         setupMonthlyCalendarScrollView()
     }
 
@@ -28,7 +29,6 @@ class MonthlyCalendarViewController: UIViewController {
         if calendarButtonList.isEmpty == false {
             removeMonthlyCalendar()
         }
-        displayCurrentMonth()
         displayMonthlyCalendar()
     }
 
@@ -52,10 +52,12 @@ class MonthlyCalendarViewController: UIViewController {
         monthlyCalendarScrollView.scrollsToTop = false
     }
 
-    private func displayCurrentMonth() {
+    private func setupMonthlyCalendarTitleView() {
         let year  = CalendarButtonModule.currentYear
         let month = CalendarButtonModule.currentMonth
-        currentMonthLabel.text = "\(year)年\(month)月の一覧"
+
+        monthlyCalendarTitleView.setTitle("月別カレンダーMEMO:")
+        monthlyCalendarTitleView.setDescriptionIfNeeded("\(year)年\(month)月分")
     }
 
     private func displayMonthlyCalendar() {

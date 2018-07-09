@@ -10,7 +10,13 @@ import UIKit
 
 class EnglishNewsTableViewCell: UITableViewCell {
 
-    static let CELL_HEIGHT: CGFloat = 126.0
+    static let CELL_HEIGHT: CGFloat = 128.0
+
+    @IBOutlet weak private var englishNewsTitleLabel: UILabel!
+    @IBOutlet weak private var englishNewsDateLabel: UILabel!
+    @IBOutlet weak private var englishNewsTypeLabel: UILabel!
+    @IBOutlet weak private var englishNewsSectionLabel: UILabel!
+    @IBOutlet weak private var englishNewsByLineLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +24,11 @@ class EnglishNewsTableViewCell: UITableViewCell {
 
     // MARK: - Function
 
-    func setCell(_ news: EnglishNewsEntity) {
-
+    func setCell(_ englishNews: EnglishNewsEntity) {
+        englishNewsTitleLabel.text   = englishNews.newsTitle
+        englishNewsDateLabel.text    = englishNews.newsDate
+        englishNewsTypeLabel.text    = englishNews.newsType
+        englishNewsSectionLabel.text = englishNews.newsSection
+        englishNewsByLineLabel.text  = englishNews.newsByLine
     }
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainContentsTitleView" customModule="ReduxSampleSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="2Iq-Do-HF4" id="1O9-Bd-DoU"/>
+                <outlet property="titleLabel" destination="tr4-ZM-Dke" id="16P-YN-uaw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルが入ります" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr4-ZM-Dke">
+                    <rect key="frame" x="12" y="14" width="126" height="14"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注釈が入ります" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iq-Do-HF4">
+                    <rect key="frame" x="265" y="14" width="98" height="14"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tr4-ZM-Dke" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="3bK-3A-h9e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2Iq-Do-HF4" secondAttribute="trailing" constant="12" id="7Uh-bE-jAW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="2Iq-Do-HF4" secondAttribute="bottom" constant="14" id="82R-vm-kvE"/>
+                <constraint firstItem="tr4-ZM-Dke" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="14" id="Ifi-JN-ofI"/>
+                <constraint firstItem="2Iq-Do-HF4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="14" id="Qfl-1n-fEC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tr4-ZM-Dke" secondAttribute="bottom" constant="14" id="b9L-1P-pV5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>

@@ -25,11 +25,11 @@ struct EnglishNewsEntity {
 
         // New York Timesの公開APIから必要なものを取得した上で初期化処理を行う
         // 確認URL: http://developer.nytimes.com/article_search_v2.json#/Console/GET/articlesearch.json
-        self.newsTitle        = json["headline"]["main"].string ?? ""
-        self.newsWebUrlString = json["web_url"].string ?? ""
-        self.newsType         = json["document_type"].string ?? ""
-        self.newsSection      = json["section_name"].string ?? ""
-        self.newsByLine       = json["byline"]["organization"].string ?? ""
+        self.newsTitle        = json["headline"]["main"].string       ?? ""
+        self.newsWebUrlString = json["web_url"].string                ?? ""
+        self.newsType         = json["document_type"].string          ?? "--"
+        self.newsSection      = json["section_name"].string           ?? "--"
+        self.newsByLine       = json["byline"]["organization"].string ?? "--"
 
         // 日付についてはIOS8601形式の文字列を変換して初期化処理を行う
         if let newsDate = json["pub_date"].string {

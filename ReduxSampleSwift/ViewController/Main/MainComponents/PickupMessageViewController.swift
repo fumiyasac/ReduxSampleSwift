@@ -13,11 +13,13 @@ class PickupMessageViewController: UIViewController {
 
     private let pickupMessageCount = 5
 
+    @IBOutlet weak private var pickupMessageTitleView: MainContentsTitleView!
     @IBOutlet weak private var pickupMessageCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupPickupMessageTitleView()
         setupPickupMessageCollectionView()
     }
 
@@ -27,7 +29,11 @@ class PickupMessageViewController: UIViewController {
 
     // MARK: - Private Function
 
-    // UICollectionViewに関する設定を行う
+    private func setupPickupMessageTitleView() {
+        pickupMessageTitleView.setTitle("今月のPickUp情報:")
+        pickupMessageTitleView.setDescriptionIfNeeded()
+    }
+
     private func setupPickupMessageCollectionView() {
         pickupMessageCollectionView.delegate = self
         pickupMessageCollectionView.dataSource = self

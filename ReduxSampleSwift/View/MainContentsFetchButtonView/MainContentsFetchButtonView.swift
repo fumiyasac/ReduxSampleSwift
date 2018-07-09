@@ -1,5 +1,5 @@
 //
-//  EnglishNewsFetchButtonView.swift
+//  MainContentsFetchButtonView.swift
 //  ReduxSampleSwift
 //
 //  Created by 酒井文也 on 2018/07/07.
@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class EnglishNewsFetchButtonView: CustomViewBase {
+class MainContentsFetchButtonView: CustomViewBase {
+
+    static let VIEW_HEIGHT: CGFloat = 48.0
 
     var fetchButtonAction: (() -> ())?
 
@@ -32,6 +34,15 @@ class EnglishNewsFetchButtonView: CustomViewBase {
     }
 
     // MARK: - Function
+
+    func setLoadingState(_ result: Bool = false) {
+        isLoadingWrappedView.isHidden   = !result
+        fetchButtonWrappedView.isHidden = result
+    }
+
+    func setButtonTitle(_ text: String) {
+        fetchButton.setTitle(text, for: .normal)
+    }
 
     // MARK: - Private Function
 

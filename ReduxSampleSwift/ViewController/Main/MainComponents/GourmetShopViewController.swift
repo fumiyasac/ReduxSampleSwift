@@ -10,15 +10,18 @@ import UIKit
 
 class GourmetShopViewController: UIViewController {
 
-    @IBOutlet weak private var gourmetShopCollectionView: UICollectionView!
-    @IBOutlet weak private var shuffleShopButton: UIButton!
-
     private let gourmetShopCount = 6
 
+    @IBOutlet weak private var gourmetShopTitleView: MainContentsTitleView!
+    @IBOutlet weak private var gourmetShopCollectionView: UICollectionView!
+    @IBOutlet weak private var gourmetShopFetchButtonView: MainContentsFetchButtonView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupGourmetShopTitleView()
         setupGourmetShopCollectionView()
+        setupGourmetShopFetchButtonView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,11 +30,19 @@ class GourmetShopViewController: UIViewController {
 
     // MARK: - Private Function
 
-    // UICollectionViewに関する設定を行う
+    private func setupGourmetShopTitleView() {
+        gourmetShopTitleView.setTitle("飲食店チョイス:")
+        gourmetShopTitleView.setDescriptionIfNeeded()
+    }
+
     private func setupGourmetShopCollectionView() {
         gourmetShopCollectionView.delegate = self
         gourmetShopCollectionView.dataSource = self
         gourmetShopCollectionView.registerCustomCell(GourmetShopCollectionViewCell.self)
+    }
+
+    private func setupGourmetShopFetchButtonView() {
+        gourmetShopFetchButtonView.setButtonTitle("表示を変更する")
     }
 }
 
