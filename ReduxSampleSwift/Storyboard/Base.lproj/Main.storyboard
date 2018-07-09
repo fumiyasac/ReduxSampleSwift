@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="1616"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="el0-qD-WeD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1546"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1556"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ra6-bw-NEz">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
@@ -58,16 +58,16 @@
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJ2-pP-195">
-                                                <rect key="frame" x="0.0" y="398" width="375" height="270"/>
+                                                <rect key="frame" x="0.0" y="398" width="375" height="280"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="270" id="gXF-r3-P8C"/>
+                                                    <constraint firstAttribute="height" constant="280" id="gXF-r3-P8C"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="Ry3-sV-xdv" kind="embed" id="UL7-Cx-aMT"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-tU-0W0">
-                                                <rect key="frame" x="0.0" y="668" width="375" height="878"/>
+                                                <rect key="frame" x="0.0" y="678" width="375" height="878"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="878" id="EdB-mO-B7t"/>
                                                 </constraints>
@@ -290,15 +290,18 @@
             <objects>
                 <viewController id="Ry3-sV-xdv" customClass="GourmetShopViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sOz-Ox-3se">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="280"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sga-4h-0GV">
-                                <rect key="frame" x="0.0" y="42" width="375" height="180"/>
+                                <rect key="frame" x="0.0" y="42" width="375" height="190"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iNu-F0-Fgo">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="190" id="FC5-jb-w13"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mhh-g0-IcL">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -315,11 +318,10 @@
                                     <constraint firstItem="iNu-F0-Fgo" firstAttribute="leading" secondItem="sga-4h-0GV" secondAttribute="leading" id="l8z-7x-cHg"/>
                                     <constraint firstAttribute="trailing" secondItem="iNu-F0-Fgo" secondAttribute="trailing" id="rlT-2O-2nV"/>
                                     <constraint firstItem="iNu-F0-Fgo" firstAttribute="top" secondItem="sga-4h-0GV" secondAttribute="top" id="tnM-90-fSv"/>
-                                    <constraint firstAttribute="height" constant="180" id="uJe-cC-TWm"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0W-pa-7vf" customClass="MainContentsFetchButtonView" customModule="ReduxSampleSwift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="222" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="232" width="375" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="5bb-4h-Af7"/>
