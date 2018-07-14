@@ -13,9 +13,12 @@ class EnglishNews {
 
     // MARK: - Static Functions
 
-    //
+    // レスポンスで受け取ったJSONから表示に必要なものを詰め直す
     static func getEnglishNewsListsBy(json: JSON) -> [EnglishNewsEntity] {
+
         var englishNewsEntityLists: [EnglishNewsEntity] = []
+
+        // JSON要素数分のEnglishNewsEntityを配列へ追加する
         for (key: _, value: newsJSON) in json {
             englishNewsEntityLists.append(EnglishNewsEntity.init(json: newsJSON))
         }

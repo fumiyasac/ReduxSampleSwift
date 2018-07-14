@@ -36,6 +36,9 @@
 		DE27D40E20F0AE0500F1E740 /* MainContentsFetchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D40D20F0AE0500F1E740 /* MainContentsFetchButtonView.swift */; };
 		DE27D41120F31CDB00F1E740 /* MainContentsTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D41020F31CDB00F1E740 /* MainContentsTitleView.xib */; };
 		DE27D41320F31CEA00F1E740 /* MainContentsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41220F31CEA00F1E740 /* MainContentsTitleView.swift */; };
+		DE27D41520FA375F00F1E740 /* GourmetShopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41420FA375F00F1E740 /* GourmetShopEntity.swift */; };
+		DE27D41720FA377900F1E740 /* GourmetShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41620FA377900F1E740 /* GourmetShop.swift */; };
+		DE27D41920FA3BAF00F1E740 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41820FA3BAF00F1E740 /* ArrayExtension.swift */; };
 		DE3D912A20EA6392008478C6 /* DateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */; };
 		DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
@@ -136,6 +139,9 @@
 		DE27D40D20F0AE0500F1E740 /* MainContentsFetchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentsFetchButtonView.swift; sourceTree = "<group>"; };
 		DE27D41020F31CDB00F1E740 /* MainContentsTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainContentsTitleView.xib; sourceTree = "<group>"; };
 		DE27D41220F31CEA00F1E740 /* MainContentsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentsTitleView.swift; sourceTree = "<group>"; };
+		DE27D41420FA375F00F1E740 /* GourmetShopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopEntity.swift; sourceTree = "<group>"; };
+		DE27D41620FA377900F1E740 /* GourmetShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShop.swift; sourceTree = "<group>"; };
+		DE27D41820FA3BAF00F1E740 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtil.swift; sourceTree = "<group>"; };
 		DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForNewYorkTimes.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
@@ -257,6 +263,7 @@
 		DE09D40B2001118700177D36 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				DE27D41820FA3BAF00F1E740 /* ArrayExtension.swift */,
 				DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */,
 				DEE53CDB1FF4E2690097C7B2 /* UIColorExtension.swift */,
 				DEE53CE01FF4E2DE0097C7B2 /* UIImageExtension.swift */,
@@ -350,6 +357,7 @@
 		DE3D912C20EA760F008478C6 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
+				DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */,
 				DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */,
 			);
 			path = APIManager;
@@ -367,6 +375,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB82E4620E7808C00C08FFF /* EnglishNewsEntity.swift */,
+				DE27D41420FA375F00F1E740 /* GourmetShopEntity.swift */,
 				DE4D4148206295D70038CC01 /* UserSettingEntity.swift */,
 			);
 			path = Entity;
@@ -515,6 +524,7 @@
 			children = (
 				DE4D414A20629DCF0038CC01 /* Entity */,
 				DEB82E4820E780A200C08FFF /* EnglishNews.swift */,
+				DE27D41620FA377900F1E740 /* GourmetShop.swift */,
 				DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */,
 				DE65650A2095C8A8005745D2 /* UserSetting.swift */,
 			);
@@ -550,7 +560,6 @@
 			isa = PBXGroup;
 			children = (
 				DE3D912C20EA760F008478C6 /* APIManager */,
-				DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */,
 				DE041ADE209DFAF5005271E1 /* AppConstants.swift */,
 				DE58680720C3FCDE00D1F78D /* CalendarButtonModule.swift */,
 				DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */,
@@ -858,7 +867,9 @@
 				DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */,
 				DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */,
 				DE2766AD20BAAEBB0013248E /* MonthlyCalendarViewController.swift in Sources */,
+				DE27D41720FA377900F1E740 /* GourmetShop.swift in Sources */,
 				DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */,
+				DE27D41920FA3BAF00F1E740 /* ArrayExtension.swift in Sources */,
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
 				DE2766A520B395240013248E /* UserSettingActionCreator.swift in Sources */,
@@ -889,6 +900,7 @@
 				DE59F78120CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
+				DE27D41520FA375F00F1E740 /* GourmetShopEntity.swift in Sources */,
 				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,
 				DEE53CE81FF4E7530097C7B2 /* Constants.swift in Sources */,

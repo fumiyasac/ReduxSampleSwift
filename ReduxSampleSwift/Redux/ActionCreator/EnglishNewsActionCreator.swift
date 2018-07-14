@@ -18,17 +18,20 @@ extension EnglishNewsActionCreator {
     // 英語ニュースをページごとに取得する
     static func fetchEnglishNewsList(page: Int = 0) {
 
-        //
+        // データ読み込み中の状態を反映するアクションの実行
         appStore.dispatch(EnglishNewsState.englishNewsAction.setIsLoadingEnglishNews())
 
-        // 現在の初期設定状態を反映するアクションの実行
+        // NYTのAPIから該当ページ番号のニュース一覧を取得する
         APIManagerForNewYorkTimes.shared.getNewsList(page: page)
             .done { newsJSON in
-                print(newsJSON)
+
+                // 成功時: ニュースの一覧を反映するアクションの実行
                 let englishNewsList = EnglishNews.getEnglishNewsListsBy(json: newsJSON)
                 appStore.dispatch(EnglishNewsState.englishNewsAction.setEnglishNews(news: englishNewsList))
+
             }.catch { error in
-                print(error)
+
+                // 失敗時: データ読み込み失敗時の状態を反映するアクションの実行
                 appStore.dispatch(EnglishNewsState.englishNewsAction.setIsErrorEnglishNews())
             }
     }
