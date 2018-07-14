@@ -20,6 +20,8 @@ class EnglishNewsTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        setupEnglishNewsTableViewCell()
     }
 
     // MARK: - Function
@@ -30,5 +32,12 @@ class EnglishNewsTableViewCell: UITableViewCell {
         englishNewsTypeLabel.text    = englishNews.newsType
         englishNewsSectionLabel.text = englishNews.newsSection
         englishNewsByLineLabel.text  = englishNews.newsByLine
+    }
+
+    // MARK: - Private Function
+
+    private func setupEnglishNewsTableViewCell() {
+        self.accessoryType  = .none
+        self.selectionStyle = .none
     }
 }

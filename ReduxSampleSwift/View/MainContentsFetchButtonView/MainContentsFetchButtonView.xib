@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainContentsFetchButtonView" customModule="ReduxSampleSwift" customModuleProvider="target">
             <connections>
+                <outlet property="fetchActivityIndicator" destination="Tl7-l8-uni" id="WIM-aL-gfW"/>
                 <outlet property="fetchButton" destination="HbL-tY-caD" id="BFQ-2T-bhC"/>
                 <outlet property="fetchButtonWrappedView" destination="woX-sC-J6j" id="tAq-Vg-pxz"/>
                 <outlet property="isLoadingWrappedView" destination="csX-yx-bA0" id="Bzl-NJ-IdW"/>

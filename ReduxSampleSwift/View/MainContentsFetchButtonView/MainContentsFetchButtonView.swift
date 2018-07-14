@@ -17,6 +17,7 @@ class MainContentsFetchButtonView: CustomViewBase {
 
     @IBOutlet weak private var isLoadingWrappedView: UIView!
     @IBOutlet weak private var fetchButtonWrappedView: UIView!
+    @IBOutlet weak private var fetchActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak private var fetchButton: UIButton!
 
     // MARK: - Initializer
@@ -36,8 +37,15 @@ class MainContentsFetchButtonView: CustomViewBase {
     // MARK: - Function
 
     func setLoadingState(_ result: Bool = false) {
-        isLoadingWrappedView.isHidden   = !result
-        fetchButtonWrappedView.isHidden = result
+        if result {
+            isLoadingWrappedView.isHidden   = false
+            fetchButtonWrappedView.isHidden = true
+            fetchActivityIndicator.startAnimating()
+        } else {
+            isLoadingWrappedView.isHidden   = true
+            fetchButtonWrappedView.isHidden = false
+            fetchActivityIndicator.stopAnimating()
+        }
     }
 
     func setButtonTitle(_ text: String) {

@@ -21,6 +21,6 @@ struct EnglishNewsState: ReSwift.StateType {
     // 英語ニュースの一覧を格納する配列（初期値: []）
     var englishNewsList: [EnglishNewsEntity] = []
 
-    // 英語ニュースが読み込み中かを判定するフラグ（初期値: false）
+    // 英語ニュースが読み込み失敗かを判定するフラグ（初期値: false）
     var isErrorEnglishNews: Bool = false
 }
