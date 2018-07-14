@@ -11,6 +11,7 @@ import ReSwift
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak private var englishNewsContainer: UIView!
     @IBOutlet weak private var englishNewListHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -31,9 +32,20 @@ class MainViewController: UIViewController {
         appStore.unsubscribe(self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        // ContainerViewで接続されたViewController側に定義したプロトコルを適用するためにSegueからViewControllerのインスタンスを作成する
+        if segue.identifier == "EnglishNewsContainer" {
+            let englishNewsViewController = segue.destination as! EnglishNewsViewController
+            englishNewsViewController.delegate = self
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    // MARK: - Private Function
 }
 
 // MARK: - StoreSubscriber
@@ -43,21 +55,36 @@ extension MainViewController: StoreSubscriber {
     // ステートの更新が検知された際に実行される処理
     func newState(state: AppState) {
 
-        // 英語ニュース表示エリアのコンテンツ高さの調節を行う ← FIXME: ここはProtocolで処理委譲するべき
-        setEnglishNewContainerViewHeight(newsListCount: state.englishNewsState.englishNewsList.count)
-
         // Debug.
         print("---")
         print("State logging #start: Stateの変更をMainViewControllerで受け取りました。")
-        print(state.englishNewsState)
         print("MainViewController logging #end:")
         print("---\n")
     }
+}
 
-    // MARK: - Private Function
+// MARK: - EnglishNewsViewDelegate
 
-    private func setEnglishNewContainerViewHeight(newsListCount: Int) {
-        let englishNewListContentHeight = CGFloat(newsListCount) * EnglishNewsTableViewCell.CELL_HEIGHT
+extension MainViewController: EnglishNewsViewDelegate {
+
+    // 英語ニュースの取得成功時にこのViewController側で行う処理
+    func fetchEnglishNewsListSuccess(_ newsCount: Int) {
+
+        // 英語ニュースを表示しているContainerViewの高さを調節する
+        let englishNewListContentHeight = CGFloat(newsCount) * EnglishNewsTableViewCell.CELL_HEIGHT
         englishNewListHeight.constant = englishNewListContentHeight + MainContentsTitleView.VIEW_HEIGHT + MainContentsFetchButtonView.VIEW_HEIGHT
+    }
+
+    // 英語ニュースの取得失敗時にこのViewController側で行う処理
+    func fetchEnglishNewsListFailure() {
+
+        // TODO: エラー発生時のポップアップを表示する
+        print("EnglishNewsの表示時にエラーが発生しました。")
+    }
+
+    func selectEnglishNews(_ urlString: String) {
+
+        // TODO: WebView(WKWebView)でNYTの記事を表示する
+        print("表示するべきURL:", urlString)
     }
 }
