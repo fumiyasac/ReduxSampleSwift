@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class GourmetShop {
 
-    private static let limitGetShopCount = 5
+    static let GOURMET_SHOP_COUNT = 5
 
     private static let countList: [Int] = {
         var valueList: [Int] = []
@@ -44,6 +44,6 @@ class GourmetShop {
 
     private static func getTargetCountList() -> [Int] {
         let randomSortedCountList = countList.shuffled
-        return randomSortedCountList.enumerated().filter{ $0.0 < limitGetShopCount }.map{ $0.1 }
+        return randomSortedCountList.enumerated().filter{ $0.0 < GOURMET_SHOP_COUNT }.map{ $0.1 }
     }
 }

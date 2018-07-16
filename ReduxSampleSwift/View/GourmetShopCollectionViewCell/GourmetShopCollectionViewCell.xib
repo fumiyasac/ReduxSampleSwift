@@ -21,24 +21,34 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEA-E6-Eyc">
                         <rect key="frame" x="6" y="6" width="148" height="168"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8f-qN-4BN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q8f-qN-4BN">
                                 <rect key="frame" x="0.0" y="0.0" width="148" height="168"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <view alpha="0.56000000000000005" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wwt-1L-BFa">
+                                <rect key="frame" x="0.0" y="0.0" width="148" height="168"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDW-QY-PHi">
+                                <rect key="frame" x="8" y="93" width="132" height="9"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-Mu-zf3">
-                                <rect key="frame" x="8" y="108" width="86" height="16"/>
-                                <color key="backgroundColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="8" y="110" width="100" height="16"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.5" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="FXb-Mr-aP9"/>
+                                    <constraint firstAttribute="width" constant="100" id="FXb-Mr-aP9"/>
                                     <constraint firstAttribute="height" constant="16" id="gOL-La-1En"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="9"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日のベストグルメが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Deb-IV-9lw">
-                                <rect key="frame" x="8" y="134" width="132" height="24"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
+                                <rect key="frame" x="8" y="136" width="132" height="22"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -46,14 +56,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Deb-IV-9lw" secondAttribute="trailing" constant="8" id="1tv-V8-I9F"/>
+                            <constraint firstAttribute="trailing" secondItem="Wwt-1L-BFa" secondAttribute="trailing" id="2JE-9h-vjp"/>
                             <constraint firstAttribute="bottom" secondItem="Q8f-qN-4BN" secondAttribute="bottom" id="2Pl-Tr-m3d"/>
+                            <constraint firstItem="xDW-QY-PHi" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="2oM-Zw-wZp"/>
                             <constraint firstAttribute="trailing" secondItem="Q8f-qN-4BN" secondAttribute="trailing" id="5XY-Dh-8Os"/>
+                            <constraint firstItem="dzw-Mu-zf3" firstAttribute="top" secondItem="xDW-QY-PHi" secondAttribute="bottom" constant="8" id="8GA-k2-s1t"/>
+                            <constraint firstItem="Wwt-1L-BFa" firstAttribute="top" secondItem="DEA-E6-Eyc" secondAttribute="top" id="AB0-7t-6rt"/>
                             <constraint firstItem="Deb-IV-9lw" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="J9b-kT-07y"/>
                             <constraint firstItem="dzw-Mu-zf3" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" constant="8" id="Ktf-Mz-0zP"/>
                             <constraint firstAttribute="bottom" secondItem="Deb-IV-9lw" secondAttribute="bottom" constant="10" id="NTp-s7-kTv"/>
                             <constraint firstItem="Deb-IV-9lw" firstAttribute="top" secondItem="dzw-Mu-zf3" secondAttribute="bottom" constant="10" id="Rsk-Ie-KeL"/>
+                            <constraint firstItem="Wwt-1L-BFa" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" id="Wqj-bF-MaC"/>
                             <constraint firstItem="Q8f-qN-4BN" firstAttribute="leading" secondItem="DEA-E6-Eyc" secondAttribute="leading" id="aoG-hQ-2TI"/>
+                            <constraint firstAttribute="trailing" secondItem="xDW-QY-PHi" secondAttribute="trailing" constant="8" id="grO-WQ-2Xj"/>
                             <constraint firstItem="Q8f-qN-4BN" firstAttribute="top" secondItem="DEA-E6-Eyc" secondAttribute="top" id="iXa-5D-Nn8"/>
+                            <constraint firstAttribute="bottom" secondItem="Wwt-1L-BFa" secondAttribute="bottom" id="nh7-OB-JMZ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -66,7 +83,8 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="gourmetShopCategoryLabel" destination="dzw-Mu-zf3" id="Ztf-T6-iQi"/>
+                <outlet property="gourmetShopFoodLabel" destination="xDW-QY-PHi" id="mQn-fN-1yw"/>
+                <outlet property="gourmetShopGenreLabel" destination="dzw-Mu-zf3" id="ZGO-cb-O4l"/>
                 <outlet property="gourmetShopImageView" destination="Q8f-qN-4BN" id="Us5-5v-hXe"/>
                 <outlet property="gourmetShopTitleLabel" destination="Deb-IV-9lw" id="z9g-jS-5jO"/>
                 <outlet property="gourmetShopWrappedView" destination="DEA-E6-Eyc" id="ejY-ub-Zb8"/>
