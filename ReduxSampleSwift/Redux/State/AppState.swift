@@ -20,4 +20,7 @@ struct AppState: ReSwift.StateType {
 
     // 英語ニュース一覧に関するstate
     var englishNewsState = EnglishNewsState()
+
+    // 飲食店情報に関するstate
+    var gourmetShopState = GourmetShopState()
 }

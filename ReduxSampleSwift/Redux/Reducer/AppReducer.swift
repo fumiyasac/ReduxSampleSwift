@@ -13,9 +13,11 @@ import ReSwift
 func appReduce(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
 
+    // それぞれの変更されたReducerを反映する
     state.tutorialState = TutorialReducer.reducer(action: action, state: state.tutorialState)
     state.userSettingState = UserSettingReducer.reducer(action: action, state: state.userSettingState)
     state.englishNewsState = EnglishNewsReducer.reducer(action: action, state: state.englishNewsState)
+    state.gourmetShopState = GourmetShopReducer.reducer(action: action, state: state.gourmetShopState)
 
     // Debug.
     print("---")

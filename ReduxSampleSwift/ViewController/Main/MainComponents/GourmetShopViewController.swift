@@ -7,10 +7,28 @@
 //
 
 import UIKit
+import ReSwift
+
+// MARK: - Protocol
+
+// MEMO: ContainerViewを介したViewに関する処理はプロトコル経由で接続する
+protocol GourmetShopViewDelegate: NSObjectProtocol {
+
+    // 飲食店情報のセル選択時にプロトコルを適用したViewController側で行うためのメソッド
+    func selectGourmetShop(_ urlString: String)
+}
 
 class GourmetShopViewController: UIViewController {
 
-    private let gourmetShopCount = 6
+    private var gourmetShopList: [GourmetShopEntity] = [] {
+        // 値の変更があった場合に再読み込みを実行する
+        didSet {
+            self.gourmetShopCollectionView.reloadData()
+        }
+    }
+
+    // GourmetShopViewDelegateの宣言
+    weak var delegate: GourmetShopViewDelegate?
 
     @IBOutlet weak private var gourmetShopTitleView: MainContentsTitleView!
     @IBOutlet weak private var gourmetShopCollectionView: UICollectionView!
@@ -22,6 +40,23 @@ class GourmetShopViewController: UIViewController {
         setupGourmetShopTitleView()
         setupGourmetShopCollectionView()
         setupGourmetShopFetchButtonView()
+
+        // 飲食店情報をフェッチするアクションを実行する
+        GourmetShopActionCreator.fetchGourmetShopList()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
+        appStore.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
+        appStore.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +78,39 @@ class GourmetShopViewController: UIViewController {
 
     private func setupGourmetShopFetchButtonView() {
         gourmetShopFetchButtonView.setButtonTitle("表示を変更する")
+        gourmetShopFetchButtonView.fetchButtonAction = {
+
+            // 飲食店情報をフェッチするアクションを実行する
+            GourmetShopActionCreator.fetchGourmetShopList()
+        }
+    }
+}
+
+// MARK: - StoreSubscriber
+
+extension GourmetShopViewController: StoreSubscriber {
+
+    // ステートの更新が検知された際に実行される処理
+    func newState(state: AppState) {
+
+        // 飲食店情報のリストデータをメンバ変数へ格納する
+        gourmetShopList = state.gourmetShopState.gourmetShopList
+
+        // 飲食店情報の読み込み状態をボタンへ反映させる
+        gourmetShopFetchButtonView.setLoadingState(state.gourmetShopState.isLoadingGourmetShop)
+
+        // 飲食店情報の取得に失敗した場合はその状態表示をこのView内で実行する
+        let isErrorGourmetShop = state.gourmetShopState.isErrorGourmetShop
+        if isErrorGourmetShop {
+            // TODO: エラー時のViewに関する処理を実行する
+        }
+
+        // Debug.
+        print("---")
+        print("GourmetShopState logging #start: GourmetShopStateの変更をGourmetShopViewControllerで受け取りました。")
+        print(state.gourmetShopState)
+        print("GourmetShopState logging #end:")
+        print("---\n")
     }
 }
 
@@ -55,14 +123,22 @@ extension GourmetShopViewController: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gourmetShopCount
+        return gourmetShopList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: GourmetShopCollectionViewCell.self, indexPath: indexPath)
-        cell.setCell()
+        let gourmetShop = gourmetShopList[indexPath.row]
+        cell.setCell(gourmetShop)
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let gourmetShop = gourmetShopList[indexPath.row]
+
+        // 飲食店情報のURLを取得して、ContainerViewを配置しているViewControllerからWebViewで表示する
+        self.delegate?.selectGourmetShop(gourmetShop.gourmetShopUrl)
     }
 }
 

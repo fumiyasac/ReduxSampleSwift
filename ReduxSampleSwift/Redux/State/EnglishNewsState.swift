@@ -9,7 +9,7 @@
 import Foundation
 import ReSwift
 
-// 英語ニュースの通過状態に関するstateの定義
+// 英語ニュースの通信状態に関するstateの定義
 struct EnglishNewsState: ReSwift.StateType {
 
     // 英語ニュースが読み込み中かを判定するフラグ（初期値: false）

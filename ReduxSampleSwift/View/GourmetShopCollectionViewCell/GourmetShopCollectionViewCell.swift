@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class GourmetShopCollectionViewCell: UICollectionViewCell {
 
@@ -14,7 +15,8 @@ class GourmetShopCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak private var gourmetShopWrappedView: UIView!
     @IBOutlet weak private var gourmetShopImageView: UIImageView!
-    @IBOutlet weak private var gourmetShopCategoryLabel: UILabel!
+    @IBOutlet weak private var gourmetShopFoodLabel: UILabel!
+    @IBOutlet weak private var gourmetShopGenreLabel: UILabel!
     @IBOutlet weak private var gourmetShopTitleLabel: UILabel!
 
     override func awakeFromNib() {
@@ -25,8 +27,13 @@ class GourmetShopCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Function
 
-    func setCell() {
-        setAttributesForTitle("今日のベストグルメが入ります。")
+    func setCell(_ shop: GourmetShopEntity) {
+        if let imageUrl = URL(string: shop.gourmetShopImageUrl) {
+            gourmetShopImageView.af_setImage(withURL: imageUrl)
+        }
+        gourmetShopFoodLabel.text  = shop.gourmetShopFood
+        gourmetShopGenreLabel.text = shop.gourmetShopGenre
+        setAttributesForTitle(shop.gourmetShopName)
     }
 
     // MARK: - Private Function

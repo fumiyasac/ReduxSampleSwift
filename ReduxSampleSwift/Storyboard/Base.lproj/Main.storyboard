@@ -63,7 +63,7 @@
                                                     <constraint firstAttribute="height" constant="280" id="gXF-r3-P8C"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="Ry3-sV-xdv" kind="embed" id="UL7-Cx-aMT"/>
+                                                    <segue destination="Ry3-sV-xdv" kind="embed" identifier="GourmetShopContainer" id="UL7-Cx-aMT"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-tU-0W0">
@@ -100,7 +100,6 @@
                     <size key="freeformSize" width="375" height="1680"/>
                     <connections>
                         <outlet property="englishNewListHeight" destination="EdB-mO-B7t" id="BPT-RN-iQ1"/>
-                        <outlet property="englishNewsContainer" destination="7Ba-tU-0W0" id="7c0-62-2La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

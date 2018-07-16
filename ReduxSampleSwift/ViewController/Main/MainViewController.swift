@@ -11,7 +11,6 @@ import ReSwift
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak private var englishNewsContainer: UIView!
     @IBOutlet weak private var englishNewListHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -39,6 +38,11 @@ class MainViewController: UIViewController {
             let englishNewsViewController = segue.destination as! EnglishNewsViewController
             englishNewsViewController.delegate = self
         }
+
+        if segue.identifier == "GourmetShopContainer" {
+            let gourmetShopViewController = segue.destination as! GourmetShopViewController
+            gourmetShopViewController.delegate = self
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +64,16 @@ extension MainViewController: StoreSubscriber {
         print("State logging #start: Stateの変更をMainViewControllerで受け取りました。")
         print("MainViewController logging #end:")
         print("---\n")
+    }
+}
+
+// MARK: - GourmetShopViewDelegate
+
+extension MainViewController: GourmetShopViewDelegate {
+
+    func selectGourmetShop(_ urlString: String) {
+        // TODO: WebView(WKWebView)でNYTの記事を表示する
+        print("表示するべきURL:", urlString)
     }
 }
 
