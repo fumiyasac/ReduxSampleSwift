@@ -29,8 +29,18 @@
                                     <constraint firstAttribute="height" constant="75" id="vWi-li-aSx"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-vr-H3F">
+                                <rect key="frame" x="15" y="60" width="69" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="Oef-eu-dCZ"/>
+                                    <constraint firstAttribute="width" constant="69" id="p4E-nE-d0k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="8"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TGf-2B-nBd">
-                                <rect key="frame" x="95" y="3" width="213" height="75"/>
+                                <rect key="frame" x="95" y="2.5" width="213" height="75"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Uxx-il-Xj9">
                                         <rect key="frame" x="0.0" y="0.0" width="213" height="12"/>
@@ -149,12 +159,14 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="TGf-2B-nBd" firstAttribute="top" secondItem="Ato-x2-VLf" secondAttribute="top" constant="3" id="4qx-a0-fri"/>
+                            <constraint firstItem="fAh-vr-H3F" firstAttribute="bottom" secondItem="8ar-hJ-dNB" secondAttribute="bottom" id="DiT-Dm-sWw"/>
                             <constraint firstAttribute="bottom" secondItem="TGf-2B-nBd" secondAttribute="bottom" constant="12" id="Mty-SF-saa"/>
                             <constraint firstAttribute="height" constant="90" id="T00-AS-ZJp"/>
                             <constraint firstItem="TGf-2B-nBd" firstAttribute="leading" secondItem="8ar-hJ-dNB" secondAttribute="trailing" constant="8" id="V9m-rK-ond"/>
                             <constraint firstItem="8ar-hJ-dNB" firstAttribute="top" secondItem="Ato-x2-VLf" secondAttribute="top" constant="3" id="ayJ-EZ-Haf"/>
                             <constraint firstAttribute="trailing" secondItem="TGf-2B-nBd" secondAttribute="trailing" constant="12" id="esr-30-mgo"/>
                             <constraint firstItem="8ar-hJ-dNB" firstAttribute="leading" secondItem="Ato-x2-VLf" secondAttribute="leading" constant="12" id="gbC-b7-kFT"/>
+                            <constraint firstItem="fAh-vr-H3F" firstAttribute="centerX" secondItem="8ar-hJ-dNB" secondAttribute="centerX" id="ni1-rp-Por"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NYT News Title is here! Please input this field!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQD-so-7EV">
@@ -200,6 +212,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="news_sample" width="75" height="75"/>
+        <image name="news_sample" width="112" height="112"/>
     </resources>
 </document>
