@@ -13,6 +13,7 @@ class MonthlyCalendarViewController: UIViewController {
 
     @IBOutlet weak private var monthlyCalendarTitleView: MainContentsTitleView!
     @IBOutlet weak private var monthlyCalendarScrollView: UIScrollView!
+    @IBOutlet weak private var monthlyCalendarRemarkView: MainContentsRemarkView!
 
     private var calendarButtonList: [CalendarButtonView] = []
 
@@ -21,6 +22,7 @@ class MonthlyCalendarViewController: UIViewController {
 
         setupMonthlyCalendarTitleView()
         setupMonthlyCalendarScrollView()
+        setupMonthlyCalendarRemarkView()
     }
 
     override func viewDidLayoutSubviews() {
@@ -58,6 +60,10 @@ class MonthlyCalendarViewController: UIViewController {
 
         monthlyCalendarTitleView.setTitle("月別カレンダーMEMO:")
         monthlyCalendarTitleView.setDescriptionIfNeeded("\(year)年\(month)月分")
+    }
+
+    private func setupMonthlyCalendarRemarkView() {
+        monthlyCalendarRemarkView.setRemark("日付を押すとその日のメモを記載できます。")
     }
 
     private func displayMonthlyCalendar() {
