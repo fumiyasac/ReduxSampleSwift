@@ -74,6 +74,7 @@ class GourmetShopViewController: UIViewController {
         gourmetShopCollectionView.delegate = self
         gourmetShopCollectionView.dataSource = self
         gourmetShopCollectionView.registerCustomCell(GourmetShopCollectionViewCell.self)
+        shouldHideGourmetShopCollectionView(result: true)
     }
 
     private func setupGourmetShopFetchButtonView() {
@@ -83,6 +84,10 @@ class GourmetShopViewController: UIViewController {
             // 飲食店情報をフェッチするアクションを実行する
             GourmetShopActionCreator.fetchGourmetShopList()
         }
+    }
+
+    private func shouldHideGourmetShopCollectionView(result: Bool) {
+        gourmetShopCollectionView.isHidden = result
     }
 }
 
@@ -101,9 +106,7 @@ extension GourmetShopViewController: StoreSubscriber {
 
         // 飲食店情報の取得に失敗した場合はその状態表示をこのView内で実行する
         let isErrorGourmetShop = state.gourmetShopState.isErrorGourmetShop
-        if isErrorGourmetShop {
-            // TODO: エラー時のViewに関する処理を実行する
-        }
+        shouldHideGourmetShopCollectionView(result: isErrorGourmetShop)
 
         // Debug.
         print("---")

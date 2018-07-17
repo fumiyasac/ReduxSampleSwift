@@ -39,12 +39,12 @@
 		DE27D41520FA375F00F1E740 /* GourmetShopEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41420FA375F00F1E740 /* GourmetShopEntity.swift */; };
 		DE27D41720FA377900F1E740 /* GourmetShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41620FA377900F1E740 /* GourmetShop.swift */; };
 		DE27D41920FA3BAF00F1E740 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41820FA3BAF00F1E740 /* ArrayExtension.swift */; };
-		DE27D41D20FCD47800F1E740 /* GourmetShopLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D41C20FCD47800F1E740 /* GourmetShopLoadingView.xib */; };
-		DE27D41F20FCD4A400F1E740 /* GourmetShopLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D41E20FCD4A400F1E740 /* GourmetShopLoadingView.swift */; };
 		DE27D42120FCD84A00F1E740 /* GourmetShopState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42020FCD84A00F1E740 /* GourmetShopState.swift */; };
 		DE27D42320FCDF9300F1E740 /* GourmetShopAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42220FCDF9300F1E740 /* GourmetShopAction.swift */; };
 		DE27D42520FCDFA900F1E740 /* GourmetShopReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42420FCDFA900F1E740 /* GourmetShopReducer.swift */; };
 		DE27D42720FCE16D00F1E740 /* GourmetShopActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42620FCE16D00F1E740 /* GourmetShopActionCreator.swift */; };
+		DE27D42A20FE247D00F1E740 /* MainContentsRemarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D42920FE247D00F1E740 /* MainContentsRemarkView.xib */; };
+		DE27D42C20FE248E00F1E740 /* MainContentsRemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42B20FE248E00F1E740 /* MainContentsRemarkView.swift */; };
 		DE3D912A20EA6392008478C6 /* DateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */; };
 		DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
@@ -148,12 +148,12 @@
 		DE27D41420FA375F00F1E740 /* GourmetShopEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopEntity.swift; sourceTree = "<group>"; };
 		DE27D41620FA377900F1E740 /* GourmetShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShop.swift; sourceTree = "<group>"; };
 		DE27D41820FA3BAF00F1E740 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		DE27D41C20FCD47800F1E740 /* GourmetShopLoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GourmetShopLoadingView.xib; sourceTree = "<group>"; };
-		DE27D41E20FCD4A400F1E740 /* GourmetShopLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopLoadingView.swift; sourceTree = "<group>"; };
 		DE27D42020FCD84A00F1E740 /* GourmetShopState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopState.swift; sourceTree = "<group>"; };
 		DE27D42220FCDF9300F1E740 /* GourmetShopAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopAction.swift; sourceTree = "<group>"; };
 		DE27D42420FCDFA900F1E740 /* GourmetShopReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopReducer.swift; sourceTree = "<group>"; };
 		DE27D42620FCE16D00F1E740 /* GourmetShopActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopActionCreator.swift; sourceTree = "<group>"; };
+		DE27D42920FE247D00F1E740 /* MainContentsRemarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainContentsRemarkView.xib; sourceTree = "<group>"; };
+		DE27D42B20FE248E00F1E740 /* MainContentsRemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentsRemarkView.swift; sourceTree = "<group>"; };
 		DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtil.swift; sourceTree = "<group>"; };
 		DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForNewYorkTimes.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
@@ -367,13 +367,13 @@
 			path = MainContentsTitleView;
 			sourceTree = "<group>";
 		};
-		DE27D41A20FCD42600F1E740 /* GourmetShopLoadingView */ = {
+		DE27D42820FE241000F1E740 /* MainContentsRemarkView */ = {
 			isa = PBXGroup;
 			children = (
-				DE27D41E20FCD4A400F1E740 /* GourmetShopLoadingView.swift */,
-				DE27D41C20FCD47800F1E740 /* GourmetShopLoadingView.xib */,
+				DE27D42B20FE248E00F1E740 /* MainContentsRemarkView.swift */,
+				DE27D42920FE247D00F1E740 /* MainContentsRemarkView.xib */,
 			);
-			path = GourmetShopLoadingView;
+			path = MainContentsRemarkView;
 			sourceTree = "<group>";
 		};
 		DE3D912C20EA760F008478C6 /* APIManager */ = {
@@ -622,8 +622,8 @@
 				DEE53CF71FFBB5D50097C7B2 /* CustomViewBase */,
 				DE59F77920CAD154005B2BCC /* EnglishNewsTableViewCell */,
 				DE2685EB20C83ADB00D50BCA /* GourmetShopCollectionViewCell */,
-				DE27D41A20FCD42600F1E740 /* GourmetShopLoadingView */,
 				DE27D40A20F0ADB000F1E740 /* MainContentsFetchButtonView */,
+				DE27D42820FE241000F1E740 /* MainContentsRemarkView */,
 				DE27D40F20F31C7800F1E740 /* MainContentsTitleView */,
 				DED8E96520C55ABE00836CE4 /* PickupMessageCollectionViewCell */,
 				DED8E96220C43D9A00836CE4 /* PickupMessageFlowLayout */,
@@ -772,10 +772,10 @@
 				DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */,
 				DE2766B920BAF0100013248E /* UserSetting.storyboard in Resources */,
 				DE671B071FDFC75400B752CA /* LaunchScreen.storyboard in Resources */,
-				DE27D41D20FCD47800F1E740 /* GourmetShopLoadingView.xib in Resources */,
 				DE2766C120BAF83F0013248E /* MessageDetail.storyboard in Resources */,
 				DE671B041FDFC75400B752CA /* Assets.xcassets in Resources */,
 				DEE53CFD1FFD1C750097C7B2 /* Tutorial.storyboard in Resources */,
+				DE27D42A20FE247D00F1E740 /* MainContentsRemarkView.xib in Resources */,
 				DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */,
 				DE27D40C20F0ADF800F1E740 /* MainContentsFetchButtonView.xib in Resources */,
 				DE27D41120F31CDB00F1E740 /* MainContentsTitleView.xib in Resources */,
@@ -896,7 +896,6 @@
 				DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */,
 				DE2766AD20BAAEBB0013248E /* MonthlyCalendarViewController.swift in Sources */,
 				DE27D41720FA377900F1E740 /* GourmetShop.swift in Sources */,
-				DE27D41F20FCD4A400F1E740 /* GourmetShopLoadingView.swift in Sources */,
 				DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */,
 				DE27D41920FA3BAF00F1E740 /* ArrayExtension.swift in Sources */,
 				DE27D42320FCDF9300F1E740 /* GourmetShopAction.swift in Sources */,
@@ -920,6 +919,7 @@
 				DE041AD72096E81F005271E1 /* UITableViewExtension.swift in Sources */,
 				DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */,
 				DE27D42120FCD84A00F1E740 /* GourmetShopState.swift in Sources */,
+				DE27D42C20FE248E00F1E740 /* MainContentsRemarkView.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */,
 				DEB82E4520E77B2300C08FFF /* EnglishNewsState.swift in Sources */,

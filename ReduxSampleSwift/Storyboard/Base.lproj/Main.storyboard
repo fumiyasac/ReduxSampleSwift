@@ -69,7 +69,7 @@
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ba-tU-0W0">
                                                 <rect key="frame" x="0.0" y="678" width="375" height="878"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="878" id="EdB-mO-B7t"/>
+                                                    <constraint firstAttribute="height" priority="750" constant="878" id="EdB-mO-B7t"/>
                                                 </constraints>
                                                 <connections>
                                                     <segue destination="Jgz-3o-iol" kind="embed" identifier="EnglishNewsContainer" id="qmn-ix-MbB"/>
@@ -120,21 +120,11 @@
                                     <constraint firstAttribute="height" constant="58" id="4mB-Jm-jDJ"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUV-sJ-Vxb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUV-sJ-Vxb" customClass="MainContentsRemarkView" customModule="ReduxSampleSwift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="375" height="33"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※日付をクリックするとメモが開きます。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbR-Hh-DrF">
-                                        <rect key="frame" x="12" y="10" width="246" height="13"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
-                                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="fbR-Hh-DrF" firstAttribute="centerY" secondItem="LUV-sJ-Vxb" secondAttribute="centerY" id="Qtk-iS-aje"/>
-                                    <constraint firstItem="fbR-Hh-DrF" firstAttribute="leading" secondItem="LUV-sJ-Vxb" secondAttribute="leading" constant="12" id="dqA-nu-dfI"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fbR-Hh-DrF" secondAttribute="trailing" constant="12" id="pgC-Ny-6gr"/>
+                                    <constraint firstAttribute="height" constant="33" id="VQQ-1q-278"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrF-zm-qgm" customClass="MainContentsTitleView" customModule="ReduxSampleSwift" customModuleProvider="target">
@@ -166,6 +156,7 @@
                         <viewLayoutGuide key="safeArea" id="Y91-Oe-T6k"/>
                     </view>
                     <connections>
+                        <outlet property="monthlyCalendarRemarkView" destination="LUV-sJ-Vxb" id="m9d-b6-rfz"/>
                         <outlet property="monthlyCalendarScrollView" destination="fQM-cX-sjh" id="Ot5-re-xwS"/>
                         <outlet property="monthlyCalendarTitleView" destination="KrF-zm-qgm" id="gaa-sb-sMt"/>
                         <segue destination="9C6-tk-ZvP" kind="presentation" id="nQY-w5-lpF"/>
@@ -202,13 +193,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxQ-cd-OVP">
                                 <rect key="frame" x="0.0" y="42" width="375" height="190"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLg-NK-7Nb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="190" id="oTC-VX-9aL"/>
-                                        </constraints>
-                                    </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hM4-Gw-rpY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
@@ -221,35 +205,21 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="VLg-NK-7Nb" secondAttribute="trailing" id="5lr-rQ-YZD"/>
                                     <constraint firstAttribute="trailing" secondItem="hM4-Gw-rpY" secondAttribute="trailing" id="Etu-xh-K3M"/>
                                     <constraint firstItem="hM4-Gw-rpY" firstAttribute="leading" secondItem="lxQ-cd-OVP" secondAttribute="leading" id="I9n-KJ-HGq"/>
-                                    <constraint firstItem="VLg-NK-7Nb" firstAttribute="leading" secondItem="lxQ-cd-OVP" secondAttribute="leading" id="LNP-Xo-Go7"/>
                                     <constraint firstAttribute="height" constant="190" id="RhM-vg-aZe"/>
                                     <constraint firstItem="hM4-Gw-rpY" firstAttribute="top" secondItem="lxQ-cd-OVP" secondAttribute="top" id="ZRi-S1-Jde"/>
                                     <constraint firstAttribute="bottom" secondItem="hM4-Gw-rpY" secondAttribute="bottom" id="bSg-kU-rX5"/>
-                                    <constraint firstAttribute="bottom" secondItem="VLg-NK-7Nb" secondAttribute="bottom" id="e8P-QR-POS"/>
-                                    <constraint firstItem="VLg-NK-7Nb" firstAttribute="top" secondItem="lxQ-cd-OVP" secondAttribute="top" id="hZw-K0-S4w"/>
                                     <constraint firstItem="hM4-Gw-rpY" firstAttribute="top" secondItem="lxQ-cd-OVP" secondAttribute="top" id="npg-Og-eDb"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTI-Ei-oi0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTI-Ei-oi0" customClass="MainContentsRemarkView" customModule="ReduxSampleSwift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="232" width="375" height="33"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※クリックすると詳細が表示されます。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7VU-s8-ZL0">
-                                        <rect key="frame" x="12" y="10" width="233" height="13"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
-                                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="7VU-s8-ZL0" firstAttribute="centerY" secondItem="RTI-Ei-oi0" secondAttribute="centerY" id="GcQ-Hg-NOe"/>
-                                    <constraint firstItem="7VU-s8-ZL0" firstAttribute="leading" secondItem="RTI-Ei-oi0" secondAttribute="leading" constant="12" id="VGv-e9-qpq"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7VU-s8-ZL0" secondAttribute="trailing" constant="12" id="vhb-KG-meW"/>
+                                    <constraint firstAttribute="height" constant="33" id="tfm-j0-eRI"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xz-6C-tYk" customClass="MainContentsTitleView" customModule="ReduxSampleSwift" customModuleProvider="target">
@@ -277,6 +247,7 @@
                     </view>
                     <connections>
                         <outlet property="pickupMessageCollectionView" destination="hM4-Gw-rpY" id="lIz-dF-2hl"/>
+                        <outlet property="pickupMessageRemarkView" destination="RTI-Ei-oi0" id="bDg-dT-rcF"/>
                         <outlet property="pickupMessageTitleView" destination="9xz-6C-tYk" id="x5a-hP-k4e"/>
                         <segue destination="Zqc-Fe-fwJ" kind="presentation" id="YWQ-Hl-J6V"/>
                     </connections>
@@ -311,7 +282,7 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="iNu-F0-Fgo" firstAttribute="top" secondItem="sga-4h-0GV" secondAttribute="top" id="eLb-S5-Q9Z"/>
                                     <constraint firstAttribute="bottom" secondItem="iNu-F0-Fgo" secondAttribute="bottom" id="gaO-Zs-REp"/>

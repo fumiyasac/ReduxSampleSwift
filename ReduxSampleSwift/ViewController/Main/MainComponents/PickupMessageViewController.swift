@@ -15,12 +15,14 @@ class PickupMessageViewController: UIViewController {
 
     @IBOutlet weak private var pickupMessageTitleView: MainContentsTitleView!
     @IBOutlet weak private var pickupMessageCollectionView: UICollectionView!
+    @IBOutlet weak private var pickupMessageRemarkView: MainContentsRemarkView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupPickupMessageTitleView()
         setupPickupMessageCollectionView()
+        setupPickupMessageRemarkView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +40,10 @@ class PickupMessageViewController: UIViewController {
         pickupMessageCollectionView.delegate = self
         pickupMessageCollectionView.dataSource = self
         pickupMessageCollectionView.registerCustomCell(PickupMessageCollectionViewCell.self)
+    }
+
+    private func setupPickupMessageRemarkView() {
+        pickupMessageRemarkView.setRemark("Read Moreを押すと詳細が表示されます。")
     }
 }
 
