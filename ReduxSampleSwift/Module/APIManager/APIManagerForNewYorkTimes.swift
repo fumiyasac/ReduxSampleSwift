@@ -50,6 +50,8 @@ class APIManagerForNewYorkTimes {
         // -----------
         // 参考URL:
         // https://medium.com/@guerrix/101-alamofire-promisekit-671436726ff6
+        // ※ Swift4.1では書き方が変わっているのでご注意を!
+        // https://stackoverflow.com/questions/48932536/swift4-error-cannot-convert-value-of-type-void-to-expected-argument-typ
         return Promise { seal in
             Alamofire.request(baseUrl, method: .get, parameters: parameters).validate().responseJSON { response in
 
