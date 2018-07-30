@@ -29,7 +29,7 @@ class GourmetShopCollectionViewCell: UICollectionViewCell {
 
     func setCell(_ shop: GourmetShopEntity) {
         if let imageUrl = URL(string: shop.gourmetShopImageUrl) {
-            gourmetShopImageView.af_setImage(withURL: imageUrl)
+            gourmetShopImageView.af_setImage(withURL: imageUrl, imageTransition: .crossDissolve(0.36))
         }
         gourmetShopFoodLabel.text  = shop.gourmetShopFood
         gourmetShopGenreLabel.text = shop.gourmetShopGenre

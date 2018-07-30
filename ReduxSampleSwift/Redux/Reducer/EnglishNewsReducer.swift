@@ -26,10 +26,10 @@ extension EnglishNewsReducer {
         case .setIsLoadingEnglishNews():
             state.isLoadingEnglishNews = true
 
-        case let .setEnglishNews(news):
+        case let .setEnglishNews(news, refresh):
             state.isLoadingEnglishNews = false
-            state.englishNewsList      = state.englishNewsList + news
-            state.itemsPerPage         = state.itemsPerPage + 1
+            state.englishNewsList      = (refresh) ? news : state.englishNewsList + news
+            state.itemsPerPage         = (refresh) ? 1    : state.itemsPerPage + 1
             state.isErrorEnglishNews   = false
             
         case .setIsErrorEnglishNews():

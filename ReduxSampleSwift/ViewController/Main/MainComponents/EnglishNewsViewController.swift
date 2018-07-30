@@ -51,7 +51,7 @@ class EnglishNewsViewController: UIViewController {
         setupEnglishNewsFetchButtonView()
 
         // 英語ニュース情報をフェッチするアクションを実行する
-        EnglishNewsActionCreator.fetchEnglishNewsList()
+        EnglishNewsActionCreator.fetchEnglishNewsList(refresh: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
