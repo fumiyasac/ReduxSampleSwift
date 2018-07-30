@@ -100,6 +100,7 @@
                     <size key="freeformSize" width="375" height="1680"/>
                     <connections>
                         <outlet property="englishNewListHeight" destination="EdB-mO-B7t" id="BPT-RN-iQ1"/>
+                        <outlet property="mainScrollView" destination="hIe-Zi-bc2" id="cIc-T8-tCT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

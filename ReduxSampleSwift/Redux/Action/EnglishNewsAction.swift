@@ -18,7 +18,7 @@ extension EnglishNewsState {
         case setIsLoadingEnglishNews()
 
         // 英語ニュース記事の読み込み成功時にAPIより取得した値をセットするアクション
-        case setEnglishNews(news: [EnglishNewsEntity])
+        case setEnglishNews(news: [EnglishNewsEntity], refresh: Bool)
 
         // 英語ニュース記事の読み込み失敗時に値をセットするアクション
         case setIsErrorEnglishNews()

@@ -11,10 +11,15 @@ import ReSwift
 
 class MainViewController: UIViewController {
 
+    private let refreshControl = UIRefreshControl()
+
+    @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var englishNewListHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        setupMainScrollView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +55,33 @@ class MainViewController: UIViewController {
     }
 
     // MARK: - Private Function
+
+    @objc private func refreshMainScrollView(sender: UIRefreshControl) {
+        
+        // 英語ニュース情報をフェッチするアクションを実行する
+        EnglishNewsActionCreator.fetchEnglishNewsList(refresh: true)
+
+        // 飲食店情報をフェッチするアクションを実行する
+        GourmetShopActionCreator.fetchGourmetShopList()
+
+        // RefreshControlを閉じる
+        sender.endRefreshing()
+    }
+
+    private func setupMainScrollView() {
+
+        var attributes = [NSAttributedStringKey : Any]()
+        attributes[NSAttributedStringKey.font] = UIFont(name: AppConstants.FONT_NAME, size: 8.0)
+        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#CCCCCC")
+
+        refreshControl.tintColor = UIColor(code: "#CCCCCC")
+        refreshControl.attributedTitle = NSAttributedString(string: "Reset Display Data...", attributes: attributes)
+        refreshControl.addTarget(self, action: #selector(self.refreshMainScrollView(sender:)), for: .valueChanged)
+
+        //mainScrollView.delegate = self
+        mainScrollView.delaysContentTouches = false
+        mainScrollView.refreshControl = refreshControl
+    }
 }
 
 // MARK: - StoreSubscriber
