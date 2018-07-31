@@ -94,10 +94,7 @@ extension MainViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("---")
-        print("State logging #start: Stateの変更をMainViewControllerで受け取りました。")
-        print("MainViewController logging #end:")
-        print("---\n")
+        AppLogger.printStateForDebug(state, viewController: self)
     }
 }
 

@@ -75,6 +75,7 @@
 		DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */; };
 		DED8E96920C55B0300836CE4 /* PickupMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */; };
 		DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */; };
+		DEDB42362110817E00D11DCD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB42352110817E00D11DCD /* AppLogger.swift */; };
 		DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F32095F29F00694443 /* UserSettingViewController.swift */; };
 		DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F820965AED00694443 /* UserSettingAction.swift */; };
 		DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FA20965B4600694443 /* UserSettingState.swift */; };
@@ -192,6 +193,7 @@
 		DED8E96320C43DC700836CE4 /* PickupMessageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageFlowLayout.swift; sourceTree = "<group>"; };
 		DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		DEDB42352110817E00D11DCD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		DEDC73F32095F29F00694443 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		DEDC73F820965AED00694443 /* UserSettingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingAction.swift; sourceTree = "<group>"; };
 		DEDC73FA20965B4600694443 /* UserSettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingState.swift; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 			children = (
 				DE3D912C20EA760F008478C6 /* APIManager */,
 				DE041ADE209DFAF5005271E1 /* AppConstants.swift */,
+				DEDB42352110817E00D11DCD /* AppLogger.swift */,
 				DE58680720C3FCDE00D1F78D /* CalendarButtonModule.swift */,
 				DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */,
 				DEE53CF31FFBB4660097C7B2 /* DeviceSize.swift */,
@@ -890,6 +893,7 @@
 				DE27D42720FCE16D00F1E740 /* GourmetShopActionCreator.swift in Sources */,
 				DEB82E4920E780A200C08FFF /* EnglishNews.swift in Sources */,
 				DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */,
+				DEDB42362110817E00D11DCD /* AppLogger.swift in Sources */,
 				DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */,
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
 				DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */,
