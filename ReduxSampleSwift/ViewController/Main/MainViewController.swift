@@ -8,6 +8,7 @@
 
 import UIKit
 import ReSwift
+import SafariServices
 
 class MainViewController: UIViewController {
 
@@ -104,9 +105,12 @@ extension MainViewController: StoreSubscriber {
 
 extension MainViewController: GourmetShopViewDelegate {
 
+    // 見たい飲食店の選択時にこのViewController側で行う処理
     func selectGourmetShop(_ urlString: String) {
-        // TODO: WebView(WKWebView)でNYTの記事を表示する
-        print("表示するべきURL:", urlString)
+        if let gourmetShopUrl = URL(string: urlString) {
+            let vc = SFSafariViewController(url: gourmetShopUrl)
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }
 
@@ -122,16 +126,11 @@ extension MainViewController: EnglishNewsViewDelegate {
         englishNewListHeight.constant = englishNewListContentHeight + MainContentsTitleView.VIEW_HEIGHT + MainContentsFetchButtonView.VIEW_HEIGHT
     }
 
-    // 英語ニュースの取得失敗時にこのViewController側で行う処理
-    func fetchEnglishNewsListFailure() {
-
-        // TODO: エラー発生時のポップアップを表示する
-        print("EnglishNewsの表示時にエラーが発生しました。")
-    }
-
+    // 英語ニュースの選択時にこのViewController側で行う処理
     func selectEnglishNews(_ urlString: String) {
-
-        // TODO: WebView(WKWebView)でNYTの記事を表示する
-        print("表示するべきURL:", urlString)
+        if let englishNewsUrl = URL(string: urlString) {
+            let vc = SFSafariViewController(url: englishNewsUrl)
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 }

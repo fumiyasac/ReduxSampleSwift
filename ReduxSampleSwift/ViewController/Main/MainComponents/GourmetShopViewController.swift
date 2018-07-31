@@ -140,7 +140,7 @@ extension GourmetShopViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let gourmetShop = gourmetShopList[indexPath.row]
 
-        // 飲食店情報のURLを取得して、ContainerViewを配置しているViewControllerからWebViewで表示する
+        // 飲食店情報のURLを取得して、SFSafariViewControllerで表示する
         self.delegate?.selectGourmetShop(gourmetShop.gourmetShopUrl)
     }
 }
