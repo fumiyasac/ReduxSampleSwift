@@ -17,9 +17,6 @@ protocol EnglishNewsViewDelegate: NSObjectProtocol {
     // 英語ニュースの取得成功時にプロトコルを適用したViewController側で行うためのメソッド
     func fetchEnglishNewsListSuccess(_ newsCount: Int)
 
-    // 英語ニュースの取得失敗時にプロトコルを適用したViewController側で行うためのメソッド
-    func fetchEnglishNewsListFailure()
-
     // 英語ニュースのセル選択時にプロトコルを適用したViewController側で行うためのメソッド
     func selectEnglishNews(_ urlString: String)
 }
@@ -117,12 +114,6 @@ extension EnglishNewsViewController: StoreSubscriber {
         let englishNewsListCount = englishNewsList.count
         self.delegate?.fetchEnglishNewsListSuccess(englishNewsListCount)
 
-        // 英語ニュースの取得に失敗した場合はContainerViewを配置しているViewControllerにエラーを表示する
-        let isErrorEnglishNews = state.englishNewsState.isErrorEnglishNews
-        if isErrorEnglishNews {
-            self.delegate?.fetchEnglishNewsListFailure()
-        }
-
         // Debug.
         print("---")
         print("EnglishNewsState logging #start: EnglishNewsStateの変更をEnglishNewsViewControllerで受け取りました。")
@@ -154,7 +145,7 @@ extension EnglishNewsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let englishNews = englishNewsList[indexPath.row]
  
-        // 選択した英語ニュースのURLを取得して、ContainerViewを配置しているViewControllerからWebViewで表示する
+        // 選択した英語ニュースのURLを取得して、SFSafariViewControllerで表示する
         self.delegate?.selectEnglishNews(englishNews.newsWebUrlString)
     }
 }
