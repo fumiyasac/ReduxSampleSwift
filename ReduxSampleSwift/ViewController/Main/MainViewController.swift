@@ -70,15 +70,16 @@ class MainViewController: UIViewController {
 
     private func setupMainScrollView() {
 
+        // RefreshControlに関する設定
         var attributes = [NSAttributedStringKey : Any]()
         attributes[NSAttributedStringKey.font] = UIFont(name: AppConstants.FONT_NAME, size: 8.0)
-        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#CCCCCC")
+        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#888888")
 
         refreshControl.tintColor = UIColor(code: "#CCCCCC")
-        refreshControl.attributedTitle = NSAttributedString(string: "Reset Display Data...", attributes: attributes)
+        refreshControl.attributedTitle = NSAttributedString(string: "データをリフレッシュします...", attributes: attributes)
         refreshControl.addTarget(self, action: #selector(self.refreshMainScrollView(sender:)), for: .valueChanged)
 
-        //mainScrollView.delegate = self
+        // ScrollViewに関する設定
         mainScrollView.delaysContentTouches = false
         mainScrollView.refreshControl = refreshControl
     }
