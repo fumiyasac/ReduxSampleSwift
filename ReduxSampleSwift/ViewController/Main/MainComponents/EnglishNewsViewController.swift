@@ -115,11 +115,7 @@ extension EnglishNewsViewController: StoreSubscriber {
         self.delegate?.fetchEnglishNewsListSuccess(englishNewsListCount)
 
         // Debug.
-        print("---")
-        print("EnglishNewsState logging #start: EnglishNewsStateの変更をEnglishNewsViewControllerで受け取りました。")
-        print(state.englishNewsState)
-        print("EnglishNewsState logging #end:")
-        print("---\n")
+        AppLogger.printStateForDebug(state.englishNewsState, viewController: self)
     }
 }
 

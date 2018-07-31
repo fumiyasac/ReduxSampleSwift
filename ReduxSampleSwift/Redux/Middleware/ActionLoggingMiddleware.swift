@@ -14,13 +14,8 @@ let ActionLoggingMiddleware: Middleware<Any> = { dispatch, getState in
     return { next in
         return { action in
 
-            // Debug.
-            print("---")
-            print("ActionCreator logging #start: ActionCreatorからActionが実行されました。")
-            // 実行されたアクションが何かのログを表記する
-            print("実行されたアクション名:", action)
-            print("ActionCreator logging #end:")
-            print("---\n\n")
+            // 実行されたActionCreatorの出力
+            AppLogger.printExecuteActionForDebug(action)
 
             // 該当するReducerへの処理を実行する
             return next(action)

@@ -21,7 +21,7 @@ func appReduce(action: Action, state: AppState?) -> AppState {
 
     // Debug.
     print("---")
-    print("appReduce Notified: appReduce(全体Stateへの変更反映)が実行されました。")
+    print("appReduceが実行されました。")
     print("---\n\n")
 
     return state

@@ -109,11 +109,7 @@ extension GourmetShopViewController: StoreSubscriber {
         shouldHideGourmetShopCollectionView(result: isErrorGourmetShop)
 
         // Debug.
-        print("---")
-        print("GourmetShopState logging #start: GourmetShopStateの変更をGourmetShopViewControllerで受け取りました。")
-        print(state.gourmetShopState)
-        print("GourmetShopState logging #end:")
-        print("---\n")
+        AppLogger.printStateForDebug(state.gourmetShopState, viewController: self)
     }
 }
 

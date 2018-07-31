@@ -14,7 +14,7 @@ class InitialSettingViewController: UIViewController {
     // ユーザーの登録状態を格納する変数
     // → stateにまとめて格納しているものを個別に使用するためにこのような形にしている
     private var isFinishedUserSetting: Bool = false
-    private var isFinishedTutorial: Bool = false
+    private var isFinishedTutorial: Bool    = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,21 +73,11 @@ extension InitialSettingViewController: StoreSubscriber {
     func newState(state: AppState) {
 
         // Debug.
-        print("---")
-        print("TutorialState logging #start: TutorialStateの変更をInitialSettingViewControllerで受け取りました。")
-        print(state.tutorialState)
-        print("TutorialState logging #end:")
-        print("---\n\n")
-        
-        // Debug.
-        print("---")
-        print("UserSettingState logging #start: UserSettingStateの変更をInitialSettingViewControllerで受け取りました。")
-        print(state.userSettingState)
-        print("UserSettingState logging #end:")
-        print("---\n\n")
+        AppLogger.printStateForDebug(state.tutorialState, viewController: self)
+        AppLogger.printStateForDebug(state.userSettingState, viewController: self)
 
         // 現在のチュートリアルの完了状態＆ユーザー登録の完了状態を取得する
         isFinishedUserSetting = state.tutorialState.isFinishedUserSetting
-        isFinishedTutorial = state.tutorialState.isFinishedTutorial
+        isFinishedTutorial    = state.tutorialState.isFinishedTutorial
     }
 }
