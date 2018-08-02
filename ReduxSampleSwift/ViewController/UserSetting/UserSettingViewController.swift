@@ -51,7 +51,7 @@ class UserSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBar()
+        setupNavigationBarTitle("ユーザーアンケートを回答する")
         setupFormScrollView()
         setupKeyboardAccesoryView()
         setupPostalCodeTextField()
@@ -118,10 +118,6 @@ class UserSettingViewController: UIViewController {
 
     @objc private func toolbarCloseButtonTapped() {
         undoFormScrollViewState()
-    }
-
-    private func setupNavigationBar() {
-        self.navigationItem.title = "ユーザーアンケートを回答する"
     }
 
     private func setupFormScrollView() {

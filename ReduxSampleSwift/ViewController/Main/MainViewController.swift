@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupNavigationBarTitle("気になるコンテンツ一覧")
         setupMainScrollView()
     }
 

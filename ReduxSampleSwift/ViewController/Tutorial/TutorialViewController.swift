@@ -35,7 +35,7 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupNavigationBar()
+        setupNavigationBarTitle("「サンプルアプリ」へようこそ!")
         setupKYNavigationProgress()
         setupPageViewController()
         setupIntroductionFinishButton()
@@ -66,11 +66,6 @@ class TutorialViewController: UIViewController {
 
         // チュートリアル完了時のActionCreatorを実行する
         TutorialActionCreator.finishTutorial()
-    }
-
-    // この画面のナビゲーションバーの設定
-    private func setupNavigationBar() {
-        self.navigationItem.title = "「サンプルアプリ」へようこそ!"
     }
 
     // この画面のナビゲーションバー下アニメーションの設定

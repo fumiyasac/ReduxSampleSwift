@@ -10,6 +10,13 @@ import Foundation
 
 class DateFormatterUtil {
 
+    private static var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale   = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone.current
+        return dateFormatter
+    }()
+
     // MARK: - Static Functions
 
     // APIで取得された日付フォーマットを任意の表記に変換する
@@ -20,11 +27,8 @@ class DateFormatterUtil {
         let targetDate = formatterForApiDateString.date(from: apiDateString)
 
         // 変換を行いたいフォーマットの文字列へ再度変換を行う
-        let formatterForDisplay = DateFormatter()
-        formatterForDisplay.dateFormat = printFormatter
-        formatterForDisplay.locale = Locale(identifier: "en_US_POSIX")
-        formatterForDisplay.timeZone = TimeZone.current
+        dateFormatter.dateFormat = printFormatter
 
-        return formatterForDisplay.string(from: targetDate!)
+        return dateFormatter.string(from: targetDate!)
     }
 }
