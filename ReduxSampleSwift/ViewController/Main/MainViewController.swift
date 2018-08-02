@@ -66,6 +66,10 @@ class MainViewController: UIViewController {
         // 飲食店情報をフェッチするアクションを実行する
         GourmetShopActionCreator.fetchGourmetShopList()
 
+
+        // ピックアップメッセージをフェッチするアクションを実行する
+        PickupMessageActionCreator.fetchGourmetShopList()
+
         // RefreshControlを閉じる
         sender.endRefreshing()
     }

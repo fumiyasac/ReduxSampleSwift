@@ -14,15 +14,14 @@ func appReduce(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
 
     // それぞれの変更されたReducerを反映する
-    state.tutorialState = TutorialReducer.reducer(action: action, state: state.tutorialState)
-    state.userSettingState = UserSettingReducer.reducer(action: action, state: state.userSettingState)
-    state.englishNewsState = EnglishNewsReducer.reducer(action: action, state: state.englishNewsState)
-    state.gourmetShopState = GourmetShopReducer.reducer(action: action, state: state.gourmetShopState)
+    state.tutorialState      = TutorialReducer.reducer(action: action, state: state.tutorialState)
+    state.userSettingState   = UserSettingReducer.reducer(action: action, state: state.userSettingState)
+    state.englishNewsState   = EnglishNewsReducer.reducer(action: action, state: state.englishNewsState)
+    state.gourmetShopState   = GourmetShopReducer.reducer(action: action, state: state.gourmetShopState)
+    state.pickupMessageState = PickupMessageReducer.reducer(action: action, state: state.pickupMessageState)
 
     // Debug.
-    print("---")
-    print("appReduceが実行されました。")
-    print("---\n\n")
+    AppLogger.printMessageForDebug("appReduceが実行されました。")
 
     return state
 }
