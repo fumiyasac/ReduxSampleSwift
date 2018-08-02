@@ -72,6 +72,7 @@
 		DED8E96920C55B0300836CE4 /* PickupMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */; };
 		DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */; };
 		DEDB42362110817E00D11DCD /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB42352110817E00D11DCD /* AppLogger.swift */; };
+		DEDB423D21136EC600D11DCD /* MonthlyCalendarButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB423C21136EC600D11DCD /* MonthlyCalendarButtonType.swift */; };
 		DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F32095F29F00694443 /* UserSettingViewController.swift */; };
 		DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F820965AED00694443 /* UserSettingAction.swift */; };
 		DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FA20965B4600694443 /* UserSettingState.swift */; };
@@ -186,6 +187,7 @@
 		DED8E96720C55B0300836CE4 /* PickupMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageCollectionViewCell.swift; sourceTree = "<group>"; };
 		DED8E96820C55B0300836CE4 /* PickupMessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickupMessageCollectionViewCell.xib; sourceTree = "<group>"; };
 		DEDB42352110817E00D11DCD /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		DEDB423C21136EC600D11DCD /* MonthlyCalendarButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendarButtonType.swift; sourceTree = "<group>"; };
 		DEDC73F32095F29F00694443 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		DEDC73F820965AED00694443 /* UserSettingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingAction.swift; sourceTree = "<group>"; };
 		DEDC73FA20965B4600694443 /* UserSettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingState.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		DE09D40A1FFFC47900177D36 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				DEDB423C21136EC600D11DCD /* MonthlyCalendarButtonType.swift */,
 				DEDC740020966B1E00694443 /* SelectedAgeEnum.swift */,
 				DEDC73FE209668B400694443 /* SelectedResidentPeriodEnum.swift */,
 			);
@@ -910,6 +913,7 @@
 				DE27D42C20FE248E00F1E740 /* MainContentsRemarkView.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEDC740120966B1E00694443 /* SelectedAgeEnum.swift in Sources */,
+				DEDB423D21136EC600D11DCD /* MonthlyCalendarButtonType.swift in Sources */,
 				DEB82E4520E77B2300C08FFF /* EnglishNewsState.swift in Sources */,
 				DE27D40E20F0AE0500F1E740 /* MainContentsFetchButtonView.swift in Sources */,
 				DED8E96420C43DC700836CE4 /* PickupMessageFlowLayout.swift in Sources */,

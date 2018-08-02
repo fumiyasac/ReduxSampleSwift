@@ -17,6 +17,8 @@ class CalendarButtonView: CustomViewBase {
     private let calendar = Calendar(identifier: .gregorian)
     private let buttonCornerRadius: CGFloat = 23
 
+    var monthlyCalendarButtonType: MonthlyCalendarButtonType!
+
     // MEMO: ボタンの配置時にボタンに関する設定を行う形にするのでprivateではない形にしている
     @IBOutlet weak var calendarButton: UIButton!
 
@@ -41,7 +43,21 @@ class CalendarButtonView: CustomViewBase {
 
     // MARK: - Function
 
-    // 現在年月から日数分のカレンダーボタンを取得する
+    // 前の月へボタンを設定する
+    func setPrevMonthButton() {
+        calendarButtonWeekdayLabel.text = "prev"
+        calendarButtonDayLabel.text     = "◀︎"
+        calendarButtonBackgroundView.backgroundColor = UIColor.init(code: "#cccccc")
+    }
+
+    // 次の月へボタンを設定する
+    func setNextMonthButton() {
+        calendarButtonWeekdayLabel.text = "next"
+        calendarButtonDayLabel.text     = "▶︎"
+        calendarButtonBackgroundView.backgroundColor = UIColor.init(code: "#cccccc")
+    }
+
+    // 現在年月から日数分のカレンダーボタンを設定する
     func setCalendarButton(year: Int, month: Int, day: Int) {
 
         // 引数の値から年月日データを取得する
@@ -67,6 +83,8 @@ class CalendarButtonView: CustomViewBase {
     // MARK: - Private Function
 
     private func setupCalendarButtonView() {
+        calendarButtonWeekdayLabel.font = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 10)!
+        calendarButtonDayLabel.font     = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 13)!
         calendarButtonBackgroundView.layer.cornerRadius = buttonCornerRadius
     }
 
@@ -78,11 +96,9 @@ class CalendarButtonView: CustomViewBase {
         let shortWeekday = shortWeekdaySymbols[weekdayIndex]
 
         // 必要な値をセットする（※MEMO: 「button.tag = day」となるように定義しておく）
-        calendarButton.tag = day
+        calendarButton.tag              = day
         calendarButtonWeekdayLabel.text = shortWeekday
-        calendarButtonWeekdayLabel.font = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 10)!
         calendarButtonDayLabel.text     = String(day)
-        calendarButtonDayLabel.font     = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 13)!
         calendarButtonBackgroundView.backgroundColor = getColorOfCalendarDay(year: year, month: month, day: day, weekdayIndex: weekdayIndex)
     }
 

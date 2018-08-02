@@ -9,11 +9,19 @@
 import UIKit
 import ReSwift
 
+/* TODO: 入力画面の作成時にReSwiftへ乗せる */
 class MonthlyCalendarViewController: UIViewController {
 
     @IBOutlet weak private var monthlyCalendarTitleView: MainContentsTitleView!
     @IBOutlet weak private var monthlyCalendarScrollView: UIScrollView!
     @IBOutlet weak private var monthlyCalendarRemarkView: MainContentsRemarkView!
+
+    private let calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+    private let scrollViewMoveDuration: TimeInterval = 0.16
+    private let monthLimit: Int = 12
+
+    private var selectedYear: Int!
+    private var selectedMonth: Int!
 
     private var calendarButtonList: [CalendarButtonView] = []
 
@@ -28,10 +36,7 @@ class MonthlyCalendarViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        if calendarButtonList.isEmpty == false {
-            removeMonthlyCalendar()
-        }
-        displayMonthlyCalendar()
+        setMonthlyCalendar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,8 +45,20 @@ class MonthlyCalendarViewController: UIViewController {
 
     // MARK: - Private Function
 
+    @objc private func prevCalendarButtonTapped() {
+        setPrevMonth()
+        setMonthlyCalendar()
+        movePrevMonthCalendarPosition()
+    }
+
+    @objc private func nextCalendarButtonTapped() {
+        setNextMonth()
+        setMonthlyCalendar()
+        moveNextMonthCalendarPosition()
+    }
+
     @objc private func calendarButtonTapped(button: UIButton) {
-        print("選択された日付:", button.tag)
+        print("選択された日付:", "\(selectedYear!)年\(selectedMonth!)月\(button.tag)日")
     }
 
     private func setupMonthlyCalendarScrollView() {
@@ -55,27 +72,31 @@ class MonthlyCalendarViewController: UIViewController {
     }
 
     private func setupMonthlyCalendarTitleView() {
-        let year  = CalendarButtonModule.currentYear
-        let month = CalendarButtonModule.currentMonth
-
+        let dateComponents = calendar.dateComponents([.year, .month], from: Date())
+        selectedYear  = Int(dateComponents.year!)
+        selectedMonth = Int(dateComponents.month!)
         monthlyCalendarTitleView.setTitle("月別カレンダーMEMO:")
-        monthlyCalendarTitleView.setDescriptionIfNeeded("\(year)年\(month)月分")
+        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
     }
 
     private func setupMonthlyCalendarRemarkView() {
         monthlyCalendarRemarkView.setRemark("日付を押すとその日のメモを記載できます。")
     }
 
-    private func displayMonthlyCalendar() {
+    private func setMonthlyCalendar() {
+
+        // ボタンを配置する前に配置されているボタンの全要素を削除する
+        removeMonthlyCalendar()
 
         // 該当月のボタン一覧を取得する
-        calendarButtonList = CalendarButtonModule.getCurrentCalendarButtonList()
+        calendarButtonList = CalendarButtonModule.getTargetCalendarButtonList(targetYear: selectedYear, targetMonth: selectedMonth)
 
         // スクロールビュー内のサイズを決定する（AutoLayoutで配置を行った場合でもこの部分はコードで設定しないといけない）
-        let contentWidth  = CalendarButtonView.CALENDAR_BUTTON_VIEW_WIDTH * CGFloat(calendarButtonList.count)
+        let allScrollViewElementCount = CGFloat(calendarButtonList.count)
+        let contentWidth  = CalendarButtonView.CALENDAR_BUTTON_VIEW_WIDTH * allScrollViewElementCount
         let contentHeight = monthlyCalendarScrollView.frame.height
         monthlyCalendarScrollView.contentSize = CGSize(width: contentWidth, height: contentHeight)
-
+        
         for index in 0..<calendarButtonList.count {
         
             // メニュー用のスクロールビューにボタンを配置
@@ -85,7 +106,17 @@ class MonthlyCalendarViewController: UIViewController {
             let buttonRect = CalendarButtonView.CALENDAR_BUTTON_VIEW_WIDTH
             let buttonPosX = buttonRect * CGFloat(index)
             calendarButtonList[index].frame = CGRect(x: buttonPosX, y: 0, width: buttonRect, height: buttonRect)
-            calendarButtonList[index].calendarButton.addTarget(self, action: #selector(self.calendarButtonTapped(button:)), for: .touchUpInside)
+
+            // Enum(MonthlyCalendarButtonType)による分類を元にした押下時のターゲットの指定
+            let type: MonthlyCalendarButtonType = calendarButtonList[index].monthlyCalendarButtonType
+            switch type {
+            case .prevButton:
+                calendarButtonList[index].calendarButton.addTarget(self, action: #selector(self.prevCalendarButtonTapped), for: .touchUpInside)
+            case .nextButton:
+                calendarButtonList[index].calendarButton.addTarget(self, action: #selector(self.nextCalendarButtonTapped), for: .touchUpInside)
+            default:
+                calendarButtonList[index].calendarButton.addTarget(self, action: #selector(self.calendarButtonTapped(button:)), for: .touchUpInside)
+            }
         }
     }
 
@@ -94,5 +125,37 @@ class MonthlyCalendarViewController: UIViewController {
             calendarButtonList[index].removeFromSuperview()
         }
         calendarButtonList.removeAll()
+    }
+
+    private func setPrevMonth() {
+        if selectedMonth == 1 {
+            selectedYear = selectedYear - 1
+            selectedMonth = monthLimit
+        } else {
+            selectedMonth = selectedMonth - 1
+        }
+        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
+    }
+
+    private func setNextMonth() {
+        if selectedMonth == monthLimit {
+            selectedYear = selectedYear + 1
+            selectedMonth = 1
+        } else {
+            selectedMonth = selectedMonth + 1
+        }
+        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
+    }
+
+    private func movePrevMonthCalendarPosition() {
+        UIView.animate(withDuration: scrollViewMoveDuration, animations: {
+            self.monthlyCalendarScrollView.contentOffset.x = self.monthlyCalendarScrollView.contentSize.width - self.view.frame.width
+        })
+    }
+
+    private func moveNextMonthCalendarPosition() {
+        UIView.animate(withDuration: scrollViewMoveDuration, animations: {
+            self.monthlyCalendarScrollView.contentOffset.x = 0
+        })
     }
 }
