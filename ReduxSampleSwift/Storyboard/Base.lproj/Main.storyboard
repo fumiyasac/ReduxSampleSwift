@@ -335,14 +335,6 @@
             </objects>
             <point key="canvasLocation" x="1156" y="192"/>
         </scene>
-        <!--NewsDetail-->
-        <scene sceneID="ajp-0g-v4p">
-            <objects>
-                <viewControllerPlaceholder storyboardName="NewsDetail" id="aTA-rz-7Y2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xi7-NT-ZQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2124" y="-301"/>
-        </scene>
         <!--English News View Controller-->
         <scene sceneID="sSI-PH-GgS">
             <objects>
@@ -392,7 +384,6 @@
                         <outlet property="englishNewsFetchButtonView" destination="pVv-ac-uvl" id="4Q7-Kl-gqu"/>
                         <outlet property="englishNewsTableView" destination="pwi-SD-hUk" id="QzT-nX-8uK"/>
                         <outlet property="englishNewsTitleView" destination="gMl-EX-xCD" id="l8n-Jx-1k8"/>
-                        <segue destination="aTA-rz-7Y2" kind="presentation" id="N39-Sv-7ys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYp-FB-LFs" userLabel="First Responder" sceneMemberID="firstResponder"/>

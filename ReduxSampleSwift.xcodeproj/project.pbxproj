@@ -30,8 +30,6 @@
 		DE2766BD20BAF24B0013248E /* DailyMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766BC20BAF24B0013248E /* DailyMemoViewController.swift */; };
 		DE2766C120BAF83F0013248E /* MessageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2766BF20BAF83F0013248E /* MessageDetail.storyboard */; };
 		DE2766C420BAF9B60013248E /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */; };
-		DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE2766C520BAFD470013248E /* NewsDetail.storyboard */; };
-		DE2766CA20BAFDC40013248E /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */; };
 		DE27D40C20F0ADF800F1E740 /* MainContentsFetchButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D40B20F0ADF800F1E740 /* MainContentsFetchButtonView.xib */; };
 		DE27D40E20F0AE0500F1E740 /* MainContentsFetchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D40D20F0AE0500F1E740 /* MainContentsFetchButtonView.swift */; };
 		DE27D41120F31CDB00F1E740 /* MainContentsTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D41020F31CDB00F1E740 /* MainContentsTitleView.xib */; };
@@ -45,8 +43,6 @@
 		DE27D42720FCE16D00F1E740 /* GourmetShopActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42620FCE16D00F1E740 /* GourmetShopActionCreator.swift */; };
 		DE27D42A20FE247D00F1E740 /* MainContentsRemarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE27D42920FE247D00F1E740 /* MainContentsRemarkView.xib */; };
 		DE27D42C20FE248E00F1E740 /* MainContentsRemarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42B20FE248E00F1E740 /* MainContentsRemarkView.swift */; };
-		DE27D42F20FE3DE200F1E740 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE27D42E20FE3DE200F1E740 /* ShopDetailViewController.swift */; };
-		DE27D43220FE40B700F1E740 /* ShopDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE27D43020FE40B700F1E740 /* ShopDetail.storyboard */; };
 		DE3D912A20EA6392008478C6 /* DateFormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */; };
 		DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */; };
 		DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D4148206295D70038CC01 /* UserSettingEntity.swift */; };
@@ -142,8 +138,6 @@
 		DE2766BC20BAF24B0013248E /* DailyMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemoViewController.swift; sourceTree = "<group>"; };
 		DE2766C020BAF83F0013248E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MessageDetail.storyboard; sourceTree = "<group>"; };
 		DE2766C320BAF9B60013248E /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
-		DE2766C620BAFD470013248E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewsDetail.storyboard; sourceTree = "<group>"; };
-		DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		DE27D40B20F0ADF800F1E740 /* MainContentsFetchButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainContentsFetchButtonView.xib; sourceTree = "<group>"; };
 		DE27D40D20F0AE0500F1E740 /* MainContentsFetchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentsFetchButtonView.swift; sourceTree = "<group>"; };
 		DE27D41020F31CDB00F1E740 /* MainContentsTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainContentsTitleView.xib; sourceTree = "<group>"; };
@@ -157,8 +151,6 @@
 		DE27D42620FCE16D00F1E740 /* GourmetShopActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopActionCreator.swift; sourceTree = "<group>"; };
 		DE27D42920FE247D00F1E740 /* MainContentsRemarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainContentsRemarkView.xib; sourceTree = "<group>"; };
 		DE27D42B20FE248E00F1E740 /* MainContentsRemarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentsRemarkView.swift; sourceTree = "<group>"; };
-		DE27D42E20FE3DE200F1E740 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
-		DE27D43120FE40B700F1E740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ShopDetail.storyboard; sourceTree = "<group>"; };
 		DE3D912920EA6392008478C6 /* DateFormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterUtil.swift; sourceTree = "<group>"; };
 		DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForNewYorkTimes.swift; sourceTree = "<group>"; };
 		DE4D4148206295D70038CC01 /* UserSettingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingEntity.swift; sourceTree = "<group>"; };
@@ -347,14 +339,6 @@
 			path = MessageDetail;
 			sourceTree = "<group>";
 		};
-		DE2766C820BAFD9F0013248E /* NewsDetail */ = {
-			isa = PBXGroup;
-			children = (
-				DE2766C920BAFDC40013248E /* NewsDetailViewController.swift */,
-			);
-			path = NewsDetail;
-			sourceTree = "<group>";
-		};
 		DE27D40A20F0ADB000F1E740 /* MainContentsFetchButtonView */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,14 +364,6 @@
 				DE27D42920FE247D00F1E740 /* MainContentsRemarkView.xib */,
 			);
 			path = MainContentsRemarkView;
-			sourceTree = "<group>";
-		};
-		DE27D42D20FE3D7D00F1E740 /* ShopDetail */ = {
-			isa = PBXGroup;
-			children = (
-				DE27D42E20FE3DE200F1E740 /* ShopDetailViewController.swift */,
-			);
-			path = ShopDetail;
 			sourceTree = "<group>";
 		};
 		DE3D912C20EA760F008478C6 /* APIManager */ = {
@@ -524,8 +500,6 @@
 				DEE53CFA1FFBD1910097C7B2 /* Main */,
 				DE2766BB20BAF1D60013248E /* DailyMemo */,
 				DE2766C220BAF97B0013248E /* MessageDetail */,
-				DE27D42D20FE3D7D00F1E740 /* ShopDetail */,
-				DE2766C820BAFD9F0013248E /* NewsDetail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -540,8 +514,6 @@
 				DE671B001FDFC75400B752CA /* Main.storyboard */,
 				DE2766B420BAEFB50013248E /* DailyMemo.storyboard */,
 				DE2766BF20BAF83F0013248E /* MessageDetail.storyboard */,
-				DE2766C520BAFD470013248E /* NewsDetail.storyboard */,
-				DE27D43020FE40B700F1E740 /* ShopDetail.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -793,8 +765,6 @@
 				DE671B041FDFC75400B752CA /* Assets.xcassets in Resources */,
 				DEE53CFD1FFD1C750097C7B2 /* Tutorial.storyboard in Resources */,
 				DE27D42A20FE247D00F1E740 /* MainContentsRemarkView.xib in Resources */,
-				DE27D43220FE40B700F1E740 /* ShopDetail.storyboard in Resources */,
-				DE2766C720BAFD470013248E /* NewsDetail.storyboard in Resources */,
 				DE27D40C20F0ADF800F1E740 /* MainContentsFetchButtonView.xib in Resources */,
 				DE27D41120F31CDB00F1E740 /* MainContentsTitleView.xib in Resources */,
 				DE58680420C3FB6500D1F78D /* CalendarButtonView.xib in Resources */,
@@ -921,7 +891,6 @@
 				DEE53CF01FF7921D0097C7B2 /* TutorialReducer.swift in Sources */,
 				DEE53CDF1FF4E28A0097C7B2 /* UIViewControllerExtension.swift in Sources */,
 				DE2766A520B395240013248E /* UserSettingActionCreator.swift in Sources */,
-				DE27D42F20FE3DE200F1E740 /* ShopDetailViewController.swift in Sources */,
 				DE27D41320F31CEA00F1E740 /* MainContentsTitleView.swift in Sources */,
 				DEE53CF61FFBB5AF0097C7B2 /* CustomViewBase.swift in Sources */,
 				DEE53D021FFD1D2D0097C7B2 /* TutorialViewController.swift in Sources */,
@@ -930,7 +899,6 @@
 				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
 				DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */,
 				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
-				DE2766CA20BAFDC40013248E /* NewsDetailViewController.swift in Sources */,
 				DEB82E4720E7808C00C08FFF /* EnglishNewsEntity.swift in Sources */,
 				DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */,
 				DE27D42520FCDFA900F1E740 /* GourmetShopReducer.swift in Sources */,
@@ -1013,22 +981,6 @@
 				DE2766C020BAF83F0013248E /* Base */,
 			);
 			name = MessageDetail.storyboard;
-			sourceTree = "<group>";
-		};
-		DE2766C520BAFD470013248E /* NewsDetail.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE2766C620BAFD470013248E /* Base */,
-			);
-			name = NewsDetail.storyboard;
-			sourceTree = "<group>";
-		};
-		DE27D43020FE40B700F1E740 /* ShopDetail.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE27D43120FE40B700F1E740 /* Base */,
-			);
-			name = ShopDetail.storyboard;
 			sourceTree = "<group>";
 		};
 		DE6565062094D8B4005745D2 /* InitialSetting.storyboard */ = {

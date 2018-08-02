@@ -140,8 +140,36 @@ extension EnglishNewsViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let englishNews = englishNewsList[indexPath.row]
- 
-        // 選択した英語ニュースのURLを取得して、SFSafariViewControllerで表示する
-        self.delegate?.selectEnglishNews(englishNews.newsWebUrlString)
+        let cell = tableView.cellForRow(at: indexPath) as! EnglishNewsTableViewCell
+
+        // セルタップ時の背景アニメーションを実行し、完了時の処理を別途設定して実行する
+        executeFlashingBackgroundAnimation(targetCell: cell, completed: {
+
+            // 選択した英語ニュースのURLを取得して、SFSafariViewControllerで表示する
+            self.delegate?.selectEnglishNews(englishNews.newsWebUrlString)
+        })
+    }
+
+    // MARK: - Private Function
+
+    // セル背景が点滅するようなアニメーションを実行する
+    private func executeFlashingBackgroundAnimation(targetCell: UITableViewCell, completed: (() -> ())? = nil) {
+        let targetDuration = 0.16
+        let targetDelay    = 0.00
+        let defaultColor  = UIColor.init(code: "FFFFFF")
+        let flashingColor = UIColor.init(code: "DDDDDD")
+        
+        UIView.animateKeyframes(withDuration: targetDuration, delay: targetDelay, options: [.autoreverse], animations: {
+
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 1.0, animations: {
+                targetCell.backgroundColor = flashingColor
+            })
+            UIView.addKeyframe(withRelativeStartTime: 1.0, relativeDuration: 1.0, animations: {
+                targetCell.backgroundColor = defaultColor
+            })
+
+        }, completion: { _ in
+            completed?()
+        })
     }
 }
