@@ -14,7 +14,7 @@
 		DE041AD72096E81F005271E1 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD62096E81F005271E1 /* UITableViewExtension.swift */; };
 		DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */; };
 		DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041ADE209DFAF5005271E1 /* AppConstants.swift */; };
-		DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */; };
+		DE09D4091FFFC1E700177D36 /* APIManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */; };
 		DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */; };
 		DE2685F020C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */; };
 		DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A020B27CE30013248E /* TutorialActionCreator.swift */; };
@@ -123,7 +123,7 @@
 		DE041AD62096E81F005271E1 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE041ADE209DFAF5005271E1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManagerForHotpepper.swift; sourceTree = "<group>"; };
+		DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForHotpepper.swift; sourceTree = "<group>"; };
 		DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GourmetShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE2766A020B27CE30013248E /* TutorialActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialActionCreator.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		DE3D912C20EA760F008478C6 /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				DE09D4081FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift */,
+				DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */,
 				DE3D912D20EA7636008478C6 /* APIManagerForNewYorkTimes.swift */,
 			);
 			path = APIManager;
@@ -903,7 +903,7 @@
 				DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */,
 				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
 				DEB82E4720E7808C00C08FFF /* EnglishNewsEntity.swift in Sources */,
-				DE09D4091FFFC1E700177D36 /* APIRequestManagerForHotpepper.swift in Sources */,
+				DE09D4091FFFC1E700177D36 /* APIManagerForHotpepper.swift in Sources */,
 				DE27D42520FCDFA900F1E740 /* GourmetShopReducer.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
 				DEDC73FF209668B400694443 /* SelectedResidentPeriodEnum.swift in Sources */,

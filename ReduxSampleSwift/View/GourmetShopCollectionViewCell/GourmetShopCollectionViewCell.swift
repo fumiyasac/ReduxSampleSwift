@@ -54,7 +54,7 @@ class GourmetShopCollectionViewCell: UICollectionViewCell {
     private func setupGourmetShopCollectionViewCell() {
         gourmetShopWrappedView.clipsToBounds       = true
         gourmetShopWrappedView.layer.masksToBounds = false
-        gourmetShopWrappedView.layer.borderColor   = UIColor.init(code: "#DDDDDD").cgColor
+        gourmetShopWrappedView.layer.borderColor   = UIColor.init(code: "#dddddd").cgColor
         gourmetShopWrappedView.layer.borderWidth   = 0.75
         gourmetShopWrappedView.layer.shadowRadius  = 3.0
         gourmetShopWrappedView.layer.shadowOpacity = 0.5

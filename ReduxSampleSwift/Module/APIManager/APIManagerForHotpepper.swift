@@ -11,14 +11,14 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
-class APIRequestManagerForHotpepper {
+class APIManagerForHotpepper {
 
     private let baseUrl = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/"
     private let key     = Constants.HOTPEPPER_API_KEY
 
     // MARK: - Singleton Instance
 
-    static let shared = APIRequestManagerForHotpepper()
+    static let shared = APIManagerForHotpepper()
 
     private init() {}
 
