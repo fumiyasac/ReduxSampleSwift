@@ -47,14 +47,14 @@ class CalendarButtonView: CustomViewBase {
     func setPrevMonthButton() {
         calendarButtonWeekdayLabel.text = "prev"
         calendarButtonDayLabel.text     = "◀︎"
-        calendarButtonBackgroundView.backgroundColor = UIColor.init(code: "#cccccc")
+        calendarButtonBackgroundView.backgroundColor = UIColor.init(code: "#fd9d01")
     }
 
     // 次の月へボタンを設定する
     func setNextMonthButton() {
         calendarButtonWeekdayLabel.text = "next"
         calendarButtonDayLabel.text     = "▶︎"
-        calendarButtonBackgroundView.backgroundColor = UIColor.init(code: "#cccccc")
+        calendarButtonBackgroundView.backgroundColor = UIColor.init(code: "#fd9d01")
     }
 
     // 現在年月から日数分のカレンダーボタンを設定する

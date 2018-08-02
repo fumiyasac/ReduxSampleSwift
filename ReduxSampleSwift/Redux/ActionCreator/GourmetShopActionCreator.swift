@@ -22,7 +22,7 @@ extension GourmetShopActionCreator {
         appStore.dispatch(GourmetShopState.gourmetShopAction.setIsLoadingGourmetShop())
 
         // HotpepperのAPIからランダムで5件の飲食店情報を取得する
-        APIRequestManagerForHotpepper.shared.getRecommendShopList()
+        APIManagerForHotpepper.shared.getRecommendShopList()
             .done { shopJSON in
 
                 // 成功時: 飲食店情報を反映するアクションの実行
