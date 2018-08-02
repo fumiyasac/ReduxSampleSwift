@@ -38,9 +38,7 @@ extension EnglishNewsReducer {
         }
 
         // Debug.
-        print("---")
-        print("EnglishNewsStateが更新されました。")
-        print("---\n\n")
+        AppLogger.printMessageForDebug("EnglishNewsStateが更新されました。")
 
         return state
     }

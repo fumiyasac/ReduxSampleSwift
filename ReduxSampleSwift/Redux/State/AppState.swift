@@ -23,4 +23,7 @@ struct AppState: ReSwift.StateType {
 
     // 飲食店情報に関するstate
     var gourmetShopState = GourmetShopState()
+
+    // ピックアップメッセージに関するstate
+    var pickupMessageState = PickupMessageState()
 }

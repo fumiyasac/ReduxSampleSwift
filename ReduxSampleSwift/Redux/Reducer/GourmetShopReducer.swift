@@ -37,9 +37,7 @@ extension GourmetShopReducer {
         }
 
         // Debug.
-        print("---")
-        print("GourmetShopStateが更新されました。")
-        print("---\n\n")
+        AppLogger.printMessageForDebug("GourmetShopStateが更新されました。")
 
         return state
     }

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class PickupMessageCollectionViewCell: UICollectionViewCell {
+
+    private let cellShrinkDuration: TimeInterval = 0.16
+    private let cellShrinkRatio: CGFloat         = 0.92
 
     var pickupMessageButtonAction: (() -> ())?
 
     @IBOutlet weak private var pickupMessageWrappedView: UIView!
+    @IBOutlet weak private var pickupMessageCategoryLabel: UILabel!
+    @IBOutlet weak private var pickupMessageTitleLabel: UILabel!
     @IBOutlet weak private var pickupMessageImageView: UIImageView!
     @IBOutlet weak private var pickupMessageButton: UIButton!
 
@@ -22,22 +28,45 @@ class PickupMessageCollectionViewCell: UICollectionViewCell {
         setupPickupMessageButton()
     }
 
+    // MARK: - Function
+
+    func setCell(_ pickupMessage: PickupMessageEntity) {
+        if let imageUrl = URL(string: pickupMessage.imageUrl) {
+            pickupMessageImageView.af_setImage(withURL: imageUrl)
+        }
+        pickupMessageCategoryLabel.text = pickupMessage.category
+        setAttributesForTitle(pickupMessage.title)
+    }
+
     // MARK: - Private Functions
 
     @objc private func onDownPickupMessageButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.10, animations: {
-            self.pickupMessageWrappedView.transform = CGAffineTransform(scaleX: 0.92, y: 0.92)
+        UIView.animate(withDuration: cellShrinkDuration, animations: {
+            self.pickupMessageWrappedView.transform = CGAffineTransform(scaleX: self.cellShrinkRatio, y: self.cellShrinkRatio)
         }, completion: nil)
     }
 
     @objc private func onUpPickupMessageButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.10, animations: {
+        UIView.animate(withDuration: cellShrinkDuration, animations: {
             self.pickupMessageWrappedView.transform = CGAffineTransform.identity
         }, completion: { finished in
 
             // ViewController側でクロージャー内に設定した処理を実行する
             self.pickupMessageButtonAction?()
         })
+    }
+
+    private func setAttributesForTitle(_ text: String) {
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        
+        var attributes = [NSAttributedStringKey : Any]()
+        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+        attributes[NSAttributedStringKey.font] = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 15.0)
+        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#ffffff")
+        
+        pickupMessageTitleLabel.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
 
     private func setupPickupMessageButton() {

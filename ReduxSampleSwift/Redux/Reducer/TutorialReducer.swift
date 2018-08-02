@@ -37,9 +37,7 @@ extension TutorialReducer {
         }
 
         // Debug.
-        print("---")
-        print("TutorialStateが更新されました。")
-        print("---\n\n")
+        AppLogger.printMessageForDebug("TutorialStateが更新されました。")
 
         return state
     }

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,19 +21,23 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neV-Sy-g1I">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-S9-Nvk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qxI-S9-Nvk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.61568627450000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <view alpha="0.35999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OkT-1F-ax6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="この部分にはタイトルが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xN-2X-677">
-                                <rect key="frame" x="12" y="119" width="296" height="15"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="15"/>
+                                <rect key="frame" x="14" y="120" width="292" height="14"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000.00.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-TZ-mD6">
-                                <rect key="frame" x="14" y="97" width="69" height="12"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="場所カテゴリー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATd-TZ-mD6">
+                                <rect key="frame" x="14" y="99" width="77" height="11"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -53,15 +56,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qxI-S9-Nvk" firstAttribute="top" secondItem="neV-Sy-g1I" secondAttribute="top" id="4ll-ON-eDW"/>
+                            <constraint firstItem="OkT-1F-ax6" firstAttribute="top" secondItem="neV-Sy-g1I" secondAttribute="top" id="Cnj-vC-aHJ"/>
                             <constraint firstItem="n20-3R-nyh" firstAttribute="top" secondItem="0xN-2X-677" secondAttribute="bottom" constant="10" id="GFU-nq-KGz"/>
                             <constraint firstAttribute="bottom" secondItem="qxI-S9-Nvk" secondAttribute="bottom" id="JSo-ca-kuo"/>
                             <constraint firstItem="ATd-TZ-mD6" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" constant="14" id="Lkg-uX-RiX"/>
+                            <constraint firstAttribute="bottom" secondItem="OkT-1F-ax6" secondAttribute="bottom" id="OfB-RP-qWz"/>
                             <constraint firstItem="qxI-S9-Nvk" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" id="Ofb-21-qQE"/>
                             <constraint firstAttribute="trailing" secondItem="n20-3R-nyh" secondAttribute="trailing" constant="12" id="Qc8-hH-pxD"/>
                             <constraint firstItem="0xN-2X-677" firstAttribute="top" secondItem="ATd-TZ-mD6" secondAttribute="bottom" constant="10" id="T9Q-PE-QYa"/>
-                            <constraint firstItem="0xN-2X-677" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" constant="12" id="clV-I5-NUb"/>
-                            <constraint firstAttribute="trailing" secondItem="0xN-2X-677" secondAttribute="trailing" constant="12" id="gXr-hI-Fc5"/>
+                            <constraint firstItem="0xN-2X-677" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" constant="14" id="clV-I5-NUb"/>
+                            <constraint firstAttribute="trailing" secondItem="0xN-2X-677" secondAttribute="trailing" constant="14" id="gXr-hI-Fc5"/>
                             <constraint firstAttribute="bottom" secondItem="n20-3R-nyh" secondAttribute="bottom" constant="8" id="gqj-wn-SYZ"/>
+                            <constraint firstAttribute="trailing" secondItem="OkT-1F-ax6" secondAttribute="trailing" id="r6l-F0-3lq"/>
+                            <constraint firstItem="OkT-1F-ax6" firstAttribute="leading" secondItem="neV-Sy-g1I" secondAttribute="leading" id="s7s-Sb-8PA"/>
                             <constraint firstAttribute="trailing" secondItem="qxI-S9-Nvk" secondAttribute="trailing" id="szp-Y8-JSF"/>
                         </constraints>
                     </view>
@@ -76,7 +83,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="pickupMessageButton" destination="n20-3R-nyh" id="dST-iq-N7f"/>
+                <outlet property="pickupMessageCategoryLabel" destination="ATd-TZ-mD6" id="UyG-cV-RIX"/>
                 <outlet property="pickupMessageImageView" destination="qxI-S9-Nvk" id="vrn-s2-tXN"/>
+                <outlet property="pickupMessageTitleLabel" destination="0xN-2X-677" id="gAb-Q4-nzj"/>
                 <outlet property="pickupMessageWrappedView" destination="neV-Sy-g1I" id="ARA-cq-n04"/>
             </connections>
         </collectionViewCell>

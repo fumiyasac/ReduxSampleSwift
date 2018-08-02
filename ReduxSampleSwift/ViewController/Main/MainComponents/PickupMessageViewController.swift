@@ -11,7 +11,12 @@ import ReSwift
 
 class PickupMessageViewController: UIViewController {
 
-    private let pickupMessageCount = 5
+    private var pickupMessageList: [PickupMessageEntity] = [] {
+        // 値の変更があった場合に再読み込みを実行する
+        didSet {
+            self.pickupMessageCollectionView.reloadData()
+        }
+    }
 
     @IBOutlet weak private var pickupMessageTitleView: MainContentsTitleView!
     @IBOutlet weak private var pickupMessageCollectionView: UICollectionView!
@@ -23,6 +28,23 @@ class PickupMessageViewController: UIViewController {
         setupPickupMessageTitleView()
         setupPickupMessageCollectionView()
         setupPickupMessageRemarkView()
+
+        // ピックアップメッセージをフェッチするアクションを実行する
+        PickupMessageActionCreator.fetchGourmetShopList()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
+        appStore.subscribe(self)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
+        appStore.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +69,21 @@ class PickupMessageViewController: UIViewController {
     }
 }
 
+// MARK: - StoreSubscriber
+
+extension PickupMessageViewController: StoreSubscriber {
+
+    // ステートの更新が検知された際に実行される処理
+    func newState(state: AppState) {
+
+        // ピックアップメッセージのリストデータをメンバ変数へ格納する
+        pickupMessageList = state.pickupMessageState.pickupMessageStateList
+
+        // Debug.
+        AppLogger.printStateForDebug(state.pickupMessageState, viewController: self)
+    }
+}
+
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 
 extension PickupMessageViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -56,11 +93,14 @@ extension PickupMessageViewController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pickupMessageCount
+        return pickupMessageList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCustomCell(with: PickupMessageCollectionViewCell.self, indexPath: indexPath)
+
+        let pickupMessage = pickupMessageList[indexPath.row]
+        cell.setCell(pickupMessage)
 
         // セルの内部にある「▶︎ Read Mode」のボタンを押下した際のアクション
         cell.pickupMessageButtonAction = {

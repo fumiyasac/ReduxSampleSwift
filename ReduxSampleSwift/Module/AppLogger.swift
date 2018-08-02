@@ -33,4 +33,12 @@ struct AppLogger {
         print("ActionCreator logging #end:")
         print("---\n\n")
     }
+
+    // メッセージをconsoleへ出力する
+    static func printMessageForDebug(_ message: String) {
+
+        print("---")
+        print(message)
+        print("---\n\n")
+    }
 }

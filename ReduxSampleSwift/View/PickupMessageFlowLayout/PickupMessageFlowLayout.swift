@@ -124,7 +124,7 @@ class PickupMessageFlowLayout: UICollectionViewFlowLayout {
         // 設定されているスクロールの方向を調べる
         let isHorizontal = (self.scrollDirection == .horizontal)
 
-        //
+        // 動かした距離に応じてアルファ値・拡大縮小比を設定するための下準備として必要な値を算出する
         var collectionCenter: CGFloat
         var movableContentOffset: CGFloat
         var normalizedCenter: CGFloat
@@ -142,7 +142,7 @@ class PickupMessageFlowLayout: UICollectionViewFlowLayout {
             maxDistance = self.itemSize.height + self.minimumLineSpacing
         }
 
-        // 
+        // 動かした距離に応じてアルファ値・拡大縮小比を設定する
         let distance = min(abs(collectionCenter - normalizedCenter), maxDistance)
         let ratio = (maxDistance - distance) / maxDistance
 
