@@ -12,40 +12,34 @@ import CalculateCalendarLogic
 
 class CalendarButtonModule {
 
-    private static let calendar = Calendar(identifier: .gregorian)
-
-    static var currentYear: String {
-        get {
-            guard let current = getCurrentCalendarValues() else { return "????" }
-            return String(current.currentYear)
-        }
-    }
-
-    static var currentMonth: String {
-        get {
-            guard let current = getCurrentCalendarValues() else { return "??" }
-            return String(current.currentMonth)
-        }
-    }
+    private static let calendar      = Calendar(identifier: .gregorian)
+    private static var dateComponent = DateComponents()
 
     // MARK: - Static Function
 
     // 現在年月のカレンダー表示用ボタンのリストを作成する
-    static func getCurrentCalendarButtonList() -> [CalendarButtonView] {
+    static func getTargetCalendarButtonList(targetYear: Int, targetMonth: Int) -> [CalendarButtonView] {
 
-        // 現在年月を取得する
-        guard let values = getCurrentCalendarValues() else {
-            return []
-        }
-        let year   = values.currentYear
-        let month  = values.currentMonth
-        let maxDay = values.maxDay
+        // 該当の年と月から日数を算出する
+        let maxDay = getTargetCalendarDays(year: targetYear, month: targetMonth)
         
-        // 現在年月において日数分のボタンを作成する
+        // 現在年月において(前へボタン + 日数のボタン + 次へボタン)のリストを作成する
         var buttonList: [CalendarButtonView] = []
-        for i in 1...maxDay {
+
+        for i in 0...maxDay + 1 {
+
+            // 0番目に前へボタン、(maxDay + 1)番目に次へボタン、それ以外はカレンダーの日付ボタンとする
             let button = CalendarButtonView()
-            button.setCalendarButton(year: year, month: month, day: i)
+            if i == 0 {
+                button.setPrevMonthButton()
+                button.monthlyCalendarButtonType = .prevButton
+            } else if i == maxDay + 1 {
+                button.setNextMonthButton()
+                button.monthlyCalendarButtonType = .nextButton
+            } else {
+                button.setCalendarButton(year: targetYear, month: targetMonth, day: i)
+                button.monthlyCalendarButtonType = .targetDayButton
+            }
             buttonList.append(button)
         }
         return buttonList
@@ -53,15 +47,15 @@ class CalendarButtonModule {
 
     // MARK: - Private Static Function
 
-    // 現在年月と日数を取得する
-    private static func getCurrentCalendarValues() -> (currentYear: Int, currentMonth: Int, maxDay: Int)? {
+    // 引数で受け取った年と月から日数を算出する
+    private static func getTargetCalendarDays(year: Int, month: Int) -> Int {
 
-        // 現在の日付をもとにして必要な値を取得する
-        let now = Date()
-        let comps = calendar.dateComponents([.year, .month], from: now)
-        guard let year = comps.year, let month = comps.month, let range = calendar.range(of: .day, in: .month, for: now) else {
-            return nil
-        }
-        return (currentYear: year, currentMonth: month, maxDay: Int(range.count))
+        dateComponent.year  = year
+        dateComponent.month = month
+        dateComponent.day   = 1
+
+        let targetDate: Date = calendar.date(from: dateComponent)!
+        let range: Range = calendar.range(of: .day, in: .month, for: targetDate)!
+        return Int(range.count)
     }
 }

@@ -154,16 +154,21 @@ extension EnglishNewsViewController: UITableViewDelegate, UITableViewDataSource 
 
     // セル背景が点滅するようなアニメーションを実行する
     private func executeFlashingBackgroundAnimation(targetCell: UITableViewCell, completed: (() -> ())? = nil) {
+
+        // 色変化とアニメーションに関する設定
         let targetDuration = 0.16
         let targetDelay    = 0.00
-        let defaultColor  = UIColor.init(code: "FFFFFF")
-        let flashingColor = UIColor.init(code: "DDDDDD")
-        
+        let defaultColor  = UIColor.init(code: "#ffffff")
+        let flashingColor = UIColor.init(code: "#dddddd")
+
         UIView.animateKeyframes(withDuration: targetDuration, delay: targetDelay, options: [.autoreverse], animations: {
 
+            // 0.00秒 ~ 0.08秒をかけて defaultColor → flashingColor
             UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 1.0, animations: {
                 targetCell.backgroundColor = flashingColor
             })
+
+            // 0.08秒 ~ 0.16秒をかけて flashingColor → defaultColor
             UIView.addKeyframe(withRelativeStartTime: 1.0, relativeDuration: 1.0, animations: {
                 targetCell.backgroundColor = defaultColor
             })
