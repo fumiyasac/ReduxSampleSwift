@@ -80,6 +80,10 @@
 		DEDB424721139F9A00D11DCD /* PickupMessageState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB424621139F9A00D11DCD /* PickupMessageState.swift */; };
 		DEDB42492113A0E900D11DCD /* PickupMessageReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB42482113A0E900D11DCD /* PickupMessageReducer.swift */; };
 		DEDB424B2113A32D00D11DCD /* PickupMessageActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB424A2113A32D00D11DCD /* PickupMessageActionCreator.swift */; };
+		DEDB424D2113C33300D11DCD /* MonthlyCalendarState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB424C2113C33300D11DCD /* MonthlyCalendarState.swift */; };
+		DEDB424F2113C41600D11DCD /* MonthlyCalendarReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB424E2113C41600D11DCD /* MonthlyCalendarReducer.swift */; };
+		DEDB42512113C47F00D11DCD /* MonthlyCalendarAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB42502113C47F00D11DCD /* MonthlyCalendarAction.swift */; };
+		DEDB42532113C71300D11DCD /* MonthlyCalendarActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDB42522113C71300D11DCD /* MonthlyCalendarActionCreator.swift */; };
 		DEDC73F42095F29F00694443 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F32095F29F00694443 /* UserSettingViewController.swift */; };
 		DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73F820965AED00694443 /* UserSettingAction.swift */; };
 		DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDC73FA20965B4600694443 /* UserSettingState.swift */; };
@@ -202,6 +206,10 @@
 		DEDB424621139F9A00D11DCD /* PickupMessageState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageState.swift; sourceTree = "<group>"; };
 		DEDB42482113A0E900D11DCD /* PickupMessageReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageReducer.swift; sourceTree = "<group>"; };
 		DEDB424A2113A32D00D11DCD /* PickupMessageActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageActionCreator.swift; sourceTree = "<group>"; };
+		DEDB424C2113C33300D11DCD /* MonthlyCalendarState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendarState.swift; sourceTree = "<group>"; };
+		DEDB424E2113C41600D11DCD /* MonthlyCalendarReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendarReducer.swift; sourceTree = "<group>"; };
+		DEDB42502113C47F00D11DCD /* MonthlyCalendarAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendarAction.swift; sourceTree = "<group>"; };
+		DEDB42522113C71300D11DCD /* MonthlyCalendarActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendarActionCreator.swift; sourceTree = "<group>"; };
 		DEDC73F32095F29F00694443 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		DEDC73F820965AED00694443 /* UserSettingAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingAction.swift; sourceTree = "<group>"; };
 		DEDC73FA20965B4600694443 /* UserSettingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingState.swift; sourceTree = "<group>"; };
@@ -315,6 +323,7 @@
 				DEB82E4120E76F9900C08FFF /* EnglishNewsActionCreator.swift */,
 				DE27D42620FCE16D00F1E740 /* GourmetShopActionCreator.swift */,
 				DE2766A220B392600013248E /* InitialSettingActionCreator.swift */,
+				DEDB42522113C71300D11DCD /* MonthlyCalendarActionCreator.swift */,
 				DEDB424A2113A32D00D11DCD /* PickupMessageActionCreator.swift */,
 				DE2766A020B27CE30013248E /* TutorialActionCreator.swift */,
 				DE2766A420B395230013248E /* UserSettingActionCreator.swift */,
@@ -544,6 +553,7 @@
 				DE85D2B41FE6AB2C0017C3AF /* AppState.swift */,
 				DEB82E4420E77B2300C08FFF /* EnglishNewsState.swift */,
 				DE27D42020FCD84A00F1E740 /* GourmetShopState.swift */,
+				DEDB424C2113C33300D11DCD /* MonthlyCalendarState.swift */,
 				DEDB424621139F9A00D11DCD /* PickupMessageState.swift */,
 				DEE53CEB1FF4ED640097C7B2 /* TutorialState.swift */,
 				DEDC73FA20965B4600694443 /* UserSettingState.swift */,
@@ -608,6 +618,7 @@
 			children = (
 				DEB82E3F20E76F7500C08FFF /* EnglishNewsAction.swift */,
 				DE27D42220FCDF9300F1E740 /* GourmetShopAction.swift */,
+				DEDB42502113C47F00D11DCD /* MonthlyCalendarAction.swift */,
 				DEDB424421139F7100D11DCD /* PickupMessageAction.swift */,
 				DEE53CED1FF50E800097C7B2 /* TutorialAction.swift */,
 				DEDC73F820965AED00694443 /* UserSettingAction.swift */,
@@ -621,6 +632,7 @@
 				DE591DF7201370360097974A /* AppReducer.swift */,
 				DEB82E3D20E76F5C00C08FFF /* EnglishNewsReducer.swift */,
 				DE27D42420FCDFA900F1E740 /* GourmetShopReducer.swift */,
+				DEDB424E2113C41600D11DCD /* MonthlyCalendarReducer.swift */,
 				DEDB42482113A0E900D11DCD /* PickupMessageReducer.swift */,
 				DEE53CEF1FF7921D0097C7B2 /* TutorialReducer.swift */,
 				DEDC73FC2096651700694443 /* UserSettingReducer.swift */,
@@ -892,7 +904,9 @@
 				DEDB42362110817E00D11DCD /* AppLogger.swift in Sources */,
 				DE2766A320B392610013248E /* InitialSettingActionCreator.swift in Sources */,
 				DEE53CF41FFBB4660097C7B2 /* DeviceSize.swift in Sources */,
+				DEDB42532113C71300D11DCD /* MonthlyCalendarActionCreator.swift in Sources */,
 				DE2766AA20BA71B50013248E /* ActionLoggingMiddleware.swift in Sources */,
+				DEDB424F2113C41600D11DCD /* MonthlyCalendarReducer.swift in Sources */,
 				DEDB42492113A0E900D11DCD /* PickupMessageReducer.swift in Sources */,
 				DE65650B2095C8A8005745D2 /* UserSetting.swift in Sources */,
 				DEB82E3E20E76F5C00C08FFF /* EnglishNewsReducer.swift in Sources */,
@@ -952,6 +966,8 @@
 				DE59F78120CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
+				DEDB424D2113C33300D11DCD /* MonthlyCalendarState.swift in Sources */,
+				DEDB42512113C47F00D11DCD /* MonthlyCalendarAction.swift in Sources */,
 				DE27D41520FA375F00F1E740 /* GourmetShopEntity.swift in Sources */,
 				DE591DF8201370360097974A /* AppReducer.swift in Sources */,
 				DE671AFD1FDFC75400B752CA /* AppDelegate.swift in Sources */,

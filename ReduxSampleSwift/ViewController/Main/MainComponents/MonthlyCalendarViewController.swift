@@ -18,7 +18,6 @@ class MonthlyCalendarViewController: UIViewController {
 
     private let calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
     private let scrollViewMoveDuration: TimeInterval = 0.16
-    private let monthLimit: Int = 12
 
     private var selectedYear: Int!
     private var selectedMonth: Int!
@@ -33,10 +32,18 @@ class MonthlyCalendarViewController: UIViewController {
         setupMonthlyCalendarRemarkView()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        setMonthlyCalendar()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
+        appStore.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
+        appStore.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,14 +54,10 @@ class MonthlyCalendarViewController: UIViewController {
 
     @objc private func prevCalendarButtonTapped() {
         setPrevMonth()
-        setMonthlyCalendar()
-        movePrevMonthCalendarPosition()
     }
 
     @objc private func nextCalendarButtonTapped() {
         setNextMonth()
-        setMonthlyCalendar()
-        moveNextMonthCalendarPosition()
     }
 
     @objc private func calendarButtonTapped(button: UIButton) {
@@ -72,11 +75,16 @@ class MonthlyCalendarViewController: UIViewController {
     }
 
     private func setupMonthlyCalendarTitleView() {
-        let dateComponents = calendar.dateComponents([.year, .month], from: Date())
-        selectedYear  = Int(dateComponents.year!)
-        selectedMonth = Int(dateComponents.month!)
         monthlyCalendarTitleView.setTitle("月別カレンダーMEMO:")
-        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
+        monthlyCalendarTitleView.setDescriptionIfNeeded("")
+
+        // 現在の日時から年と月を算出する
+        let dateComponents = calendar.dateComponents([.year, .month], from: Date())
+        let targetYear: Int  = Int(dateComponents.year!)
+        let targetMonth: Int = Int(dateComponents.month!)
+
+        // 現在の日時から年と月をセットするアクションを実行する
+        MonthlyCalendarActionCreator.setCurrentYearAndMonth(targetYear: targetYear, targetMonth: targetMonth)
     }
 
     private func setupMonthlyCalendarRemarkView() {
@@ -128,23 +136,37 @@ class MonthlyCalendarViewController: UIViewController {
     }
 
     private func setPrevMonth() {
+
+        // 現在選択中の年と月を書き換える
+        var targetYear: Int
+        var targetMonth: Int
         if selectedMonth == 1 {
-            selectedYear = selectedYear - 1
-            selectedMonth = monthLimit
+            targetYear  = selectedYear - 1
+            targetMonth = 12
         } else {
-            selectedMonth = selectedMonth - 1
+            targetYear  = selectedYear
+            targetMonth = selectedMonth - 1
         }
-        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
+
+        // 前の年と月をセットするアクションを実行する
+        MonthlyCalendarActionCreator.setPrevYearAndMonth(targetYear: targetYear, targetMonth: targetMonth)
     }
 
     private func setNextMonth() {
-        if selectedMonth == monthLimit {
-            selectedYear = selectedYear + 1
-            selectedMonth = 1
+
+        // 現在選択中の年と月を書き換える
+        var targetYear: Int
+        var targetMonth: Int
+        if selectedMonth == 12 {
+            targetYear  = selectedYear + 1
+            targetMonth = 1
         } else {
-            selectedMonth = selectedMonth + 1
+            targetYear  = selectedYear
+            targetMonth = selectedMonth + 1
         }
-        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
+
+        // 次の年と月をセットするアクションを実行する
+        MonthlyCalendarActionCreator.setNextYearAndMonth(targetYear: targetYear, targetMonth: targetMonth)
     }
 
     private func movePrevMonthCalendarPosition() {
@@ -159,3 +181,31 @@ class MonthlyCalendarViewController: UIViewController {
         })
     }
 }
+
+extension MonthlyCalendarViewController: StoreSubscriber {
+    
+    // ステートの更新が検知された際に実行される処理
+    func newState(state: AppState) {
+
+        // メンバ変数の更新を行う
+        selectedYear  = state.monthlyCalendarState.selectedYear
+        selectedMonth = state.monthlyCalendarState.selectedMonth
+        
+        // 現在選択中の年と月に対応したカレンダーを配置する
+        setMonthlyCalendar()
+
+        // UIScrollViewの位置補正を行う
+        if state.monthlyCalendarState.isPrev {
+            movePrevMonthCalendarPosition()
+        } else {
+            moveNextMonthCalendarPosition()
+        }
+
+        // 現在選択中の年と月の表示をセットする
+        monthlyCalendarTitleView.setDescriptionIfNeeded("\(selectedYear!)年\(selectedMonth!)月分")
+        
+        // Debug.
+        AppLogger.printStateForDebug(state.monthlyCalendarState, viewController: self)
+    }
+}
+

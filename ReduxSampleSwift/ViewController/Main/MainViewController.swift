@@ -13,6 +13,7 @@ import SafariServices
 class MainViewController: UIViewController {
 
     private let refreshControl = UIRefreshControl()
+    private let calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
 
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var englishNewListHeight: NSLayoutConstraint!
@@ -66,9 +67,14 @@ class MainViewController: UIViewController {
         // 飲食店情報をフェッチするアクションを実行する
         GourmetShopActionCreator.fetchGourmetShopList()
 
-
         // ピックアップメッセージをフェッチするアクションを実行する
         PickupMessageActionCreator.fetchGourmetShopList()
+
+        // 現在の日時から年と月を算出し、年と月をセットするアクションを実行する
+        let dateComponents = calendar.dateComponents([.year, .month], from: Date())
+        let currentYear  = Int(dateComponents.year!)
+        let currentMonth = Int(dateComponents.month!)
+        MonthlyCalendarActionCreator.setCurrentYearAndMonth(targetYear: currentYear, targetMonth: currentMonth)
 
         // RefreshControlを閉じる
         sender.endRefreshing()

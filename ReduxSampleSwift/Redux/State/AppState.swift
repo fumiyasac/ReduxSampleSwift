@@ -26,4 +26,7 @@ struct AppState: ReSwift.StateType {
 
     // ピックアップメッセージに関するstate
     var pickupMessageState = PickupMessageState()
+
+    // 表示されている月別カレンダーに関するstate
+    var monthlyCalendarState = MonthlyCalendarState()
 }
