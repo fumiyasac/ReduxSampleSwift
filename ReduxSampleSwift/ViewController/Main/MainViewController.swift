@@ -59,27 +59,6 @@ class MainViewController: UIViewController {
 
     // MARK: - Private Function
 
-    @objc private func refreshMainScrollView(sender: UIRefreshControl) {
-        
-        // 英語ニュース情報をフェッチするアクションを実行する
-        EnglishNewsActionCreator.fetchEnglishNewsList(refresh: true)
-
-        // 飲食店情報をフェッチするアクションを実行する
-        GourmetShopActionCreator.fetchGourmetShopList()
-
-        // ピックアップメッセージをフェッチするアクションを実行する
-        PickupMessageActionCreator.fetchGourmetShopList()
-
-        // 現在の日時から年と月を算出し、年と月をセットするアクションを実行する
-        let dateComponents = calendar.dateComponents([.year, .month], from: Date())
-        let currentYear  = Int(dateComponents.year!)
-        let currentMonth = Int(dateComponents.month!)
-        MonthlyCalendarActionCreator.setCurrentYearAndMonth(targetYear: currentYear, targetMonth: currentMonth)
-
-        // RefreshControlを閉じる
-        sender.endRefreshing()
-    }
-
     private func setupMainScrollView() {
 
         // RefreshControlに関する設定
@@ -89,11 +68,61 @@ class MainViewController: UIViewController {
 
         refreshControl.tintColor = UIColor(code: "#CCCCCC")
         refreshControl.attributedTitle = NSAttributedString(string: "データをリフレッシュします...", attributes: attributes)
-        refreshControl.addTarget(self, action: #selector(self.refreshMainScrollView(sender:)), for: .valueChanged)
 
         // ScrollViewに関する設定
+        mainScrollView.delegate = self
+        mainScrollView.alwaysBounceVertical = true
         mainScrollView.delaysContentTouches = false
         mainScrollView.refreshControl = refreshControl
+    }
+}
+
+// MARK: - StoreSubscriber
+
+extension MainViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        // UIRefreshControl表示時は以降の処理を行わない
+        guard !refreshControl.isRefreshing else {
+            return
+        }
+
+        if scrollView.contentOffset.y < -120 {
+
+            // RefreshControlを開始する
+            refreshControl.beginRefreshing()
+
+            // 英語ニュース情報をフェッチするアクションを実行する
+            EnglishNewsActionCreator.fetchEnglishNewsList(refresh: true)
+
+            // 飲食店情報をフェッチするアクションを実行する
+            GourmetShopActionCreator.fetchGourmetShopList()
+
+            // ピックアップメッセージをフェッチするアクションを実行する
+            PickupMessageActionCreator.fetchGourmetShopList()
+
+            // 現在の日時から年と月を算出し、年と月をセットするアクションを実行する
+            let dateComponents = calendar.dateComponents([.year, .month], from: Date())
+            let currentYear  = Int(dateComponents.year!)
+            let currentMonth = Int(dateComponents.month!)
+            MonthlyCalendarActionCreator.setCurrentYearAndMonth(targetYear: currentYear, targetMonth: currentMonth)
+
+            // リフレッシュから指定秒後にUIRefreshControlを閉じる
+            let delayedTime: TimeInterval  = 0.48
+            let durationTime: TimeInterval = 0.24
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayedTime) {
+
+                // RefreshControlを閉じる
+                self.refreshControl.endRefreshing()
+
+                // UIScrollViewのy軸方向の位置を元に戻す
+                UIView.animate(withDuration: durationTime, animations: {
+                    scrollView.contentOffset.y = 0
+                })
+            }
+
+        }
     }
 }
 
