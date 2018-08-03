@@ -9,6 +9,7 @@
 import UIKit
 import ReSwift
 import SafariServices
+import PromiseKit
 
 class MainViewController: UIViewController {
 
@@ -88,40 +89,63 @@ extension MainViewController: UIScrollViewDelegate {
             return
         }
 
-        if scrollView.contentOffset.y < -120 {
+        let refreshContentOffsetLimit: CGFloat = -120
+        let delayedTime: TimeInterval = 0.48
 
-            // RefreshControlを開始する
-            refreshControl.beginRefreshing()
+        if scrollView.contentOffset.y < refreshContentOffsetLimit {
 
-            // 英語ニュース情報をフェッチするアクションを実行する
-            EnglishNewsActionCreator.fetchEnglishNewsList(refresh: true)
+            // コンテンツ全体の表示をリフレッシュする
+            let _ = promiseForRefreshAllMainContents(delayedTime)
 
-            // 飲食店情報をフェッチするアクションを実行する
-            GourmetShopActionCreator.fetchGourmetShopList()
+                // 最初の処理実行(0.00秒いわゆるいの一番に実行される処理)
+                .done {
 
-            // ピックアップメッセージをフェッチするアクションを実行する
-            PickupMessageActionCreator.fetchGourmetShopList()
+                    // RefreshControlを開始する
+                    self.refreshControl.beginRefreshing()
 
-            // 現在の日時から年と月を算出し、年と月をセットするアクションを実行する
-            let dateComponents = calendar.dateComponents([.year, .month], from: Date())
-            let currentYear  = Int(dateComponents.year!)
-            let currentMonth = Int(dateComponents.month!)
-            MonthlyCalendarActionCreator.setCurrentYearAndMonth(targetYear: currentYear, targetMonth: currentMonth)
+                    // 英語ニュース情報をフェッチするアクションを実行する
+                    EnglishNewsActionCreator.fetchEnglishNewsList(refresh: true)
 
-            // リフレッシュから指定秒後にUIRefreshControlを閉じる
-            let delayedTime: TimeInterval  = 0.48
-            let durationTime: TimeInterval = 0.24
+                    // 飲食店情報をフェッチするアクションを実行する
+                    GourmetShopActionCreator.fetchGourmetShopList()
+
+                    // ピックアップメッセージをフェッチするアクションを実行する
+                    PickupMessageActionCreator.fetchGourmetShopList()
+
+                    // 現在の日時から年と月を算出し、年と月をセットするアクションを実行する
+                    let dateComponents = self.calendar.dateComponents([.year, .month], from: Date())
+                    let currentYear  = Int(dateComponents.year!)
+                    let currentMonth = Int(dateComponents.month!)
+                    MonthlyCalendarActionCreator.setCurrentYearAndMonth(targetYear: currentYear, targetMonth: currentMonth)
+                }
+
+                // 次の処理実行(0.48秒後に実行される処理)
+                .done {
+
+                    // RefreshControlを終了する
+                    self.refreshControl.endRefreshing()
+
+                    // UIScrollViewのy軸方向の位置を元に戻す
+                    let durationTime: TimeInterval = 0.24
+                    UIView.animate(withDuration: durationTime, animations: {
+                        scrollView.contentOffset.y = 0
+                    })
+                }
+        }
+    }
+
+    // MARK: - Private Function
+
+    private func promiseForRefreshAllMainContents(_ delayedTime: TimeInterval) -> Promise<Void> {
+
+        return Promise { seal in
+
+            seal.fulfill(())
+
+            // 最初の処理実行から指定秒後に次の処理を実行する
             DispatchQueue.main.asyncAfter(deadline: .now() + delayedTime) {
-
-                // RefreshControlを閉じる
-                self.refreshControl.endRefreshing()
-
-                // UIScrollViewのy軸方向の位置を元に戻す
-                UIView.animate(withDuration: durationTime, animations: {
-                    scrollView.contentOffset.y = 0
-                })
+                seal.fulfill(())
             }
-
         }
     }
 }
