@@ -19,6 +19,7 @@ func appReduce(action: Action, state: AppState?) -> AppState {
     state.englishNewsState   = EnglishNewsReducer.reducer(action: action, state: state.englishNewsState)
     state.gourmetShopState   = GourmetShopReducer.reducer(action: action, state: state.gourmetShopState)
     state.pickupMessageState = PickupMessageReducer.reducer(action: action, state: state.pickupMessageState)
+    state.monthlyCalendarState = MonthlyCalendarReducer.reducer(action: action, state: state.monthlyCalendarState)
 
     // Debug.
     AppLogger.printMessageForDebug("appReduceが実行されました。")
