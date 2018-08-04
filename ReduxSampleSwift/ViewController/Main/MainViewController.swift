@@ -138,6 +138,8 @@ extension MainViewController: UIScrollViewDelegate {
 
     private func promiseForRefreshAllMainContents(_ delayedTime: TimeInterval) -> Promise<Void> {
 
+        // 参考: SwiftでPromiseパターンを実現するPromiseKitを使ってみる (Swift4 & PromiseKit6対応)
+        // http://www.cl9.info/entry/2015/10/03/144845
         return Promise { seal in
 
             seal.fulfill(())
