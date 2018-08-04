@@ -78,10 +78,11 @@ class MainViewController: UIViewController {
     }
 }
 
-// MARK: - StoreSubscriber
+// MARK: - UIScrollViewDelegate
 
 extension MainViewController: UIScrollViewDelegate {
-    
+
+    // スクロールが実行されオフセットが変わった際に呼ばれる
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
         // UIRefreshControl表示時は以降の処理を行わない
@@ -92,6 +93,7 @@ extension MainViewController: UIScrollViewDelegate {
         let refreshContentOffsetLimit: CGFloat = -120
         let delayedTime: TimeInterval = 0.48
 
+        // UIScrollViewのオフセット値が設定値を超えたら表示内容をリフレッシュする
         if scrollView.contentOffset.y < refreshContentOffsetLimit {
 
             // コンテンツ全体の表示をリフレッシュする

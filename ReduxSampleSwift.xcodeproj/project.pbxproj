@@ -591,6 +591,13 @@
 			path = PickupMessageCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		DEDB42542115AA2E00D11DCD /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomTransition;
+			sourceTree = "<group>";
+		};
 		DEDC73F72095FECE00694443 /* UserSetting */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +609,7 @@
 		DEE53CDA1FF1DD570097C7B2 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DEDB42542115AA2E00D11DCD /* CustomTransition */,
 				DE3D912C20EA760F008478C6 /* APIManager */,
 				DE041ADE209DFAF5005271E1 /* AppConstants.swift */,
 				DEDB42352110817E00D11DCD /* AppLogger.swift */,
