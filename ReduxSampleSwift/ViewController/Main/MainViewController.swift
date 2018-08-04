@@ -43,12 +43,12 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         // ContainerViewで接続されたViewController側に定義したプロトコルを適用するためにSegueからViewControllerのインスタンスを作成する
-        if segue.identifier == "EnglishNewsContainer" {
+        if segue.identifier == "connectEnglishNewsContainer" {
             let englishNewsViewController = segue.destination as! EnglishNewsViewController
             englishNewsViewController.delegate = self
         }
 
-        if segue.identifier == "GourmetShopContainer" {
+        if segue.identifier == "connectGourmetShopContainer" {
             let gourmetShopViewController = segue.destination as! GourmetShopViewController
             gourmetShopViewController.delegate = self
         }
