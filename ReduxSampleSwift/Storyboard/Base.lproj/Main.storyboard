@@ -160,7 +160,7 @@
                         <outlet property="monthlyCalendarRemarkView" destination="LUV-sJ-Vxb" id="m9d-b6-rfz"/>
                         <outlet property="monthlyCalendarScrollView" destination="fQM-cX-sjh" id="Ot5-re-xwS"/>
                         <outlet property="monthlyCalendarTitleView" destination="KrF-zm-qgm" id="gaa-sb-sMt"/>
-                        <segue destination="9C6-tk-ZvP" kind="presentation" id="nQY-w5-lpF"/>
+                        <segue destination="9C6-tk-ZvP" kind="presentation" identifier="goDailyMemo" id="nQY-w5-lpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8r-iw-4v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
