@@ -61,6 +61,7 @@ class MonthlyCalendarViewController: UIViewController {
     }
 
     @objc private func calendarButtonTapped(button: UIButton) {
+        //performSegue(withIdentifier: "goDailyMemo", sender: self)
         print("選択された日付:", "\(selectedYear!)年\(selectedMonth!)月\(button.tag)日")
     }
 
