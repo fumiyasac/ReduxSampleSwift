@@ -18,6 +18,8 @@
 		DE215F462116A93B00421E63 /* DailyMemoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F452116A93B00421E63 /* DailyMemoTransition.swift */; };
 		DE215F4F21176E7C00421E63 /* PickupMessageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F4E21176E7C00421E63 /* PickupMessageTransition.swift */; };
 		DE215F5121176F0E00421E63 /* PickupMessageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F5021176F0E00421E63 /* PickupMessageInteractor.swift */; };
+		DE215F532117AD4E00421E63 /* TutorialEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F522117AD4E00421E63 /* TutorialEntity.swift */; };
+		DE215F552117AE3400421E63 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F542117AE3400421E63 /* Tutorial.swift */; };
 		DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */; };
 		DE2685F020C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */; };
 		DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A020B27CE30013248E /* TutorialActionCreator.swift */; };
@@ -141,6 +143,8 @@
 		DE215F452116A93B00421E63 /* DailyMemoTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemoTransition.swift; sourceTree = "<group>"; };
 		DE215F4E21176E7C00421E63 /* PickupMessageTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageTransition.swift; sourceTree = "<group>"; };
 		DE215F5021176F0E00421E63 /* PickupMessageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageInteractor.swift; sourceTree = "<group>"; };
+		DE215F522117AD4E00421E63 /* TutorialEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialEntity.swift; sourceTree = "<group>"; };
+		DE215F542117AE3400421E63 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GourmetShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE2766A020B27CE30013248E /* TutorialActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialActionCreator.swift; sourceTree = "<group>"; };
@@ -423,6 +427,7 @@
 				DEB82E4620E7808C00C08FFF /* EnglishNewsEntity.swift */,
 				DE27D41420FA375F00F1E740 /* GourmetShopEntity.swift */,
 				DEDB424021138B5400D11DCD /* PickupMessageEntity.swift */,
+				DE215F522117AD4E00421E63 /* TutorialEntity.swift */,
 				DE4D4148206295D70038CC01 /* UserSettingEntity.swift */,
 			);
 			path = Entity;
@@ -575,6 +580,7 @@
 				DE27D41620FA377900F1E740 /* GourmetShop.swift */,
 				DEE53CF81FFBBF020097C7B2 /* InitialSetting.swift */,
 				DEDB424221138C2D00D11DCD /* PickupMessage.swift */,
+				DE215F542117AE3400421E63 /* Tutorial.swift */,
 				DE65650A2095C8A8005745D2 /* UserSetting.swift */,
 			);
 			path = Model;
@@ -959,11 +965,13 @@
 				DE09D4091FFFC1E700177D36 /* APIManagerForHotpepper.swift in Sources */,
 				DE27D42520FCDFA900F1E740 /* GourmetShopReducer.swift in Sources */,
 				DEE53CEC1FF4ED640097C7B2 /* TutorialState.swift in Sources */,
+				DE215F532117AD4E00421E63 /* TutorialEntity.swift in Sources */,
 				DEDC73FF209668B400694443 /* SelectedResidentPeriodEnum.swift in Sources */,
 				DE041AD72096E81F005271E1 /* UITableViewExtension.swift in Sources */,
 				DEDB424521139F7100D11DCD /* PickupMessageAction.swift in Sources */,
 				DE4D4149206295D70038CC01 /* UserSettingEntity.swift in Sources */,
 				DE27D42120FCD84A00F1E740 /* GourmetShopState.swift in Sources */,
+				DE215F552117AE3400421E63 /* Tutorial.swift in Sources */,
 				DE27D42C20FE248E00F1E740 /* MainContentsRemarkView.swift in Sources */,
 				DEE53CEE1FF50E800097C7B2 /* TutorialAction.swift in Sources */,
 				DEDB424B2113A32D00D11DCD /* PickupMessageActionCreator.swift in Sources */,

@@ -27,12 +27,20 @@ class CardIntroductionViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    // MARK: - Function
+
+    func setCardContents(_ tutorialEntity: TutorialEntity) {
+        titleLabel.text       = tutorialEntity.title
+        descriptionLabel.text = tutorialEntity.description
+        cardImageView.image   = tutorialEntity.imageFile
+    }
+
     // MARK: - Private Function
 
     private func setupCardIntroductionView() {
         cardBackgroundView.layer.masksToBounds = true
         cardBackgroundView.layer.cornerRadius  = 10.0
         cardBackgroundView.layer.borderWidth   = 1.0
-        cardBackgroundView.layer.borderColor   = UIColor(code: "#ffdd00").cgColor
+        cardBackgroundView.layer.borderColor   = UIColor(code: "F9F9F9").cgColor
     }
 }
