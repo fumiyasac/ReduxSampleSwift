@@ -25,9 +25,10 @@ class DailyMemoViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        // 謝罪アラートを表示する
         let alert = UIAlertController(
-            title: "こちらの画面はサンプルになります。",
-            message: "この画面は特にロジックの実装は行っておりませんが、UserSettingViewControllerに記載している形と似たような感じで実装することができます。\n内容の関係で今回は割愛しましたm(_ _)m",
+            title: "こちらの画面は仮の画面になります",
+            message: "この画面は特にロジックの実装は行っておりませんが、UserSettingViewControllerに記載している形と似たような感じで実装することができます。\n内容の関係で今回は割愛しましたm(_ _)m\n後ほど必ず作成する見込みでいます。。。",
             preferredStyle: UIAlertControllerStyle.alert
         )
         alert.addAction(
