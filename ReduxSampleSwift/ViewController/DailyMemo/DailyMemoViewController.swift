@@ -8,7 +8,7 @@
 
 import UIKit
 
-// FIXME: この部分をReduxに当てはめて管理する処理はいずれ作成する
+// あとでするTODO: この部分をReduxに当てはめて管理する処理はいずれ作成する
 
 class DailyMemoViewController: UIViewController {
 
@@ -22,6 +22,20 @@ class DailyMemoViewController: UIViewController {
         setupCloseButton()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let alert = UIAlertController(
+            title: "こちらの画面はサンプルになります。",
+            message: "この画面は特にロジックの実装は行っておりませんが、UserSettingViewControllerに記載している形と似たような感じで実装することができます。\n内容の関係で今回は割愛しましたm(_ _)m",
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        alert.addAction(
+            UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        )
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
