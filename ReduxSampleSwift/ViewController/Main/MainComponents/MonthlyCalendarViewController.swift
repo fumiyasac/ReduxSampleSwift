@@ -9,7 +9,15 @@
 import UIKit
 import ReSwift
 
-/* TODO: 入力画面の作成時にReSwiftへ乗せる */
+// MARK: - Protocol
+
+// MEMO: ContainerViewを介したViewに関する処理はプロトコル経由で接続する
+protocol MonthlyCalendarViewDelegate: NSObjectProtocol {
+
+    // 月別カレンダーのボタンタップ時にプロトコルを適用したViewController側で行うためのメソッド
+    func selectMonthlyCalendar(selectedDate: (selectedYear: Int, selectedMonth: Int, selectedDay: Int))
+}
+
 class MonthlyCalendarViewController: UIViewController {
 
     @IBOutlet weak private var monthlyCalendarTitleView: MainContentsTitleView!
@@ -23,6 +31,9 @@ class MonthlyCalendarViewController: UIViewController {
     private var selectedMonth: Int!
 
     private var calendarButtonList: [CalendarButtonView] = []
+
+    // MonthlyCalendarViewDelegateの宣言
+    weak var delegate: MonthlyCalendarViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +72,17 @@ class MonthlyCalendarViewController: UIViewController {
     }
 
     @objc private func calendarButtonTapped(button: UIButton) {
-        //performSegue(withIdentifier: "goDailyMemo", sender: self)
+
+        // Debug.
         print("選択された日付:", "\(selectedYear!)年\(selectedMonth!)月\(button.tag)日")
+
+        // カレンダーで選択された日付を取得して、プロトコルを適用しているViewControllerに受け渡す
+        let targetSelectedDate: (selectedYear: Int, selectedMonth: Int, selectedDay: Int) = (
+            selectedYear: selectedYear!,
+            selectedMonth: selectedMonth!,
+            selectedDay: button.tag
+        )
+        self.delegate?.selectMonthlyCalendar(selectedDate: targetSelectedDate)
     }
 
     private func setupMonthlyCalendarScrollView() {
@@ -183,6 +203,8 @@ class MonthlyCalendarViewController: UIViewController {
     }
 }
 
+// MARK: - StoreSubscriber
+
 extension MonthlyCalendarViewController: StoreSubscriber {
     
     // ステートの更新が検知された際に実行される処理
@@ -209,4 +231,3 @@ extension MonthlyCalendarViewController: StoreSubscriber {
         AppLogger.printStateForDebug(state.monthlyCalendarState, viewController: self)
     }
 }
-

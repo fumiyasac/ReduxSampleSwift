@@ -15,6 +15,7 @@
 		DE041AD92096E8C4005271E1 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */; };
 		DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041ADE209DFAF5005271E1 /* AppConstants.swift */; };
 		DE09D4091FFFC1E700177D36 /* APIManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */; };
+		DE215F462116A93B00421E63 /* DailyMemoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F452116A93B00421E63 /* DailyMemoTransition.swift */; };
 		DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */; };
 		DE2685F020C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */; };
 		DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A020B27CE30013248E /* TutorialActionCreator.swift */; };
@@ -135,6 +136,7 @@
 		DE041AD82096E8C4005271E1 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
 		DE041ADE209DFAF5005271E1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForHotpepper.swift; sourceTree = "<group>"; };
+		DE215F452116A93B00421E63 /* DailyMemoTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemoTransition.swift; sourceTree = "<group>"; };
 		DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GourmetShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE2766A020B27CE30013248E /* TutorialActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialActionCreator.swift; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 		DEDB42542115AA2E00D11DCD /* CustomTransition */ = {
 			isa = PBXGroup;
 			children = (
+				DE215F452116A93B00421E63 /* DailyMemoTransition.swift */,
 			);
 			path = CustomTransition;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				DEDC73F920965AED00694443 /* UserSettingAction.swift in Sources */,
 				DEDC73FB20965B4600694443 /* UserSettingState.swift in Sources */,
 				DE2766AD20BAAEBB0013248E /* MonthlyCalendarViewController.swift in Sources */,
+				DE215F462116A93B00421E63 /* DailyMemoTransition.swift in Sources */,
 				DE27D41720FA377900F1E740 /* GourmetShop.swift in Sources */,
 				DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */,
 				DE27D41920FA3BAF00F1E740 /* ArrayExtension.swift in Sources */,
