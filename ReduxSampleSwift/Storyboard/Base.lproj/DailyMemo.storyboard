@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="gdv-P4-OSA" kind="relationship" relationship="rootViewController" id="Ege-Ry-TI8"/>
+                        <segue destination="gdv-P4-OSA" kind="relationship" relationship="rootViewController" id="j32-LX-7vI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d08-U3-FeA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,7 +28,7 @@
         <!--Daily Memo View Controller-->
         <scene sceneID="W5s-1O-HWZ">
             <objects>
-                <viewController id="gdv-P4-OSA" customClass="DailyMemoViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DailyMemoViewController" id="gdv-P4-OSA" customClass="DailyMemoViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NM0-U1-NKJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

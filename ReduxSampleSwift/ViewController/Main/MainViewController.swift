@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     private let calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
 
+    private let dailyMemoTransition = DailyMemoTransition()
+
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var englishNewListHeight: NSLayoutConstraint!
 
@@ -42,15 +44,23 @@ class MainViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
-        // ContainerViewで接続されたViewController側に定義したプロトコルを適用するためにSegueからViewControllerのインスタンスを作成する
-        if segue.identifier == "connectEnglishNewsContainer" {
-            let englishNewsViewController = segue.destination as! EnglishNewsViewController
-            englishNewsViewController.delegate = self
-        }
+        switch segue.identifier {
 
-        if segue.identifier == "connectGourmetShopContainer" {
+        // ContainerViewで接続されたViewController側に定義したプロトコルを適用する
+        case "connectMonthlyCalendarContainer":
+            let monthlyCalendarViewController = segue.destination as! MonthlyCalendarViewController
+            monthlyCalendarViewController.delegate = self
+
+        case "connectGourmetShopContainer":
             let gourmetShopViewController = segue.destination as! GourmetShopViewController
             gourmetShopViewController.delegate = self
+
+        case "connectEnglishNewsContainer":
+            let englishNewsViewController = segue.destination as! EnglishNewsViewController
+            englishNewsViewController.delegate = self
+
+        default:
+            break
         }
     }
 
@@ -166,10 +176,29 @@ extension MainViewController: StoreSubscriber {
     }
 }
 
+// MARK: - MonthlyCalendarViewDelegate
+
+extension MainViewController: MonthlyCalendarViewDelegate {
+
+    // 選択されたカレンダーの内容を反映させつつ、画面遷移を行う
+    func selectMonthlyCalendar(selectedDate: (selectedYear: Int, selectedMonth: Int, selectedDay: Int)) {
+
+        // 記事表示用の画面へ遷移する
+        let storyboard = UIStoryboard(name: "DailyMemo", bundle: nil)
+        let dailyMemoViewController = storyboard.instantiateViewController(withIdentifier: "DailyMemoViewController") as! DailyMemoViewController
+        dailyMemoViewController.setSelectedDate(selectedDate)
+
+        // カスタムトランジションのプロトコルを適用させて遷移する
+        let navigationController = UINavigationController(rootViewController: dailyMemoViewController)
+        navigationController.transitioningDelegate = self
+        self.present(navigationController, animated: true, completion: nil)
+    }
+}
+
 // MARK: - GourmetShopViewDelegate
 
 extension MainViewController: GourmetShopViewDelegate {
-
+    
     // 見たい飲食店の選択時にこのViewController側で行う処理
     func selectGourmetShop(_ urlString: String) {
         if let gourmetShopUrl = URL(string: urlString) {
@@ -199,3 +228,33 @@ extension MainViewController: EnglishNewsViewDelegate {
         }
     }
 }
+
+// MARK: - UIViewControllerTransitioningDelegate
+
+extension MainViewController: UIViewControllerTransitioningDelegate {
+
+    /**
+     * カスタムトランジションは下記のサンプルをSwift3に置き換えて再実装
+     * (実装の詳細はCustomTransition.swiftを参考)
+     *
+     * 参考：iOS Animation Tutorial: Custom View Controller Presentation Transitions
+     * https://www.raywenderlich.com/113845/ios-animation-tutorial-custom-view-controller-presentation-transitions
+     */
+
+    // 進む場合のアニメーションの設定を行う
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        // 現在の画面サイズを引き渡して画面が縮むトランジションにする
+        dailyMemoTransition.originalFrame = self.view.frame
+        dailyMemoTransition.presenting = true
+        return dailyMemoTransition
+    }
+
+    // 戻る場合のアニメーションの設定を行う
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        dailyMemoTransition.presenting = false
+        return dailyMemoTransition
+    }
+}
+

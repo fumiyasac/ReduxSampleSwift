@@ -45,7 +45,7 @@
                                                     <constraint firstAttribute="height" constant="133" id="rV9-G7-hGc"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="ZP1-eJ-pt5" kind="embed" id="sDf-Bk-Snr"/>
+                                                    <segue destination="ZP1-eJ-pt5" kind="embed" identifier="connectMonthlyCalendarContainer" id="sDf-Bk-Snr"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-R1-Q8B">
@@ -160,20 +160,11 @@
                         <outlet property="monthlyCalendarRemarkView" destination="LUV-sJ-Vxb" id="m9d-b6-rfz"/>
                         <outlet property="monthlyCalendarScrollView" destination="fQM-cX-sjh" id="Ot5-re-xwS"/>
                         <outlet property="monthlyCalendarTitleView" destination="KrF-zm-qgm" id="gaa-sb-sMt"/>
-                        <segue destination="9C6-tk-ZvP" kind="presentation" identifier="goDailyMemo" id="nQY-w5-lpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8r-iw-4v3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="-419.64017991004499"/>
-        </scene>
-        <!--DailyMemo-->
-        <scene sceneID="Ocz-G6-8lq">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DailyMemo" id="9C6-tk-ZvP" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5a-LD-rml" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2122" y="-420"/>
+            <point key="canvasLocation" x="1049" y="-564"/>
         </scene>
         <!--MessageDetail-->
         <scene sceneID="hu5-aW-Gbo">
@@ -258,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL1-rt-SnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="-147"/>
+            <point key="canvasLocation" x="1049" y="-313"/>
         </scene>
         <!--Gourmet Shop View Controller-->
         <scene sceneID="nyb-jE-qoo">
@@ -333,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d4B-xx-lrB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="192"/>
+            <point key="canvasLocation" x="1049" y="4"/>
         </scene>
         <!--English News View Controller-->
         <scene sceneID="sSI-PH-GgS">
@@ -388,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYp-FB-LFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="786.20689655172418"/>
+            <point key="canvasLocation" x="1049" y="594"/>
         </scene>
     </scenes>
 </document>
