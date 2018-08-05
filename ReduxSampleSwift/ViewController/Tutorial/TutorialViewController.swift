@@ -112,12 +112,14 @@ class TutorialViewController: UIViewController {
     // Tutorial.storyboard上に配置した紹介コンテンツ用のViewController配列に追加する
     private func setIntroductionViewControllerLists() {
 
+        let tutorialList = Tutorial.getTutorialList()
         for index in 0..<targetViewControllerTitle.count {
             let storyboard: UIStoryboard = UIStoryboard(name: "Tutorial", bundle: Bundle.main)
-            let cardIntroductionViewController = storyboard.instantiateViewController(withIdentifier: "CardIntroductionViewController")
+            let cardIntroductionViewController = storyboard.instantiateViewController(withIdentifier: "CardIntroductionViewController") as! CardIntroductionViewController
 
             // 「タグ番号 = インデックスの値」でスワイプ完了時にどのViewControllerかを判別できるようにする ＆ 各ViewControllerの表示内容をセットする
             cardIntroductionViewController.view.tag = index
+            cardIntroductionViewController.setCardContents(tutorialList[index])
 
             // ページングして表示させるViewControllerを保持する配列
             targetViewControllerLists.append(cardIntroductionViewController)
