@@ -9,6 +9,15 @@
 import UIKit
 import ReSwift
 
+// MARK: - Protocol
+
+// MEMO: ContainerViewを介したViewに関する処理はプロトコル経由で接続する
+protocol PickupMessageViewDelegate: NSObjectProtocol {
+
+    // ピックアップメッセージのセル選択時にプロトコルを適用したViewController側で行うためのメソッド
+    func selectPickupMessage(pickupMessageEntity: PickupMessageEntity, pickupMessageImage: UIImage?)
+}
+
 class PickupMessageViewController: UIViewController {
 
     private var pickupMessageList: [PickupMessageEntity] = [] {
@@ -17,6 +26,9 @@ class PickupMessageViewController: UIViewController {
             self.pickupMessageCollectionView.reloadData()
         }
     }
+
+    // PickupMessageViewDelegateの宣言
+    weak var delegate: PickupMessageViewDelegate?
 
     @IBOutlet weak private var pickupMessageTitleView: MainContentsTitleView!
     @IBOutlet weak private var pickupMessageCollectionView: UICollectionView!
@@ -103,8 +115,13 @@ extension PickupMessageViewController: UICollectionViewDelegate, UICollectionVie
         cell.setCell(pickupMessage)
 
         // セルの内部にある「▶︎ Read Mode」のボタンを押下した際のアクション
-        cell.pickupMessageButtonAction = {
+        cell.pickupMessageButtonAction = { [weak self] pushedImage in
+
+            // Debug.
             print("押されたセルのインデックス値:", indexPath.row)
+
+            // ピックアップメッセージの情報を取得して、プロトコルを適用しているViewControllerに受け渡す
+            self?.delegate?.selectPickupMessage(pickupMessageEntity: pickupMessage, pickupMessageImage: pushedImage)
         }
         return cell
     }

@@ -12,17 +12,33 @@
         <!--Message Detail View Controller-->
         <scene sceneID="vNS-TM-0kU">
             <objects>
-                <viewController id="jJ6-gk-rH7" customClass="MessageDetailViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageDetailViewController" id="jJ6-gk-rH7" customClass="MessageDetailViewController" customModule="ReduxSampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iUK-11-BUH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="99" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-BW-X5O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="5tL-A4-TGb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qzy-BW-X5O" firstAttribute="trailing" secondItem="ozp-jb-555" secondAttribute="trailing" id="7yn-mt-Q20"/>
+                            <constraint firstItem="qzy-BW-X5O" firstAttribute="top" secondItem="iUK-11-BUH" secondAttribute="top" id="cii-r5-IXU"/>
+                            <constraint firstItem="qzy-BW-X5O" firstAttribute="leading" secondItem="ozp-jb-555" secondAttribute="leading" id="vjh-0e-wVS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ozp-jb-555"/>
                     </view>
+                    <connections>
+                        <outlet property="targetImageView" destination="qzy-BW-X5O" id="pxz-Ke-tRi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEi-Rk-b4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="250" y="-26"/>
+            <point key="canvasLocation" x="248.80000000000001" y="-26.53673163418291"/>
         </scene>
     </scenes>
 </document>
