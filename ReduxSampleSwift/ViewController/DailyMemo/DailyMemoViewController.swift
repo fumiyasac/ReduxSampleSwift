@@ -27,7 +27,7 @@ class DailyMemoViewController: UIViewController {
 
         // 謝罪アラートを表示する
         let alert = UIAlertController(
-            title: "こちらの画面は仮の画面になります",
+            title: "こちらの画面は仮画面です。",
             message: "この画面は特にロジックの実装は行っておりませんが、UserSettingViewControllerに記載している形と似たような感じで実装することができます。\n内容の関係で今回は割愛しましたm(_ _)m\n後ほど必ず作成する見込みでいます。。。",
             preferredStyle: UIAlertControllerStyle.alert
         )
