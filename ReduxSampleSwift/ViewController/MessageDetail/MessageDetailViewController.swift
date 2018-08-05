@@ -15,7 +15,7 @@ class MessageDetailViewController: UIViewController {
 
     private var targetPickupMessage: PickupMessageEntity!
 
-    @IBOutlet weak var targetImageView: UIImageView!
+    @IBOutlet weak private var targetImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

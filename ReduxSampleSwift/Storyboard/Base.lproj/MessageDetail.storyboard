@@ -23,11 +23,308 @@
                                     <constraint firstAttribute="height" constant="190" id="5tL-A4-TGb"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raO-Px-0iN">
+                                <rect key="frame" x="0.0" y="190" width="375" height="477"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-Cw-an0">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="754"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vW2-LI-lsl">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018.08.24" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIf-Qd-Sga">
+                                                        <rect key="frame" x="12" y="14" width="63.5" height="11"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="11"/>
+                                                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEN-yc-3DF">
+                                                        <rect key="frame" x="12" y="39" width="351" height="42"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="このサンプルを手にとって頂いた皆様へ、本当にありがとうございます！">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="17" name="HiraginoSans-W6"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真の種類：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uox-Jj-XEM">
+                                                        <rect key="frame" x="12" y="103" width="351" height="13"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qAp-Nq-kFH">
+                                                        <rect key="frame" x="12" y="128" width="351" height="114"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="cW6-L7-4Md">
+                                                                <rect key="frame" x="0.0" y="0.0" width="351" height="114"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-jg-exN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="351" height="16"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="グルメ・お食事" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iX4-EK-Gyj">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="16"/>
+                                                                                <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="16" id="GOu-Gw-dK4"/>
+                                                                                    <constraint firstAttribute="width" constant="110" id="iP2-de-p43"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金沢の懐かしい食べ物紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw0-QI-3bh">
+                                                                                <rect key="frame" x="120" y="0.0" width="231" height="16"/>
+                                                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="10"/>
+                                                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="cw0-QI-3bh" firstAttribute="top" secondItem="R5g-jg-exN" secondAttribute="top" id="0EB-oK-vGL"/>
+                                                                            <constraint firstItem="cw0-QI-3bh" firstAttribute="leading" secondItem="iX4-EK-Gyj" secondAttribute="trailing" constant="10" id="GtY-7Y-kZn"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="cw0-QI-3bh" secondAttribute="trailing" id="MFv-Og-QNN"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="cw0-QI-3bh" secondAttribute="bottom" id="MdS-AD-kD8"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="IAI-vj-wqK">
+                                                                        <rect key="frame" x="0.0" y="24.5" width="351" height="16"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ショッピング・お買い物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WrC-kj-1bO">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="16"/>
+                                                                                <color key="backgroundColor" red="0.32156862745098036" green="0.79607843137254897" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="110" id="LR1-t2-aqL"/>
+                                                                                    <constraint firstAttribute="height" constant="16" id="hO2-O6-TjX"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お土産や土地の名産品紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-KI-dvZ">
+                                                                                <rect key="frame" x="120" y="0.0" width="231" height="16"/>
+                                                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="10"/>
+                                                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="vJU-KI-dvZ" firstAttribute="leading" secondItem="WrC-kj-1bO" secondAttribute="trailing" constant="10" id="NPJ-y9-xC2"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="vJU-KI-dvZ" secondAttribute="trailing" id="QWq-OA-Cfq"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="vJU-KI-dvZ" secondAttribute="bottom" id="gx6-Bb-buI"/>
+                                                                            <constraint firstItem="vJU-KI-dvZ" firstAttribute="top" secondItem="IAI-vj-wqK" secondAttribute="top" id="kiB-vg-8qX"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="L3y-8H-iZN">
+                                                                        <rect key="frame" x="0.0" y="49" width="351" height="16"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="観光・街めぐり" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNP-Og-Ei9">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="16"/>
+                                                                                <color key="backgroundColor" red="0.24705882352941178" green="0.77254901960784317" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="16" id="7qU-lN-6Iz"/>
+                                                                                    <constraint firstAttribute="width" constant="110" id="mhe-ID-aIB"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="観光名所や新しいスポット紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQR-hX-agg">
+                                                                                <rect key="frame" x="120" y="0.0" width="231" height="16"/>
+                                                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="10"/>
+                                                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="BQR-hX-agg" secondAttribute="trailing" id="5Pw-Np-BnU"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="BQR-hX-agg" secondAttribute="bottom" id="FcS-Fc-CKg"/>
+                                                                            <constraint firstItem="BQR-hX-agg" firstAttribute="top" secondItem="L3y-8H-iZN" secondAttribute="top" id="Gui-97-dLZ"/>
+                                                                            <constraint firstItem="BQR-hX-agg" firstAttribute="leading" secondItem="rNP-Og-Ei9" secondAttribute="trailing" constant="10" id="uVI-Kf-dYS"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="9kd-XP-NIu">
+                                                                        <rect key="frame" x="0.0" y="73.5" width="351" height="16"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ホテル・宿泊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrM-Dz-D77">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="16"/>
+                                                                                <color key="backgroundColor" red="0.99607843137254903" green="0.792156862745098" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="16" id="1X8-6b-VUk"/>
+                                                                                    <constraint firstAttribute="width" constant="110" id="dUp-Ch-X9y"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おすすめのホテルや民宿の紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6P-m5-Fx4">
+                                                                                <rect key="frame" x="120" y="0.0" width="231" height="16"/>
+                                                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="10"/>
+                                                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="bottom" secondItem="g6P-m5-Fx4" secondAttribute="bottom" id="26m-e4-CMz"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="g6P-m5-Fx4" secondAttribute="trailing" id="8he-Yx-v5b"/>
+                                                                            <constraint firstItem="g6P-m5-Fx4" firstAttribute="top" secondItem="9kd-XP-NIu" secondAttribute="top" id="Uy9-HV-7AC"/>
+                                                                            <constraint firstItem="g6P-m5-Fx4" firstAttribute="leading" secondItem="lrM-Dz-D77" secondAttribute="trailing" constant="10" id="ijK-dk-mML"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Vyh-wM-SSW">
+                                                                        <rect key="frame" x="0.0" y="98" width="351" height="16"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="イベント・催し物" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgf-Ty-1gJ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="16"/>
+                                                                                <color key="backgroundColor" red="1" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="16" id="elw-4Y-9LG"/>
+                                                                                    <constraint firstAttribute="width" constant="110" id="rUK-2a-Ip7"/>
+                                                                                </constraints>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="面白い金沢ならではのイベント紹介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-CJ-OOq">
+                                                                                <rect key="frame" x="120" y="0.0" width="231" height="16"/>
+                                                                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="10"/>
+                                                                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="bottom" secondItem="dd4-CJ-OOq" secondAttribute="bottom" id="CCZ-97-k24"/>
+                                                                            <constraint firstItem="dd4-CJ-OOq" firstAttribute="top" secondItem="Vyh-wM-SSW" secondAttribute="top" id="KsG-3W-iha"/>
+                                                                            <constraint firstItem="dd4-CJ-OOq" firstAttribute="leading" secondItem="sgf-Ty-1gJ" secondAttribute="trailing" constant="10" id="OQ1-OP-dZt"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="dd4-CJ-OOq" secondAttribute="trailing" id="rFC-4D-ZCy"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="cW6-L7-4Md" firstAttribute="leading" secondItem="qAp-Nq-kFH" secondAttribute="leading" id="Bej-8d-6hX"/>
+                                                            <constraint firstItem="cW6-L7-4Md" firstAttribute="top" secondItem="qAp-Nq-kFH" secondAttribute="top" id="Ix8-e1-Afi"/>
+                                                            <constraint firstAttribute="trailing" secondItem="cW6-L7-4Md" secondAttribute="trailing" id="MGC-yg-DZB"/>
+                                                            <constraint firstAttribute="bottom" secondItem="cW6-L7-4Md" secondAttribute="bottom" id="Oyw-FM-jus"/>
+                                                            <constraint firstAttribute="height" constant="114" id="rpi-5g-cHV"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="qAp-Nq-kFH" firstAttribute="leading" secondItem="vW2-LI-lsl" secondAttribute="leading" constant="12" id="32H-tC-ns3"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="6sf-vl-01r"/>
+                                                    <constraint firstItem="PIf-Qd-Sga" firstAttribute="leading" secondItem="vW2-LI-lsl" secondAttribute="leading" constant="12" id="79e-Ql-LT7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Uox-Jj-XEM" secondAttribute="trailing" constant="12" id="7MZ-Uy-goW"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oEN-yc-3DF" secondAttribute="trailing" constant="12" id="EH7-PB-HIe"/>
+                                                    <constraint firstItem="qAp-Nq-kFH" firstAttribute="top" secondItem="Uox-Jj-XEM" secondAttribute="bottom" constant="12" id="EWR-rw-FPy"/>
+                                                    <constraint firstItem="Uox-Jj-XEM" firstAttribute="leading" secondItem="vW2-LI-lsl" secondAttribute="leading" constant="12" id="LvM-VO-p4x"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qAp-Nq-kFH" secondAttribute="bottom" constant="12" id="Pdn-2b-c6B"/>
+                                                    <constraint firstItem="oEN-yc-3DF" firstAttribute="top" secondItem="PIf-Qd-Sga" secondAttribute="bottom" constant="14" id="W0T-r5-0Bw"/>
+                                                    <constraint firstItem="PIf-Qd-Sga" firstAttribute="top" secondItem="vW2-LI-lsl" secondAttribute="top" constant="14" id="W1g-dl-wDH"/>
+                                                    <constraint firstItem="Uox-Jj-XEM" firstAttribute="top" secondItem="oEN-yc-3DF" secondAttribute="bottom" constant="22" id="ine-cS-wSf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qAp-Nq-kFH" secondAttribute="trailing" constant="12" id="j6l-qR-4yu"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="250" id="j72-x2-ezS"/>
+                                                    <constraint firstItem="oEN-yc-3DF" firstAttribute="leading" secondItem="vW2-LI-lsl" secondAttribute="leading" constant="12" id="qxh-OD-ATk"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoB-3C-Knm">
+                                                <rect key="frame" x="0.0" y="254" width="375" height="500"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReSwiftに触れてみて：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnw-Jv-12a">
+                                                        <rect key="frame" x="12" y="10" width="351" height="13"/>
+                                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="13"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ice-17-nlc">
+                                                        <rect key="frame" x="12" y="35" width="351" height="453"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment>
+                                                                <mutableString key="content">元々はReactJSやReactNativeで利用されているもので、私自身もPublishSubscribeで書くスタイルやReact系のフレームワークにも若干の心得があったので今回活用したUIサンプルを作成してみました。
+
+ネイティブのiOSアプリ開発にはViewController(MVCパターン)を基本としているので、「一枚岩で状態を管理する」という概念をその中でどのように展開するかがポイントになりそうだと感じてしまうと思います。
+
+状態とViewが振る舞うべき状態が多岐にわたるようなサンプルを作ってみることで、よりReduxへの理解やUI実装の勘所がつかめれば嬉しいです。
+
+今後においてもUI実装と美しいインタラクションをはじめとするものに磨きをかけて行きたいと思う次第です。
+
+※</mutableString>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="13" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content">※※ お知らせ ※※※
+10月8日の「技術書典5」にUI実装のテクニックを紹介した同人誌を出版する予定です。ブースでお会いできた際にはよろしくお願いします！</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666999999999997" green="0.46666999999999997" blue="0.46666999999999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="13" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment>
+                                                                <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="13" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="2018.08.24 fumiyasac">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <font key="NSFont" size="13" name="HiraginoSans-W3"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="8" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Bnw-Jv-12a" firstAttribute="leading" secondItem="xoB-3C-Knm" secondAttribute="leading" constant="12" id="4f6-Fm-TLX"/>
+                                                    <constraint firstAttribute="height" priority="250" constant="128" id="93B-Ln-g7I"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="Kib-f2-Mni"/>
+                                                    <constraint firstItem="ice-17-nlc" firstAttribute="top" secondItem="Bnw-Jv-12a" secondAttribute="bottom" constant="12" id="VDa-X8-JVR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ice-17-nlc" secondAttribute="bottom" constant="12" id="ZQ5-Tf-abV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ice-17-nlc" secondAttribute="trailing" constant="12" id="cgm-QO-ehf"/>
+                                                    <constraint firstItem="ice-17-nlc" firstAttribute="leading" secondItem="xoB-3C-Knm" secondAttribute="leading" constant="12" id="kyX-w3-Kri"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Bnw-Jv-12a" secondAttribute="trailing" constant="12" id="oV9-I6-Zd7"/>
+                                                    <constraint firstItem="Bnw-Jv-12a" firstAttribute="top" secondItem="xoB-3C-Knm" secondAttribute="top" constant="10" id="xZh-3T-Cfl"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ntK-Cw-an0" firstAttribute="top" secondItem="raO-Px-0iN" secondAttribute="top" id="2oZ-cc-tIM"/>
+                                    <constraint firstAttribute="trailing" secondItem="ntK-Cw-an0" secondAttribute="trailing" id="4ze-X0-cqH"/>
+                                    <constraint firstItem="ntK-Cw-an0" firstAttribute="leading" secondItem="raO-Px-0iN" secondAttribute="leading" id="58y-a1-Uju"/>
+                                    <constraint firstItem="ntK-Cw-an0" firstAttribute="width" secondItem="raO-Px-0iN" secondAttribute="width" id="6YR-FY-z1f"/>
+                                    <constraint firstAttribute="bottom" secondItem="ntK-Cw-an0" secondAttribute="bottom" id="kis-iQ-XLX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qzy-BW-X5O" firstAttribute="trailing" secondItem="ozp-jb-555" secondAttribute="trailing" id="7yn-mt-Q20"/>
+                            <constraint firstItem="raO-Px-0iN" firstAttribute="leading" secondItem="ozp-jb-555" secondAttribute="leading" id="BNh-BK-7tK"/>
+                            <constraint firstItem="raO-Px-0iN" firstAttribute="bottom" secondItem="ozp-jb-555" secondAttribute="bottom" id="Cjg-vK-R7l"/>
+                            <constraint firstItem="raO-Px-0iN" firstAttribute="trailing" secondItem="ozp-jb-555" secondAttribute="trailing" id="Qf2-cG-qjO"/>
                             <constraint firstItem="qzy-BW-X5O" firstAttribute="top" secondItem="iUK-11-BUH" secondAttribute="top" id="cii-r5-IXU"/>
+                            <constraint firstItem="raO-Px-0iN" firstAttribute="top" secondItem="qzy-BW-X5O" secondAttribute="bottom" id="nnY-FF-mcT"/>
                             <constraint firstItem="qzy-BW-X5O" firstAttribute="leading" secondItem="ozp-jb-555" secondAttribute="leading" id="vjh-0e-wVS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ozp-jb-555"/>
