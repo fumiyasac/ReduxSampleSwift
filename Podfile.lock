@@ -1,5 +1,4 @@
 PODS:
-  - ActiveLabel (0.9.0)
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
@@ -23,7 +22,6 @@ PODS:
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
-  - "ActiveLabel (from `git@github.com:optonaut/ActiveLabel.swift.git`, branch `master`)"
   - Alamofire
   - AlamofireImage
   - CalculateCalendarLogic
@@ -45,18 +43,7 @@ SPEC REPOS:
     - ReSwift
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  ActiveLabel:
-    :branch: master
-    :git: "git@github.com:optonaut/ActiveLabel.swift.git"
-
-CHECKOUT OPTIONS:
-  ActiveLabel:
-    :commit: cf7818aa9a151b218684b72df655487ffc6e8e78
-    :git: "git@github.com:optonaut/ActiveLabel.swift.git"
-
 SPEC CHECKSUMS:
-  ActiveLabel: c4fdd14a288483e98b5a3dff0ab214699aeee74a
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   CalculateCalendarLogic: 3961452b0138ac1d716d18707bc84afe8f46837e
@@ -67,6 +54,6 @@ SPEC CHECKSUMS:
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 9aab8e6638b3c00b584cc4ba06e721a374c14f70
+PODFILE CHECKSUM: eb899f4bf881b7b04e8cb392ce04553cefbd100c
 
 COCOAPODS: 1.5.3
