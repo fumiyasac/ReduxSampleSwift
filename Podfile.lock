@@ -3,7 +3,6 @@ PODS:
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - CalculateCalendarLogic (0.1.7)
-  - FontAwesome.swift (1.2.0)
   - Hero (1.1.0)
   - KYNavigationProgress (2.0.2)
   - PromiseKit (6.2.1):
@@ -21,20 +20,17 @@ PODS:
   - RealmSwift (3.3.0):
     - Realm (= 3.3.0)
   - ReSwift (4.0.1)
-  - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - CalculateCalendarLogic
-  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-4.0`)
   - Hero
   - KYNavigationProgress
   - PromiseKit
   - RealmSwift
   - ReSwift
-  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -50,35 +46,18 @@ SPEC REPOS:
     - ReSwift
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  FontAwesome.swift:
-    :branch: swift-4.0
-    :git: https://github.com/thii/FontAwesome.swift
-  SVProgressHUD:
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
-
-CHECKOUT OPTIONS:
-  FontAwesome.swift:
-    :commit: ee1bf6b3db08f969ec7508c0feca3bac0d8b96ff
-    :git: https://github.com/thii/FontAwesome.swift
-  SVProgressHUD:
-    :commit: 7f676d51905ede045ca5dcaf82d4ba0d9f96addf
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
-
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   CalculateCalendarLogic: 3961452b0138ac1d716d18707bc84afe8f46837e
-  FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
   Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   PromiseKit: edaca6f0a7ed73b08c287600537d13867a7fabc7
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
   RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 736b9d3003501bfe908559f4ffa716c3ca3f4bea
+PODFILE CHECKSUM: 276933592fc0e1d98a418faa1999649df0848e2e
 
 COCOAPODS: 1.5.3
