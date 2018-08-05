@@ -19,8 +19,8 @@ target 'ReduxSampleSwift' do
 
   # UI構築用ライブラリ
   pod 'CalculateCalendarLogic'
-  pod 'Hero'
   pod 'KYNavigationProgress'
+  pod 'ActiveLabel', :git => 'git@github.com:optonaut/ActiveLabel.swift.git', :branch => 'master'
 
 #  target 'ReduxSampleSwiftTests' do
 #    inherit! :search_paths

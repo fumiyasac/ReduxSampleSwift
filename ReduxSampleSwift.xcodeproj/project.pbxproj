@@ -16,6 +16,8 @@
 		DE041ADF209DFAF5005271E1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041ADE209DFAF5005271E1 /* AppConstants.swift */; };
 		DE09D4091FFFC1E700177D36 /* APIManagerForHotpepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */; };
 		DE215F462116A93B00421E63 /* DailyMemoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F452116A93B00421E63 /* DailyMemoTransition.swift */; };
+		DE215F4F21176E7C00421E63 /* PickupMessageTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F4E21176E7C00421E63 /* PickupMessageTransition.swift */; };
+		DE215F5121176F0E00421E63 /* PickupMessageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE215F5021176F0E00421E63 /* PickupMessageInteractor.swift */; };
 		DE2685EF20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */; };
 		DE2685F020C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */; };
 		DE2766A120B27CE30013248E /* TutorialActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2766A020B27CE30013248E /* TutorialActionCreator.swift */; };
@@ -137,6 +139,8 @@
 		DE041ADE209DFAF5005271E1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE09D4081FFFC1E700177D36 /* APIManagerForHotpepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerForHotpepper.swift; sourceTree = "<group>"; };
 		DE215F452116A93B00421E63 /* DailyMemoTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMemoTransition.swift; sourceTree = "<group>"; };
+		DE215F4E21176E7C00421E63 /* PickupMessageTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageTransition.swift; sourceTree = "<group>"; };
+		DE215F5021176F0E00421E63 /* PickupMessageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupMessageInteractor.swift; sourceTree = "<group>"; };
 		DE2685ED20C83B4B00D50BCA /* GourmetShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE2685EE20C83B4B00D50BCA /* GourmetShopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GourmetShopCollectionViewCell.xib; sourceTree = "<group>"; };
 		DE2766A020B27CE30013248E /* TutorialActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialActionCreator.swift; sourceTree = "<group>"; };
@@ -597,6 +601,8 @@
 			isa = PBXGroup;
 			children = (
 				DE215F452116A93B00421E63 /* DailyMemoTransition.swift */,
+				DE215F4E21176E7C00421E63 /* PickupMessageTransition.swift */,
+				DE215F5021176F0E00421E63 /* PickupMessageInteractor.swift */,
 			);
 			path = CustomTransition;
 			sourceTree = "<group>";
@@ -846,10 +852,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/KYNavigationProgress/KYNavigationProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
@@ -859,10 +865,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActiveLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalculateCalendarLogic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYNavigationProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
@@ -947,6 +953,7 @@
 				DE3D912E20EA7636008478C6 /* APIManagerForNewYorkTimes.swift in Sources */,
 				DE5867FD20C3E5C100D1F78D /* CalendarButtonView.swift in Sources */,
 				DEE53CF91FFBBF020097C7B2 /* InitialSetting.swift in Sources */,
+				DE215F4F21176E7C00421E63 /* PickupMessageTransition.swift in Sources */,
 				DEE53D0A1FFD22630097C7B2 /* InitialSettingViewController.swift in Sources */,
 				DEDB424121138B5400D11DCD /* PickupMessageEntity.swift in Sources */,
 				DEE53D041FFD21FF0097C7B2 /* CardIntroductionViewController.swift in Sources */,
@@ -972,6 +979,7 @@
 				DE2766BD20BAF24B0013248E /* DailyMemoViewController.swift in Sources */,
 				DE2766AF20BAAEE30013248E /* PickupMessageViewController.swift in Sources */,
 				DE59F78120CAD1B6005B2BCC /* EnglishNewsTableViewCell.swift in Sources */,
+				DE215F5121176F0E00421E63 /* PickupMessageInteractor.swift in Sources */,
 				DEE53CDC1FF4E2690097C7B2 /* UIColorExtension.swift in Sources */,
 				DE671AFF1FDFC75400B752CA /* MainViewController.swift in Sources */,
 				DEDB424D2113C33300D11DCD /* MonthlyCalendarState.swift in Sources */,

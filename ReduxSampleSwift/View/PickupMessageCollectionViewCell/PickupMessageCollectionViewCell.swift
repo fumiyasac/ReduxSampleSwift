@@ -14,7 +14,7 @@ class PickupMessageCollectionViewCell: UICollectionViewCell {
     private let cellShrinkDuration: TimeInterval = 0.16
     private let cellShrinkRatio: CGFloat         = 0.92
 
-    var pickupMessageButtonAction: (() -> ())?
+    var pickupMessageButtonAction: ((UIImage?) -> ())?
 
     @IBOutlet weak private var pickupMessageWrappedView: UIView!
     @IBOutlet weak private var pickupMessageCategoryLabel: UILabel!
@@ -52,7 +52,7 @@ class PickupMessageCollectionViewCell: UICollectionViewCell {
         }, completion: { finished in
 
             // ViewController側でクロージャー内に設定した処理を実行する
-            self.pickupMessageButtonAction?()
+            self.pickupMessageButtonAction?(self.pickupMessageImageView.image)
         })
     }
 

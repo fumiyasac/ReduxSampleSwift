@@ -18,6 +18,10 @@ class MainViewController: UIViewController {
 
     private let dailyMemoTransition = DailyMemoTransition()
 
+    private var selectedFrame: CGRect?
+    private var pickupMessageInteractor: PickupMessageInteractor?
+    private var selectedImage: UIImage?
+
     @IBOutlet weak private var mainScrollView: UIScrollView!
     @IBOutlet weak private var englishNewListHeight: NSLayoutConstraint!
 
@@ -25,6 +29,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         setupNavigationBarTitle("気になるコンテンツ一覧")
+        removeBackButtonText()
+        setupNavigationController()
         setupMainScrollView()
     }
 
@@ -51,6 +57,10 @@ class MainViewController: UIViewController {
             let monthlyCalendarViewController = segue.destination as! MonthlyCalendarViewController
             monthlyCalendarViewController.delegate = self
 
+        case "connectPickupMessageContainer":
+            let pickupMessageViewController = segue.destination as! PickupMessageViewController
+            pickupMessageViewController.delegate = self
+            
         case "connectGourmetShopContainer":
             let gourmetShopViewController = segue.destination as! GourmetShopViewController
             gourmetShopViewController.delegate = self
@@ -69,6 +79,19 @@ class MainViewController: UIViewController {
     }
 
     // MARK: - Private Function
+
+    private func setupNavigationController() {
+        self.navigationController?.delegate = self
+
+        // MEMO: NavigationBarの下に灰色のUIViewを敷いておく
+        let statusBarHeight      = UIApplication.shared.statusBarFrame.height
+        let navigationBarHeight  = self.navigationController?.navigationBar.frame.height ?? 0
+        let headerBackgroundView = UIView(
+            frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(statusBarHeight + navigationBarHeight))
+        )
+        headerBackgroundView.backgroundColor = UIColor.init(code: "#F9F9F9")
+        self.view.addSubview(headerBackgroundView)
+    }
 
     private func setupMainScrollView() {
 
@@ -195,6 +218,35 @@ extension MainViewController: MonthlyCalendarViewDelegate {
     }
 }
 
+// MARK: - PickupMessageViewDelegate
+
+extension MainViewController: PickupMessageViewDelegate {
+
+    func selectPickupMessage(pickupMessageEntity: PickupMessageEntity, pickupMessageImage: UIImage?) {
+
+        // カスタムトランジションに引き渡すUIImageをメンバ変数へ格納する
+        selectedImage = pickupMessageImage
+        
+        // カスタムトランジションに引き渡す遷移元画像の位置をメンバ変数へ格納する
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
+        selectedFrame = CGRect(
+            x: 0.0,
+            y: 175.0 + navigationBarHeight + statusBarHeight - mainScrollView.contentOffset.y,
+            width: self.view.frame.width,
+            height: 190.0
+        )
+
+        // カスタムトランジションのプロトコルを適用させて遷移する
+        let storyboard = UIStoryboard(name: "MessageDetail", bundle: nil)
+        let messageDetailViewController = storyboard.instantiateViewController(withIdentifier: "MessageDetailViewController") as! MessageDetailViewController
+        
+        messageDetailViewController.setPickupMessageEntity(pickupMessageEntity)
+        self.navigationController?.pushViewController(messageDetailViewController, animated: true)
+    }
+}
+
+
 // MARK: - GourmetShopViewDelegate
 
 extension MainViewController: GourmetShopViewDelegate {
@@ -255,6 +307,30 @@ extension MainViewController: UIViewControllerTransitioningDelegate {
 
         dailyMemoTransition.presenting = false
         return dailyMemoTransition
+    }
+}
+
+// MARK: - UINavigationControllerDelegate
+
+extension MainViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        guard let targetInteractor = pickupMessageInteractor else { return nil }
+        return targetInteractor.transitionInProgress ? pickupMessageInteractor : nil
+    }
+
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        guard let frame = selectedFrame else { return nil }
+        guard let image = selectedImage else { return nil }
+
+        switch operation {
+        case .push:
+            self.pickupMessageInteractor = PickupMessageInteractor(attachTo: toVC)
+            return PickupMessageTransition(presenting: true, originFrame: frame, originImage: image)
+        default:
+            return PickupMessageTransition(presenting: false, originFrame: frame, originImage: image)
+        }
     }
 }
 

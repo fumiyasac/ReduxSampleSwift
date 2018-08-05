@@ -54,7 +54,7 @@
                                                     <constraint firstAttribute="height" constant="265" id="Mbz-x9-Yxi"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="FVd-3n-Mxo" kind="embed" id="hPS-FC-se9"/>
+                                                    <segue destination="FVd-3n-Mxo" kind="embed" identifier="connectPickupMessageContainer" id="hPS-FC-se9"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJ2-pP-195">
@@ -166,14 +166,6 @@
             </objects>
             <point key="canvasLocation" x="1049" y="-564"/>
         </scene>
-        <!--MessageDetail-->
-        <scene sceneID="hu5-aW-Gbo">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MessageDetail" id="Zqc-Fe-fwJ" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="64o-nv-g5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2140" y="-363"/>
-        </scene>
         <!--Pickup Message View Controller-->
         <scene sceneID="4oO-AQ-DPB">
             <objects>
@@ -244,7 +236,6 @@
                         <outlet property="pickupMessageCollectionView" destination="hM4-Gw-rpY" id="lIz-dF-2hl"/>
                         <outlet property="pickupMessageRemarkView" destination="RTI-Ei-oi0" id="bDg-dT-rcF"/>
                         <outlet property="pickupMessageTitleView" destination="9xz-6C-tYk" id="x5a-hP-k4e"/>
-                        <segue destination="Zqc-Fe-fwJ" kind="presentation" id="YWQ-Hl-J6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL1-rt-SnX" userLabel="First Responder" sceneMemberID="firstResponder"/>

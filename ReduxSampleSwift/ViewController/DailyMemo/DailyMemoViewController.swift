@@ -61,5 +61,4 @@ class DailyMemoViewController: UIViewController {
         closeButton.tintColor = UIColor.init(code: "#999999")
         self.navigationItem.leftBarButtonItem = closeButton
     }
-
 }
