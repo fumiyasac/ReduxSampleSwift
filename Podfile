@@ -20,8 +20,6 @@ target 'ReduxSampleSwift' do
   # UI構築用ライブラリ
   pod 'CalculateCalendarLogic'
   pod 'Hero'
-  pod 'SVProgressHUD',     :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
-  pod 'FontAwesome.swift', :git => 'https://github.com/thii/FontAwesome.swift', :branch => 'swift-4.0'
   pod 'KYNavigationProgress'
 
 #  target 'ReduxSampleSwiftTests' do
