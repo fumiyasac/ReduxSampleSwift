@@ -90,6 +90,8 @@ class MainViewController: UIViewController {
             frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: CGFloat(statusBarHeight + navigationBarHeight))
         )
         headerBackgroundView.backgroundColor = UIColor.init(code: "#F9F9F9")
+        headerBackgroundView.layer.borderWidth = 0.5
+        headerBackgroundView.layer.borderColor = UIColor.init(code: "#CCCCCC").cgColor
         self.view.addSubview(headerBackgroundView)
     }
 
