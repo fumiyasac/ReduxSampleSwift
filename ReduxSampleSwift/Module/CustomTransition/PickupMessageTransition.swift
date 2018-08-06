@@ -13,7 +13,7 @@ import UIKit
 // https://medium.com/@samstone/create-custom-uinavigationcontroller-transitions-in-ios-1acd6a0b6d25
 class PickupMessageTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    private let duration: TimeInterval = 0.18
+    private let duration: TimeInterval = 0.28
     private let customAnimatorTag = 99
 
     var presenting: Bool
