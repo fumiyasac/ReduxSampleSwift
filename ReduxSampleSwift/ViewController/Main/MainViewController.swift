@@ -226,7 +226,7 @@ extension MainViewController: PickupMessageViewDelegate {
 
         // カスタムトランジションに引き渡すUIImageをメンバ変数へ格納する
         selectedImage = pickupMessageImage
-        
+
         // カスタムトランジションに引き渡す遷移元画像の位置をメンバ変数へ格納する
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0

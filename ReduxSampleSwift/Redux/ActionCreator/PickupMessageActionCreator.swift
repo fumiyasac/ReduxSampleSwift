@@ -13,6 +13,13 @@ struct PickupMessageActionCreator {}
 
 extension PickupMessageActionCreator {
 
+    // ピックアップメッセージ表示エリアの表示状態を反映する
+    static func shouldHidePickupMessageArea(result: Bool) {
+        appStore.dispatch(
+            PickupMessageState.pickupMessageAction.setIsPickupMessageAreaHidden(result: result)
+        )
+    }
+
     // ピックアップメッセージを取得する
     static func fetchGourmetShopList() {
 

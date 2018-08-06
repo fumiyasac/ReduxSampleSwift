@@ -179,7 +179,7 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hM4-Gw-rpY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="190"/>
-                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="190" id="AIx-NJ-DwM"/>
                                         </constraints>
@@ -192,7 +192,7 @@
                                         <cells/>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="hM4-Gw-rpY" secondAttribute="trailing" id="Etu-xh-K3M"/>
                                     <constraint firstItem="hM4-Gw-rpY" firstAttribute="leading" secondItem="lxQ-cd-OVP" secondAttribute="leading" id="I9n-KJ-HGq"/>
