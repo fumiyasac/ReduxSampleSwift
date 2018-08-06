@@ -59,6 +59,13 @@ class PickupMessageViewController: UIViewController {
         appStore.unsubscribe(self)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        // ピックアップメッセージエリアの表示状態を更新するアクションを実行する
+        PickupMessageActionCreator.shouldHidePickupMessageArea(result: false)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -88,6 +95,9 @@ extension PickupMessageViewController: StoreSubscriber {
     // ステートの更新が検知された際に実行される処理
     func newState(state: AppState) {
 
+        // ピックアップメッセージの表示エリア状態を反映する
+        pickupMessageCollectionView.isHidden = state.pickupMessageState.isPickupMessageAreaHidden
+
         // ピックアップメッセージのリストデータをメンバ変数へ格納する
         pickupMessageList = state.pickupMessageState.pickupMessageStateList
 
@@ -116,6 +126,9 @@ extension PickupMessageViewController: UICollectionViewDelegate, UICollectionVie
 
         // セルの内部にある「▶︎ Read Mode」のボタンを押下した際のアクション
         cell.pickupMessageButtonAction = { [weak self] pushedImage in
+
+            // ピックアップメッセージエリアの表示状態を更新するアクションを実行する
+            PickupMessageActionCreator.shouldHidePickupMessageArea(result: true)
 
             // Debug.
             print("押されたセルのインデックス値:", indexPath.row)

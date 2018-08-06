@@ -15,6 +15,9 @@ extension PickupMessageState {
     enum pickupMessageAction: ReSwift.Action {
 
         // ピックアップメッセージの読み込み成功時にAPIより取得した値をセットするアクション
-        case setPickupMessage(pickupMessage: [PickupMessageEntity])        
+        case setPickupMessage(pickupMessage: [PickupMessageEntity])
+
+        // ピックアップメッセージエリアの表示状態の値をセットするアクション
+        case setIsPickupMessageAreaHidden(result: Bool)
     }
 }

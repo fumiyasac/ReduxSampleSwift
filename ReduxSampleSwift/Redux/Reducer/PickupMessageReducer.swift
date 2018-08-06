@@ -25,6 +25,9 @@ extension PickupMessageReducer {
 
         case let .setPickupMessage(pickupMessage):
             state.pickupMessageStateList = pickupMessage
+
+        case let .setIsPickupMessageAreaHidden(result):
+            state.isPickupMessageAreaHidden = result
         }
 
         // Debug.
