@@ -452,27 +452,4 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
             return UITableViewCell.init()
         }
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-//        switch tableView.tag {
-//
-//        case tableViewType.residentPeriod.rawValue:
-//
-//            // お住まいの年数の選択変更を反映するActionCreatorを実行する
-//            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
-//            UserSettingActionCreator.changeResidentPeriodSelect(residentPeriod: residentPeriod)
-//            return
-//
-//        case tableViewType.age.rawValue:
-//
-//            // 年齢の選択変更を反映するActionCreatorを実行する
-//            let age = SelectedAgeEnum.getAll()[indexPath.row]
-//            UserSettingActionCreator.changeAgeSelect(age: age)
-//            return
-//
-//        default:
-//            return
-//        }
-    }
 }
