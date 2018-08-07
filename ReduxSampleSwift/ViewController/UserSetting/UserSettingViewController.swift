@@ -10,8 +10,9 @@ import UIKit
 import ReSwift
 
 class UserSettingViewController: UIViewController {
-    
+
     // キーボード表示時に表示されるツールバーの設定
+    private let keyboardToolBarHeight: CGFloat = 40.0
     private var keyboardToolBar: UIToolbar!
 
     // ユーザー情報のEntity
@@ -65,7 +66,16 @@ class UserSettingViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillBeShown(_:)),
+                                               name: Notification.Name.UIKeyboardWillShow,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.keyboardWillBeHidden(_:)),
+                                               name: Notification.Name.UIKeyboardWillHide,
+                                               object: nil)
+
         // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
         appStore.subscribe(self)
     }
@@ -73,6 +83,8 @@ class UserSettingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        NotificationCenter.default.removeObserver(self)
+
         // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
         appStore.unsubscribe(self)
     }
@@ -120,15 +132,82 @@ class UserSettingViewController: UIViewController {
         undoFormScrollViewState()
     }
 
+    @objc private func hideKeyboardIfNeeded(sender: UITapGestureRecognizer) {
+
+        // MEMO: UIScrollViewにキーボードを引っ込めたいのでUITapGestureRecognizerを付与したが、UITableViewCellのタップが呼ばれない
+        // → タップ位置からどのUITableViewがタップされたかを割り出してタップされたセルを選択中となるようにする
+
+        let touchForResidentPeriodTableView = sender.location(in: residentPeriodTableView)
+        if let indexPath = residentPeriodTableView.indexPathForRow(at: touchForResidentPeriodTableView) {
+
+            // お住まいの年数の選択変更を反映するActionCreatorを実行する
+            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
+            UserSettingActionCreator.changeResidentPeriodSelect(residentPeriod: residentPeriod)
+            return
+        }
+
+        let touchForAgeTableView = sender.location(in: ageTableView)
+        if let indexPath = ageTableView.indexPathForRow(at: touchForAgeTableView) {
+
+            // 年齢の選択変更を反映するActionCreatorを実行する
+            let age = SelectedAgeEnum.getAll()[indexPath.row]
+            UserSettingActionCreator.changeAgeSelect(age: age)
+            return
+        }
+
+        undoFormScrollViewState()
+    }
+
+    @objc func keyboardWillBeShown(_ notification: Notification) {
+
+        // キーボードを開く際のObserver処理
+        guard let userInfo = notification.userInfo as? [String : Any] else {
+            return
+        }
+        guard let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
+            return
+        }
+        guard let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+            return
+        }
+        let keyboardSize = keyboardInfo.cgRectValue.size
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        UIView.animate(withDuration: duration, animations: {
+            self.formScrollView.contentInset = contentInsets
+            self.formScrollView.scrollIndicatorInsets = contentInsets
+            self.view.layoutIfNeeded()
+        })
+    }
+
+    @objc func keyboardWillBeHidden(_ notification: Notification) {
+
+        // キーボードを閉じる際のObserver処理
+        guard let userInfo = notification.userInfo as? [String : Any] else {
+            return
+        }
+        guard let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+            return
+        }
+        UIView.animate(withDuration: duration, animations: {
+            self.formScrollView.contentInset = .zero
+            self.formScrollView.scrollIndicatorInsets = .zero
+            self.view.layoutIfNeeded()
+        })
+    }
+
     private func setupFormScrollView() {
         formScrollView.delaysContentTouches = false
+
+        // MEMO: UIScrollViewとFiestResponderの処理を共存させる場合の処理
+        let tapGestureForScrollView = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardIfNeeded(sender:)))
+        formScrollView.addGestureRecognizer(tapGestureForScrollView)
     }
 
     // キーボードに付与するツールバーの設定を行う
     private func setupKeyboardAccesoryView() {
 
         // ツールバーのサイズ設定を行う
-        keyboardToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 40))
+        keyboardToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: keyboardToolBarHeight))
         keyboardToolBar.barStyle = UIBarStyle.default
         keyboardToolBar.sizeToFit()
 
@@ -203,7 +282,6 @@ class UserSettingViewController: UIViewController {
         // キーボード表示のステータス変更を反映するActionCreatorを実行する
         UserSettingActionCreator.hideKeyboardStatus()
 
-        formScrollView.isScrollEnabled = true
         view.endEditing(false)
     }
 
@@ -212,7 +290,6 @@ class UserSettingViewController: UIViewController {
         // キーボード表示のステータス変更を反映するActionCreatorを実行する
         UserSettingActionCreator.showKeyboardStatus()
 
-        formScrollView.isScrollEnabled = false
         UIView.animate(withDuration: 0.16, animations: {
             self.formScrollView.contentOffset.y = offsetY
         })
@@ -378,24 +455,24 @@ extension UserSettingViewController: UITableViewDelegate, UITableViewDataSource 
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        switch tableView.tag {
-
-        case tableViewType.residentPeriod.rawValue:
-
-            // お住まいの年数の選択変更を反映するActionCreatorを実行する
-            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
-            UserSettingActionCreator.changeResidentPeriodSelect(residentPeriod: residentPeriod)
-            return
-
-        case tableViewType.age.rawValue:
-
-            // 年齢の選択変更を反映するActionCreatorを実行する
-            let age = SelectedAgeEnum.getAll()[indexPath.row]
-            UserSettingActionCreator.changeAgeSelect(age: age)
-            return
-
-        default:
-            return
-        }
+//        switch tableView.tag {
+//
+//        case tableViewType.residentPeriod.rawValue:
+//
+//            // お住まいの年数の選択変更を反映するActionCreatorを実行する
+//            let residentPeriod = SelectedResidentPeriodEnum.getAll()[indexPath.row]
+//            UserSettingActionCreator.changeResidentPeriodSelect(residentPeriod: residentPeriod)
+//            return
+//
+//        case tableViewType.age.rawValue:
+//
+//            // 年齢の選択変更を反映するActionCreatorを実行する
+//            let age = SelectedAgeEnum.getAll()[indexPath.row]
+//            UserSettingActionCreator.changeAgeSelect(age: age)
+//            return
+//
+//        default:
+//            return
+//        }
     }
 }
