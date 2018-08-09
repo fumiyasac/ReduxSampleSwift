@@ -2,7 +2,7 @@ PODS:
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
-  - CalculateCalendarLogic (0.1.7)
+  - CalculateCalendarLogic (0.2.0)
   - KYNavigationProgress (2.0.2)
   - PromiseKit (6.2.1):
     - PromiseKit/CorePromise (= 6.2.1)
@@ -46,7 +46,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  CalculateCalendarLogic: 3961452b0138ac1d716d18707bc84afe8f46837e
+  CalculateCalendarLogic: d7b6bf4ed6c0c21937efb7323c67d09cdb12a1ad
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
   PromiseKit: edaca6f0a7ed73b08c287600537d13867a7fabc7
   Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
