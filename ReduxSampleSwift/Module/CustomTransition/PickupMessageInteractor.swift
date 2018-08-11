@@ -11,8 +11,9 @@ import UIKit
 
 class PickupMessageInteractor: UIPercentDrivenInteractiveTransition {
 
-    var navigationController: UINavigationController
-    var shouldCompleteTransition = false
+    private var navigationController: UINavigationController
+    private var shouldCompleteTransition = false
+
     var transitionInProgress = false
 
     // MARK: - Initializer
