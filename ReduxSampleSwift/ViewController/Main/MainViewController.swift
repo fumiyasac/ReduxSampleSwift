@@ -16,7 +16,8 @@ class MainViewController: UIViewController {
     private let refreshControl = UIRefreshControl()
     private let calendar: Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
 
-    private let dailyMemoTransition = DailyMemoTransition()
+    private let dailyMemoTransition     = DailyMemoTransition()
+    private let pickupMessageTransition = PickupMessageTransition()
 
     private var selectedFrame: CGRect?
     private var pickupMessageInteractor: PickupMessageInteractor?
@@ -307,6 +308,7 @@ extension MainViewController: UIViewControllerTransitioningDelegate {
     // 戻る場合のアニメーションの設定を行う
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
+        // 縮んだ状態から画面が戻るトランジションにする
         dailyMemoTransition.presenting = false
         return dailyMemoTransition
     }
@@ -323,15 +325,21 @@ extension MainViewController: UINavigationControllerDelegate {
 
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
+        // カスタムトランジションのクラスに定義したプロパティへFrame情報とUIImage情報を渡す
         guard let frame = selectedFrame else { return nil }
         guard let image = selectedImage else { return nil }
+
+        pickupMessageTransition.originFrame = frame
+        pickupMessageTransition.originImage = image
 
         switch operation {
         case .push:
             self.pickupMessageInteractor = PickupMessageInteractor(attachTo: toVC)
-            return PickupMessageTransition(presenting: true, originFrame: frame, originImage: image)
+            pickupMessageTransition.presenting  = true
+            return pickupMessageTransition
         default:
-            return PickupMessageTransition(presenting: false, originFrame: frame, originImage: image)
+            pickupMessageTransition.presenting  = false
+            return pickupMessageTransition
         }
     }
 }

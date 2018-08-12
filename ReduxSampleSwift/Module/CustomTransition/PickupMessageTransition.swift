@@ -11,22 +11,27 @@ import UIKit
 
 // 参考: UINavigationControllerと組み合わせたカスタムトランジションの例
 // https://medium.com/@samstone/create-custom-uinavigationcontroller-transitions-in-ios-1acd6a0b6d25
-class PickupMessageTransition: NSObject, UIViewControllerAnimatedTransitioning {
+class PickupMessageTransition: NSObject {
 
+    // トランジションの秒数
     private let duration: TimeInterval = 0.28
+
+    // アニメーション対象となる画像のtag番号(遷移先のUIImageViewに付与する)
     private let customAnimatorTag = 99
 
-    var presenting: Bool
-    var originFrame: CGRect
-    var originImage: UIImage
+    // トランジションの方向(present: true, dismiss: false)
+    var presenting: Bool = true
 
-    // MARK: - Initializer
+    // アニメーション対象なるViewControllerの位置やサイズ情報を格納するメンバ変数
+    var originFrame: CGRect = CGRect.zero
 
-    init(presenting: Bool, originFrame: CGRect, originImage: UIImage) {
-        self.presenting  = presenting
-        self.originFrame = originFrame
-        self.originImage = originImage
-    }
+    // アニメーション対象なるサムネイル画像情報を格納するメンバ変数
+    var originImage: UIImage = UIImage()
+}
+
+// MARK: - UIViewControllerAnimatedTransitioning
+
+extension PickupMessageTransition: UIViewControllerAnimatedTransitioning {
 
     // アニメーションの時間を定義する
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -50,16 +55,16 @@ class PickupMessageTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
         // アニメーションの実体となるコンテナビューを作成する
         let container = transitionContext.containerView
-        
+
         // 表示させるViewControllerを格納するための変数を定義する
         var detailView: UIView!
-        
+
         // Case1: 進む場合
         if presenting {
 
             container.addSubview(toView)
             detailView = toView
-            
+
         // Case2: 戻る場合
         } else {
 
@@ -107,7 +112,7 @@ class PickupMessageTransition: NSObject, UIViewControllerAnimatedTransitioning {
         // 遷移先のViewのアルファ値を反映する
         toView.alpha = toViewAlpha
         toView.layoutIfNeeded()
-        
+
         UIView.animate(withDuration: duration, delay: 0.00, options: [.curveEaseInOut], animations: {
             transitionImageView.frame = afterTransitionImageViewFrame
             detailView.alpha = afterTransitionViewAlpha
