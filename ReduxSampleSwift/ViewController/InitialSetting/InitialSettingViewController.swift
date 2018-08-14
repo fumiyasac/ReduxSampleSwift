@@ -23,7 +23,7 @@ class InitialSettingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
+        // Stateが更新された際に通知を検知できるようにするリスナーを登録する
         appStore.subscribe(self)
 
         // 現在のユーザーステータスを反映するActionCreatorを実行する
@@ -40,7 +40,7 @@ class InitialSettingViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
+        // Stateが更新された際に通知を検知できるようにするリスナーを解除する
         appStore.unsubscribe(self)
     }
 
