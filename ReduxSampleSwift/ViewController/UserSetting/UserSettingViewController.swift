@@ -76,7 +76,7 @@ class UserSettingViewController: UIViewController {
                                                name: Notification.Name.UIKeyboardWillHide,
                                                object: nil)
 
-        // Stateが更新された際に通知を検知できるようにappStoreにリスナーを登録する
+        // Stateが更新された際に通知を検知できるようにするリスナーを登録する
         appStore.subscribe(self)
     }
 
@@ -85,7 +85,7 @@ class UserSettingViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self)
 
-        // Stateが更新された際に通知を検知できるようにappStoreに登録したリスナーを解除する
+        // Stateが更新された際に通知を検知できるようにするリスナーを解除する
         appStore.unsubscribe(self)
     }
 
