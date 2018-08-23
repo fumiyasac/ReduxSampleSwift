@@ -199,6 +199,9 @@ extension MainViewController: StoreSubscriber {
 
         // Debug.
         AppLogger.printStateForDebug(state, viewController: self)
+
+        // 画面全体の更新を行う
+        self.view.setNeedsDisplay()
     }
 }
 
