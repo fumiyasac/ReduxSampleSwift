@@ -67,6 +67,8 @@
 		DE671B121FDFC75500B752CA /* ReduxSampleSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B111FDFC75500B752CA /* ReduxSampleSwiftTests.swift */; };
 		DE671B1D1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */; };
 		DE85D2B51FE6AB2C0017C3AF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE85D2B41FE6AB2C0017C3AF /* AppState.swift */; };
+		DE939B6B21614DA7006F406A /* PickupMessageStub.json in Resources */ = {isa = PBXBuildFile; fileRef = DE939B6A21614DA7006F406A /* PickupMessageStub.json */; };
+		DE939B6C21615251006F406A /* PickupMessageStub.json in Resources */ = {isa = PBXBuildFile; fileRef = DE939B6A21614DA7006F406A /* PickupMessageStub.json */; };
 		DEB82E3E20E76F5C00C08FFF /* EnglishNewsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E3D20E76F5C00C08FFF /* EnglishNewsReducer.swift */; };
 		DEB82E4020E76F7500C08FFF /* EnglishNewsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E3F20E76F7500C08FFF /* EnglishNewsAction.swift */; };
 		DEB82E4220E76F9900C08FFF /* EnglishNewsActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB82E4120E76F9900C08FFF /* EnglishNewsActionCreator.swift */; };
@@ -198,6 +200,7 @@
 		DE671B1C1FDFC75500B752CA /* ReduxSampleSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxSampleSwiftUITests.swift; sourceTree = "<group>"; };
 		DE671B1E1FDFC75500B752CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE85D2B41FE6AB2C0017C3AF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		DE939B6A21614DA7006F406A /* PickupMessageStub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PickupMessageStub.json; sourceTree = "<group>"; };
 		DEB82E3D20E76F5C00C08FFF /* EnglishNewsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsReducer.swift; sourceTree = "<group>"; };
 		DEB82E3F20E76F7500C08FFF /* EnglishNewsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsAction.swift; sourceTree = "<group>"; };
 		DEB82E4120E76F9900C08FFF /* EnglishNewsActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishNewsActionCreator.swift; sourceTree = "<group>"; };
@@ -504,6 +507,7 @@
 		DE671B101FDFC75500B752CA /* ReduxSampleSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE939B6921614D58006F406A /* Stub */,
 				DE671B111FDFC75500B752CA /* ReduxSampleSwiftTests.swift */,
 				DE671B131FDFC75500B752CA /* Info.plist */,
 			);
@@ -584,6 +588,14 @@
 				DE65650A2095C8A8005745D2 /* UserSetting.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE939B6921614D58006F406A /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				DE939B6A21614DA7006F406A /* PickupMessageStub.json */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 		DED8E96220C43D9A00836CE4 /* PickupMessageFlowLayout */ = {
@@ -815,6 +827,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE939B6C21615251006F406A /* PickupMessageStub.json in Resources */,
 				DE59F78020CAD1B6005B2BCC /* EnglishNewsTableViewCell.xib in Resources */,
 				DED8E96A20C55B0300836CE4 /* PickupMessageCollectionViewCell.xib in Resources */,
 				DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */,
@@ -838,6 +851,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE939B6B21614DA7006F406A /* PickupMessageStub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1235,6 +1249,7 @@
 		};
 		DE671B251FDFC75500B752CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
