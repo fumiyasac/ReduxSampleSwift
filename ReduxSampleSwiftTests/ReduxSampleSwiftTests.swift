@@ -12,6 +12,14 @@ import SwiftyJSON
 
 @testable import ReduxSampleSwift
 
+// MEMO: このテストに関する意図について
+// Reduxのデータフローにおける「Store(before state) → Action → Reducer → Store(after state)」の担保をしたい意図がある
+// 実際のサンプルコード内ではActionCreatorでViewの表示に関するデータを取得しそのデータをAction経由で送ることでStateへ反映する処理を行う。
+// ActionCreator自体はAction発行処理をラッピングしているため、Reduxのデータフロー処理を担保する必要があったのでこの形にした。
+
+// 参考: Getting started with Redux in Swift - Part 1
+// https://medium.com/mackmobile/getting-started-with-redux-in-swift-54e00f323e2b
+
 class ReduxSampleSwiftTests: XCTestCase {
     
     override func setUp() {
