@@ -196,7 +196,17 @@ class ReduxSampleSwiftTests: XCTestCase {
         let afterIsPickupMessageAreaHidden = appStore.state.pickupMessageState.isPickupMessageAreaHidden
         let afterPickupMessageStateList = appStore.state.pickupMessageState.pickupMessageStateList
 
+        // (1) 表示フラグの変更
         XCTAssertEqual(true, afterIsPickupMessageAreaHidden, "setIsPickupMessageAreaHiddenの引数と同じ値となる")
-        XCTAssertEqual(18, afterPickupMessageStateList.count, "スタブ: pickupMessageStub.json内のデータ数と同じ値となる")
+
+        // (2) JSONからの表示用データ生成
+        XCTAssertEqual(18, afterPickupMessageStateList.count, "pickupMessageStub.json内の表示用データの個数と同じ値となる")
+
+        // (3) 表示用データの構成要素
+        let firstData: PickupMessageEntity = afterPickupMessageStateList.first!
+        XCTAssertEqual("1", firstData.id, "pickupMessageStub.jsonのデータ部分の1番目に相当するID文字列と同じ値となる")
+        XCTAssertEqual("旬の魚が安く手に入る「いきいき魚市」", firstData.title, "pickupMessageStub.jsonのデータ部分の1番目に相当するタイトル名と同じ値となる")
+        XCTAssertEqual("ショッピング・お買い物", firstData.category, "pickupMessageStub.jsonのデータ部分の1番目に相当するカテゴリ名と同じ値となる")
+        XCTAssertEqual("https://kanazawa-photos.s3-ap-northeast-1.amazonaws.com/articles/images/1/large.jpg", firstData.imageUrl, "pickupMessageStub.jsonのデータ部分の1番目に相当する画像ファイルURLの文字列と同じ値となる")
     }
 }
