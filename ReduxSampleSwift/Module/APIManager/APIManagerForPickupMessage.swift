@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class APIManagerForPickupMessage {
 
-    private let baseUrl  = "https://immense-journey-38002.herokuapp.com/articles.json"
+    private let baseUrl  = "https://kanazawa-photos.s3-ap-northeast-1.amazonaws.com/articles.json"
 
     // MARK: - Singleton Instance
 
