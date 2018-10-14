@@ -48,10 +48,10 @@ class PickupMessageCollectionViewCell: UICollectionViewCell {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
         
-        var attributes = [NSAttributedStringKey : Any]()
-        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
-        attributes[NSAttributedStringKey.font] = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 15.0)
-        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#ffffff")
+        var attributes = [NSAttributedString.Key : Any]()
+        attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
+        attributes[NSAttributedString.Key.font] = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 15.0)
+        attributes[NSAttributedString.Key.foregroundColor] = UIColor(code: "#ffffff")
         
         pickupMessageTitleLabel.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
