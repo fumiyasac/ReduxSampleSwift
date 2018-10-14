@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jJ6-gk-rH7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jJ6-gk-rH7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -247,7 +248,7 @@
                                                         <rect key="frame" x="12" y="35" width="351" height="453"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
-                                                                <mutableString key="content">元々はReactJSやReactNativeで利用されているもので、私自身もPublishSubscribeで書くスタイルやReact系のフレームワークにも若干の心得があったので今回活用したUIサンプルを作成してみました。
+                                                                <string key="content">元々はReactJSやReactNativeで利用されているもので、私自身もPublishSubscribeで書くスタイルやReact系のフレームワークにも若干の心得があったので今回活用したUIサンプルを作成してみました。
 
 ネイティブのiOSアプリ開発にはViewController(MVCパターン)を基本としているので、「一枚岩で状態を管理する」という概念をその中でどのように展開するかがポイントになりそうだと感じてしまうと思います。
 
@@ -255,7 +256,7 @@
 
 今後においてもUI実装と美しいインタラクションをはじめとするものに磨きをかけて行きたいと思う次第です。
 
-※</mutableString>
+※</string>
                                                                 <attributes>
                                                                     <color key="NSColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <font key="NSFont" size="13" name="HiraginoSans-W3"/>
@@ -319,13 +320,13 @@ Cgo
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qzy-BW-X5O" firstAttribute="trailing" secondItem="ozp-jb-555" secondAttribute="trailing" id="7yn-mt-Q20"/>
+                            <constraint firstItem="qzy-BW-X5O" firstAttribute="trailing" secondItem="iUK-11-BUH" secondAttribute="trailing" id="7yn-mt-Q20"/>
                             <constraint firstItem="raO-Px-0iN" firstAttribute="leading" secondItem="ozp-jb-555" secondAttribute="leading" id="BNh-BK-7tK"/>
                             <constraint firstItem="raO-Px-0iN" firstAttribute="bottom" secondItem="ozp-jb-555" secondAttribute="bottom" id="Cjg-vK-R7l"/>
                             <constraint firstItem="raO-Px-0iN" firstAttribute="trailing" secondItem="ozp-jb-555" secondAttribute="trailing" id="Qf2-cG-qjO"/>
                             <constraint firstItem="qzy-BW-X5O" firstAttribute="top" secondItem="iUK-11-BUH" secondAttribute="top" id="cii-r5-IXU"/>
                             <constraint firstItem="raO-Px-0iN" firstAttribute="top" secondItem="qzy-BW-X5O" secondAttribute="bottom" id="nnY-FF-mcT"/>
-                            <constraint firstItem="qzy-BW-X5O" firstAttribute="leading" secondItem="ozp-jb-555" secondAttribute="leading" id="vjh-0e-wVS"/>
+                            <constraint firstItem="qzy-BW-X5O" firstAttribute="leading" secondItem="iUK-11-BUH" secondAttribute="leading" id="vjh-0e-wVS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ozp-jb-555"/>
                     </view>

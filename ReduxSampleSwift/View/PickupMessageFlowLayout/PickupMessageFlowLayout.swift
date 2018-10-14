@@ -93,7 +93,7 @@ class PickupMessageFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = self.collectionView else { return }
 
         // スクロール時の減速スピードに関する設定をする
-        collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
 
         // 算出に必要なものの準備する（方向とCollectionView自体のサイズ）
         let isHorizontal = (scrollDirection == .horizontal)

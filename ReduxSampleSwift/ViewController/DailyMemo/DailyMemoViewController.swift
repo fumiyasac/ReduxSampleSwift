@@ -29,10 +29,10 @@ class DailyMemoViewController: UIViewController {
         let alert = UIAlertController(
             title: "こちらの画面は仮画面です。",
             message: "この画面は特にロジックの実装は行っておりませんが、UserSettingViewControllerに記載している形と似たような感じで実装することができます。\n内容の関係で今回は割愛しましたm(_ _)m\n後ほど必ず作成する見込みでいます。。。",
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
         alert.addAction(
-            UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         )
         self.present(alert, animated: true, completion: nil)
     }

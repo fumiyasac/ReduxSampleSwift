@@ -88,7 +88,7 @@ class TutorialViewController: UIViewController {
         setIntroductionViewControllerLists()
 
         // ContainerViewにEmbedしたUIPageViewControllerを取得する
-        for childViewController in childViewControllers {
+        for childViewController in children {
             if let targetPageViewController = childViewController as? UIPageViewController {
                 pageViewController = targetPageViewController
             }

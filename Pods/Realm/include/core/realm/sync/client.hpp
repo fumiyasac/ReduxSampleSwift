@@ -20,7 +20,8 @@
 #ifndef REALM_SYNC_CLIENT_HPP
 #define REALM_SYNC_CLIENT_HPP
 
-#include <stdint.h>
+#include <cstddef>
+#include <cstdint>
 #include <memory>
 #include <utility>
 #include <functional>
@@ -35,6 +36,19 @@
 
 namespace realm {
 namespace sync {
+
+/// Supported protocols:
+///
+///      Protocol    URL scheme     Default port
+///     -----------------------------------------------------------------------------------
+///      realm       "realm:"       7800 (80 if Client::Config::enable_default_port_hack)
+///      realm_ssl   "realms:"      7801 (443 if Client::Config::enable_default_port_hack)
+///
+enum class Protocol {
+    realm,
+    realm_ssl
+};
+
 
 class Client {
 public:
@@ -60,11 +74,19 @@ public:
         testing
     };
 
-    static constexpr std::uint_fast64_t default_connect_timeout_ms        = 120000; //  2 minutes
-    static constexpr std::uint_fast64_t default_connection_linger_time_ms =  30000; // 30 seconds
-    static constexpr std::uint_fast64_t default_ping_keepalive_period_ms  =  60000; //  1 minute
-    static constexpr std::uint_fast64_t default_pong_keepalive_timeout_ms = 120000; //  2 minutes
-    static constexpr std::uint_fast64_t default_pong_urgent_timeout_ms    =   5000; //  5 seconds
+    using port_type = util::network::Endpoint::port_type;
+    using RoundtripTimeHandler = void(milliseconds_type roundtrip_time);
+
+    // FIXME: The default values for `connect_timeout`, `ping_keepalive_period`,
+    // and `pong_keepalive_timeout` ought to be much lower (2 minutes, 1 minute,
+    // and 2 minutes) than they are. Their current values are due to the fact
+    // that the server is single threaded, and that some operations take more
+    // than 5 minutes to complete.
+    static constexpr milliseconds_type default_connect_timeout        = 600000; // 10 minutes
+    static constexpr milliseconds_type default_connection_linger_time =  30000; // 30 seconds
+    static constexpr milliseconds_type default_ping_keepalive_period  = 600000; // 10 minutes
+    static constexpr milliseconds_type default_pong_keepalive_timeout = 600000; // 10 minutes
+    static constexpr milliseconds_type default_fast_reconnect_limit   =  60000; // 1 minute
 
     struct Config {
         Config() {}
@@ -114,7 +136,7 @@ public:
         /// become fully established. This includes the time to resolve the
         /// network address, the TCP connect operation, the SSL handshake, and
         /// the WebSocket handshake.
-        std::uint_fast64_t connect_timeout_ms = default_connect_timeout_ms;
+        milliseconds_type connect_timeout = default_connect_timeout;
 
         /// The number of milliseconds to keep a connection open after all
         /// sessions have been abandoned (or suspended by errors).
@@ -126,16 +148,60 @@ public:
         /// If the connection gets closed due to an error before the linger time
         /// expires, the connection will be kept closed until there are sessions
         /// willing to use it again.
-        std::uint_fast64_t connection_linger_time_ms = default_connection_linger_time_ms;
+        milliseconds_type connection_linger_time = default_connection_linger_time;
 
-        /// The number of ms between periodic keep-alive pings.
-        std::uint_fast64_t ping_keepalive_period_ms = default_ping_keepalive_period_ms;
+        /// The client will send PING messages periodically to allow the server
+        /// to detect dead connections (heartbeat). This parameter specifies the
+        /// time, in milliseconds, between these PING messages. When scheduling
+        /// the next PING message, the client will deduct a small random amount
+        /// from the specified value to help spread the load on the server from
+        /// many clients.
+        milliseconds_type ping_keepalive_period = default_ping_keepalive_period;
 
-        /// The number of ms to wait for keep-alive pongs.
-        std::uint_fast64_t pong_keepalive_timeout_ms = default_pong_keepalive_timeout_ms;
+        /// Whenever the server receives a PING message, it is supposed to
+        /// respond with a PONG messsage to allow the client to detect dead
+        /// connections (heartbeat). This parameter specifies the time, in
+        /// milliseconds, that the client will wait for the PONG response
+        /// message before it assumes that the connection is dead, and
+        /// terminates it.
+        milliseconds_type pong_keepalive_timeout = default_pong_keepalive_timeout;
 
-        /// The number of ms to wait for urgent pongs.
-        std::uint_fast64_t pong_urgent_timeout_ms = default_pong_urgent_timeout_ms;
+        /// The maximum amount of time, in milliseconds, since the loss of a
+        /// prior connection, for a new connection to be considered a *fast
+        /// reconnect*.
+        ///
+        /// In general, when a client establishes a connection to the server,
+        /// the uploading process remains suspended until the initial
+        /// downloading process completes (as if by invocation of
+        /// Session::async_wait_for_download_completion()). However, to avoid
+        /// unnecessary latency in change propagation during ongoing
+        /// application-level activity, if the new connection is established
+        /// less than a certain amount of time (`fast_reconnect_limit`) since
+        /// the client was previously connected to the server, then the
+        /// uploading process will be activated immediately.
+        ///
+        /// For now, the purpose of the general delaying of the activation of
+        /// the uploading process, is to increase the chance of multiple initial
+        /// transactions on the client-side, to be uploaded to, and processed by
+        /// the server as a single unit. In the longer run, the intention is
+        /// that the client should upload transformed (from reciprocal history),
+        /// rather than original changesets when applicable to reduce the need
+        /// for changeset to be transformed on both sides. The delaying of the
+        /// upload process will increase the number of cases where this is
+        /// possible.
+        ///
+        /// FIXME: Currently, the time between connections is not tracked across
+        /// sessions, so if the application closes its session, and opens a new
+        /// one immediately afterwards, the activation of the upload process
+        /// will be delayed unconditionally.
+        milliseconds_type fast_reconnect_limit = default_fast_reconnect_limit;
+
+        /// Set to true to completely disable delaying of the upload process. In
+        /// this mode, the upload process will be activated immediately, and the
+        /// value of `fast_reconnect_limit` is ignored.
+        ///
+        /// For testing purposes only.
+        bool disable_upload_activation_delay = false;
 
         /// If enable_upload_log_compaction is true, every changeset will be
         /// compacted before it is uploaded to the server. Compaction will
@@ -150,6 +216,13 @@ public:
         /// decrease latencies, but possibly at the expense of scalability. Be
         /// sure to research the subject before you enable this option.
         bool tcp_no_delay = false;
+
+        /// The specified function will be called whenever a PONG message is
+        /// received on any connection. The round-trip time in milliseconds will
+        /// be pased to the function. The specified function will always be
+        /// called by the client's event loop thread, i.e., the thread that
+        /// calls `Client::run()`. This feature is mainly for testing purposes.
+        std::function<RoundtripTimeHandler> roundtrip_time_handler;
     };
 
     /// \throw util::EventLoop::Implementation::NotAvailable if no event loop
@@ -214,23 +287,14 @@ public:
     /// by any thread, and by multiple threads concurrently.
     bool wait_for_session_terminations_or_client_stopped();
 
+    /// Returns false if the specified URL is invalid.
+    bool decompose_server_url(const std::string& url, Protocol& protocol, std::string& address,
+                              port_type& port, std::string& path) const;
+
 private:
     class Impl;
     std::unique_ptr<Impl> m_impl;
     friend class Session;
-};
-
-
-/// Supported protocols:
-///
-///      Protocol    URL scheme     Default port
-///     -----------------------------------------------------------------------------------
-///      realm       "realm:"       7800 (80 if Client::Config::enable_default_port_hack)
-///      realm_ssl   "realms:"      7801 (443 if Client::Config::enable_default_port_hack)
-///
-enum class Protocol {
-    realm,
-    realm_ssl
 };
 
 
@@ -469,10 +533,6 @@ public:
 
         /// The encryption key the SharedGroup will be opened with.
         Optional<std::array<char, 64>> encryption_key;
-
-        /// FIXME: This value must currently be true in a cluster setup.
-        /// This restriction will be lifted in the future.
-        bool one_connection_per_session = true;
     };
 
     /// \brief Start a new session for the specified client-side Realm.
@@ -949,6 +1009,7 @@ enum class Client::Error {
     bad_client_file_ident_salt  = 119, ///< Bad client file identifier salt (IDENT)
     bad_file_ident              = 120, ///< Bad file identifier (ALLOC)
     connect_timeout             = 121, ///< Sync connection was not fully established in time
+    bad_timestamp               = 122, ///< Bad timestamp (PONG)
 };
 
 const std::error_category& client_error_category() noexcept;

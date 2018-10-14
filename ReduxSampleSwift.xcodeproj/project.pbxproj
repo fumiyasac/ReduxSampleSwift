@@ -132,7 +132,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -275,8 +275,8 @@
 		4023BD23F5E993B339BE7142 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */,
 				4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */,
+				3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -788,6 +788,7 @@
 				TargetAttributes = {
 					DE671AF81FDFC75400B752CA = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					DE671B0C1FDFC75500B752CA = {
@@ -1215,7 +1216,7 @@
 		};
 		DE671B221FDFC75500B752CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */;
+			baseConfigurationReference = 3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1225,7 +1226,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.ReduxSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1242,14 +1243,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.ReduxSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		DE671B251FDFC75500B752CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2061DCC7A7CD4CA8AAE40E37 /* Pods-ReduxSampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

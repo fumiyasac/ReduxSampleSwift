@@ -76,6 +76,7 @@ extension PickupMessageTransition: UIViewControllerAnimatedTransitioning {
         guard let targetImageView = detailView.viewWithTag(customAnimatorTag) as? UIImageView else {
             return
         }
+
         targetImageView.image = originImage
         targetImageView.alpha = 0
 
@@ -105,8 +106,8 @@ extension PickupMessageTransition: UIViewControllerAnimatedTransitioning {
         // 遷移時に動かすUIImageViewを追加する
         let transitionImageView = UIImageView(frame: beforeTransitionImageViewFrame)
         transitionImageView.clipsToBounds = true
-        transitionImageView.contentMode   = .scaleAspectFill
-        transitionImageView.image         = originImage
+        transitionImageView.contentMode = .scaleAspectFill
+        transitionImageView.image = originImage
         container.addSubview(transitionImageView)
 
         // 遷移先のViewのアルファ値を反映する
