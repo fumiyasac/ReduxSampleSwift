@@ -69,11 +69,11 @@ class UserSettingViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWillBeShown(_:)),
-                                               name: Notification.Name.UIKeyboardWillShow,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.keyboardWillBeHidden(_:)),
-                                               name: Notification.Name.UIKeyboardWillHide,
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
 
         // Stateが更新された際に通知を検知できるようにするリスナーを登録する
@@ -164,10 +164,10 @@ class UserSettingViewController: UIViewController {
         guard let userInfo = notification.userInfo as? [String : Any] else {
             return
         }
-        guard let keyboardInfo = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
+        guard let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else {
             return
         }
-        guard let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+        guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
             return
         }
         let keyboardSize = keyboardInfo.cgRectValue.size
@@ -185,7 +185,7 @@ class UserSettingViewController: UIViewController {
         guard let userInfo = notification.userInfo as? [String : Any] else {
             return
         }
-        guard let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+        guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
             return
         }
         UIView.animate(withDuration: duration, animations: {
@@ -216,7 +216,7 @@ class UserSettingViewController: UIViewController {
 
         let closeButton = UIBarButtonItem(title: "閉じる", style: .plain, target: self, action: #selector(self.toolbarCloseButtonTapped))
 
-        let attributeOfFont = [ NSAttributedStringKey.font : UIFont(name: AppConstants.FONT_NAME, size: 16)! ]
+        let attributeOfFont = [ NSAttributedString.Key.font : UIFont(name: AppConstants.FONT_NAME, size: 16)! ]
 
         closeButton.setTitleTextAttributes(attributeOfFont, for: .normal)
         closeButton.tintColor = UIColor.init(code: "#ff9900")

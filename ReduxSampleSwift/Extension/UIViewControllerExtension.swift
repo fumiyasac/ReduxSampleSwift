@@ -16,9 +16,9 @@ extension UIViewController {
     public func setupNavigationBarTitle(_ title: String) {
 
         // NavigationControllerのデザイン調整を行う
-        var attributes = [NSAttributedStringKey : Any]()
-        attributes[NSAttributedStringKey.font]             = UIFont(name: AppConstants.FONT_NAME, size: 14.0)
-        attributes[NSAttributedStringKey.foregroundColor]  = UIColor.init(code: "#333333")
+        var attributes = [NSAttributedString.Key : Any]()
+        attributes[NSAttributedString.Key.font]             = UIFont(name: AppConstants.FONT_NAME, size: 14.0)
+        attributes[NSAttributedString.Key.foregroundColor]  = UIColor.init(code: "#333333")
 
         self.navigationController!.navigationBar.tintColor           = UIColor.init(code: "#DDDDDD")
         self.navigationController!.navigationBar.titleTextAttributes = attributes

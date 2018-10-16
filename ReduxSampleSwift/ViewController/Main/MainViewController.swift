@@ -99,9 +99,9 @@ class MainViewController: UIViewController {
     private func setupMainScrollView() {
 
         // RefreshControlに関する設定
-        var attributes = [NSAttributedStringKey : Any]()
-        attributes[NSAttributedStringKey.font] = UIFont(name: AppConstants.FONT_NAME, size: 8.0)
-        attributes[NSAttributedStringKey.foregroundColor] = UIColor(code: "#888888")
+        var attributes = [NSAttributedString.Key : Any]()
+        attributes[NSAttributedString.Key.font] = UIFont(name: AppConstants.FONT_NAME, size: 8.0)
+        attributes[NSAttributedString.Key.foregroundColor] = UIColor(code: "#888888")
 
         refreshControl.tintColor = UIColor(code: "#CCCCCC")
         refreshControl.attributedTitle = NSAttributedString(string: "データをリフレッシュします...", attributes: attributes)
@@ -326,7 +326,7 @@ extension MainViewController: UINavigationControllerDelegate {
         return targetInteractor.transitionInProgress ? pickupMessageInteractor : nil
     }
 
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         // カスタムトランジションのクラスに定義したプロパティへFrame情報とUIImage情報を渡す
         guard let frame = selectedFrame else { return nil }
