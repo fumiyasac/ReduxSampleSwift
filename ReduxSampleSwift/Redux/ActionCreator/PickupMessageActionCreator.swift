@@ -21,7 +21,7 @@ extension PickupMessageActionCreator {
     }
 
     // ピックアップメッセージを取得する
-    static func fetchGourmetShopList() {
+    static func fetchPickupMessageList() {
 
         // ピックアップメッセージのAPIから全件情報を取得する
         APIManagerForPickupMessage.shared.getPickupMessageList()

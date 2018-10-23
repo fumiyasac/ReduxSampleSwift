@@ -148,7 +148,7 @@ extension MainViewController: UIScrollViewDelegate {
                     GourmetShopActionCreator.fetchGourmetShopList()
 
                     // ピックアップメッセージをフェッチするアクションを実行する
-                    PickupMessageActionCreator.fetchGourmetShopList()
+                    PickupMessageActionCreator.fetchPickupMessageList()
 
                     // 現在の日時から年と月を算出し、年と月をセットするアクションを実行する
                     let dateComponents = self.calendar.dateComponents([.year, .month], from: Date())

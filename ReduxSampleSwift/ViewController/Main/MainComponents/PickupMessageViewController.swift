@@ -42,7 +42,7 @@ class PickupMessageViewController: UIViewController {
         setupPickupMessageRemarkView()
 
         // ピックアップメッセージをフェッチするアクションを実行する
-        PickupMessageActionCreator.fetchGourmetShopList()
+        PickupMessageActionCreator.fetchPickupMessageList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
