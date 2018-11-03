@@ -33,16 +33,14 @@ Reduxの処理に必要な各々の処理で行われている内容と、処理
 
 ### 利用ライブラリ一覧
 
-| ライブラリ名 | ライブラリの機能概要 |
-|:-----------|:------------|:------------|
-|[ReSwift](https://github.com/ReSwift/ReSwift) |ReduxのSwift実装用 |
-|[PromiseKit](https://github.com/mxcl/PromiseKit) |非同期通信のハンドリング |
-|[SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) |JSONデータの解析をしやすくする |
-|[Alamofire](https://github.com/Alamofire/Alamofire) |HTTPないしはHTTPSのネットワーク通信用 |
-|[AlamofireImage](https://github.com/Alamofire/AlamofireImage) |画像URLからの非同期での画像表示とキャッシュサポート |
-|[RealmSwift](https://github.com/realm/realm-cocoa/tree/master/RealmSwift) |アプリ内のデータベース |
-|[CalculateCalendarLogic](https://github.com/fumiyasac/handMadeCalendarAdvance) |日本の祝祭日の判定 |
-|[KYNavigationProgress](https://github.com/ykyouhei/KYNavigationProgress) |UINavigationBar直下へのProgressBar表示 |
++ [ReSwift](https://github.com/ReSwift/ReSwift) → ReduxのSwift実装用
++ [PromiseKit](https://github.com/mxcl/PromiseKit) → 非同期通信のハンドリング
++ [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) → JSONデータの解析をしやすくする
++ [Alamofire](https://github.com/Alamofire/Alamofire) → HTTPないしはHTTPSのネットワーク通信用
++ [AlamofireImage](https://github.com/Alamofire/AlamofireImage) → 画像URLからの非同期での画像表示とキャッシュサポート
++ [RealmSwift](https://github.com/realm/realm-cocoa/tree/master/RealmSwift) → アプリ内のデータベース
++ [CalculateCalendarLogic](https://github.com/fumiyasac/handMadeCalendarAdvance) → 日本の祝祭日の判定
++ [KYNavigationProgress](https://github.com/ykyouhei/KYNavigationProgress) → UINavigationBar直下へのProgressBar表示
 
 ### その他補足事項や詳細記事に関して
 
