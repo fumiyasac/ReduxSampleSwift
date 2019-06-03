@@ -56,6 +56,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DE671B0C1FDFC75500B752CA"
+               BuildableName = "ReduxSampleSwiftTests.xctest"
+               BlueprintName = "ReduxSampleSwiftTests"
+               ReferencedContainer = "container:ReduxSampleSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

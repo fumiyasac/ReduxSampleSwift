@@ -15,12 +15,12 @@ extension EnglishNewsState {
     enum englishNewsAction: ReSwift.Action {
 
         // 英語ニュース記事の読み込み状態の値をセットするアクション
-        case setIsLoadingEnglishNews()
+        case setIsLoadingEnglishNews
 
         // 英語ニュース記事の読み込み成功時にAPIより取得した値をセットするアクション
         case setEnglishNews(news: [EnglishNewsEntity], refresh: Bool)
 
         // 英語ニュース記事の読み込み失敗時に値をセットするアクション
-        case setIsErrorEnglishNews()
+        case setIsErrorEnglishNews
     }
 }

@@ -19,7 +19,7 @@ extension GourmetShopActionCreator {
     static func fetchGourmetShopList() {
 
         // データ読み込み中の状態を反映するアクションの実行
-        appStore.dispatch(GourmetShopState.gourmetShopAction.setIsLoadingGourmetShop())
+        appStore.dispatch(GourmetShopState.gourmetShopAction.setIsLoadingGourmetShop)
 
         // HotpepperのAPIからランダムで5件の飲食店情報を取得する
         APIManagerForHotpepper.shared.getRecommendShopList()
@@ -32,7 +32,7 @@ extension GourmetShopActionCreator {
             }.catch { error in
 
                 // 失敗時: データ読み込み失敗時の状態を反映するアクションの実行
-                appStore.dispatch(GourmetShopState.gourmetShopAction.setIsErrorGourmetShop())
+                appStore.dispatch(GourmetShopState.gourmetShopAction.setIsErrorGourmetShop)
         }
     }
 }

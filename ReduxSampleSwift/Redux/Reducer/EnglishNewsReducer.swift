@@ -23,7 +23,7 @@ extension EnglishNewsReducer {
 
         switch action {
 
-        case .setIsLoadingEnglishNews():
+        case .setIsLoadingEnglishNews:
             state.isLoadingEnglishNews = true
 
         case let .setEnglishNews(news, refresh):
@@ -32,7 +32,7 @@ extension EnglishNewsReducer {
             state.itemsPerPage         = (refresh) ? 1    : state.itemsPerPage + 1
             state.isErrorEnglishNews   = false
             
-        case .setIsErrorEnglishNews():
+        case .setIsErrorEnglishNews:
             state.isLoadingEnglishNews = false
             state.isErrorEnglishNews   = true
         }

@@ -22,7 +22,7 @@ extension EnglishNewsActionCreator {
         let currentPage = (refresh) ? 0 : page
 
         // データ読み込み中の状態を反映するアクションの実行
-        appStore.dispatch(EnglishNewsState.englishNewsAction.setIsLoadingEnglishNews())
+        appStore.dispatch(EnglishNewsState.englishNewsAction.setIsLoadingEnglishNews)
 
         // NYTのAPIから該当ページ番号のニュース一覧を取得する
         APIManagerForNewYorkTimes.shared.getNewsList(page: currentPage)
@@ -35,7 +35,7 @@ extension EnglishNewsActionCreator {
             }.catch { error in
 
                 // 失敗時: データ読み込み失敗時の状態を反映するアクションの実行
-                appStore.dispatch(EnglishNewsState.englishNewsAction.setIsErrorEnglishNews())
+                appStore.dispatch(EnglishNewsState.englishNewsAction.setIsErrorEnglishNews)
             }
     }
 }

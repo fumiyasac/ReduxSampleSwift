@@ -23,7 +23,7 @@ extension GourmetShopReducer {
 
         switch action {
 
-        case .setIsLoadingGourmetShop():
+        case .setIsLoadingGourmetShop:
             state.isLoadingGourmetShop = true
 
         case let .setGourmetShop(shop):
@@ -31,7 +31,7 @@ extension GourmetShopReducer {
             state.gourmetShopList      = shop
             state.isErrorGourmetShop   = false
 
-        case .setIsErrorGourmetShop():
+        case .setIsErrorGourmetShop:
             state.isLoadingGourmetShop = false
             state.isErrorGourmetShop   = true
         }

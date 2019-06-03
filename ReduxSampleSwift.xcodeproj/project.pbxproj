@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16E668A7B7110EEEF2AB86AD /* Pods_ReduxSampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */; };
+		98F177B7DC32A8045E1DCB0D /* Pods_ReduxSampleSwift_ReduxSampleSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC4ACFF2D9F72D2EC0697AC /* Pods_ReduxSampleSwift_ReduxSampleSwiftTests.framework */; };
 		DE041AD22096758B005271E1 /* SelectFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */; };
 		DE041AD32096758B005271E1 /* SelectFormTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE041AD12096758B005271E1 /* SelectFormTableViewCell.xib */; };
 		DE041AD52096E759005271E1 /* NSObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE041AD42096E759005271E1 /* NSObjectProtocol.swift */; };
@@ -132,7 +133,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		0E15A28761283E30824793E4 /* Pods-ReduxSampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		30A74771D5E9E47CA66574A8 /* Pods-ReduxSampleSwift-ReduxSampleSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift-ReduxSampleSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift-ReduxSampleSwiftTests/Pods-ReduxSampleSwift-ReduxSampleSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BC4ACFF2D9F72D2EC0697AC /* Pods_ReduxSampleSwift_ReduxSampleSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift_ReduxSampleSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4585AECF4E6D419C165BA928 /* Pods-ReduxSampleSwift-ReduxSampleSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift-ReduxSampleSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift-ReduxSampleSwiftTests/Pods-ReduxSampleSwift-ReduxSampleSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxSampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 		96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxSampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE041AD02096758B005271E1 /* SelectFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFormTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98F177B7DC32A8045E1DCB0D /* Pods_ReduxSampleSwift_ReduxSampleSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				4C223812AC95D79EA003A43E /* Pods-ReduxSampleSwift.release.xcconfig */,
-				3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */,
+				0E15A28761283E30824793E4 /* Pods-ReduxSampleSwift.debug.xcconfig */,
+				30A74771D5E9E47CA66574A8 /* Pods-ReduxSampleSwift-ReduxSampleSwiftTests.debug.xcconfig */,
+				4585AECF4E6D419C165BA928 /* Pods-ReduxSampleSwift-ReduxSampleSwiftTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -285,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				96CB00677271C596CFB78B93 /* Pods_ReduxSampleSwift.framework */,
+				3BC4ACFF2D9F72D2EC0697AC /* Pods_ReduxSampleSwift_ReduxSampleSwiftTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -744,9 +752,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE671B241FDFC75500B752CA /* Build configuration list for PBXNativeTarget "ReduxSampleSwiftTests" */;
 			buildPhases = (
+				44EA32B17C5AA3D8AE8F2010 /* [CP] Check Pods Manifest.lock */,
 				DE671B091FDFC75500B752CA /* Sources */,
 				DE671B0A1FDFC75500B752CA /* Frameworks */,
 				DE671B0B1FDFC75500B752CA /* Resources */,
+				1B0B93FC8EEE2218BFB0D3CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -788,11 +798,12 @@
 				TargetAttributes = {
 					DE671AF81FDFC75400B752CA = {
 						CreatedOnToolsVersion = 9.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					DE671B0C1FDFC75500B752CA = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DE671AF81FDFC75400B752CA;
 					};
@@ -866,13 +877,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B0B93FC8EEE2218BFB0D3CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReduxSampleSwift-ReduxSampleSwiftTests/Pods-ReduxSampleSwift-ReduxSampleSwiftTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
+				"${BUILT_PRODUCTS_DIR}/KYNavigationProgress/KYNavigationProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalculateCalendarLogic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYNavigationProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReduxSampleSwift-ReduxSampleSwiftTests/Pods-ReduxSampleSwift-ReduxSampleSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		20CDE663C072D05E3276B9CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CalculateCalendarLogic/CalculateCalendarLogic.framework",
@@ -897,7 +946,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReduxSampleSwift/Pods-ReduxSampleSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44EA32B17C5AA3D8AE8F2010 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReduxSampleSwift-ReduxSampleSwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E6D81D7C63A45D0F214C9AFF /* [CP] Check Pods Manifest.lock */ = {
@@ -1218,7 +1289,7 @@
 		};
 		DE671B221FDFC75500B752CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */;
+			baseConfigurationReference = 0E15A28761283E30824793E4 /* Pods-ReduxSampleSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1228,7 +1299,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.ReduxSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1245,14 +1316,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.ReduxSampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		DE671B251FDFC75500B752CA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC71F632BF9B022F722F23D /* Pods-ReduxSampleSwift.debug.xcconfig */;
+			baseConfigurationReference = 30A74771D5E9E47CA66574A8 /* Pods-ReduxSampleSwift-ReduxSampleSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1262,7 +1333,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.ReduxSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReduxSampleSwift.app/ReduxSampleSwift";
 			};
@@ -1270,6 +1341,7 @@
 		};
 		DE671B261FDFC75500B752CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4585AECF4E6D419C165BA928 /* Pods-ReduxSampleSwift-ReduxSampleSwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1279,7 +1351,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.ReduxSampleSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReduxSampleSwift.app/ReduxSampleSwift";
 			};

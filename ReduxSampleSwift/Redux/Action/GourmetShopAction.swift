@@ -15,12 +15,12 @@ extension GourmetShopState {
     enum gourmetShopAction: ReSwift.Action {
 
         // 飲食店情報の読み込み状態の値をセットするアクション
-        case setIsLoadingGourmetShop()
+        case setIsLoadingGourmetShop
 
         // 飲食店情報の読み込み成功時にAPIより取得した値をセットするアクション
         case setGourmetShop(shop: [GourmetShopEntity])
 
         // 飲食店情報の読み込み失敗時に値をセットするアクション
-        case setIsErrorGourmetShop()
+        case setIsErrorGourmetShop
     }
 }
