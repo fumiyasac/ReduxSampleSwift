@@ -1,5 +1,5 @@
 # ReduxSampleSwift
-[ING] Swift4でReduxとUI実装を合わせたサンプル（iOS Sample Study: Swift）
+[ING] SwiftでReduxとUI実装を合わせたサンプル（iOS Sample Study: Swift）
 
 「チュートリアル → ユーザーの情報入力 → 1画面に複数の画面要素が混在する」という形のUI実装において、「アプリ表示に必要なデータの値 = アプリのUI要素の状態」として結びついている仕組みをiOSアプリでReduxアーキテクチャを実現するライブラリ「ReSwift」を利用して実現したアプリサンプルになります。
 
@@ -45,6 +45,8 @@ Reduxの処理に必要な各々の処理で行われている内容と、処理
 + [RealmSwift](https://github.com/realm/realm-cocoa/tree/master/RealmSwift) → アプリ内のデータベース
 + [CalculateCalendarLogic](https://github.com/fumiyasac/handMadeCalendarAdvance) → 日本の祝祭日の判定
 + [KYNavigationProgress](https://github.com/ykyouhei/KYNavigationProgress) → UINavigationBar直下へのProgressBar表示
+
+※ `CalculateCalendarLogic`および`KYNavigationProgress`についてはSwift4.2でバージョン固定しています。
 
 ### その他補足事項や詳細記事に関して
 
