@@ -2,22 +2,22 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
-  - CalculateCalendarLogic (0.2.5)
+  - CalculateCalendarLogic (0.3.0)
   - KYNavigationProgress (2.0.2)
-  - PromiseKit (6.8.4):
-    - PromiseKit/CorePromise (= 6.8.4)
-    - PromiseKit/Foundation (= 6.8.4)
-    - PromiseKit/UIKit (= 6.8.4)
-  - PromiseKit/CorePromise (6.8.4)
-  - PromiseKit/Foundation (6.8.4):
+  - PromiseKit (6.9.0):
+    - PromiseKit/CorePromise (= 6.9.0)
+    - PromiseKit/Foundation (= 6.9.0)
+    - PromiseKit/UIKit (= 6.9.0)
+  - PromiseKit/CorePromise (6.9.0)
+  - PromiseKit/Foundation (6.9.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.4):
+  - PromiseKit/UIKit (6.9.0):
     - PromiseKit/CorePromise
-  - Realm (3.16.1):
-    - Realm/Headers (= 3.16.1)
-  - Realm/Headers (3.16.1)
-  - RealmSwift (3.16.1):
-    - Realm (= 3.16.1)
+  - Realm (3.16.2):
+    - Realm/Headers (= 3.16.2)
+  - Realm/Headers (3.16.2)
+  - RealmSwift (3.16.2):
+    - Realm (= 3.16.2)
   - ReSwift (4.1.1)
   - SwiftyJSON (5.0.0)
 
@@ -46,14 +46,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
-  CalculateCalendarLogic: 27db31b8f27a42869ecf7ad0d43963a05af14193
+  CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
-  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
-  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
-  RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
+  PromiseKit: 97397236f9e9c443d5b70a941d49cad25160af7a
+  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
+  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
   ReSwift: d925be0033558f55bd73d92869961230dfe19d52
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
 PODFILE CHECKSUM: 03f351e32ae4a37a01157e5a13394bee37080f85
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.7.2
