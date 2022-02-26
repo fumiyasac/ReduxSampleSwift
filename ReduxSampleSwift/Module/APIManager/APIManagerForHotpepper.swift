@@ -55,7 +55,7 @@ class APIManagerForHotpepper {
 
         // Alamofireの非同期通信をPromiseKitの処理でラッピングする
         return Promise { seal in
-            Alamofire.request(baseUrl, method: .get, parameters: parameters).validate().responseJSON { response in
+            AF.request(baseUrl, method: .get, parameters: parameters).responseData { response in
                 switch response.result {
 
                 // 成功時の処理(表示に必要な部分だけを抜き出して返す)

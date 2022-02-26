@@ -220,6 +220,7 @@ extension MainViewController: MonthlyCalendarViewDelegate {
         // カスタムトランジションのプロトコルを適用させて遷移する
         let navigationController = UINavigationController(rootViewController: dailyMemoViewController)
         navigationController.transitioningDelegate = self
+        navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: true, completion: nil)
     }
 }
@@ -239,7 +240,7 @@ extension MainViewController: PickupMessageViewDelegate {
         selectedFrame = CGRect(
             x: 0.0,
             y: 175.0 + navigationBarHeight + statusBarHeight - mainScrollView.contentOffset.y,
-            width: self.view.frame.width,
+            width: UIScreen.main.bounds.width,
             height: 190.0
         )
 

@@ -1,25 +1,25 @@
 PODS:
-  - Alamofire (4.8.2)
-  - AlamofireImage (3.5.2):
-    - Alamofire (~> 4.8)
-  - CalculateCalendarLogic (0.3.0)
+  - Alamofire (5.5.0)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
+  - CalculateCalendarLogic (0.5.0)
   - KYNavigationProgress (2.0.2)
-  - PromiseKit (6.9.0):
-    - PromiseKit/CorePromise (= 6.9.0)
-    - PromiseKit/Foundation (= 6.9.0)
-    - PromiseKit/UIKit (= 6.9.0)
-  - PromiseKit/CorePromise (6.9.0)
-  - PromiseKit/Foundation (6.9.0):
+  - PromiseKit (6.16.3):
+    - PromiseKit/CorePromise (= 6.16.3)
+    - PromiseKit/Foundation (= 6.16.3)
+    - PromiseKit/UIKit (= 6.16.3)
+  - PromiseKit/CorePromise (6.16.3)
+  - PromiseKit/Foundation (6.16.3):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.9.0):
+  - PromiseKit/UIKit (6.16.3):
     - PromiseKit/CorePromise
-  - Realm (3.16.2):
-    - Realm/Headers (= 3.16.2)
-  - Realm/Headers (3.16.2)
-  - RealmSwift (3.16.2):
-    - Realm (= 3.16.2)
-  - ReSwift (4.1.1)
-  - SwiftyJSON (5.0.0)
+  - Realm (10.22.0):
+    - Realm/Headers (= 10.22.0)
+  - Realm/Headers (10.22.0)
+  - RealmSwift (10.22.0):
+    - Realm (= 10.22.0)
+  - ReSwift (6.1.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -32,7 +32,7 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AlamofireImage
     - CalculateCalendarLogic
@@ -44,16 +44,16 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
-  CalculateCalendarLogic: cd5b2c706a8628bb924c5ee9d05c4f61bdbaf390
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
+  CalculateCalendarLogic: d14189787cd47766e64281b2686608afea07ae4d
   KYNavigationProgress: a380f5016e898ea4577049cf7b41895ed2a8da5a
-  PromiseKit: 97397236f9e9c443d5b70a941d49cad25160af7a
-  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
-  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
-  ReSwift: d925be0033558f55bd73d92869961230dfe19d52
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  PromiseKit: ed0e2a8e3f3cd59d5d98ca0a6de481a2c5c59c0b
+  Realm: d9e4e5877095a6722145811f56fe89a531c9659d
+  RealmSwift: e4191b4b957fcfcbed23751ec65eec98f8173ab5
+  ReSwift: eab3c01e4279ba81b54a61e4fd6499634d20123a
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 03f351e32ae4a37a01157e5a13394bee37080f85
+PODFILE CHECKSUM: 144fb50288490cef5330309d43aedf2c2d0099a8
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.10.1

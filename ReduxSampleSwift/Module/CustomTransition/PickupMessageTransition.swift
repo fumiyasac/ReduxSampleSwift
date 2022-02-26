@@ -91,7 +91,14 @@ extension PickupMessageTransition: UIViewControllerAnimatedTransitioning {
 
             toViewAlpha = 0
             beforeTransitionImageViewFrame = originFrame
-            afterTransitionImageViewFrame  = targetImageView.frame
+            // MEMO: 詳細画面の初期配置位置に重なる様にframe値を設定する
+            // targetImageView.frameを設定するとStoryboardの値が基準となる
+            afterTransitionImageViewFrame = CGRect(
+                x: 0,
+                y: 0,
+                width: UIScreen.main.bounds.width,
+                height: 190.0
+            )
             afterTransitionViewAlpha = 1
 
         // Case2: 戻る場合

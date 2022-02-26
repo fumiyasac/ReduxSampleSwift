@@ -44,7 +44,7 @@ class APIManagerForPickupMessage {
         // ※ Swift4.1では書き方が変わっているのでご注意を!
         // https://stackoverflow.com/questions/48932536/swift4-error-cannot-convert-value-of-type-void-to-expected-argument-typ
         return Promise { seal in
-            Alamofire.request(baseUrl, method: .get).validate().responseJSON { response in
+            AF.request(baseUrl, method: .get, encoding: URLEncoding.default).responseData { response in
 
                 switch response.result {
 
